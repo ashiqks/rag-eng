@@ -1,0 +1,26 @@
+[
+  {
+    "file": "TLCOE-2010001.html",
+    "test_id": "T-ON-00001",
+    "title": "[ON WEB] Sticky add-to-bag button on PDP scroll - Jun 2022",
+    "brand": "Old Navy",
+    "value_stream": "PDP",
+    "tactic": "Time Savings",
+    "outcome": "Flat",
+    "start_date": "2022-06-13",
+    "end_date": "2022-10-11",
+    "primary_kpi_delta_pct": -0.11
+  },
+  {
+    "file": "TLCOE-2010002.html",
+    "test_id": "T-GAPF-00002",
+    "title": "[GAPF WEB] Loyalty point earn estimator on PDP - Mar 2026",
+    "brand": "Gap Factory",
+    "value_stream": "PDP",
+    "tactic": "Value",
+    "outcome": "Loss",
+    "start_date": "2026-03-14",
+    "end_date": "2026-05-13",
+    "primary_kpi_delta_pct": -0.56
+  }
+]

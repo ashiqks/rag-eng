@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>[BR PUSH] Inline gift-card application - Dec 2026</title>
+  <link rel="canonical" href="https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010391"/>
+  <meta name="test_id" content="T-BR-00391"/>
+  <meta name="confluence_page_id" content="TLCOE-2010391"/>
+  <meta name="confluence_url" content="https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010391"/>
+  <meta name="title" content="[BR PUSH] Inline gift-card application - Dec 2026"/>
+  <meta name="brand" content="Banana Republic"/>
+  <meta name="brand_code" content="BR"/>
+  <meta name="market" content="US"/>
+  <meta name="value_stream" content="Shopping Bag"/>
+  <meta name="channel" content="Push"/>
+  <meta name="channel_section" content="iOS Push"/>
+  <meta name="device" content="All Devices"/>
+  <meta name="audience" content="New Visitors"/>
+  <meta name="tactic" content="Quality"/>
+  <meta name="test_type" content="Server-Side"/>
+  <meta name="vendor" content="Optimizely (Server-Side)"/>
+  <meta name="primary_kpi" content="PDP -&gt; Shopping Bag Conversion"/>
+  <meta name="secondary_kpis" content="Return Rate, PDP Certona Engagement Rate, Visits Split (Visit/Visitor)"/>
+  <meta name="start_date" content="2026-12-06"/>
+  <meta name="end_date" content="2026-05-13"/>
+  <meta name="duration_days" content="-207"/>
+  <meta name="sample_size_per_arm" content="10000000"/>
+  <meta name="mde_pct" content="0.72"/>
+  <meta name="confidence_pct" content="80"/>
+  <meta name="power_pct" content="80"/>
+  <meta name="exposure_pct" content="10"/>
+  <meta name="split" content="33/33/33"/>
+  <meta name="outcome" content="Loss"/>
+  <meta name="primary_kpi_delta_pct" content="-3.5"/>
+  <meta name="net_rpv_delta_pct" content="-3.68"/>
+  <meta name="aos_delta_pct" content="-2.27"/>
+  <meta name="visits_total" content="30000000"/>
+  <meta name="incremental_revenue_usd" content="0"/>
+  <meta name="averted_loss_usd" content="1093342"/>
+  <meta name="recommendation_adopted" content="No (averted loss)"/>
+  <meta name="related_test_ids" content=""/>
+  <meta name="sha256_source" content="9884a193f864bd6cd40b47328436aedbbdd22321ac4b9c73562d09b505177979"/>
+  <meta name="metadata_quality" content="high"/>
+  <meta name="template_version" content="2017.stable"/>
+  <script type="application/ld+json">{"test_id": "T-BR-00391", "confluence_page_id": "TLCOE-2010391", "confluence_url": "https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010391", "title": "[BR PUSH] Inline gift-card application - Dec 2026", "brand": "Banana Republic", "brand_code": "BR", "market": "US", "value_stream": "Shopping Bag", "channel": "Push", "channel_section": "iOS Push", "device": "All Devices", "audience": "New Visitors", "tactic": "Quality", "test_type": "Server-Side", "vendor": "Optimizely (Server-Side)", "primary_kpi": "PDP -&gt; Shopping Bag Conversion", "secondary_kpis": ["Return Rate", "PDP Certona Engagement Rate", "Visits Split (Visit/Visitor)"], "start_date": "2026-12-06", "end_date": "2026-05-13", "duration_days": -207, "sample_size_per_arm": 10000000, "mde_pct": 0.72, "confidence_pct": 80, "power_pct": 80, "exposure_pct": 10, "split": "33/33/33", "outcome": "Loss", "primary_kpi_delta_pct": -3.5, "net_rpv_delta_pct": -3.68, "aos_delta_pct": -2.27, "visits_total": 30000000, "incremental_revenue_usd": 0, "averted_loss_usd": 1093342, "recommendation_adopted": "No (averted loss)", "related_test_ids": [], "sha256_source": "9884a193f864bd6cd40b47328436aedbbdd22321ac4b9c73562d09b505177979", "metadata_quality": "high", "template_version": "2017.stable"}</script>
+</head>
+<body>
+<h1>[BR PUSH] Inline gift-card application - Dec 2026</h1>
+<blockquote><strong>Brand</strong>: Banana Republic (BR) · <strong>Market</strong>: US · <strong>Value Stream</strong>: Shopping Bag<br/><strong>Channel</strong>: Push (iOS Push) · <strong>Device</strong>: All Devices · <strong>Audience</strong>: New Visitors<br/><strong>Tactic</strong>: Quality · <strong>Test Type</strong>: Server-Side · <strong>Vendor</strong>: Optimizely (Server-Side)<br/><strong>Window</strong>: 2026-12-06 → 2026-05-13 (-207 days)<br/><strong>Outcome</strong>: <strong>Loss</strong> · <strong>Recommendation Adopted</strong>: No (averted loss)</blockquote>
+<hr/>
+<h2>1. Test Plan</h2>
+<h3>1.1 Problem Statement</h3>
+<p>On Banana Republic Shopping Bag, the current control experience does not sufficiently support pdp -&gt; shopping bag conversion for the new visitors segment. Based on prior quality-tactic learnings across the premium tier, we want to evaluate whether the proposed change moves the needle within the -207-day window.</p>
+<h3>1.2 Hypothesis</h3>
+<p>If we apply 'Bag inline gift card' on Banana Republic Shopping Bag (iOS Push) to new visitors, then we expect a lift of at least 0.72% on PDP -&gt; Shopping Bag Conversion because allowing gift-card entry inline in the bag (vs. checkout) reduces drop-off.</p>
+<h3>1.3 Experimental Changes</h3>
+<ul><li><strong>Control</strong>: existing Shopping Bag experience on Banana Republic iOS Push.</li><li><strong>Challenger</strong>: Bag inline gift card variant — allowing gift-card entry inline in the bag (vs. checkout) reduces drop-off.</li></ul>
+<h3>1.4 Significance Calculations &amp; Experimental Design</h3>
+<table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Brand</td><td>Banana Republic</td></tr><tr><td>Scenarios</td><td>1 Control + 1 Challenger (33/33/33)</td></tr><tr><td>Primary KPI</td><td>PDP -&gt; Shopping Bag Conversion</td></tr><tr><td>Minimum Detectable Lift</td><td>~0.72%</td></tr><tr><td>Confidence Threshold</td><td>80%</td></tr><tr><td>Power Threshold</td><td>80%</td></tr><tr><td>Sample Size per Variation</td><td>~10,000,000 visits</td></tr><tr><td>Estimated Duration</td><td>~-207 days</td></tr><tr><td>Test Exposure</td><td>10% of eligible traffic</td></tr><tr><td>Audience Limitation</td><td>New Visitors</td></tr></tbody></table>
+<h3>1.5 Adobe Workspace</h3>
+<ul><li>Project: <em>Banana Republic US — Production</em></li><li>Workspace: <code>[BR US] Bag inline gift card Test</code></li><li>Filters: Return vs. New Visits · Segment (Global Blanket Correction Segment [Approved]) · Device Type · Page Type · Extreme Orders (COE — Exclude Extreme)</li></ul>
+<h3>1.6 Measurement Strategy</h3>
+<p><strong>Metrics (All Experiments)</strong>: Conversion Rate (OPV) · Net RPV · AOS · UPT · AUR · Total Visits · Visits Split (Visit/Visitor) · Variation Overlap</p>
+<p><strong>Metrics (Test Specific)</strong>:</p>
+<ul><li>Return Rate</li><li>PDP Certona Engagement Rate</li><li>Visits Split (Visit/Visitor)</li></ul>
+<p><strong>Segments (All Experiments)</strong>: New vs. Returning</p>
+<p><strong>Segments (Test Specific)</strong>: Desktop vs. Mobile · Loyalty vs. Non-Loyalty</p>
+<h3>1.7 Custom Metrics</h3>
+<table><thead><tr><th>Description / Location</th><th>Custom Variable</th><th>Tracking Notes</th></tr></thead><tbody><tr><td>Bag inline gift card click</td><td>eVar47 — bag_inline_gift_card_click</td><td>Track once per visit</td></tr><tr><td>Bag inline gift card view</td><td>eVar48 — bag_inline_gift_card_view</td><td>Track always</td></tr><tr><td>Shopping Bag arrival from Bag inline gift card</td><td>eVar49 — shopping_bag_arrival</td><td>Track once per session</td></tr></tbody></table>
+<hr/>
+<h2>2. Test Results</h2>
+<h3>2.1 Findings (TL;DR)</h3>
+<p>Across the -207-day test window, the challenger underperformed the control on the primary KPI (PDP -&gt; Shopping Bag Conversion) by <strong>3.5%</strong> (statistically significant in the wrong direction). Net RPV moved by -3.68% and AOS by -2.27%.</p>
+<h3>2.2 Variation Description</h3>
+<ul><li><strong>Control</strong>: as-is Shopping Bag on Banana Republic iOS Push.</li><li><strong>Challenger</strong>: applies the <em>Bag inline gift card</em> treatment described in §1.3.</li><li><em>Screenshots</em>: see Confluence attachments <code>control_T-BR-00391.png</code>, <code>challenger_T-BR-00391.png</code> (omitted from this synthetic export).</li></ul>
+<h3>2.3 Details</h3>
+<p>Across the -207-day test window, the challenger underperformed the control on the primary KPI (PDP -&gt; Shopping Bag Conversion) by <strong>3.5%</strong> (statistically significant in the wrong direction). Net RPV moved by -3.68% and AOS by -2.27%.</p>
+<p>Statistical significance was computed <strong>outside</strong> Optimizely (Excel + online calculator) per standard Test &amp; Learn COE practice — Optimizely's built-in significance is not reliable for GAP because of cross-brand basket attribution.</p>
+<h3>2.4 Impacts</h3>
+<table><thead><tr><th>Metric</th><th>Control</th><th>Challenger</th><th>Δ %</th></tr></thead><tbody><tr><td>Net RPV</td><td>baseline</td><td>challenger</td><td>▼ 3.68%</td></tr><tr><td>PDP -&gt; Shopping Bag Conversion</td><td>baseline</td><td>challenger</td><td>▼ 3.5%</td></tr><tr><td>AOS</td><td>baseline</td><td>challenger</td><td>▼ 2.27%</td></tr><tr><td>UPT</td><td>baseline</td><td>challenger</td><td>▼ 1.36%</td></tr><tr><td>AUR</td><td>baseline</td><td>challenger</td><td>▼ 0.91%</td></tr><tr><td>Total Visits (test arm)</td><td>—</td><td>10,000,000</td><td>—</td></tr><tr><td>Incremental Revenue (USD)</td><td>—</td><td>—</td><td>$0</td></tr><tr><td>Averted Loss (USD)</td><td>—</td><td>—</td><td>$1,093,342</td></tr></tbody></table>
+<h3>2.5 Segment Break-down</h3>
+<table><thead><tr><th>Segment</th><th>Value</th><th>Primary KPI Δ</th><th>Net RPV Δ</th></tr></thead><tbody><tr><td>Device</td><td>Desktop</td><td>-3.96%</td><td>-3.35%</td></tr><tr><td>Device</td><td>Mobile</td><td>-3.02%</td><td>-3.42%</td></tr><tr><td>Device</td><td>Tablet</td><td>-3.11%</td><td>-3.64%</td></tr><tr><td>Visit Type</td><td>New</td><td>-3.34%</td><td>-3.76%</td></tr><tr><td>Visit Type</td><td>Returning</td><td>-4.01%</td><td>-3.35%</td></tr><tr><td>Loyalty</td><td>Member</td><td>-3.83%</td><td>-3.41%</td></tr><tr><td>Loyalty</td><td>Non-Member</td><td>-3.74%</td><td>-3.75%</td></tr></tbody></table>
+<h3>2.6 Product Mix</h3>
+<p>Top contributing categories during the test window: women's tops, women's denim, men's polos, accessories. No anomalous category-level skew detected.</p>
+<h3>2.7 Gross Margin (GMS / Visit)</h3>
+<p>GMS/Visit moved in the wrong direction in line with the Net RPV decline; the loss is real revenue, not a mix shift.</p>
+<hr/>
+<h2>3. Recommendation</h2>
+<p><strong>Do NOT roll out. Investigate whether copy variant caused friction.</strong></p>
+<p>Recommendation adopted: <strong>No (averted loss)</strong>.</p>
+<h2>4. Optimization Opportunities (feeds next brainstorm)</h2>
+<ul><li>Re-run with a tighter MDE on the new visitors segment to confirm.</li><li>Explore the same hypothesis on the sister brand in the premium tier.</li><li>Consider follow-up on PDP where the same tactic (Quality) has not yet been tested for Banana Republic.</li></ul>
+<h2>5. Related Tests</h2>
+<p><em>No prior closely-related tests recorded.</em></p>
+<hr/>
+<p><em>Generated synthetic record for POC retrieval testing. Template version 2017.stable, mirroring the Test &amp; Learn COE Confluence template walked through by Prateek Oberoi on 2026-05-06.</em></p>
+</body>
+</html>

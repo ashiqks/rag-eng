@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>[BRF IOS APP] Loyalty progress widget on account page - Aug 2024</title>
+  <link rel="canonical" href="https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010117"/>
+  <meta name="test_id" content="T-BRF-00117"/>
+  <meta name="confluence_page_id" content="TLCOE-2010117"/>
+  <meta name="confluence_url" content="https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010117"/>
+  <meta name="title" content="[BRF IOS APP] Loyalty progress widget on account page - Aug 2024"/>
+  <meta name="brand" content="Banana Republic Factory"/>
+  <meta name="brand_code" content="BRF"/>
+  <meta name="market" content="US"/>
+  <meta name="value_stream" content="Account"/>
+  <meta name="channel" content="iOS App"/>
+  <meta name="channel_section" content="iOS Native"/>
+  <meta name="device" content="Mobile"/>
+  <meta name="audience" content="All Customers"/>
+  <meta name="tactic" content="Value"/>
+  <meta name="test_type" content="Client-Side"/>
+  <meta name="vendor" content="In-house"/>
+  <meta name="primary_kpi" content="Checkout Start Rate"/>
+  <meta name="secondary_kpis" content="Visits Split (Visit/Visitor), Total Visits, Bag Edit Rate"/>
+  <meta name="start_date" content="2024-08-25"/>
+  <meta name="end_date" content="2024-10-06"/>
+  <meta name="duration_days" content="42"/>
+  <meta name="sample_size_per_arm" content="1200000"/>
+  <meta name="mde_pct" content="1.41"/>
+  <meta name="confidence_pct" content="90"/>
+  <meta name="power_pct" content="80"/>
+  <meta name="exposure_pct" content="20"/>
+  <meta name="split" content="50/50"/>
+  <meta name="outcome" content="Flat"/>
+  <meta name="primary_kpi_delta_pct" content="0.1"/>
+  <meta name="net_rpv_delta_pct" content="0.17"/>
+  <meta name="aos_delta_pct" content="0.15"/>
+  <meta name="visits_total" content="2400000"/>
+  <meta name="incremental_revenue_usd" content="0"/>
+  <meta name="averted_loss_usd" content="0"/>
+  <meta name="recommendation_adopted" content="N/A"/>
+  <meta name="related_test_ids" content=""/>
+  <meta name="sha256_source" content="a0b070fc02f0b5f6c9a7af7b2d338a545476c828ce4834eb495e5acee1e24e84"/>
+  <meta name="metadata_quality" content="high"/>
+  <meta name="template_version" content="2017.stable"/>
+  <script type="application/ld+json">{"test_id": "T-BRF-00117", "confluence_page_id": "TLCOE-2010117", "confluence_url": "https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010117", "title": "[BRF IOS APP] Loyalty progress widget on account page - Aug 2024", "brand": "Banana Republic Factory", "brand_code": "BRF", "market": "US", "value_stream": "Account", "channel": "iOS App", "channel_section": "iOS Native", "device": "Mobile", "audience": "All Customers", "tactic": "Value", "test_type": "Client-Side", "vendor": "In-house", "primary_kpi": "Checkout Start Rate", "secondary_kpis": ["Visits Split (Visit/Visitor)", "Total Visits", "Bag Edit Rate"], "start_date": "2024-08-25", "end_date": "2024-10-06", "duration_days": 42, "sample_size_per_arm": 1200000, "mde_pct": 1.41, "confidence_pct": 90, "power_pct": 80, "exposure_pct": 20, "split": "50/50", "outcome": "Flat", "primary_kpi_delta_pct": 0.1, "net_rpv_delta_pct": 0.17, "aos_delta_pct": 0.15, "visits_total": 2400000, "incremental_revenue_usd": 0, "averted_loss_usd": 0, "recommendation_adopted": "N/A", "related_test_ids": [], "sha256_source": "a0b070fc02f0b5f6c9a7af7b2d338a545476c828ce4834eb495e5acee1e24e84", "metadata_quality": "high", "template_version": "2017.stable"}</script>
+</head>
+<body>
+<h1>[BRF IOS APP] Loyalty progress widget on account page - Aug 2024</h1>
+<blockquote><strong>Brand</strong>: Banana Republic Factory (BRF) · <strong>Market</strong>: US · <strong>Value Stream</strong>: Account<br/><strong>Channel</strong>: iOS App (iOS Native) · <strong>Device</strong>: Mobile · <strong>Audience</strong>: All Customers<br/><strong>Tactic</strong>: Value · <strong>Test Type</strong>: Client-Side · <strong>Vendor</strong>: In-house<br/><strong>Window</strong>: 2024-08-25 → 2024-10-06 (42 days)<br/><strong>Outcome</strong>: <strong>Flat</strong> · <strong>Recommendation Adopted</strong>: N/A</blockquote>
+<hr/>
+<h2>1. Test Plan</h2>
+<h3>1.1 Problem Statement</h3>
+<p>On Banana Republic Factory Account, the current control experience does not sufficiently support checkout start rate for the all customers segment. Based on prior value-tactic learnings across the discount tier, we want to evaluate whether the proposed change moves the needle within the 42-day window.</p>
+<h3>1.2 Hypothesis</h3>
+<p>If we apply 'Loyalty progress widget' on Banana Republic Factory Account (iOS Native) to all customers, then we expect a lift of at least 1.41% on Checkout Start Rate because a progress widget toward the next loyalty tier raises return-visit rate among members.</p>
+<h3>1.3 Experimental Changes</h3>
+<ul><li><strong>Control</strong>: existing Account experience on Banana Republic Factory iOS Native.</li><li><strong>Challenger</strong>: Loyalty progress widget variant — a progress widget toward the next loyalty tier raises return-visit rate among members.</li></ul>
+<h3>1.4 Significance Calculations &amp; Experimental Design</h3>
+<table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Brand</td><td>Banana Republic Factory</td></tr><tr><td>Scenarios</td><td>1 Control + 1 Challenger (50/50)</td></tr><tr><td>Primary KPI</td><td>Checkout Start Rate</td></tr><tr><td>Minimum Detectable Lift</td><td>~1.41%</td></tr><tr><td>Confidence Threshold</td><td>90%</td></tr><tr><td>Power Threshold</td><td>80%</td></tr><tr><td>Sample Size per Variation</td><td>~1,200,000 visits</td></tr><tr><td>Estimated Duration</td><td>~42 days</td></tr><tr><td>Test Exposure</td><td>20% of eligible traffic</td></tr><tr><td>Audience Limitation</td><td>All Customers</td></tr></tbody></table>
+<h3>1.5 Adobe Workspace</h3>
+<ul><li>Project: <em>Banana Republic Factory US — Production</em></li><li>Workspace: <code>[BRF US] Loyalty progress widget Test</code></li><li>Filters: Return vs. New Visits · Segment (Global Blanket Correction Segment [Approved]) · Device Type · Page Type · Extreme Orders (COE — Exclude Extreme)</li></ul>
+<h3>1.6 Measurement Strategy</h3>
+<p><strong>Metrics (All Experiments)</strong>: Conversion Rate (OPV) · Net RPV · AOS · UPT · AUR · Total Visits · Visits Split (Visit/Visitor) · Variation Overlap</p>
+<p><strong>Metrics (Test Specific)</strong>:</p>
+<ul><li>Visits Split (Visit/Visitor)</li><li>Total Visits</li><li>Bag Edit Rate</li></ul>
+<p><strong>Segments (All Experiments)</strong>: New vs. Returning</p>
+<p><strong>Segments (Test Specific)</strong>: Desktop vs. Mobile · Loyalty vs. Non-Loyalty</p>
+<h3>1.7 Custom Metrics</h3>
+<table><thead><tr><th>Description / Location</th><th>Custom Variable</th><th>Tracking Notes</th></tr></thead><tbody><tr><td>Loyalty progress widget click</td><td>eVar47 — loyalty_progress_widget_click</td><td>Track once per visit</td></tr><tr><td>Loyalty progress widget view</td><td>eVar48 — loyalty_progress_widget_view</td><td>Track always</td></tr><tr><td>Account arrival from Loyalty progress widget</td><td>eVar49 — account_arrival</td><td>Track once per session</td></tr></tbody></table>
+<hr/>
+<h2>2. Test Results</h2>
+<h3>2.1 Findings (TL;DR)</h3>
+<p>Across the 42-day test window, no statistically significant difference was observed on the primary KPI (Checkout Start Rate); observed delta 0.1% sits within MDE (1.41%). Net RPV 0.17%, AOS 0.15% — also within noise.</p>
+<h3>2.2 Variation Description</h3>
+<ul><li><strong>Control</strong>: as-is Account on Banana Republic Factory iOS Native.</li><li><strong>Challenger</strong>: applies the <em>Loyalty progress widget</em> treatment described in §1.3.</li><li><em>Screenshots</em>: see Confluence attachments <code>control_T-BRF-00117.png</code>, <code>challenger_T-BRF-00117.png</code> (omitted from this synthetic export).</li></ul>
+<h3>2.3 Details</h3>
+<p>Across the 42-day test window, no statistically significant difference was observed on the primary KPI (Checkout Start Rate); observed delta 0.1% sits within MDE (1.41%). Net RPV 0.17%, AOS 0.15% — also within noise.</p>
+<p>Statistical significance was computed <strong>outside</strong> Optimizely (Excel + online calculator) per standard Test &amp; Learn COE practice — Optimizely's built-in significance is not reliable for GAP because of cross-brand basket attribution.</p>
+<h3>2.4 Impacts</h3>
+<table><thead><tr><th>Metric</th><th>Control</th><th>Challenger</th><th>Δ %</th></tr></thead><tbody><tr><td>Net RPV</td><td>baseline</td><td>challenger</td><td>▲ 0.17%</td></tr><tr><td>Checkout Start Rate</td><td>baseline</td><td>challenger</td><td>▲ 0.1%</td></tr><tr><td>AOS</td><td>baseline</td><td>challenger</td><td>▲ 0.15%</td></tr><tr><td>UPT</td><td>baseline</td><td>challenger</td><td>▲ 0.09%</td></tr><tr><td>AUR</td><td>baseline</td><td>challenger</td><td>▲ 0.06%</td></tr><tr><td>Total Visits (test arm)</td><td>—</td><td>1,200,000</td><td>—</td></tr><tr><td>Incremental Revenue (USD)</td><td>—</td><td>—</td><td>$0</td></tr><tr><td>Averted Loss (USD)</td><td>—</td><td>—</td><td>$0</td></tr></tbody></table>
+<h3>2.5 Segment Break-down</h3>
+<table><thead><tr><th>Segment</th><th>Value</th><th>Primary KPI Δ</th><th>Net RPV Δ</th></tr></thead><tbody><tr><td>Device</td><td>Desktop</td><td>0.37%</td><td>0.24%</td></tr><tr><td>Device</td><td>Mobile</td><td>-0.23%</td><td>0.32%</td></tr><tr><td>Device</td><td>Tablet</td><td>-0.18%</td><td>0.49%</td></tr><tr><td>Visit Type</td><td>New</td><td>0.1%</td><td>0.13%</td></tr><tr><td>Visit Type</td><td>Returning</td><td>0.34%</td><td>0.11%</td></tr><tr><td>Loyalty</td><td>Member</td><td>0.2%</td><td>0.44%</td></tr><tr><td>Loyalty</td><td>Non-Member</td><td>-0.23%</td><td>0.44%</td></tr></tbody></table>
+<h3>2.6 Product Mix</h3>
+<p>Top contributing categories during the test window: women's tops, women's denim, men's polos, accessories. No anomalous category-level skew detected.</p>
+<h3>2.7 Gross Margin (GMS / Visit)</h3>
+<p>GMS/Visit was flat across both arms within MDE.</p>
+<hr/>
+<h2>3. Recommendation</h2>
+<p><strong>No change. The effect, if any, is below MDE.</strong></p>
+<p>Recommendation adopted: <strong>N/A</strong>.</p>
+<h2>4. Optimization Opportunities (feeds next brainstorm)</h2>
+<ul><li>Re-run with a tighter MDE on the all customers segment to confirm.</li><li>Explore the same hypothesis on the sister brand in the discount tier.</li><li>Consider follow-up on Account where the same tactic (Value) has not yet been tested for Banana Republic Factory.</li></ul>
+<h2>5. Related Tests</h2>
+<p><em>No prior closely-related tests recorded.</em></p>
+<hr/>
+<p><em>Generated synthetic record for POC retrieval testing. Template version 2017.stable, mirroring the Test &amp; Learn COE Confluence template walked through by Prateek Oberoi on 2026-05-06.</em></p>
+</body>
+</html>

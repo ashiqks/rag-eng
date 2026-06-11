@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>[ON IOS APP] Pre-selected default size - Mar 2020</title>
+  <link rel="canonical" href="https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010408"/>
+  <meta name="test_id" content="T-ON-00408"/>
+  <meta name="confluence_page_id" content="TLCOE-2010408"/>
+  <meta name="confluence_url" content="https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010408"/>
+  <meta name="title" content="[ON IOS APP] Pre-selected default size - Mar 2020"/>
+  <meta name="brand" content="Old Navy"/>
+  <meta name="brand_code" content="ON"/>
+  <meta name="market" content="US"/>
+  <meta name="value_stream" content="PDP"/>
+  <meta name="channel" content="iOS App"/>
+  <meta name="channel_section" content="iOS Native"/>
+  <meta name="device" content="Mobile"/>
+  <meta name="audience" content="Loyalty Members"/>
+  <meta name="tactic" content="Time Savings"/>
+  <meta name="test_type" content="Client-Side"/>
+  <meta name="vendor" content="Optimizely (Client-Side)"/>
+  <meta name="primary_kpi" content="Email Capture Rate"/>
+  <meta name="secondary_kpis" content="Variation Overlap, PDP Certona Engagement Rate, Promo Code Application Rate, Total Visits"/>
+  <meta name="start_date" content="2020-03-10"/>
+  <meta name="end_date" content="2020-06-08"/>
+  <meta name="duration_days" content="90"/>
+  <meta name="sample_size_per_arm" content="1200000"/>
+  <meta name="mde_pct" content="1.28"/>
+  <meta name="confidence_pct" content="90"/>
+  <meta name="power_pct" content="80"/>
+  <meta name="exposure_pct" content="50"/>
+  <meta name="split" content="90/10 (holdback)"/>
+  <meta name="outcome" content="Win"/>
+  <meta name="primary_kpi_delta_pct" content="1.54"/>
+  <meta name="net_rpv_delta_pct" content="1.98"/>
+  <meta name="aos_delta_pct" content="1.48"/>
+  <meta name="visits_total" content="2400000"/>
+  <meta name="incremental_revenue_usd" content="3256137"/>
+  <meta name="averted_loss_usd" content="0"/>
+  <meta name="recommendation_adopted" content="Yes"/>
+  <meta name="related_test_ids" content="T-BRF-00066, T-BRF-00259"/>
+  <meta name="sha256_source" content="3bd9928ba777feac9a99f0f35a8dedaa85f6c9fabe4b50a5d3f7168e65ddf3b7"/>
+  <meta name="metadata_quality" content="high"/>
+  <meta name="template_version" content="2017.stable"/>
+  <script type="application/ld+json">{"test_id": "T-ON-00408", "confluence_page_id": "TLCOE-2010408", "confluence_url": "https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010408", "title": "[ON IOS APP] Pre-selected default size - Mar 2020", "brand": "Old Navy", "brand_code": "ON", "market": "US", "value_stream": "PDP", "channel": "iOS App", "channel_section": "iOS Native", "device": "Mobile", "audience": "Loyalty Members", "tactic": "Time Savings", "test_type": "Client-Side", "vendor": "Optimizely (Client-Side)", "primary_kpi": "Email Capture Rate", "secondary_kpis": ["Variation Overlap", "PDP Certona Engagement Rate", "Promo Code Application Rate", "Total Visits"], "start_date": "2020-03-10", "end_date": "2020-06-08", "duration_days": 90, "sample_size_per_arm": 1200000, "mde_pct": 1.28, "confidence_pct": 90, "power_pct": 80, "exposure_pct": 50, "split": "90/10 (holdback)", "outcome": "Win", "primary_kpi_delta_pct": 1.54, "net_rpv_delta_pct": 1.98, "aos_delta_pct": 1.48, "visits_total": 2400000, "incremental_revenue_usd": 3256137, "averted_loss_usd": 0, "recommendation_adopted": "Yes", "related_test_ids": ["T-BRF-00066", "T-BRF-00259"], "sha256_source": "3bd9928ba777feac9a99f0f35a8dedaa85f6c9fabe4b50a5d3f7168e65ddf3b7", "metadata_quality": "high", "template_version": "2017.stable"}</script>
+</head>
+<body>
+<h1>[ON IOS APP] Pre-selected default size - Mar 2020</h1>
+<blockquote><strong>Brand</strong>: Old Navy (ON) · <strong>Market</strong>: US · <strong>Value Stream</strong>: PDP<br/><strong>Channel</strong>: iOS App (iOS Native) · <strong>Device</strong>: Mobile · <strong>Audience</strong>: Loyalty Members<br/><strong>Tactic</strong>: Time Savings · <strong>Test Type</strong>: Client-Side · <strong>Vendor</strong>: Optimizely (Client-Side)<br/><strong>Window</strong>: 2020-03-10 → 2020-06-08 (90 days)<br/><strong>Outcome</strong>: <strong>Win</strong> · <strong>Recommendation Adopted</strong>: Yes</blockquote>
+<hr/>
+<h2>1. Test Plan</h2>
+<h3>1.1 Problem Statement</h3>
+<p>On Old Navy PDP, the current control experience does not sufficiently support email capture rate for the loyalty members segment. Based on prior time savings-tactic learnings across the discount tier, we want to evaluate whether the proposed change moves the needle within the 90-day window.</p>
+<h3>1.2 Hypothesis</h3>
+<p>If we apply 'PDP default size' on Old Navy PDP (iOS Native) to loyalty members, then we expect a lift of at least 1.28% on Email Capture Rate because defaulting to the most-purchased size for the current sku saves a tap.</p>
+<h3>1.3 Experimental Changes</h3>
+<ul><li><strong>Control</strong>: existing PDP experience on Old Navy iOS Native.</li><li><strong>Challenger</strong>: PDP default size variant — defaulting to the most-purchased size for the current sku saves a tap.</li></ul>
+<h3>1.4 Significance Calculations &amp; Experimental Design</h3>
+<table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Brand</td><td>Old Navy</td></tr><tr><td>Scenarios</td><td>1 Control + 1 Challenger (90/10 (holdback))</td></tr><tr><td>Primary KPI</td><td>Email Capture Rate</td></tr><tr><td>Minimum Detectable Lift</td><td>~1.28%</td></tr><tr><td>Confidence Threshold</td><td>90%</td></tr><tr><td>Power Threshold</td><td>80%</td></tr><tr><td>Sample Size per Variation</td><td>~1,200,000 visits</td></tr><tr><td>Estimated Duration</td><td>~90 days</td></tr><tr><td>Test Exposure</td><td>50% of eligible traffic</td></tr><tr><td>Audience Limitation</td><td>Loyalty Members</td></tr></tbody></table>
+<h3>1.5 Adobe Workspace</h3>
+<ul><li>Project: <em>Old Navy US — Production</em></li><li>Workspace: <code>[ON US] PDP default size Test</code></li><li>Filters: Return vs. New Visits · Segment (Global Blanket Correction Segment [Approved]) · Device Type · Page Type · Extreme Orders (COE — Exclude Extreme)</li></ul>
+<h3>1.6 Measurement Strategy</h3>
+<p><strong>Metrics (All Experiments)</strong>: Conversion Rate (OPV) · Net RPV · AOS · UPT · AUR · Total Visits · Visits Split (Visit/Visitor) · Variation Overlap</p>
+<p><strong>Metrics (Test Specific)</strong>:</p>
+<ul><li>Variation Overlap</li><li>PDP Certona Engagement Rate</li><li>Promo Code Application Rate</li><li>Total Visits</li></ul>
+<p><strong>Segments (All Experiments)</strong>: New vs. Returning</p>
+<p><strong>Segments (Test Specific)</strong>: Desktop vs. Mobile · Loyalty vs. Non-Loyalty</p>
+<h3>1.7 Custom Metrics</h3>
+<table><thead><tr><th>Description / Location</th><th>Custom Variable</th><th>Tracking Notes</th></tr></thead><tbody><tr><td>PDP default size click</td><td>eVar47 — pdp_default_size_click</td><td>Track once per visit</td></tr><tr><td>PDP default size view</td><td>eVar48 — pdp_default_size_view</td><td>Track always</td></tr><tr><td>PDP arrival from PDP default size</td><td>eVar49 — pdp_arrival</td><td>Track once per session</td></tr></tbody></table>
+<hr/>
+<h2>2. Test Results</h2>
+<h3>2.1 Findings (TL;DR)</h3>
+<p>Across the 90-day test window, the challenger outperformed the control on the primary KPI (Email Capture Rate) by <strong>1.54%</strong> (statistically significant at the configured threshold). Net RPV moved by 1.98% and AOS by 1.48%.</p>
+<h3>2.2 Variation Description</h3>
+<ul><li><strong>Control</strong>: as-is PDP on Old Navy iOS Native.</li><li><strong>Challenger</strong>: applies the <em>PDP default size</em> treatment described in §1.3.</li><li><em>Screenshots</em>: see Confluence attachments <code>control_T-ON-00408.png</code>, <code>challenger_T-ON-00408.png</code> (omitted from this synthetic export).</li></ul>
+<h3>2.3 Details</h3>
+<p>Across the 90-day test window, the challenger outperformed the control on the primary KPI (Email Capture Rate) by <strong>1.54%</strong> (statistically significant at the configured threshold). Net RPV moved by 1.98% and AOS by 1.48%.</p>
+<p>Statistical significance was computed <strong>outside</strong> Optimizely (Excel + online calculator) per standard Test &amp; Learn COE practice — Optimizely's built-in significance is not reliable for GAP because of cross-brand basket attribution.</p>
+<h3>2.4 Impacts</h3>
+<table><thead><tr><th>Metric</th><th>Control</th><th>Challenger</th><th>Δ %</th></tr></thead><tbody><tr><td>Net RPV</td><td>baseline</td><td>challenger</td><td>▲ 1.98%</td></tr><tr><td>Email Capture Rate</td><td>baseline</td><td>challenger</td><td>▲ 1.54%</td></tr><tr><td>AOS</td><td>baseline</td><td>challenger</td><td>▲ 1.48%</td></tr><tr><td>UPT</td><td>baseline</td><td>challenger</td><td>▲ 0.89%</td></tr><tr><td>AUR</td><td>baseline</td><td>challenger</td><td>▲ 0.59%</td></tr><tr><td>Total Visits (test arm)</td><td>—</td><td>1,200,000</td><td>—</td></tr><tr><td>Incremental Revenue (USD)</td><td>—</td><td>—</td><td>$3,256,137</td></tr><tr><td>Averted Loss (USD)</td><td>—</td><td>—</td><td>$0</td></tr></tbody></table>
+<h3>2.5 Segment Break-down</h3>
+<table><thead><tr><th>Segment</th><th>Value</th><th>Primary KPI Δ</th><th>Net RPV Δ</th></tr></thead><tbody><tr><td>Device</td><td>Desktop</td><td>1.21%</td><td>1.88%</td></tr><tr><td>Device</td><td>Mobile</td><td>1.12%</td><td>1.76%</td></tr><tr><td>Device</td><td>Tablet</td><td>1.61%</td><td>2.29%</td></tr><tr><td>Visit Type</td><td>New</td><td>1.4%</td><td>1.77%</td></tr><tr><td>Visit Type</td><td>Returning</td><td>1.94%</td><td>2.28%</td></tr><tr><td>Loyalty</td><td>Member</td><td>1.34%</td><td>1.58%</td></tr><tr><td>Loyalty</td><td>Non-Member</td><td>1.67%</td><td>2.35%</td></tr></tbody></table>
+<h3>2.6 Product Mix</h3>
+<p>Top contributing categories during the test window: women's tops, women's denim, men's polos, accessories. No anomalous category-level skew detected.</p>
+<h3>2.7 Gross Margin (GMS / Visit)</h3>
+<p>Lift on GMS/Visit aligned with the directional Net RPV move; no margin compression observed.</p>
+<hr/>
+<h2>3. Recommendation</h2>
+<p><strong>Roll out to mobile first; monitor desktop in parallel.</strong></p>
+<p>Recommendation adopted: <strong>Yes</strong>.</p>
+<h2>4. Optimization Opportunities (feeds next brainstorm)</h2>
+<ul><li>Re-run with a tighter MDE on the loyalty members segment to confirm.</li><li>Explore the same hypothesis on the sister brand in the discount tier.</li><li>Consider follow-up on Checkout where the same tactic (Time Savings) has not yet been tested for Old Navy.</li></ul>
+<h2>5. Related Tests</h2>
+<table><thead><tr><th>Related Test ID</th><th>Relation</th></tr></thead><tbody><tr><td>T-BRF-00066</td><td>Re-test after redesign</td></tr><tr><td>T-BRF-00259</td><td>Same hypothesis, prior promo window</td></tr></tbody></table>
+<hr/>
+<p><em>Generated synthetic record for POC retrieval testing. Template version 2017.stable, mirroring the Test &amp; Learn COE Confluence template walked through by Prateek Oberoi on 2026-05-06.</em></p>
+</body>
+</html>

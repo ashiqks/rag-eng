@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>[GAPF WEB] Show &#x27;X left in stock&#x27; badge on PLP tiles - Dec 2022</title>
+  <link rel="canonical" href="https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010161"/>
+  <meta name="test_id" content="T-GAPF-00161"/>
+  <meta name="confluence_page_id" content="TLCOE-2010161"/>
+  <meta name="confluence_url" content="https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010161"/>
+  <meta name="title" content="[GAPF WEB] Show &#x27;X left in stock&#x27; badge on PLP tiles - Dec 2022"/>
+  <meta name="brand" content="Gap Factory"/>
+  <meta name="brand_code" content="GAPF"/>
+  <meta name="market" content="US"/>
+  <meta name="value_stream" content="PLP"/>
+  <meta name="channel" content="Web"/>
+  <meta name="channel_section" content="Mobile Web"/>
+  <meta name="device" content="Mobile"/>
+  <meta name="audience" content="Returning Visitors"/>
+  <meta name="tactic" content="Value"/>
+  <meta name="test_type" content="Client-Side"/>
+  <meta name="vendor" content="Rokt"/>
+  <meta name="primary_kpi" content="Add-to-Bag Rate"/>
+  <meta name="secondary_kpis" content="Variation Overlap, Promo Code Application Rate, Loyalty Sign-up Rate, PDP Views Per Visit, Visits Split (Visit/Visitor)"/>
+  <meta name="start_date" content="2022-12-12"/>
+  <meta name="end_date" content="2023-04-11"/>
+  <meta name="duration_days" content="120"/>
+  <meta name="sample_size_per_arm" content="5000000"/>
+  <meta name="mde_pct" content="0.61"/>
+  <meta name="confidence_pct" content="85"/>
+  <meta name="power_pct" content="80"/>
+  <meta name="exposure_pct" content="100"/>
+  <meta name="split" content="90/10 (holdback)"/>
+  <meta name="outcome" content="Flat"/>
+  <meta name="primary_kpi_delta_pct" content="-0.18"/>
+  <meta name="net_rpv_delta_pct" content="0.01"/>
+  <meta name="aos_delta_pct" content="-0.03"/>
+  <meta name="visits_total" content="10000000"/>
+  <meta name="incremental_revenue_usd" content="0"/>
+  <meta name="averted_loss_usd" content="0"/>
+  <meta name="recommendation_adopted" content="N/A"/>
+  <meta name="related_test_ids" content=""/>
+  <meta name="sha256_source" content="f09ef08f56d44d33baddc4ea48fb5b30f60e22c592b63d2e2346a3ada469924d"/>
+  <meta name="metadata_quality" content="high"/>
+  <meta name="template_version" content="2017.stable"/>
+  <script type="application/ld+json">{"test_id": "T-GAPF-00161", "confluence_page_id": "TLCOE-2010161", "confluence_url": "https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010161", "title": "[GAPF WEB] Show 'X left in stock' badge on PLP tiles - Dec 2022", "brand": "Gap Factory", "brand_code": "GAPF", "market": "US", "value_stream": "PLP", "channel": "Web", "channel_section": "Mobile Web", "device": "Mobile", "audience": "Returning Visitors", "tactic": "Value", "test_type": "Client-Side", "vendor": "Rokt", "primary_kpi": "Add-to-Bag Rate", "secondary_kpis": ["Variation Overlap", "Promo Code Application Rate", "Loyalty Sign-up Rate", "PDP Views Per Visit", "Visits Split (Visit/Visitor)"], "start_date": "2022-12-12", "end_date": "2023-04-11", "duration_days": 120, "sample_size_per_arm": 5000000, "mde_pct": 0.61, "confidence_pct": 85, "power_pct": 80, "exposure_pct": 100, "split": "90/10 (holdback)", "outcome": "Flat", "primary_kpi_delta_pct": -0.18, "net_rpv_delta_pct": 0.01, "aos_delta_pct": -0.03, "visits_total": 10000000, "incremental_revenue_usd": 0, "averted_loss_usd": 0, "recommendation_adopted": "N/A", "related_test_ids": [], "sha256_source": "f09ef08f56d44d33baddc4ea48fb5b30f60e22c592b63d2e2346a3ada469924d", "metadata_quality": "high", "template_version": "2017.stable"}</script>
+</head>
+<body>
+<h1>[GAPF WEB] Show 'X left in stock' badge on PLP tiles - Dec 2022</h1>
+<blockquote><strong>Brand</strong>: Gap Factory (GAPF) · <strong>Market</strong>: US · <strong>Value Stream</strong>: PLP<br/><strong>Channel</strong>: Web (Mobile Web) · <strong>Device</strong>: Mobile · <strong>Audience</strong>: Returning Visitors<br/><strong>Tactic</strong>: Value · <strong>Test Type</strong>: Client-Side · <strong>Vendor</strong>: Rokt<br/><strong>Window</strong>: 2022-12-12 → 2023-04-11 (120 days)<br/><strong>Outcome</strong>: <strong>Flat</strong> · <strong>Recommendation Adopted</strong>: N/A</blockquote>
+<hr/>
+<h2>1. Test Plan</h2>
+<h3>1.1 Problem Statement</h3>
+<p>On Gap Factory PLP, the current control experience does not sufficiently support add-to-bag rate for the returning visitors segment. Based on prior value-tactic learnings across the discount tier, we want to evaluate whether the proposed change moves the needle within the 120-day window.</p>
+<h3>1.2 Hypothesis</h3>
+<p>If we apply 'PLP scarcity badge' on Gap Factory PLP (Mobile Web) to returning visitors, then we expect a lift of at least 0.61% on Add-to-Bag Rate because surfacing low-inventory signals on plp triggers loss-aversion and lifts ctr to pdp.</p>
+<h3>1.3 Experimental Changes</h3>
+<ul><li><strong>Control</strong>: existing PLP experience on Gap Factory Mobile Web.</li><li><strong>Challenger</strong>: PLP scarcity badge variant — surfacing low-inventory signals on plp triggers loss-aversion and lifts ctr to pdp.</li></ul>
+<h3>1.4 Significance Calculations &amp; Experimental Design</h3>
+<table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Brand</td><td>Gap Factory</td></tr><tr><td>Scenarios</td><td>1 Control + 1 Challenger (90/10 (holdback))</td></tr><tr><td>Primary KPI</td><td>Add-to-Bag Rate</td></tr><tr><td>Minimum Detectable Lift</td><td>~0.61%</td></tr><tr><td>Confidence Threshold</td><td>85%</td></tr><tr><td>Power Threshold</td><td>80%</td></tr><tr><td>Sample Size per Variation</td><td>~5,000,000 visits</td></tr><tr><td>Estimated Duration</td><td>~120 days</td></tr><tr><td>Test Exposure</td><td>100% of eligible traffic</td></tr><tr><td>Audience Limitation</td><td>Returning Visitors</td></tr></tbody></table>
+<h3>1.5 Adobe Workspace</h3>
+<ul><li>Project: <em>Gap Factory US — Production</em></li><li>Workspace: <code>[GAPF US] PLP scarcity badge Test</code></li><li>Filters: Return vs. New Visits · Segment (Global Blanket Correction Segment [Approved]) · Device Type · Page Type · Extreme Orders (COE — Exclude Extreme)</li></ul>
+<h3>1.6 Measurement Strategy</h3>
+<p><strong>Metrics (All Experiments)</strong>: Conversion Rate (OPV) · Net RPV · AOS · UPT · AUR · Total Visits · Visits Split (Visit/Visitor) · Variation Overlap</p>
+<p><strong>Metrics (Test Specific)</strong>:</p>
+<ul><li>Variation Overlap</li><li>Promo Code Application Rate</li><li>Loyalty Sign-up Rate</li><li>PDP Views Per Visit</li><li>Visits Split (Visit/Visitor)</li></ul>
+<p><strong>Segments (All Experiments)</strong>: New vs. Returning</p>
+<p><strong>Segments (Test Specific)</strong>: Desktop vs. Mobile · Loyalty vs. Non-Loyalty</p>
+<h3>1.7 Custom Metrics</h3>
+<table><thead><tr><th>Description / Location</th><th>Custom Variable</th><th>Tracking Notes</th></tr></thead><tbody><tr><td>PLP scarcity badge click</td><td>eVar47 — plp_scarcity_badge_click</td><td>Track once per visit</td></tr><tr><td>PLP scarcity badge view</td><td>eVar48 — plp_scarcity_badge_view</td><td>Track always</td></tr><tr><td>PLP arrival from PLP scarcity badge</td><td>eVar49 — plp_arrival</td><td>Track once per session</td></tr></tbody></table>
+<hr/>
+<h2>2. Test Results</h2>
+<h3>2.1 Findings (TL;DR)</h3>
+<p>Across the 120-day test window, no statistically significant difference was observed on the primary KPI (Add-to-Bag Rate); observed delta -0.18% sits within MDE (0.61%). Net RPV 0.01%, AOS -0.03% — also within noise.</p>
+<h3>2.2 Variation Description</h3>
+<ul><li><strong>Control</strong>: as-is PLP on Gap Factory Mobile Web.</li><li><strong>Challenger</strong>: applies the <em>PLP scarcity badge</em> treatment described in §1.3.</li><li><em>Screenshots</em>: see Confluence attachments <code>control_T-GAPF-00161.png</code>, <code>challenger_T-GAPF-00161.png</code> (omitted from this synthetic export).</li></ul>
+<h3>2.3 Details</h3>
+<p>Across the 120-day test window, no statistically significant difference was observed on the primary KPI (Add-to-Bag Rate); observed delta -0.18% sits within MDE (0.61%). Net RPV 0.01%, AOS -0.03% — also within noise.</p>
+<p>Statistical significance was computed <strong>outside</strong> Optimizely (Excel + online calculator) per standard Test &amp; Learn COE practice — Optimizely's built-in significance is not reliable for GAP because of cross-brand basket attribution.</p>
+<h3>2.4 Impacts</h3>
+<table><thead><tr><th>Metric</th><th>Control</th><th>Challenger</th><th>Δ %</th></tr></thead><tbody><tr><td>Net RPV</td><td>baseline</td><td>challenger</td><td>▲ 0.01%</td></tr><tr><td>Add-to-Bag Rate</td><td>baseline</td><td>challenger</td><td>▼ 0.18%</td></tr><tr><td>AOS</td><td>baseline</td><td>challenger</td><td>▼ 0.03%</td></tr><tr><td>UPT</td><td>baseline</td><td>challenger</td><td>▼ 0.02%</td></tr><tr><td>AUR</td><td>baseline</td><td>challenger</td><td>▼ 0.01%</td></tr><tr><td>Total Visits (test arm)</td><td>—</td><td>5,000,000</td><td>—</td></tr><tr><td>Incremental Revenue (USD)</td><td>—</td><td>—</td><td>$0</td></tr><tr><td>Averted Loss (USD)</td><td>—</td><td>—</td><td>$0</td></tr></tbody></table>
+<h3>2.5 Segment Break-down</h3>
+<table><thead><tr><th>Segment</th><th>Value</th><th>Primary KPI Δ</th><th>Net RPV Δ</th></tr></thead><tbody><tr><td>Device</td><td>Desktop</td><td>-0.03%</td><td>0.32%</td></tr><tr><td>Device</td><td>Mobile</td><td>0.17%</td><td>0.1%</td></tr><tr><td>Device</td><td>Tablet</td><td>0.39%</td><td>0.26%</td></tr><tr><td>Visit Type</td><td>New</td><td>-0.67%</td><td>-0.26%</td></tr><tr><td>Visit Type</td><td>Returning</td><td>0.03%</td><td>0.03%</td></tr><tr><td>Loyalty</td><td>Member</td><td>-0.6%</td><td>0.09%</td></tr><tr><td>Loyalty</td><td>Non-Member</td><td>-0.36%</td><td>-0.0%</td></tr></tbody></table>
+<h3>2.6 Product Mix</h3>
+<p>Top contributing categories during the test window: women's tops, women's denim, men's polos, accessories. No anomalous category-level skew detected.</p>
+<h3>2.7 Gross Margin (GMS / Visit)</h3>
+<p>GMS/Visit was flat across both arms within MDE.</p>
+<hr/>
+<h2>3. Recommendation</h2>
+<p><strong>No change. Consider re-testing during a higher-traffic window (Holiday).</strong></p>
+<p>Recommendation adopted: <strong>N/A</strong>.</p>
+<h2>4. Optimization Opportunities (feeds next brainstorm)</h2>
+<ul><li>Re-run with a tighter MDE on the returning visitors segment to confirm.</li><li>Explore the same hypothesis on the sister brand in the discount tier.</li><li>Consider follow-up on Homepage where the same tactic (Value) has not yet been tested for Gap Factory.</li></ul>
+<h2>5. Related Tests</h2>
+<p><em>No prior closely-related tests recorded.</em></p>
+<hr/>
+<p><em>Generated synthetic record for POC retrieval testing. Template version 2017.stable, mirroring the Test &amp; Learn COE Confluence template walked through by Prateek Oberoi on 2026-05-06.</em></p>
+</body>
+</html>

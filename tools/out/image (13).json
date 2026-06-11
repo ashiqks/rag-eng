@@ -1,0 +1,62 @@
+{
+  "tables": [
+    {
+      "title": "Incremental Impacts: Challenger vs Control",
+      "footnotes": [
+        "**4/10 onwards after we fixed pinning and facets issues for AT"
+      ],
+      "headers": [
+        "Brand",
+        "#Visits",
+        "Net RPV",
+        "OPV",
+        "AOS",
+        "Category To PDP Conversion",
+        "PDP To Bag Conversion",
+        "Statistical Significance"
+      ],
+      "rows": [
+        {
+          "Brand": "BR US",
+          "#Visits": "~742K",
+          "Net RPV": "0.1%",
+          "OPV": "2.9%",
+          "AOS": "-2.7%",
+          "Category To PDP Conversion": "2.8%",
+          "PDP To Bag Conversion": "4.6%",
+          "Statistical Significance": "Not Significant"
+        },
+        {
+          "Brand": "ON US",
+          "#Visits": "~9.0MM",
+          "Net RPV": "0.8%",
+          "OPV": "1.1%",
+          "AOS": "-0.3%",
+          "Category To PDP Conversion": "0.6%",
+          "PDP To Bag Conversion": "0.7%",
+          "Statistical Significance": "Significant"
+        },
+        {
+          "Brand": "GP US",
+          "#Visits": "~1.8MM",
+          "Net RPV": "-0.1%",
+          "OPV": "0.5%",
+          "AOS": "-0.6%",
+          "Category To PDP Conversion": "0.4%",
+          "PDP To Bag Conversion": "0.6%",
+          "Statistical Significance": "Not Significant"
+        },
+        {
+          "Brand": "AT US**",
+          "#Visits": "~1.1MM",
+          "Net RPV": "0.0%",
+          "OPV": "-0.3%",
+          "AOS": "0.3%",
+          "Category To PDP Conversion": "0.3%",
+          "PDP To Bag Conversion": "-0.3%",
+          "Statistical Significance": "Not Significant"
+        }
+      ]
+    }
+  ]
+}

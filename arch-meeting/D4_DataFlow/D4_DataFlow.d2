@@ -1,0 +1,145 @@
+# D4 - Data Flow Diagram (OWASP DFD style)
+# Render: d2 --layout=elk --theme=1 D4_DataFlow.d2 D4_DataFlow.svg
+
+direction: right
+
+title: "D4 - Data Flow Diagram | gap-genai-discovery | OWASP DFD with trust boundaries" {
+  near: top-center
+  shape: text
+  style.font-size: 24
+  style.bold: true
+}
+
+# ============ TB1 - INTERNET (untrusted) ============
+tb1: "TB1 - Internet (untrusted)" {
+  style.fill: "#FFEBEE"
+  style.stroke: "#C62828"
+  style.stroke-dash: 5
+  style.stroke-width: 2
+
+  e1: "E1 User\ngap.com employee\nbrowser" {shape: person}
+  e2: "E2 Workspace IdP\nOIDC issuer" {shape: cloud}
+}
+
+# ============ TB2 - IAP authenticated zone ============
+tb2: "TB2 - Edge (IAP-authenticated)" {
+  style.fill: "#FFF3E0"
+  style.stroke: "#E65100"
+  style.stroke-dash: 5
+  style.stroke-width: 2
+
+  p0: "P0 IAP\nTLS term + OIDC (Cloud Run native IAP)" {shape: oval; style.fill: "#1976D2"; style.font-color: "#FFFFFF"}
+}
+
+# ============ TB3 - Internal Cloud Run mesh ============
+tb3: "TB3 - Internal Cloud Run mesh (sa-* identities)" {
+  style.fill: "#E8F5E9"
+  style.stroke: "#137333"
+  style.stroke-dash: 5
+  style.stroke-width: 2
+
+  p1: "P1 web (React SPA, AR-9)\nsa-web" {shape: oval; style.fill: "#4284F3"; style.font-color: "#FFFFFF"}
+  p2: "P2 gateway\nsa-gateway\nIAP JWT verify" {shape: oval; style.fill: "#4284F3"; style.font-color: "#FFFFFF"}
+  p3: "P3 agent\nsa-agent\nLangGraph orchestration" {shape: oval; style.fill: "#4284F3"; style.font-color: "#FFFFFF"}
+  p5: "P5 exporter Job\nsa-exporter" {shape: oval; style.fill: "#34A853"; style.font-color: "#FFFFFF"}
+  p6: "P6 reindex Job\nsa-reindex" {shape: oval; style.fill: "#34A853"; style.font-color: "#FFFFFF"}
+  p7: "P7 weekly-eval\nsa-eval" {shape: oval; style.fill: "#34A853"; style.font-color: "#FFFFFF"}
+  p9: "P9 Cloud Build\nsa-cloudbuild" {shape: oval; style.fill: "#5F6368"; style.font-color: "#FFFFFF"}
+
+  ds6: "DS6 Secret Manager\nconfluence-pat" {shape: cylinder; style.fill: "#C62828"; style.font-color: "#FFFFFF"}
+  ds7: "DS7 KMS\nCMEK keys" {shape: cylinder; style.fill: "#C62828"; style.font-color: "#FFFFFF"}
+  ds8: "DS8 Artifact Registry\nweb/gateway/agent images" {shape: cylinder; style.fill: "#5F6368"; style.font-color: "#FFFFFF"}
+  p8: "P8 OTel exporter\n(in-process per service)" {shape: oval; style.fill: "#5F6368"; style.font-color: "#FFFFFF"}
+  ds9: "DS9 Cloud Observability Suite (AR-5)\nLogging + Monitoring + Trace\nlog-based metrics: gap_genai/llm_tokens_*\n(AR-6)" {shape: cylinder; style.fill: "#1A73E8"; style.font-color: "#FFFFFF"}
+  ds10: "DS10 Cloud Billing (AR-6)\nbudgets on DE + Vertex AI\nalert on llm_tokens_out rate" {shape: cylinder; style.fill: "#FDFEFE"; style.stroke: "#595959"}
+}
+
+# ============ TB4 - VPC-SC perimeter ============
+tb4: "TB4 - VPC-SC perimeter (data plane)" {
+  style.fill: "#F3E8FD"
+  style.stroke: "#8430CE"
+  style.stroke-dash: 5
+  style.stroke-width: 2
+
+  ds1: "DS1 VAIS engine + sessions\n(chat history, indexed corpus)" {shape: cylinder; style.fill: "#8430CE"; style.font-color: "#FFFFFF"}
+  ds2: "DS2 Vertex Model Garden\nGemini 2.5 F/P" {shape: cylinder; style.fill: "#8430CE"; style.font-color: "#FFFFFF"}
+  p4: "P4 Managed BQ MCP server\nbigquery.googleapis.com/mcp\n(Google-hosted, no infra)" {shape: oval; style.fill: "#1ABC9C"; style.font-color: "#FFFFFF"}
+  ds3: "DS3 GCS corpus-html\n(HTML pages + ACL tags)" {shape: cylinder; style.fill: "#F9A825"; style.font-color: "#FFFFFF"}
+  ds4: "DS4 BQ gap_genai_app\n(product data only, AR-5)\nfeedback, golden_evals, eval_runs,\napp_config.*" {shape: cylinder; style.fill: "#F9A825"; style.font-color: "#FFFFFF"}
+  ds5: "DS5 BQ v_experiment_kpis (authorized view)\nover experiments + experiment_clusters\n(weekly eval results)" {shape: cylinder; style.fill: "#F9A825"; style.font-color: "#FFFFFF"}
+}
+
+# ============ TB5 - SaaS (Atlassian / GitHub) ============
+tb5: "TB5 - External SaaS" {
+  style.fill: "#E1F5FE"
+  style.stroke: "#0277BD"
+  style.stroke-dash: 5
+  style.stroke-width: 2
+
+  e3: "E3 Confluence Cloud\nREST API + PAT" {shape: cloud; style.fill: "#0052CC"; style.font-color: "#FFFFFF"}
+  e4: "E4 GitHub\nCI/CD source" {shape: cloud}
+}
+
+# ============ FLOWS ============
+# F1: user login OIDC
+tb1.e1 -> tb1.e2: "F1 OIDC sign-in (HTTPS, OIDC code grant)" {style.stroke: "#C62828"}
+tb1.e2 -> tb2.p0: "F2 ID token (HTTPS, OIDC JWT)" {style.stroke: "#1A73E8"; style.stroke-dash: 3}
+
+# F3: User -> LB
+tb1.e1 -> tb2.p0: "F3 query (HTTPS/443, TLS1.2+)" {style.stroke: "#C62828"; style.bold: true}
+
+# F4: IAP -> web
+tb2.p0 -> tb3.p1: "F4 query + IAP JWT (mTLS internal)" {style.stroke: "#1A73E8"}
+
+# F5: web -> gateway
+tb3.p1 -> tb3.p2: "F5 chat request (HTTPS internal, IAP JWT)" {style.stroke: "#1A73E8"}
+
+# F6: gateway -> agent
+tb3.p2 -> tb3.p3: "F6 normalised question (HTTPS internal, SA token)" {style.stroke: "#1A73E8"; style.bold: true}
+
+# F7: agent -> VAIS
+tb3.p3 -> tb4.ds1: "F7 :answer + sessions API (PSC, SA token)" {style.stroke: "#8430CE"; style.bold: true}
+
+# F8: VAIS -> Model Garden
+tb4.ds1 -> tb4.ds2: "F8 grounded gen (internal Vertex, CMEK)" {style.stroke: "#8430CE"; style.stroke-dash: 3}
+
+# F9: agent -> Managed BQ MCP (Google-hosted)
+tb3.p3 -> tb4.p4: "F9 MCP tool call (HTTPS/JSON-RPC,\nOAuth2 sa-agent, mcp.toolUser)\nexecute_sql_readonly on v_experiment_kpis\nModel Armor inspects payload" {style.stroke: "#1ABC9C"; style.bold: true}
+
+# F10a: managed MCP -> BQ view (Google-internal, sa-agent identity)
+tb4.p4 -> tb4.ds5: "F10a jobs.query as sa-agent\nauto Cloud Audit Logs (goog-mcp-server:true)" {style.stroke: "#F9A825"; style.bold: true}
+
+# F10b: agent -> BQ feedback writes (direct, no MCP)
+tb3.p3 -> tb4.ds4: "F10b INSERT feedback (PSC, sa-agent dataEditor on feedback only)" {style.stroke: "#F9A825"; style.stroke-dash: 3}
+
+# F11: weekly export
+tb3.p5 -> tb1.e2: "(see F12 NAT egress)" {style.opacity: 0}
+tb3.p5 -> tb5.e3: "F12 Confluence CQL export (HTTPS via NAT, PAT)" {style.stroke: "#E65100"; style.bold: true}
+tb3.p5 -> tb4.ds3: "F13 write HTML + sidecars (PSC, SA token, CMEK)" {style.stroke: "#F9A825"}
+
+# F14: reindex -> GCS / VAIS
+tb3.p6 -> tb4.ds3: "F14 read corpus (PSC, SA token)" {style.stroke: "#F9A825"; style.stroke-dash: 3}
+tb3.p6 -> tb4.ds1: "F15 import documents (PSC, SA token)" {style.stroke: "#8430CE"}
+
+# F16: weekly-eval
+tb3.p7 -> tb4.ds1: "F16 golden-set queries (PSC, SA token)" {style.stroke: "#8430CE"; style.stroke-dash: 3}
+tb3.p7 -> tb4.ds5: "F17 write eval metrics (PSC, SA token)" {style.stroke: "#F9A825"}
+
+# Secrets / KMS
+tb3.p5 -> tb3.ds6: "F18 read confluence-pat (PSC, SA token)" {style.stroke: "#C62828"; style.stroke-dash: 3}
+tb3.ds7 -> tb4.ds3: "F19 CMEK encrypt (key bind)" {style.stroke: "#C62828"; style.stroke-dash: 3}
+tb3.ds7 -> tb4.ds4: "F19 CMEK encrypt (key bind)" {style.stroke: "#C62828"; style.stroke-dash: 3}
+tb3.ds7 -> tb4.ds5: "F19 CMEK encrypt (key bind)" {style.stroke: "#C62828"; style.stroke-dash: 3}
+
+# CI/CD
+tb5.e4 -> tb3.p9: "F20 git push trigger (HTTPS, signed webhook)" {style.stroke: "#5F6368"; style.stroke-dash: 3}
+tb3.p9 -> tb3.ds8: "F21 push image (HTTPS internal, SA token)" {style.stroke: "#5F6368"; style.stroke-dash: 3}
+tb3.ds8 -> tb3.p1: "F22 pull image at deploy" {style.stroke: "#5F6368"; style.stroke-dash: 3}
+
+# Audit logging
+tb3.p1 -> tb3.p8 {style.stroke: "#9E9E9E"; style.stroke-dash: 3}
+tb3.p2 -> tb3.p8 {style.stroke: "#9E9E9E"; style.stroke-dash: 3}
+tb3.p3 -> tb3.p8 {style.stroke: "#9E9E9E"; style.stroke-dash: 3}
+tb4.p4 -> tb3.ds9: "F23a Cloud Audit Logs (managed MCP, auto)" {style.stroke: "#1ABC9C"; style.stroke-dash: 3}
+tb3.p8 -> tb3.ds9: "F23 OTel logs+traces+metrics (CMEK)\nskill_name, model_id, llm_tokens_in/out (AR-6)" {style.stroke: "#1A73E8"; style.stroke-dash: 3; style.bold: true}
+tb3.ds9 -> tb3.ds10: "F24 log-based metric -> budget + alert policy (AR-6)" {style.stroke: "#595959"; style.stroke-dash: 3}

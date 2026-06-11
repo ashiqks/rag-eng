@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>[GAP IOS APP] Infinite scroll vs paginated PLP - May 2026</title>
+  <link rel="canonical" href="https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010088"/>
+  <meta name="test_id" content="T-GAP-00088"/>
+  <meta name="confluence_page_id" content="TLCOE-2010088"/>
+  <meta name="confluence_url" content="https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010088"/>
+  <meta name="title" content="[GAP IOS APP] Infinite scroll vs paginated PLP - May 2026"/>
+  <meta name="brand" content="Gap"/>
+  <meta name="brand_code" content="GAP"/>
+  <meta name="market" content="US"/>
+  <meta name="value_stream" content="PLP"/>
+  <meta name="channel" content="iOS App"/>
+  <meta name="channel_section" content="iOS Native"/>
+  <meta name="device" content="Mobile"/>
+  <meta name="audience" content="First-time Buyers"/>
+  <meta name="tactic" content="Time Savings"/>
+  <meta name="test_type" content="Server-Side"/>
+  <meta name="vendor" content="Optimizely (Server-Side)"/>
+  <meta name="primary_kpi" content="AOS (Average Order Size)"/>
+  <meta name="secondary_kpis" content="Search Engagement Rate, Free Shipping Threshold Crossings, PDP Exit Rate, Loyalty Sign-up Rate"/>
+  <meta name="start_date" content="2026-05-20"/>
+  <meta name="end_date" content="2026-05-13"/>
+  <meta name="duration_days" content="-7"/>
+  <meta name="sample_size_per_arm" content="2400000"/>
+  <meta name="mde_pct" content="0.98"/>
+  <meta name="confidence_pct" content="95"/>
+  <meta name="power_pct" content="80"/>
+  <meta name="exposure_pct" content="20"/>
+  <meta name="split" content="25/25/25/25"/>
+  <meta name="outcome" content="Win"/>
+  <meta name="primary_kpi_delta_pct" content="2.97"/>
+  <meta name="net_rpv_delta_pct" content="2.69"/>
+  <meta name="aos_delta_pct" content="1.48"/>
+  <meta name="visits_total" content="9600000"/>
+  <meta name="incremental_revenue_usd" content="879682"/>
+  <meta name="averted_loss_usd" content="0"/>
+  <meta name="recommendation_adopted" content="Pending"/>
+  <meta name="related_test_ids" content=""/>
+  <meta name="sha256_source" content="f48012965498d81872ca9c3241b968196caadd9988a64caffc15b790538fff8f"/>
+  <meta name="metadata_quality" content="high"/>
+  <meta name="template_version" content="2017.stable"/>
+  <script type="application/ld+json">{"test_id": "T-GAP-00088", "confluence_page_id": "TLCOE-2010088", "confluence_url": "https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010088", "title": "[GAP IOS APP] Infinite scroll vs paginated PLP - May 2026", "brand": "Gap", "brand_code": "GAP", "market": "US", "value_stream": "PLP", "channel": "iOS App", "channel_section": "iOS Native", "device": "Mobile", "audience": "First-time Buyers", "tactic": "Time Savings", "test_type": "Server-Side", "vendor": "Optimizely (Server-Side)", "primary_kpi": "AOS (Average Order Size)", "secondary_kpis": ["Search Engagement Rate", "Free Shipping Threshold Crossings", "PDP Exit Rate", "Loyalty Sign-up Rate"], "start_date": "2026-05-20", "end_date": "2026-05-13", "duration_days": -7, "sample_size_per_arm": 2400000, "mde_pct": 0.98, "confidence_pct": 95, "power_pct": 80, "exposure_pct": 20, "split": "25/25/25/25", "outcome": "Win", "primary_kpi_delta_pct": 2.97, "net_rpv_delta_pct": 2.69, "aos_delta_pct": 1.48, "visits_total": 9600000, "incremental_revenue_usd": 879682, "averted_loss_usd": 0, "recommendation_adopted": "Pending", "related_test_ids": [], "sha256_source": "f48012965498d81872ca9c3241b968196caadd9988a64caffc15b790538fff8f", "metadata_quality": "high", "template_version": "2017.stable"}</script>
+</head>
+<body>
+<h1>[GAP IOS APP] Infinite scroll vs paginated PLP - May 2026</h1>
+<blockquote><strong>Brand</strong>: Gap (GAP) · <strong>Market</strong>: US · <strong>Value Stream</strong>: PLP<br/><strong>Channel</strong>: iOS App (iOS Native) · <strong>Device</strong>: Mobile · <strong>Audience</strong>: First-time Buyers<br/><strong>Tactic</strong>: Time Savings · <strong>Test Type</strong>: Server-Side · <strong>Vendor</strong>: Optimizely (Server-Side)<br/><strong>Window</strong>: 2026-05-20 → 2026-05-13 (-7 days)<br/><strong>Outcome</strong>: <strong>Win</strong> · <strong>Recommendation Adopted</strong>: Pending</blockquote>
+<hr/>
+<h2>1. Test Plan</h2>
+<h3>1.1 Problem Statement</h3>
+<p>On Gap PLP, the current control experience does not sufficiently support aos for the first-time buyers segment. Based on prior time savings-tactic learnings across the mid tier, we want to evaluate whether the proposed change moves the needle within the -7-day window.</p>
+<h3>1.2 Hypothesis</h3>
+<p>If we apply 'PLP infinite scroll' on Gap PLP (iOS Native) to first-time buyers, then we expect a lift of at least 0.98% on AOS because infinite scroll reduces friction in browsing and lifts products viewed per visit.</p>
+<h3>1.3 Experimental Changes</h3>
+<ul><li><strong>Control</strong>: existing PLP experience on Gap iOS Native.</li><li><strong>Challenger</strong>: PLP infinite scroll variant — infinite scroll reduces friction in browsing and lifts products viewed per visit.</li></ul>
+<h3>1.4 Significance Calculations &amp; Experimental Design</h3>
+<table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Brand</td><td>Gap</td></tr><tr><td>Scenarios</td><td>1 Control + 1 Challenger (25/25/25/25)</td></tr><tr><td>Primary KPI</td><td>AOS (Average Order Size)</td></tr><tr><td>Minimum Detectable Lift</td><td>~0.98%</td></tr><tr><td>Confidence Threshold</td><td>95%</td></tr><tr><td>Power Threshold</td><td>80%</td></tr><tr><td>Sample Size per Variation</td><td>~2,400,000 visits</td></tr><tr><td>Estimated Duration</td><td>~-7 days</td></tr><tr><td>Test Exposure</td><td>20% of eligible traffic</td></tr><tr><td>Audience Limitation</td><td>First-time Buyers</td></tr></tbody></table>
+<h3>1.5 Adobe Workspace</h3>
+<ul><li>Project: <em>Gap US — Production</em></li><li>Workspace: <code>[GAP US] PLP infinite scroll Test</code></li><li>Filters: Return vs. New Visits · Segment (Global Blanket Correction Segment [Approved]) · Device Type · Page Type · Extreme Orders (COE — Exclude Extreme)</li></ul>
+<h3>1.6 Measurement Strategy</h3>
+<p><strong>Metrics (All Experiments)</strong>: Conversion Rate (OPV) · Net RPV · AOS · UPT · AUR · Total Visits · Visits Split (Visit/Visitor) · Variation Overlap</p>
+<p><strong>Metrics (Test Specific)</strong>:</p>
+<ul><li>Search Engagement Rate</li><li>Free Shipping Threshold Crossings</li><li>PDP Exit Rate</li><li>Loyalty Sign-up Rate</li></ul>
+<p><strong>Segments (All Experiments)</strong>: New vs. Returning</p>
+<p><strong>Segments (Test Specific)</strong>: Desktop vs. Mobile · Loyalty vs. Non-Loyalty</p>
+<h3>1.7 Custom Metrics</h3>
+<table><thead><tr><th>Description / Location</th><th>Custom Variable</th><th>Tracking Notes</th></tr></thead><tbody><tr><td>PLP infinite scroll click</td><td>eVar47 — plp_infinite_scroll_click</td><td>Track once per visit</td></tr><tr><td>PLP infinite scroll view</td><td>eVar48 — plp_infinite_scroll_view</td><td>Track always</td></tr><tr><td>PLP arrival from PLP infinite scroll</td><td>eVar49 — plp_arrival</td><td>Track once per session</td></tr></tbody></table>
+<hr/>
+<h2>2. Test Results</h2>
+<h3>2.1 Findings (TL;DR)</h3>
+<p>Across the -7-day test window, the challenger outperformed the control on the primary KPI (AOS (Average Order Size)) by <strong>2.97%</strong> (statistically significant at the configured threshold). Net RPV moved by 2.69% and AOS by 1.48%.</p>
+<h3>2.2 Variation Description</h3>
+<ul><li><strong>Control</strong>: as-is PLP on Gap iOS Native.</li><li><strong>Challenger</strong>: applies the <em>PLP infinite scroll</em> treatment described in §1.3.</li><li><em>Screenshots</em>: see Confluence attachments <code>control_T-GAP-00088.png</code>, <code>challenger_T-GAP-00088.png</code> (omitted from this synthetic export).</li></ul>
+<h3>2.3 Details</h3>
+<p>Across the -7-day test window, the challenger outperformed the control on the primary KPI (AOS (Average Order Size)) by <strong>2.97%</strong> (statistically significant at the configured threshold). Net RPV moved by 2.69% and AOS by 1.48%.</p>
+<p>Statistical significance was computed <strong>outside</strong> Optimizely (Excel + online calculator) per standard Test &amp; Learn COE practice — Optimizely's built-in significance is not reliable for GAP because of cross-brand basket attribution.</p>
+<h3>2.4 Impacts</h3>
+<table><thead><tr><th>Metric</th><th>Control</th><th>Challenger</th><th>Δ %</th></tr></thead><tbody><tr><td>Net RPV</td><td>baseline</td><td>challenger</td><td>▲ 2.69%</td></tr><tr><td>AOS (Average Order Size)</td><td>baseline</td><td>challenger</td><td>▲ 2.97%</td></tr><tr><td>AOS</td><td>baseline</td><td>challenger</td><td>▲ 1.48%</td></tr><tr><td>UPT</td><td>baseline</td><td>challenger</td><td>▲ 0.89%</td></tr><tr><td>AUR</td><td>baseline</td><td>challenger</td><td>▲ 0.59%</td></tr><tr><td>Total Visits (test arm)</td><td>—</td><td>2,400,000</td><td>—</td></tr><tr><td>Incremental Revenue (USD)</td><td>—</td><td>—</td><td>$879,682</td></tr><tr><td>Averted Loss (USD)</td><td>—</td><td>—</td><td>$0</td></tr></tbody></table>
+<h3>2.5 Segment Break-down</h3>
+<table><thead><tr><th>Segment</th><th>Value</th><th>Primary KPI Δ</th><th>Net RPV Δ</th></tr></thead><tbody><tr><td>Device</td><td>Desktop</td><td>3.55%</td><td>2.38%</td></tr><tr><td>Device</td><td>Mobile</td><td>3.48%</td><td>2.91%</td></tr><tr><td>Device</td><td>Tablet</td><td>2.58%</td><td>2.9%</td></tr><tr><td>Visit Type</td><td>New</td><td>3.3%</td><td>2.91%</td></tr><tr><td>Visit Type</td><td>Returning</td><td>2.61%</td><td>2.44%</td></tr></tbody></table>
+<h3>2.6 Product Mix</h3>
+<p>Top contributing categories during the test window: women's tops, women's denim, men's polos, accessories. No anomalous category-level skew detected.</p>
+<h3>2.7 Gross Margin (GMS / Visit)</h3>
+<p>Lift on GMS/Visit aligned with the directional Net RPV move; no margin compression observed.</p>
+<hr/>
+<h2>3. Recommendation</h2>
+<p><strong>Roll out to US; revisit CA/MX after localisation review.</strong></p>
+<p>Recommendation adopted: <strong>Pending</strong>.</p>
+<h2>4. Optimization Opportunities (feeds next brainstorm)</h2>
+<ul><li>Re-run with a tighter MDE on the first-time buyers segment to confirm.</li><li>Explore the same hypothesis on the sister brand in the discount tier.</li><li>Consider follow-up on Homepage where the same tactic (Time Savings) has not yet been tested for Gap.</li></ul>
+<h2>5. Related Tests</h2>
+<p><em>No prior closely-related tests recorded.</em></p>
+<hr/>
+<p><em>Generated synthetic record for POC retrieval testing. Template version 2017.stable, mirroring the Test &amp; Learn COE Confluence template walked through by Prateek Oberoi on 2026-05-06.</em></p>
+</body>
+</html>

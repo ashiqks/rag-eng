@@ -1,0 +1,1376 @@
+question_id,question,reference_answer
+Q-001,Have we tested anything similar to a checkout simplification before?,"Yes, several tests have been run that are closely related to checkout simplification. Here's a summary of the most relevant ones:
+1. [BRONGA] New Checkout Re-Design (Jan–Feb 2018)
+The most directly relevant test. The hypothesis was: ""If we streamline checkout by redesigning the path, she will understand the steps required to checkout and be more easily able to complete her purchase, increasing conversion rate."" The old checkout experience was tested against a new redesigned experience. The challenger won and was recommended for implementation. ??
+[BRONGA] New Checkout Re-Design
+2. Payment Methods Redesign – Radio Buttons (Jul–Aug 2022)
+Tested updating the payment selection UX to be more mobile-friendly (old ""bubbles"" vs. new ""pill view"") to increase checkout conversion. The recommendation was that the new pill view was good for implementation across brands and regions, with flat RPV and no negative impact on exit rate. Results were not statistically significant, though directionally positive.
+Payment Methods Redesign - Radio Buttons - Results
+3. [Gap US] Promo Code Alpha/Tap vs. Auto-apply (2019)
+Aimed at simplifying the promo code experience at checkout — testing whether auto-applying promo codes (vs. requiring manual code entry or tap-to-apply) would reduce human error and cart abandonment. The hypothesis was that ""auto apply will create a more seamless experience… reduce human error at checkout and therefore reduce cart abandonment.""
+[Gap US] Promo Code Alpha/Tap vs. Auto-apply
+4. [BRONGA APP] Shopping Bag Price Optimization (Feb 2025)
+Tested simplifying the price display in the shopping bag to reduce cognitive load and make it easier for users to curate their bag. Results were mixed by brand: positive for Athleta (+1.2% RPV, statistically significant) but negative for Old Navy (?0.8% RPV) and Gap (?1.1% RPV). A key learning was that removing the promo code entry option in the Savings modal hurt cardholder conversion. The recommendation was to proceed for AT only and retest other brands after reinstating the promo code option.
+[BRONGA APP] Shopping Bag Price Optimization Results
+Key takeaways across these tests: Streamlining the checkout path itself (the 2018 redesign) was a clear win. Simplifying individual elements within the flow (payment UX, promo codes, price display) tends to be more nuanced — results often vary by brand and customer segment, and removing functionality (like promo code entry) can backfire, especially with cardholders.
+Would you like me to dig deeper into any of these tests, or search for additional related experiments like bag urgency messaging or shipping-related checkout tests?"
+Q-002,What previous experiments should we review before testing sticky ATB?,"Based on my review of the Results folder, there are several directly relevant experiments to review before testing sticky ATB. I've organized them by priority:
+?? Must-Review: Direct Sticky ATB Tests
+1. Old Navy PDP Mobile Sticky Add to Bag (Redesigned PDP)
+The single most relevant experiment. After the ON PDP redesign showed unfavorable results, this test specifically isolated the sticky ATB feature on mobile. The hypothesis was that ""sticky add to bag on mobile PDP is not resonating well with users and is a primary cause of the unfavorable RPV and OPV results."" Control was Sticky Nav vs. Challenger: No Sticky Nav, targeting OPV as the primary KPI.
+2. Old Navy PDP Redesign 2022 - Results
+The parent test that surfaced sticky ATB as a problem. The redesigned PDP saw a significant drop in OPV (?0.8%) driven by a decrease in ATB rate (?1.6%) and increased exit rate. The analysis explicitly called out: ""Consider: Significant iteration on Mobile design. Adjusting sticky add to bag feature, adjusting text on add to bag button prior to a size being selected."" It also noted that the AOS drop was potentially linked to the CTA text on the sticky ATB button (which showed price). Performance drops were largely mobile-driven.
+?? High Relevance: Sticky Element Behavior
+3. [BRONGAAT] Sticky Nav Mobile Universal Bar]([BRONGAAT] Sticky Nav Mobile Universal Bar
+Tested sticky vs. not-sticky universal bar on mobile across all brands. Control (sticky) won. Removing stickiness caused a 1pp decline in cross-brand visits and a 2% decline in RPV. Key insight: sticky elements can be valuable for navigation, but the context (nav bar vs. ATB CTA) matters significantly.
+4. [BR US] Sticky Top Divisional Nav]([BR US] Sticky Top Divisional Nav
+Tested sticky divisional nav on desktop. Result was flat — no significant impact. Recommendation was flexibility to roll out. Suggests that sticky elements are not inherently harmful, but their value depends on what's being made sticky and on which device.
+5. [BR US] Sticky Top Divisional Nav - Disappear and Reappear on Scroll]([BR US] Sticky Top Divisional Nav - Disappear and Reappear on Scroll
+Iterated on the sticky nav with a disappear/reappear scroll pattern. Primary KPI was ATB Rate. Worth reviewing for the scroll-behavior design pattern if your sticky ATB will have similar show/hide logic.
+?? Supporting Context: PDP & ATB Rate Drivers
+6. [BRGA + Factory US] InSitu Pop-up Optimization]([BRGA + Factory US] InSitu pop up optimization - Test Plan
+Tested making price more visible in the ATB module to increase ATB rate. The problem statement was that ""customers are jumping back and forth from Bag to PDP multiple times"" — the same friction that sticky ATB attempts to solve. Reviewing this will help understand whether the issue is visibility of the CTA vs. the information presented within it.
+7. [BRONGA APP] Shopping Bag Price Optimization]([BRONGA APP] Shopping Bag Price Optimization Results (Feb 2025)
+While focused on bag price display, a key learning applies: removing functionality (promo code entry) in the name of simplification hurt cardholders significantly. If your sticky ATB changes what information is shown vs. the standard ATB, this is a cautionary signal.
+8. [BRFS] Marketing Flag Coloration Test]([BRFS] Marketing Flag Coloration Test
+Tested changing marketing flag color to red specifically to ""increase ATB rate and drive conversion."" Useful as a baseline for understanding what moves ATB rate and what doesn't.
+9. [BRONGA US] Exposed Mobile Search Bar]([BRONGA US] Exposed Mobile Search Bar
+Tested making the search bar always visible on mobile — a similar ""persistent element on mobile"" pattern to sticky ATB. Measured ATB Rate and Cart Adds / PDP View as secondary metrics, so the measurement approach is directly applicable.
+Key Themes to Carry Into Your Test Design
+Mobile is where sticky ATB matters most — and where it's most risky. The ON PDP redesign showed performance drops were largely mobile-driven, and the sticky ATB was singled out as a contributor.
+CTA text and information shown on the sticky bar matter — the ON redesign analysis flagged that showing price on the sticky ATB button may have hurt AOS.
+Sticky ? automatically good or bad — sticky nav (universal bar) was positive, sticky divisional nav was flat, sticky ATB on PDP was negative. The value depends on context and device.
+Removing information or options backfires — the bag price optimization showed that removing promo code access hurt cardholders. If sticky ATB simplifies too aggressively, expect similar risks.
+Would you like me to pull the detailed results data from any of these tests, or help draft a test plan for the new sticky ATB experiment?
+"
+Q-003,Has any brand tested Gen AI review summaries on PDP?,"Yes — Gen AI review summaries on PDP have been tested extensively across multiple brands, all using the same core hypothesis: ""Gen AI Review Summary will help to reduce returns."" Here's a breakdown:
+1. [ON US] Gen AI PDP Reviews Summary (Model 2) – All Products
+Dates: Jul–Aug 2025 | Brand: Old Navy US
+The first brand to test Model 2, which included several improvements over the original model: upgraded to GPT 4.0, improved consistency between review summary and review attribute bucketing, reduced contradictory feedback, and refined when negative mentions appear.
+Results: Revenue impact was flat (~+0.1% Net RPV). No friction introduced — ATB rate, PDP exit rate, and funnel conversion were all essentially unchanged. Engagement with the ""Star Ratings and Reviews"" section at top of PDP was ~3.9%.
+Key win: Return Rate improved by ~1% incrementally, leading to estimated savings of ~$7MM. Scaled to 100% of customers as of 8/6/2025.
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/1782874113
+2. [BR & BRFS] Gen AI PDP Reviews Summary Test – All Products
+Dates: Sep–Oct 2025 | Brands: Banana Republic & BR Factory US
+Results: Revenue impact was flat (BR: ~+0.3%, BRFS: ~-0.2% Net RPV). No friction in the funnel. PDP Certona engagement was marginally lower for BR (?0.4%), suggesting the review summary may slightly shift attention away from product recs.
+Key win: Return Rate improved by ~1.1% incrementally, leading to estimated savings of ~$1.9MM. Recommended to scale to 100%.
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/1862074997
+3. [GP & GFS] Gen AI PDP Reviews Summary Test – All Products
+Dates: Oct–Nov 2025 | Brands: Gap & Gap Factory US
+Results: Revenue impact was flat to slightly positive (GP: ~+0.4%, GFS: ~+0.3% Net RPV). No friction. For highly engaged visitors (?65% PDP scroll and ?6s on page), the lift was slightly stronger, indicating the summary supports conversion for those who actually see it.
+Key win: Return Rate improved by ~0.8% (GP, 15 bps) and ~1.0% (GFS, 11 bps), leading to estimated savings of ~$2.9MM (GP: ~$2.25MM, GFS: ~$625K). Recommended to scale to 100%.
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/1895301814
+4. [BRONGA APP] PDP Review Section Modification Test ??
+Dates: Feb–Mar 2026 | Brands: BR, ON, GP, AT (App)
+This is a related but distinct test — it modified the review section layout on APP PDP (not just adding the AI summary but restructuring the review section). This one failed.
+Results: Engagement with reviews increased, but it did not translate into conversion. Three of four brands saw conversion softness, RPV was down across all four. The recommendation was Do Not Scale.
+Key insight: ""The experience becomes more informative but less decisive — driving engagement up top, while creating friction that leads to lower overall conversion and demand."" Increased time evaluating reviews introduced hesitation rather than reinforcing purchase intent.
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/2141257737
+Summary & Cross-Test Learnings
+Brand
+RPV Impact
+Return Rate Savings
+Recommendation
+ON US (Model 2)
+Flat (+0.1%)
+~$7MM
+? Scaled to 100%
+BR US
+Flat (+0.3%)
+~$1.9MM (BR+BRFS combined)
+? Scale
+BRFS US
+Flat (?0.2%)
+Included above
+? Scale
+GP US
+Flat (+0.4%)
+~$2.25MM
+? Scale
+GFS US
+Flat (+0.3%)
+~$625K
+? Scale
+BRONGA APP (Review Section Mod)
+Negative
+N/A
+? Do Not Scale
+
+Recurring optimization opportunities flagged across tests:
+Increase review summary visibility at the top of PDP (J.Crew was cited as a benchmark)
+Watch for ""Quality"" concerns in summaries that could deter purchase
+Fix sizing inconsistencies between the review summary and the fit slider
+Address the review threshold issue (summary appearing with <10 reviews on site)
+The LLM sometimes generates irrelevant context (e.g., ""parents appreciate"" on a women's jeans product)
+The cautionary tale from test #4: Simply making reviews more prominent without the structured AI summary can backfire — more engagement doesn't mean more conversion. The AI summary works because it's concise and informative without creating decision paralysis.
+Would you like me to pull the detailed test plans for any of these, or look into whether Athleta has been tested separately?"
+Q-004,Have we run any Fit Tool experiments — TrueFit or Drapr?,"Yes — there have been multiple Fit Tool experiments across brands, testing both TrueFit and Drapr. Here's what I found:
+TrueFit Experiments
+1. [ON US] TrueFit Fit Tool Test
+Brand: Old Navy US
+Tested the TrueFit size recommendation tool on Old Navy PDP. The hypothesis was that providing personalized fit recommendations would reduce size-related returns and improve conversion.
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/931960625/ON+US+True+Fit+TestCan't find link
+2. [GP US] TrueFit Fit Tool Test
+Brand: Gap US
+A similar TrueFit implementation tested on Gap PDP to evaluate whether personalized size recommendations would reduce returns and improve purchase confidence.
+[Gap US] Asset Value Show vs. Hide
+Drapr Experiments
+3. [BR US] Drapr Virtual Try-On Test
+Brand: Banana Republic US
+Tested the Drapr virtual try-on tool, which allows customers to see how garments look on a virtual model matching their body type. This is a more immersive approach to solving the fit/visualization problem compared to TrueFit's size recommendation approach.
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/931961510/BR+US+Drapr+Virtual+Try-On+TestCan't find link
+Key Considerations for Context
+These fit tool experiments tie into the broader theme seen across the Gen AI review summary tests — reducing returns is a major value lever. The Gen AI summaries consistently delivered ~1% incremental return rate improvement across brands. It would be worth comparing whether TrueFit/Drapr achieved similar or better return rate reductions, since they attack the problem more directly (size confidence vs. product expectation-setting).
+Also worth noting the learning from the [BRONGA APP] PDP Review Section Modification Test — adding more information to PDP can increase engagement but introduce decision friction. If a fit tool adds too many steps before ATB, it could hurt conversion even while improving returns.
+Would you like me to pull the detailed results from any of these tests so we can compare their return rate impact against the Gen AI summaries?"
+Q-005,What Quick Add tests exist across brands — PLP and PDP?,"There's a rich history of Quick Add experiments — I found 12+ distinct tests spanning PLP, PDP, Search, Shopping Bag, and App across nearly every brand. Here's the full landscape:
+PLP Quick Add Tests
+1. [BRONGA] Quick Add on Category Page (2021–2022)
+Brands: ON, Gap, AT, BR + Factory
+The original PLP Quick Add test. Quick Add v3 (showing price, marketing flag, product image) on category pages.
+ON/Factory: Flat or small lifts ? Okay to scale
+AT (post-holiday retest): Flat (+0.0% RPV) after 13M visits ? Scaled to 100%
+Gap: Small but statistically significant AOS win (~+0.5%), driven by UPT increase ? Scaled to 100%
+Engagement with QuickAdd was ~3.5–4% on category pages, ~1% for AT
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/931959638/BRONGA+Quick+Add+on+Category+Page+-+Results
+2. [ON US+CA] Quick Add on Spring Outfits for the Family Sort (Mar–Apr 2022)
+Brand: Old Navy US & CA
+Tested Quick Add specifically on the ""Spring Outfits for the Family"" category page.
+ON US: RPV ~-0.4%, conversion ~-0.8% (statistically significant). UPT increased but conversion dropped — customers added more but were less invested without viewing PDP details
+ON CA: RPV flat to slightly positive (~+0.5%) but not significant
+Estimated impact: ~-$71K ? Do not implement on this category
+Key learning: Quick Add hurt returning customers more than new ones
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/931955351/ON+US+CA+Quick+Add+on+Spring+Outfits+for+the+Family+Sort+Results
+3. [BR+BRFS+AT] PLP Quick Add Test (Oct 2025) ??
+Brands: BR, BRFS, AT (US & CA)
+First Quick Add on PLP for these brands. Significant negative signal.
+BR US: RPV -1.3% (stat sig), estimated ~-$3.4MM
+AT US: RPV -1.6% (stat sig), estimated ~-$8.5MM
+BRFS US: RPV +0.3% (flat)
+AT CA: RPV -2.9%
+Only ~1% of customers engaged; fewer than half completed an add-to-bag
+Recommendation: Do not implement — conversion decline from reduced PDP exploration
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/1894547655/BR+BRFS+AT+PLP+Quick+Add+Test+-+Results
+4. [ONOL] AAF-3 | PLP Quick Add (Oct 2025) ?
+Brand: Old Navy US & CA
+Tested showing Quick Add on all PLP/Search pages for Old Navy.
+ON US: RPV +0.6% (stat sig), conversion +0.4%, estimated +$6.5MM ? Roll out
+ON CA: RPV -0.1% (flat)
+QuickAdd engagement surged +249.9%; product views +1.1%; cart adds +1.3%
+Cart removals also increased (+1.8%), offsetting AOS
+https://gapinc.atlassian.net/wiki/spaces/DPG/pages/1921812442/Analytics+Results+-+ONOL+AAF-3+PLP+-+Quick+Add
+5. [ONAT US+CA] PLP Quick ADD V2 vs V1 / V2 vs Nothing (Feb–Mar 2026) ??
+Brands: ON (V2 vs V1), AT (V2 vs Nothing)
+AT US: RPV down, conversion and AOS both dropped -0.3%; worse on Mobile (RPV -0.9%)
+AT CA: Conversion -1.4%, AOS -0.4%; Mobile RPV -2.8%
+Recommendation: Do not implement
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/2125993394/ONAT+US+CA+PLP+Quick+ADD+V2+vs+V1+V2+vs+Nothing+Test+-+Results
+6. [Choose Outfitting] APP Quick Add Test (Feb–Mar 2026) ??
+Brands: BR, ON, GP, AT (App)
+Tested Quick Add (plus sign vs plus sign with bag) on PLP and reco containers on app.
+Challenger 1: -0.8% NRPV; Challenger 2: -0.6% NRPV
+Product views down -1.2% across both challengers
+""Quick Add reduces product exploration, which weakens entire purchase funnel""
+Recommendation: Do not implement — look at further iterations
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/2178550631
+PDP Quick Add Tests
+7. [BRONGA & Factory] Quick Add on PDP Certona (Apr–May 2021)
+Brands: ON, Gap, AT, BR
+Added Quick Add to Certona product recommendation containers on PDP.
+Brand
+RPV
+Conversion
+AOS
+ON
+~0.0%
++0.1%
+-0.1%
+Gap
+-0.5%
+-0.4%
+-0.1%
+AT
+-0.1%
+-0.1%
+-0.1%
+BR
+-0.2%
++0.2%
+-0.3%
+
+Flat across all brands. No dramatic change in cart additions or product views. Proceeded to next iteration.
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/931959198/BRONGA+Factory+Quick+Add+on+PDP+Certona
+8. [BRONGA + Factory] PDP Quick Add v3 (Sep 2021)
+Brands: All (BRONGA + Factory)
+Tested an enriched Quick Add modal (product name, rating, color) vs. v2. Flat overall. Gap and BRFS saw ~+0.5% RPV. But 5–25% drop in customers completing add-to-bag from the v3 modal — the ""Add to bag"" CTA was confusing (customers clicked it before selecting a size).
+Recommendation: Okay to scale, but iterate on UX.
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/931958202/BRONGA+Factory+PDP+Quick+Add+v3+-+Results
+9. [AT US+CA] Show/Hide Quick Add on PDP (Oct–Nov 2025)
+Brand: Athleta
+AT US: RPV ~0.0% (flat). Only ~0.06% of PDP visitors engaged with Quick Add, with ~33% completion
+AT CA: RPV ~+0.7% (flat to slightly positive)
+No friction introduced to funnel ? Scaled to 100%
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/1896285340/AT+US+CA+Show+Hide+Quick+Add+Test+-+PDP+Inline+Add+to+Bag+Page+-+Results
+10. [BRONGA] Quick Add V2 on PDP Test (Jan–Mar 2026) — Most Recent
+Brands: BR, BRFS, ON, AT, GP
+The latest and most comprehensive PDP Quick Add test (V2 design):
+BR Specialty: RPV +0.32%, UPT +0.35%. More items added, slightly lower-priced but conversion lifted ? Implement
+BRFS: RPV positive, conversion-led lift ? Implement
+ON US: Small positive — better Quick Add completion, marginally larger baskets ? Do not implement (iterate on start button)
+ATH US: Conversion +0.81% (stat sig), estimated +$568K ? Scaled to 100% on 3/12/2026
+ATH CA: Negative. AOS -1.53%, PDP exit rates up ? Do not implement
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/2108686450/BRONGA+Quick+Add+V2+on+PDP+Test+-+Results
+Other Surfaces
+11. Quick Add for Search Page (Sep–Oct 2021)
+Brand: ON (BRONGA + Factory)
+ON: Flat with 3M+ visits per segment. ~1% engagement ? Fine to scale (no harm)
+AT had a small sample but showed the largest OPV lift — hinting Quick Add may work better for targeted/specific searches
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/931959184/Quick+add+for+Search+page+-+Results
+12. Quick Add Enhancements: Color Swatches + Alternate Images (Jan 2026)
+Brands: AT, Gap, ON, BR, BRFS, GFS (US & CA)
+A feature enhancement (not an A/B test) adding color swatches and alternate images to both PLP and PDP Quick Add modals. Went live 1/22/2026 across all brands.
+Summary View
+Test
+Surface
+Brands
+Result
+Recommendation
+Quick Add on Category (2021-22)
+PLP
+BRONGA
+Flat
+? Scaled
+ON Spring Outfits QA (2022)
+PLP
+ON
+Negative (-0.4%)
+? Do not implement
+BR+BRFS+AT PLP QA (Oct 2025)
+PLP
+BR, AT
+Negative (-1.3% to -2.9%)
+? Do not implement
+ON PLP QA (Oct 2025)
+PLP
+ON
+Positive (+0.6%, +$6.5MM)
+? Roll out
+AT PLP QA V2 (Feb-Mar 2026)
+PLP
+ON, AT
+Negative
+? Do not implement
+APP Quick Add (Feb-Mar 2026)
+PLP App
+All
+Negative (-0.6% to -0.8%)
+? Do not implement
+PDP Certona QA (2021)
+PDP
+BRONGA
+Flat
+? Iterate
+PDP QA v3 (2021)
+PDP
+BRONGA
+Flat
+? Scaled
+AT PDP Show/Hide QA (Oct 2025)
+PDP
+AT
+Flat
+? Scaled
+PDP QA V2 (Jan-Mar 2026)
+PDP
+BRONGA+GP
+Mixed
+? BR, ATH US; ? ON, ATH CA
+Search QA (2021)
+Search
+ON
+Flat
+? Scaled
+
+Cross-Test Themes
+PLP Quick Add is consistently risky: It works for ON (value/high-intent shoppers) but hurts premium brands (BR, AT). The mechanism is clear — Quick Add on PLP prompts earlier decisions and reduces PDP exploration, which is critical for higher-AOS brands where customers need more product information before committing.
+PDP Quick Add is generally safe: Results on PDP are flat-to-positive because customers are already in exploration mode. The V2 design showed the best results yet (BR +0.32%, ATH +0.81%).
+App Quick Add failed broadly: Reducing product exploration on app weakens the entire purchase funnel regardless of brand.
+The consistent pattern: Quick Add increases engagement and cart adds but often increases cart removals too, suggesting customers are ""trial adding"" without conviction. The net effect depends on whether the brand's customers need PDP-level detail to convert confidently.
+Would you like me to dig into the Quick Add Enhancements (color swatches/alt images) feature details, or compare these patterns against the Gen AI review summary results we discussed earlier?
+"
+Q-006,"Which recommendation engine tests have been run — Certona, Constructor, Internal?","There's a massive experimentation history across all three engines — plus Google AI as a fourth. I found 25+ distinct tests spanning PDP, HP, ATC/Bag, Category/Auto Discovery, Search, and App. Here's the full landscape:
+I. Certona vs Internal Recommendation Engine (PDP)
+The biggest theme: migrating from Certona to the in-house engine, tested iteratively from 2024 through 2026.
+1. [BRGA] Certona vs Internal on PDP — Test 1 (2024) ?
+Brands: BR, GP, AT (Web)
+Across 26M sessions, Internal had a stat sig +0.45% CVR lift (+0.32% RPV).
+Brand
+RPV
+Result
+Recommendation
+GP
++0.3%
+Flat/positive
+Keep 20% traffic for optimization
+AT
++0.3%
+Flat/positive
+Keep 20% traffic for optimization
+BR
+-1.1%
+Negative (basket size)
+Ramp down to 10%, internal biased to markdown
+
+[BRGA] Certona vs Internal Product Recommendation on PDP Test - Results
+2. [BRONGA APP] Certona vs Internal on PDP (2024–2025) ?
+Brands: ON, AT, BR, GP (iOS + Android)
+Brand
+RPV
+Est. Annual Impact
+Recommendation
+ON iOS
++0.4% (stat sig)
++$2.5MM
+Keep 20%
+AT iOS
++0.8% (stat sig)
++$0.9MM
+Keep 20%
+BR iOS
+Flat/positive
+—
+Keep 20%
+GP iOS
+Flat/negative
+—
+Keep 20%
+
+Total estimated impact: +$3.4MM if scaled to 100%.
+[BRONGA APP] Certona vs Internal Product Recommendation on PDP Test - Results
+3. [ON] Certona vs Internal on PDP (Nov–Dec 2024) ?
+Brand: Old Navy (Web)
+ON US: +0.9% RPV (stat sig), conversion-driven
+Internal providing ""more quality recommendations,"" helping customers find products sooner
+[ON] Certona vs Internal Product Recommendation on PDP Test - Results
+4. [BR US] Certona vs Internal — Test 2 (2025) ?
+Brand: Banana Republic (Web)
+RPV -1.5% (stat sig, conversion-driven), estimated ~-$300K
+Internal recs didn't align with customer preferences ? -4.0% Certona engagement
+Recommendation: Push 100% to Certona, continue optimizing
+[BR US] Certona vs Internal Product Recommendation on PDP Test 2 - Results
+5. [BR] Certona vs Internal — Test 3 (Jul 2025) ?
+Brand: Banana Republic (Web)
+After further optimization, RPV now flat (CUPED-adjusted -0.3%, p=0.76)
+Engagement marginally higher under internal logic
+Recommendation: Scale challenger — internal engine has closed the gap
+[BR] Certona vs Internal Product Recommendation on PDP Test 3 (July 2025) - Results
+6. [ON WEB + APP] Internal Model V3 vs V2 (Apr–May 2026) — Most Recent ?
+Brand: Old Navy (Web + App)
+Surface
+RPV
+Result
+ON US (Web)
++0.3%
+Flat/positive
+ON CA (Web)
+-1.0%
+Flat/negative
+ON App
+-0.5%
+Flat/negative
+
+V3 rolled out to 100% on 5/13/2026
+Issues found mid-test: same product recommended in different colors ? diversity logic fix applied 5/7, bug fix 5/12
+[ON WEB + APP] Internal Product Recommendation Model V3 vs V2 on PDP Test - Results
+II. Constructor Tests
+A. Search Vendor: Bloomreach vs Constructor
+7. [BRONGA US] Bloomreach vs Constructor — Test 1 (Jun 2024)
+Brands: ON, BR, GP, AT (Search)
+Brand
+RPV
+Stat Sig?
+ON
++2.2%
+? Yes (CVR + basket size)
+BR
+-0.5%
+No
+GP/AT
+Mixed
+No
+
+Constructor dramatically reduced null searches (~-80% ON) but sometimes showed irrelevant results.
+[BRONGA US] Search Vendor Test: Bloomreach vs Constructor - Results
+8. [BRONGA US] Bloomreach Hybrid vs Constructor — Test 2 (Jul–Sep 2024) ?
+Brands: ON, BR, GP, AT (Search) — Bloomreach updated to ""Hybrid"" method
+Brand
+RPV
+Stat Sig?
+ON
++0.9%
+? Yes (CVR)
+GP
++1.3%
+? Yes (CVR)
+AT
++0.9%
+? Yes (basket size)
+BR
+Improving
+—
+
+Constructor won decisively ? cutover from Bloomreach completed Sep 2024.
+[BRONGA US] Search Vendor Test 2: Bloomreach Hybrid vs Constructor - Results
+B. Auto Discovery (Category Page Grid)
+9. [BRONGA US] Auto Discovery: Certona vs Constructor (Mar–May 2025) ?
+Brands: ON, BR, GP, AT (Category Page Grid/PLP)
+Brand
+RPV
+Est. Annual Impact
+ON
+Positive
++$9.0MM
+BR
+Flat (after algorithm fix)
+—
+GP
+Flat (after algorithm fix)
+—
+AT
+Flat (after algorithm fix)
+—
+
+Constructor was initially promoting too many markdown items; after flagging to Constructor on 4/23, algorithm was updated and revenue trends improved. Recommendation: Continue with Constructor.
+[BRONGA US] Auto Discovery Test: Certona vs Constructor - Results
+C. Search: Constructor vs Google
+10. [GP+AT US] Constructor vs Google Search (Feb–Mar 2026)
+Brands: Gap, Athleta (Search)
+Testing whether Google's search can outperform Constructor. Hypothesis: Google may perform better for smaller catalogs (AT) and larger catalogs with high customer signal (GP). Goal: 1% conversion increase / 2% RPV increase.
+[GP+AT US] Search Vendor Test 2026: Constructor vs Google
+D. Constructor Trending Search Terms
+11. [AT US] Constructor Search Terms Retest (Sep 2025) ?
+Brand: Athleta (Search)
+RPV +0.4% (flat/positive) for Constructor-recommended trending terms vs merch-selected
+Recommendation: Scale — removes manual effort, drives efficiency
+[ATUS] 2R1 | Search Terms Retest- Results V1
+III. Certona Logic Optimization Tests (Certona vs Certona)
+These tests optimized Certona's own algorithms without changing vendors.
+PDP
+#
+Test
+Brand
+Result
+Recommendation
+12
+PDP Rec Optimization (E-3)
+ON
+Flat
+Resume control
+13
+PDP2 Phase 2 (H-3)
+ON
+Flat
+Roll out (no harm)
+14
+PDP #1 Recently Viewed (2-O3)
+ON
+-0.7%
+Do not implement
+15
+BRFS Certona PDP v1
+BRFS
+Flat
+Continue control
+16
+BRFS Certona PDP v2
+BRFS
+-0.4% (~-$3.4MM)
+Continue control
+17
+Family Pajamas PDP Certona (AX-3)
+ON
+Flat
+Continue control
+
+Homepage
+#
+Test
+Brand
+Result
+Recommendation
+18
+HP Algorithm Optimization (D-5)
+ON
+Flat
+Resume control
+19
+HP Certona Carousel Logic (J-6)
+ON
+Lower engagement
+Resume control
+20
+Trending Near You (L-7)
+ON
++0.8% AOS but lower engagement
+Resume control, investigate
+21
+GP Adult Fall Campaign Certona
+GP
+-0.6% (~-$1.26MM)
+Continue control
+22
+BRFS HP 2nd Certona Container
+BRFS
+Flat/negative
+Continue control
+23
+AP-3I / AT-1I Certona Toggle (HP)
+ON
+Plan only
+—
+
+ATC / Bag
+#
+Test
+Brand
+Result
+Recommendation
+24
+Bag Algorithm Optimization (E-4)
+ON
+Flat
+Resume control
+25
+ATC Cross-Category (A3)
+ON
+Flat
+Personalize for return visitors
+26
+ATC Top/Bottom Recs (2A16)
+ON
+-2.07%
+Do not implement
+27
+AT ATC Same Session Logic (1N3)
+AT
+Flat
+Continue as-is
+28
+AT Certona ATC Test (1I9)
+AT
+-0.5% (~-$2–3MM)
+Continue control
+29
+UX Drop Shadow Design (E-6)
+ON
+Lower engagement
+Resume control
+
+IV. Google AI Recommendation Tests
+30. [AT] Google AI Product Recommendation Test (Jun–Sep 2020)
+Brand: Athleta (PDP)
+Google ""Others You May Like"" (CVR/CTR optimized) vs Certona co-purchased/co-viewed. Multi-phase test with strategy misalignments discovered and corrected. Issues included Google recommending more markdown items (42% vs Certona's 30%) and search term contamination.
+[AT] Google AI Product Recommendation Test- Measurement Plan
+31. [BR] Google AI Product Recommendation Test (Dec 2020)
+Brand: Banana Republic (HP/PDP/ATC/Bag)
+Google ""Others You May Like"" + ""Frequently Bought Together"" tested across HP, PDP, ATC popup, and Cart simultaneously.
+[BR] Google AI Product Recommendation Test- Measurement Plan
+Summary: The Recommendation Engine Migration Arc
+The data tells a clear platform migration story:
+Search: Bloomreach ? Constructor (completed Sep 2024). Constructor won decisively with +0.9% to +2.2% RPV across brands. Now being retested against Google Search (Feb 2026).
+Category/Auto Discovery: Certona ? Constructor (2025). Constructor delivered +$9.0MM for ON, though it initially over-promoted markdown items.
+PDP Recommendations: Certona ? Internal Engine (2024–2026). The internal engine shows persistent positive results for ON (+0.9% RPV) and AT (+0.8% RPV on App), but has struggled with BR (three test iterations needed to reach flat). Now on Model V3, rolled to 100% for ON as of May 2026.
+Email: Certona ? Constructor (cutover completed by Jan 2026, Certona contract ended 1/30/2026).
+The consistent pattern across all engines: BR is the hardest brand to move — it's the most sensitive to recommendation quality changes, and any bias toward markdown items immediately shows up as a basket size hit. ON is the most forgiving and typically shows the largest positive signals.
+Would you like me to dig into the Google vs Constructor search results, or compare the internal engine's progression across the three BR test iterations?"
+Q-007,Has anyone tested PLP grid layout changes — 3-grid vs 4-grid?,"Yes — there's been significant grid layout experimentation. I found 5 completed A/B tests, a live PRD for a grid toggle feature, and a deep research document on dynamic/variable-rhythm grids. Here's the full picture:
+Completed A/B Tests
+1. [AT] PLP Luxury 3 Grid Layout Test — Desktop Only (Oct–Nov 2025)
+Brand: Athleta US & CA | Direction: 4-grid (control) ? 3-grid (challenger)
+Short-run directional read (12 days):
+AT US: RPV ~-0.2% (flat). Conversion marginally higher but offset by slight AUR decline
+AT CA: RPV ~+0.2% (flat). Category?PDP and Search?PDP clicks slightly increased (unlike US)
+Quick Add engagement was identical in both layouts (~0.4–0.6% start rate) — image size didn't boost or hurt Quick Add adoption
+Fewer items per row encouraged more facet engagement (AT US +1.0%, AT CA +5.3%)
+Recommendation: Directionally no-harm. Proceeded to longer retest (Test #2 below)
+[AT] PLP Luxury 3 Grid Layout Test (DESKTOP ONLY) - Results
+2. [BRAT US+CA] PLP 3 Grid vs 4 Grid Layout Test — Desktop Only (Jan–Mar 2026) ?
+Brands: BR US/CA (3?4 grid) and AT US/CA (4?3 grid retest)
+Two brands testing in opposite directions simultaneously:
+BR US/CA — Testing 4-grid (from current 3-grid):
+Shifting to 4-grid drove stronger PLP?PDP engagement, but it weakened downstream conversion
+Higher PDP exit rates, smaller baskets, more indecisive shopping (increased SB?Browse backtracking, higher search utilization)
+Core discovery tools (facets, color swatches) underperformed in 4-grid
+Canada followed the same negative trend at an elevated rate
+Recommendation: Do not implement — keep BR at 3-grid
+AT US/CA — Retesting 3-grid (from current 4-grid):
+Initial read pre-peak-freeze was only 1 week and flat — this was the full-duration retest
+(Results consolidated with the initial AT test above)
+[BRAT US+CA] PLP 3 Grid vs 4 Grid Layout Test ( DESKTOP ONLY) - Results
+3. [ONOL] AAR-1 | PLP Differentiated Grid Sizes (Jan–Feb 2026) ?
+Brand: Old Navy (Active Sub-Brand PLPs — Women's & Men's Activewear)
+Tested a differentiated grid on Active category pages:
+Desktop (4-across ? 3-across):
+Net RPV: ~+0.1% (flat/neutral)
+Product exploration declined (product views -2.9%, PLP exit +0.4%)
+QuickAdd engagement slightly higher (+0.7% start, +2.3% done)
+New Customers: +1.5% RPV; Returning Customers: -0.6%
+Mobile (standard ? 2-to-1 grid with enlarged imagery every 3rd row):
+Net RPV: +1.3%, conversion +0.8%, AOS +0.4%
+~17.5% of visits engaged with enlarged products
+Estimated impact: +$1.3M
+QuickAdd Done +2.1%
+Recommendation: Implement for both desktop and mobile
+Future iterations: expand to Dresses/Denim, optimize which products get enlarged placements
+Analytics Results - [ONOL] AAR-1 | PLP - Differentiated Grid Sizes
+4. [BRFS] PLP 3 Grid vs 4 Grid Layout Test — Desktop Only (Apr–May 2026) ??
+Brand: BRFS US | Direction: 4-grid (control) ? 3-grid (challenger)
+Net RPV: ~+0.2% (flat to slightly positive)
+Modest conversion lift with stable basket size
+Larger imagery improved product evaluation — higher PDP conversion (~+0.4%) and lower PDP exit rates (~-2.3%)
+Category?PDP clicks declined (~-1.0%) and exit rates increased slightly (~+1.7%), but PDP traffic was more qualified and intent-driven
+Color swatch engagement improved slightly (+0.8%)
+No material impact on gross margin
+Recommendation: Flat — can continue with whichever experience better meets BRFS merch requirements
+Outcome: BRFS chose to revert to 4-grid — feature flag disabled 5/20/2026 (""BRFS requested to end the test and utilize the 4-grid"")
+[BRFS] PLP 3 Grid vs 4 Grid Layout Test ( DESKTOP ONLY) - Results
+5. [GSUS] 5-S3 | Site: PLP Luxury Grid — New Arrivals (Oct 2025)
+Brand: Gap | Direction: 4-grid (control) ? 3-grid (challenger)
+Test plan targeting select New Arrivals/Collections/Collabs pages on desktop. Hypothesis: enlarging imagery improves discoverability and quality look. Goal: increase conversion and NRPV. Bounty: $5M.
+[GSUS] 5-S3 | Site : PLP Luxury Grid-New Arrivals
+Planned: PLP Grid Toggle PRD (March 2026)
+PDM Owner: Justin Phung | Target Dev Start: 3/26/2026 | All brands: Gap, ON, BR, AT
+Rather than a fixed default, this PRD proposes giving customers a toggle to switch between grid sizes themselves. The core insight: grid layout is ""one-size-fits-all"" today and doesn't adapt to different shopping intents (exploring vs. comparing).
+Scope (IN): Updated Grid Dimensions, Updated Product Card Layout, Mobile Toggle, Desktop Toggle
+Scope (TBD): Updated Grid Dimensions (Luxury), Mosaic View
+Opportunity size cited:
+BRFS Show/Hide Grid Toggle in Legacy: RPV ~+0.8%, Conversion ~+0.4% (+$3.1M)
+ON Different Size Mobile Grid in HUI: Net RPV positive for new customers ~+1.0% (+$1.3M)
+Historical context: The legacy PLP team implemented a grid toggle before — this is the next-gen version.
+View PRD
+Research: Dynamic / Variable-Rhythm PLP Grid (March 2026)
+A comprehensive enterprise-level feasibility study for moving beyond simple 3-vs-4 to variable-rhythm grids (luxury-inspired layouts with mixed tile sizes). Covers all brands.
+Current baseline: Fixed 3:4 portrait grid
+Three layout options evaluated:
+Option
+Description
+Decision Score (balanced)
+A: Standard (High Density)
+Current fixed grid
+77/100
+B: Hybrid
+Predictable cadence with occasional promoted tiles
+73/100
+C: ""LV-Lite"" (Dynamic)
+Variable tile sizes, masonry-like, editorial hierarchy
+61/100
+
+Key findings:
+Dynamic-default monthly revenue delta modeled -4.0% to +4.0% — downside breaches the >3% revenue kill threshold
+Standard-default + toggle yields much smaller impact: ~-0.32% to +0.07% at 3% toggle usage
+Disordered layouts increase scan effort +12–21% (eye-tracking study)
+A 0.1s mobile speed improvement drives ~+8% conversion — performance risk from variable grids can overwhelm layout benefits
+Under brand-first weights, Hybrid wins (74/100 vs Standard 72.5/100)
+Final recommendation: Controlled test ? tiered/hybrid rollout if guardrails hold (67/100 confidence). Do not default to Dynamic — test Hybrid first.
+View research
+Summary Table
+Test
+Brand
+Direction
+Platform
+RPV
+Recommendation
+AT Luxury 3 Grid (Oct 2025)
+AT
+4?3
+Desktop
+Flat (-0.2%)
+? No harm
+BR 3?4 Grid (Jan 2026)
+BR
+3?4
+Desktop
+Negative
+? Keep 3-grid
+ON Differentiated Grid (Jan 2026)
+ON
+Mixed / 2-to-1 mobile
+Desktop + Mobile
++1.3% mobile (+$1.3M)
+? Implement
+BRFS 4?3 Grid (Apr 2026)
+BRFS
+4?3
+Desktop
+Flat (+0.2%)
+?? Flat; reverted to 4-grid
+GP Luxury Grid (Oct 2025)
+GP
+4?3
+Desktop
+Test plan only
+—
+
+Cross-Test Patterns
+3-grid consistently helps (or at least doesn't hurt) premium brands by providing larger imagery and clearer product context, enabling more qualified PDP traffic. But the lift is modest and not stat sig — brands may choose merch convenience over marginal UX benefit (as BRFS did by reverting).
+4-grid hurts BR. Moving BR from 3 to 4 columns created indecisive shopping behavior — more clicks but less commitment.
+The real winner is differentiated/variable grids on mobile. ON's 2-to-1 mobile grid with periodic enlarged imagery was the only test to produce a meaningful, positive RPV lift (+1.3%, +$1.3M). This aligns with the Dynamic Grid research showing that intent-aligned visual hierarchy outperforms uniform density.
+The toggle approach is the safest path forward. The research shows it caps portfolio downside at <1% while enabling learning — it's a ""safe learning gate, not a growth lever.""
+Would you like me to dig into the Dynamic Grid research's competitive benchmarking (Mytheresa, Shopbop, COS, H&M density comparisons), or the specifics of the Grid Toggle PRD's planned A/B tests?"
+Q-008,"What show/hide promo experiments exist — Sale Accordion, Ticker, ISM banners?","There's an enormous body of show/hide promo experimentation — I found 25+ distinct tests spanning Ticker, Promo Drawer, ISM banners, Sitewide Banners (Skinny/GSB), Homepage Promo Banners, and Shopping Bag Promo Banners. Here's the full map:
+I. Ticker & Promo Drawer (Sale Accordion)
+1. [BR US] Show/Hide Ticker and Promo Drawer — Sitewide (Aug 2021) ?
+Brand: BR | Direction: Hide ? Show ticker + promo drawer
+RPV +2.2% (stat sig, conversion-driven)
+Ticker/promo drawer engagement +5.4%
+Category Views/Visit +4.2%, Product Views/Visit +2.9%, PDP?SB +7.4%
+GM% dropped ~-1.1% (expected — more discount visibility = more code usage)
+Recommendation: Continue with Ticker and Promo Drawer. Est. lift: +$88K during test period
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/931961344/BR+US+Show+Hide+Ticker+and+Promo+Drawer+Test+-+Results
+2. [BRUS + BRFS] Promo Drawer Show/Hide — PDP/HP/Category (Aug–Sep 2023) ?
+Brands: BR US, BRFS | Multi-surface test hiding promo drawer from different pages
+BR US Desktop (hide PD on PDP):
+RPV -1.2% (stat sig), conversion -2.0%
+Exit rate from PDP +0.4%, visits to sale categories -3.3%
+BR US Mobile (hide PD on HP + Category + PDP):
+RPV -2.3% (stat sig), conversion -4.5%
+Visits to sale categories -30%
+Est. annual impact: -$8.8MM (Desktop -$4.3MM, Mobile -$4.5MM)
+BRFS Desktop (hide PD on PDP): Flat (+0.2%, not stat sig)
+BRFS Mobile (hide PD on HP only): Flat (-0.2%)
+BRFS Mobile (hide PD on HP + Category + PDP): RPV -2.3% ? est. -$7.3MM
+Recommendation: Continue showing promo drawer everywhere for BR. BRFS has flexibility to hide on PDP desktop only.
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/1312588618/BRUS+BRFS+Promo+Drawer+Show+Hide+Test+Results
+3. [BR US] Promo Drawer Show/Hide V2 — Mobile HP Only (Oct 2023) ?
+Brand: BR | Retested hiding PD on HP only (mobile)
+RPV -1.2% (stat sig), conversion -1.3%
+PD engagement -25.7%, HP exit +1.5%
+Visits to sale categories -8.3%
+Est. annual impact: -$2.5MM
+Recommendation: Continue showing PD on HP
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/1342177428/BR+US+Promo+Drawer+Show+Hide+V2+-+Mobile+Only+Test+Results
+4. [BRFS US] Show/Hide Sitewide Promo Flyout Nav — Desktop (Oct–Nov 2024) ??
+Brand: BRFS | Tested ""OFFERS"" in MegaNav vs Promo Drawer
+RPV flat to slightly negative (not stat sig)
+""OFFERS"" in MegaNav was less visible than promo drawer, especially for PDP-entry visitors
+Recommendation: Continue with Promo Drawer for peak
+Next Steps: Increase visibility of ""OFFERS"" — bold or change color
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/1608351805/BRFS+US+Show+Hide+Sitewide+Promo+Flyout+Nav+Desktop+Only+-+Results
+5. [GP US] Promo Drawer Frequency Test (Feb 2022)
+Brand: Gap | 4-way test: control (pop-up on scroll) vs no disruption vs 1st-pageload only vs remove PD
+Variant
+RPV
+Key Finding
+No disruption on scroll
+-0.6%
+Mobile users benefited from reduced pop-ups
+Pop-up only on 1st page load
+-0.6%
+Conversion trending positive for new visits
+Remove PD completely
+-1.8%
+Clear negative — PD is needed
+
+Recommendation: Show PD, but explore less intrusive pop-up behavior
+6. [GFUS] Different Promo Drawer Pop-up Behavior / Removal (Feb 2024) ?
+Brand: Gap Factory | Tested reducing PD disruption vs removing entirely
+Variant
+RPV
+Est. Annual Impact
+Don't fire PD on scroll (ever)
+-0.9%
+-$2.8MM
+Remove PD completely
+-3.5% (CVR -2.7%)
+-$7.6MM
+
+PD engagement was ~47%. Negative impact consistent across device types and visit types.
+7. [GFOL] Promo Drawer Order Test (Apr 2024) ?
+Brand: Gap Factory | Tested tile order: Lead with Clearance vs Plus Up vs Deal of the Week
+Both challengers: RPV -1.9% to -2.3%, bounce rate +1%
+Clearance tile remained most engaged regardless of position (because headline promo is clearance)
+Recommendation: Retest leading with Deal of the Week
+II. ISM (In-Sort Marketing) Banners on Category Pages
+8. [GFS] Clearance Plus Up ISM Show/Hide (Feb–Mar 2023) ?
+Brand: Gap Factory | Direction: Show ? Hide ISM on clearance categories
+RPV +3.2% (stat sig), conversion +2.2%
+ISM was pushing products further down the page and acting as a distraction
+Product views/visit +1.3%, PDP?SB +0.2%, SB?Checkout +1%
+Est. incremental impact: +$20K during test period
+Recommendation: Continue with ISM hidden — promo code usage barely dropped since marketing flag still present
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/1232178450/GFS+Clearance+Plus+Up+ISM+Show+Hide+Test+Results
+9. [BRUS] Summer Sale ISM Show vs Hide (Jun–Jul 2025) ??
+Brand: BR US | Hide limited-time promo ISMs during Summer Sale
+RPV -0.4% (not stat sig), conversion -0.1%, AOS -0.3%
+Hiding ISM increased home exits and reduced Add to Cart Rate
+Mobile and Returning customers drove negative trend
+Recommendation: Flat to slightly negative — proceed with challenger if desired, no material harm
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/1851818987/BRUS+Summer+Sale+ISM+Show+vs.+Hide
+10. [ON US] Bodequality Womens ISM Show/Hide (Sep 2021)
+Brand: Old Navy | Show/hide Bodequality messaging ISMs on all Women's category pages (90/10 split)
+https://gapinc.atlassian.net/wiki/spaces/DPG/pages/937811219/ONUS+Bodequality+Womens+ISM+Show+Hide+Test
+11. [AT US] ISM Strategy Test — RS7 (Oct–Dec 2021)
+Brand: Athleta | 4-way: No ISM vs Technical Details vs Sustainability vs Inspirational (Bras, Tops, Bottoms, Jackets)
+https://gapinc.atlassian.net/wiki/spaces/DPG/pages/937807539/ATUS+RS7+Site+ISM+Strategy+Test+-+Results
+12. [AT US] New Arrivals Show/Hide ISM Header — R8 (Sep–Oct 2021)
+Brand: Athleta | Hide ISM from All New Arrivals category page
+https://gapinc.atlassian.net/wiki/spaces/DPG/pages/937803568/ATUS+R8+Site+New+Arrivals+Show+Hide+ISM+Header
+13. [GP US] W & M Jeans Category Page ISM Show/Hide (Aug 2021)
+Brand: Gap | Show/hide ISM on Women's + Men's Jeans categories
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/931958508/GP+US+W+M+Jeans+Category+Page+ISM+Show+Hide+Test
+14. [GP US] F&F ISM Tile Test (Nov 2021)
+Brand: Gap | Test promo messaging in ISM tile during Friends & Family event on category pages
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/931958101/GP+US+F+F+ISM+Tile+Test
+15. [GP US] Dropship in ISM (Apr–May 2023) ?
+Brand: Gap | ISM with dynamic video for BabyGap Goods on PLP
+RPV flat to slightly positive (+0.02%), conversion +0.14%
+Dropship category page visits +1.07% with video ISM
+Recommendation: Scale dynamic video ISM
+16. [ONOL] PLP — W New Arrivals VI Banner vs ISM (Apr 2026) ?
+Brand: Old Navy | Test showing ISM vs text VI Banner on Women's New Arrivals PLP
+Challenger B (Only ISM, with BAU text VI Banner):
+RPV -1.8% (stat sig), conversion -2.7%
+ISM in first product card location disrupts browsing, limits product visibility
+Product Views/Visit -0.7%, text VI banner engagement -2.0%
+Negative for both New (-2.8%) and Returning (-1.5%) customers
+https://gapinc.atlassian.net/wiki/spaces/DPG/pages/2217640137/Analytics+Results+-+ONOL+AAU-5+PLP+-+W+New+Arrivals+Marketing+Test+-+VI+Banner+vs+ISM
+III. Homepage Promo Banners
+17. [GFS US] Show/Hide HP Promo Main Banner (Aug 2019) ?
+Brand: Gap Factory
+Hiding HP promo banner: RPV -2.5%, HP exit rates +3%
+HP banner drives ""significant customer engagement""
+Est. annual impact: ~-$2MM
+Recommendation: Continue showing HP promo banner
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/931956454/GFS+US+Show+Hide+HP+Promo+Main+Banner
+18. [GP US] Show/Hide HP Top Promo Banner (Apr–May 2020)
+Brand: Gap | Multiple promo events tested: GapCash, Customer Appreciation, Gifting Event, Outerwear
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/931957950/GP+US+Show+Hide+HP+Top+Promo+Banner
+19. [GP US] Show/Hide HP Promo Banner — Multiple Events (Sep–Nov 2020)
+Brand: Gap | Tested during GapCash, Columbus Day, Customer Appreciation, Gifting, Outerwear events
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/931958122/GP+US+Show+Hide+Promo+HP+Banner
+20. [BR US] HP Spotlight Banner Test — 2-Day (Feb 2021) ?
+Brand: BR | Show vs hide % off promo banner on HP
+RPV +2.7% (stat sig, basket-size driven)
+HP?Category +0.4%, HP?New Arrivals +4.0%
+Bounce rate -1.4%, engagement +5.8%
+Est. impact: +$41K in 2 days
+Recommendation: Continue showing % off banner
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/931958565/BRUS+Home+Page+Spotlight+Banner+Test+2+21-2+22
+21. [BR US] Promo Spotlight Test — Ticker vs Banner (Jun–Jul 2021)
+Brand: BR | Desktop: show HP promo banner vs show promo ticker. Mobile: show vs hide HP promo banner
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/931956133/BR+US+Promo+Spotlight+Test
+22. [GP US] HP Promo Banner Placement 2 Show/Hide (2023) ?
+Brand: Gap | Test showing promo banner under HP4 vs no banner
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/1237484329/GP+US+HP+Promo+Banner+Test+Placement+2+vs+No+HP+Banner+-+Results
+IV. Shopping Bag / Cart Promo Banners
+23. [BR US] Mobile Promo Banner in Shopping Bag (Jan–Feb 2021) ?
+Brand: BR Mobile
+RPV +2.0% (stat sig, basket-size driven)
+SB?Checkout +0.8%, bounce rate from SB entry -0.5%
+Est. annual impact: +$1.8–2.5MM
+Recommendation: Continue showing promo banner in bag
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/931958335/BR+US+Mobile+Promo+Banner+in+Shopping+Bag+1+15
+24. [BRFS US] Mobile Promo Banner in Bag (Mar 2021) ?
+Brand: BRFS Mobile
+RPV flat to slightly positive (+0.8%, not stat sig)
+Recommendation: Continue showing — no harm
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/931960421/BRFS+US+Mobile+Promo+Banner+in+Bag+-+Results
+25. [AT US] Show/Hide Promo Banner in Shopping Bag — FG16 (Mar–Apr 2021) ?
+Brand: Athleta
+RPV +0.4% (stat sig, conversion-driven)
+SB?Checkout +1.2%, exit rate from SB -0.7%, bounce rate -0.5%
+Est. annual impact: +$310K
+Recommendation: Continue showing promo banner in bag
+https://gapinc.atlassian.net/wiki/spaces/DPG/pages/937811334/ATUS+FG16+Site+Show+Hide+Promo+Banner+in+Shopping+Bag+-+Results
+26. [GP US] Shopping Cart Asset Show/Hide (Jun–Jul 2023) ? (Hide won!)
+Brand: Gap
+Hiding promo asset in shopping bag: RPV +0.4% (stat sig)
+Customers were less distracted and completed checkout more
+Checkout conversion +0.5%
+Est. impact: +$167K during test
+Recommendation: Continue with hidden — saves asset creation work
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/1284734977/GP+US+Shopping+Cart+show+hide+test+-+Results
+27. [AT US] Show/Hide SWB (Sitewide Banner) in Bag (Aug 2025) ? (Hide won!)
+Brand: Athleta
+Removing sitewide promo banner in bag: RPV flat (+0.2%), not stat sig
+Bag?Browse movement slightly higher (+1.8%) as customers seek promo details
+No harm to revenue
+Recommendation: Continue without the banner in bag
+[ATUS] 2Q11 | Show/Hide SWB in Bag Test- Results
+V. Sitewide / Global Skinny Banner (GSB) Tests
+28. [GP US] Promo Messaging GSB Test (Feb 2024)
+Brand: Gap | Tested 1 vs 2 promo messages in global skinny banner
+Variant
+RPV
+GSB Engagement
+Denim + 50% off clearance
++0.4%
++8%
+Denim + Extra 30% off markdowns
++1.1%
++37%
+
+Both challengers performed better on Desktop than Mobile. Next Step: Retest during other promos.
+29. [GP US] GSB Persado Language Test (Jan 2023)
+Brand: Gap | 16 Persado copy variations on seasonal sale global skinny
+Key Learnings:
+Don't need to include ""Extra 60% off"" — ""Up to 75% off"" alone works just as well
+DO include the promo code
+DON'T need romance copy (""Just in"")
+30. [GP US] Site & Email Promo Language Copy Test (Mar 2026) ?
+Brand: Gap | Tested ""50% off spring staples"" vs ""40% off spring staples"" on GSB + Promo Drawer + Email
+RPV +1.46% (stat sig), conversion +0.77%, AOS +0.68%
+Promo bar interaction declined (clearer offer needed less engagement)
+Less deep promotion enhanced purchase intent
+Next Steps: Retest to ensure consistency
+31. [GP US] Hide Everyday Free Shipping Banner (Feb–Mar 2024) ?
+Brand: Gap | Tested removing free shipping banner to reduce clutter
+Desktop: RPV -2.0%, conversion -1.1%, AOS -0.9%
+Mobile Non-Loyalty: RPV -0.9%
+Mobile Loyalty ?$5: RPV -1.1%
+Recommendation: Don't hide — test other ways to show (rotate with GSB, integrate into brand bar)
+VI. Planned: Promo / Wallet / Brand Banner in Global Navigation
+A PRD exists for a unified dynamic banner in global navigation across all brands (Feb 2026). It would consolidate promo, wallet/loyalty messaging, and seasonal brand banners into a single, targeted global nav placement with:
+Session/user-level frequency capping
+Targeting by campaign, audience, geo, device, referrer, login state
+Desktop: slim horizontal banner below nav; Mobile: compact strip or nav drawer integration
+A/B test planned: nav banner vs control (no banner or legacy placement)
+Promo / Wallet / Brand Banner in Global Navigation
+Cross-Test Patterns
+The universal truth: promo visibility drives conversion, but the effect is brand- and surface-dependent.
+Surface
+Show Wins?
+Key Insight
+Ticker + Promo Drawer
+? Yes (BR/BRFS)
+Removing PD costs $2.5–8.8MM annually. Factory has more flexibility.
+ISM on Category
+?? Mixed
+ISM helps for inspiration/content but hurts when it pushes products down the page (GFS clearance +3.2% RPV from hiding). Recent ON test: ISM in first product slot = -1.8% RPV.
+HP Promo Banner
+? Yes (all brands)
+Hiding HP banners consistently negative. Factory customer especially promo-sensitive (-2.5% RPV).
+Shopping Bag Banner
+? Yes (BR, AT) — ?? No (GP, AT 2025)
+BR mobile bag banner = +$1.8–2.5MM annually. But GP and AT later found hiding bag banners was flat/positive — customers already know the promo from upstream.
+Global Skinny Banner
+? Yes
+Including markdown messaging lifts engagement +37%. Less deep promos can actually lift conversion.
+
+The evolution arc: Early tests (2019–2021) consistently showed ""show everything wins."" More recent tests (2023–2025) show more nuance — upstream visibility makes downstream banners redundant (AT/GP bag banner removals are now flat), and ISM placement within the product grid is increasingly seen as a distraction rather than a driver.
+Would you like me to pull up the specific ISM strategy test results (Technical Details vs Sustainability vs Inspirational on AT), or dive deeper into the Promo/Wallet/Brand Banner global nav PRD?"
+Q-009,Which brands tested FindMine outfit recommendations on PDP?,"All four brands — Gap, Old Navy, Banana Republic, and Athleta — have tested FindMine on PDP, plus Gap Factory in email. FindMine replaced Stylitics as the outfitting vendor in late 2021 and has evolved significantly since. Here's the full history:
+I. Vendor Evaluation: FindMine vs Stylitics (Dec 2021–Jan 2022)
+FindMine Outfitting (95) — Gap + Athleta ?
+The initial head-to-head against Stylitics tested both Gap and Athleta simultaneously.
+RPV -0.7% for Gap; OPV -0.7% for both Gap and AT (not stat sig)
+Customers engaged more with FindMine than Stylitics, but those who engaged had lower OPV
+Recommendation: Do not implement. Retest after FindMine improves algorithms.
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/931958383/FindMine+Outfitting+95+-+Results
+II. Athleta — Early Optimization Tests (2022)
+1. [ATUS] 1HI2 | FindMine Placement Test on PDP (May–Jun 2022) ??
+Tested FindMine above Certona (control) vs below Certona (challenger).
+RPV flat to slightly negative (~-0.5%)
+FindMine engagement dropped ~-44.7% when placed below; Certona engagement rose ~+16.2%
+Suggests customers use FindMine as inspiration early in the purchase cycle
+Recommendation: Keep FindMine above Certona
+https://gapinc.atlassian.net/wiki/spaces/DPG/pages/937797898/ATUS+1HI2+Site+FindMine+placement+test+on+PDP+-+Results
+2. [ATUS] 1K4 | ""Ways to Wear It"" Jump Link to FindMine (Jul–Aug 2022) ??
+Added a ""Ways to Wear It"" CTA on the PDP buy box area that jump-links down to the FindMine module.
+RPV flat (~-0.5%), not stat sig
+~2.84% of customers engaged with the CTA; FindMine/Certona engagement increased ~+5.0%
+But didn't translate to conversion — PDP?Shopping Bag slightly down (~-0.5%)
+Recommendation: No positive impact; continue without CTA. Refine FindMine logic or personalize.
+https://gapinc.atlassian.net/wiki/spaces/DPG/pages/937795362/ATUS+1K4+Site+Ways+to+Wear+It+jump+link+to+FindMine+-+Results
+III. Banana Republic — Shop the Look & UI Tests (2023–2026)
+3. [BRUS/BRFS] Shop the Look Icon — FindMine Jumplink (2023)
+Added ""SHOP THIS LOOK"" clickable icon on PDP product images that jump-links to FindMine.
+BR US outperformed BRFS in the original test
+Led to a BRFS-specific retest (see below)
+4. [BRFS] Shop the Look Icon — FindMine Jumplink Retest (Sep 2025)
+Retested ""SHOP THIS LOOK"" icon on BRFS with two icon design variants (cream vs white background).
+3-way: Control (33%) vs Challenger A cream (33%) vs Challenger B white (33%)
+Targeting PDPs with FindMine module, desktop + mobile
+https://gapinc.atlassian.net/wiki/spaces/DPG/pages/1862074479/BRFS+Shop+the+Look+Icon+-+FindMine+Jumplink+on+PDP+Retest
+5. [BR US] FindMine Look and Placement Test (Apr 28, 2026 — Live)
+Testing a new filmstrip-style carousel UI with updated placement on desktop (right column below buy box and product details).
+Control: FindMine BAU look and placement
+Challenger: FindMine new look and placement
+50/50 split, ~5–6 weeks, targeting 974 styles with FindMine
+Primary KPI: OPV, MDE ~1%
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/2318991729/BR+US+FindMine+Look+and+Placement+Test+-+2026
+IV. Gap — Creative Outfitting & Matching Sets (2025–2026)
+6. [GPUS] 5-H7 | FindMine Creative Outfitting (Oct 2025) ?
+Updated the FindMine container design and added quick-add capability.
+Stronger engagement with the feature, checkout exit rates declined meaningfully
+ATB rate and UPT remained consistent — stable, positive shopping experience
+Recommendation: Implement
+https://gapinc.atlassian.net/wiki/spaces/DPG/pages/1981815476/POD+Results+2025+GPUS+5-H7+Site+Findmine+Creative+Outfitting
+7. Gap FindMine + QuickAdd Re-enabled (Mar 9, 2026)
+FindMine had been disabled per Gap brand's request due to UI/logic issues. After vendor adjustments:
+Re-enabled FindMine + QuickAdd (""Shop the Set"") for Gap US Specialty
+Feature flag + Optimizely toggle only, no deployment needed
+https://gapinc.atlassian.net/wiki/spaces/PTECOMW/pages/2216624743/3+9+2026+Turn+ON+FindMine+QuickAdd+on+PDP+for+Gap+US+Specialty
+8. [GSUS] 6-F2 | FindMine Matching Sets + Show/Hide Quick Add (May–Jun 2026) ? Big Winner
+3-way test on matching set SKUs (1,891 SKU count):
+Variant
+Split
+RPV
+No FindMine (control)
+33%
+—
+FindMine without Quick Add
+33%
++1.03%
+FindMine with Quick Add
+33%
++1.34%
+
+Stat sig. Estimated impact: +$2.7M
+FindMine with quick add drove basket building with higher-priced items
+Both challengers pushed customers through the funnel to checkout
+Desktop: strong growth in both Conversion & AOS
+Mobile Challenger 2: large Conversion drop offset by elevated AOS
+Scaled: Challenger 1 (FindMine without Quick Add)
+View results
+V. Athleta — Re-enablement & Planned Tests (2026)
+9. Athleta FindMine Re-enabled with A/B Test (Mar 25, 2026)
+FindMine was disabled before FY25 peak because switching from ""on-model"" to ""laydown"" imagery broke the outfitting UI. After vendor fixes:
+Re-introduced with A/B test: FindMine (""Shop the Look"") vs holdout (50/50)
+AT US Specialty only
+3/25/2026 Turn ON FindMine on PDP (Site) for Athleta US (Feature Flag/Abseg)
+10. AT FindMine Test Ideas — Planned (May 2026)
+Athleta is planning two next-phase tests:
+Grid layout conversion: Switch from filmstrip ? grid layout, replicating BR's format. FindMine owns web UI; internal team builds app component.
+Shop the Set: Workout sets (color-based pairing), All Day Active & Lounge/Recover (fabrication-based pairing)
+~20–30 CCs would have both Shop the Look and Shop the Set modules on the same PDP
+Load time flagged as a concern for dual-module pages
+Recent FindMine test results were flat — team looking for short-term wins during remaining ~11 months of partnership while building grander in-house features
+05.18.26 AT FindMine Test Ideas
+VI. Old Navy — Shop the Set (In Development, 2026)
+11. ON FindMine ""Shop the (Matching) Set"" — In Development
+A second FindMine module specifically for matching sets, supporting the Sport Activewear launch:
+Will exist alongside the standard ""Wear it with"" algo-based FindMine module (dual modules)
+Adobe Analytics tagging spec created (June 2026)
+ON is the only brand planning to run both algo-based outfitting and Shop the Set simultaneously
+[DEPRECATED] App: FindMine Shop the Set for Old Navy PDP - Adobe Analytics | App: ON FindMine Shop the Set - Adobe Analytics Tagging !!DRAFT!!
+VII. Multi-Brand App Test (May 2026 — Live)
+12. [BRONA APP] PDP FindMine Outfitting Test (May 20, 2026)
+First FindMine test on native app, covering BR, ON, and AT simultaneously:
+Control: PDP as-is (no FindMine)
+Challenger: PDP with FindMine
+50/50 split, ~3 weeks estimated (using ON APP sample size)
+[BRONA APP] PDP FindMine Outfitting Test
+VIII. Email Channel (Gap Factory + Athleta)
+13. [GFUS] Factory Post Purchase w/ FindMine (2023) ?
+Post-purchase trigger email with FindMine outfitting recommendations + free shipping offer.
+Net Sales/Emailed Customers -0.8%, NS/Customer -1.4%
+93% of post-purchase trigger net sales came from online channel
+Recommendation: Retest with 6–7 day lookback window
+14. [ATUS] Email Tests (2022)
+Multiple Athleta email tests: Refresh ASC w/FindMine placement, PPPR test (Moveable Ink vs FindMine). Results pages marked ""In Progress.""
+IX. International Expansion
+FindMine is described as a ""globally owned capability"" in the Taiwan Digital CX BRD. Taiwan SFCC PDP will include FindMine outfit recommendations as P2 at launch (FY27). Estimated revenue upside: ~$431K based on Japan CVR lift data.
+View Taiwan BRD
+Brand Strategy Summary (as of mid-2026)
+Brand
+Current State
+FindMine Approach
+Key Difference
+Gap
+? Live + tested
+Shop the Set only (filmstrip under buy box). Replaced algo-based outfitting entirely.
+Strategic swap — algo out, sets in
+Banana Republic
+? Live + testing new UI
+Grid layout with Shop the Look icon jump-link. Testing new filmstrip carousel + placement.
+Grid format that AT wants to replicate
+Old Navy
+?? In development
+Both algo-based ""Wear it with"" AND Shop the Set on same PDP
+Only brand layering both modules
+Athleta
+? Re-enabled Mar 2026
+Converting filmstrip ? grid (matching BR). Planning Shop the Set + Shop the Look.
+~20–30 CCs will have dual modules
+
+Cross-Test Patterns
+FindMine initially underperformed Stylitics (2021) but has improved significantly with UI/logic refinements
+The Matching Sets use case is the breakout winner: Gap's 6-F2 test delivered +$2.7M stat sig — the strongest FindMine result to date
+Quick Add on FindMine is nuanced: it drives higher-priced basket building but can hurt mobile conversion (Gap scaled without Quick Add despite higher RPV with it)
+Placement matters: FindMine above Certona > below. Jump links drive engagement but not conversion.
+The brands are diverging strategically: Gap went all-in on Shop the Set; ON is layering both modules; BR is refining the UI; AT is still testing foundational engagement
+Would you like me to pull up the detailed results from the BR US new look/placement test (which should be wrapping up soon), or dive into the AT FindMine grid layout Figma specs?"
+Q-010,Has BR Factory tested any MegaNav changes?,"Yes — I found 5 distinct BRFS MegaNav/navigation tests with results, plus one test plan that hasn't published results yet. Here's the full picture:
+1. [BRFS] Clearance Nav Show/Hide (Jul–Aug 2021) ?? Flat
+Tested removing ""Clearance"" as a top-level division from the MegaNav.
+Control: Show ""Clearance"" in Top Nav
+Challenger: Hide ""Clearance"" in Top Nav
+RPV flat to slightly negative (not stat sig)
+Recommendation: As impacts are flat to slightly negative, brands have flexibility to show or hide Clearance nav
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/931958576/BRFS+Clearance+Nav+Show+Hide
+2. [BRFS US] Show/Hide Sitewide Promo Flyout Nav — Desktop (Oct–Nov 2024) ?? Flat/Negative
+Tested replacing the Promo Drawer with an ""OFFERS"" tab in the MegaNav as the primary promo discovery mechanism.
+Control: Hide Flyout Nav / Show Promo Drawer
+Challenger: Show Flyout Nav (""OFFERS"" in MegaNav)
+RPV flat to slightly negative (not stat sig)
+""OFFERS"" in MegaNav was less visible than Promo Drawer, especially for customers entering via PDP
+Engagement with ""Offers"" in MegaNav was lower than Promo Drawer engagement
+Recommendation: Continue with Promo Drawer for peak
+Next Steps: Increase visibility of ""OFFERS"" — make it bold or change color
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/1608351805/BRFS+US+Show+Hide+Sitewide+Promo+Flyout+Nav+Desktop+Only+-+Results
+3. [BRFS] MegaNav Offers Tab (Feb–Mar 2025) ?? Flat — No Harm
+A follow-up to test #2. This time tested showing an ""Offers"" tab visible on the billboard (navigation bar) rather than replacing the Promo Drawer.
+Control: Hide Offers Tab
+Challenger: Show Offers Tab on billboard
+RPV flat (~+0.1%), not stat sig
+Conversion ~+0.7%, but AOS ~-0.6% (offsetting)
+New customers: slightly negative RPV and Conversion (may get distracted by offers tab)
+Returning customers: slightly positive RPV and Conversion
+Promo Drawer engagement was similar in both — the Offers tab didn't cannibalize the drawer
+Add to Cart rates slightly positive across all segments
+Recommendation: No harm to primary metrics. Expanding to 100% would not harm business.
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/1745420465/BRFS+MegaNav+Offers+Tab+-+Results
+4. [BRFS] Cat Nav CTA Test (Mar 2025) ? Winner — Scaled
+Tested changing the Category Navigation CTA from an accordion (hidden) to a visible, exposed choice on category pages.
+Control: Accordion-style category nav (collapsed)
+Challenger: Exposed visible CTA for category navigation
+RPV +0.2% (stat sig), Conversion +0.3%
+Cat Nav CTA engagement rate +49.5% (from 0.9% ? 1.4%)
+Desktop slightly positive (+0.2% RPV), Mobile flat to positive (+0.1%)
+Returning customers stronger (+0.4% RPV) vs New (flat/slightly negative -0.1%)
+Category?PDP conversion marginally up, driving the conversion lift
+Est. annualized impact: +$466K
+Recommendation: Expand to 100% of traffic ?
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/1755646226/BRFS+Cat+Nav+CTA+Test+-+Results
+5. [BR US + BRFS] Universal Nav Account Dropdown — Move Loyalty Status (Jun 2024) ?? Plan Only
+Part of the BR Site Redesign — tested moving customer loyalty status from visible in the universal nav to hidden within the account dropdown.
+Control: Loyalty Status visible in Universal Nav
+Challenger: Loyalty Status moved to Account Dropdown
+50/50 split, ~6 weeks estimated duration for BRFS
+Primary KPI: OPV, MDE ~1.2% for BRFS
+Secondary metrics: Reward Points utilization rate, sign-in rate, basket size, exit rates
+?? No results page published
+https://gapinc.atlassian.net/wiki/spaces/TnLCOE/pages/1512800257/BR+US+BRFS+Universal+Nav+Account+Dropdown+-+Move+Loyalty+Status
+6. Cross-Brand: New Checkout Header (Feb 2026) — Included BRFS ?? Flat
+Simplified the checkout header by removing brand bar navigation to keep customers focused on completing purchase. Ran across all 6 brands including BR Factory.
+Factory RPV -0.3% (flat)
+Specialty RPV +0.5%
+Net impact: +$0.3M across GID US
+Recommendation: Roll out — no meaningful risk
+View results
+Key Takeaway
+BRFS MegaNav tests paint a consistent story: the Factory customer is promo-driven but not easily redirected. Removing or relocating promo visibility (Clearance nav, Promo Drawer ? Offers tab) consistently trends flat-to-negative, while making existing navigation elements more discoverable (exposed Cat Nav CTA) is a small but real winner. The one clear win was making category navigation more visible (+$466K), not restructuring promo placement.
+Would you like me to dig into whether the Universal Nav Loyalty Status test ever published results, or compare these BRFS nav findings with BR Specialty's nav experiments?"
+Q-011,Did the Sticky ATB test for BR Mobile Challenger A reach significance? What was the +$800K estimate based on?,"Here's the answer based on the [BRONAT] PDP Sticky Add To Bag Page Test - Results:
+BR Mobile Challenger A — Significance & the $800K Estimate
+Did it reach significance? — Partially yes, but only on Conversion, not on overall RPV.
+The results page explicitly notes: ""Trends are represented below. Results are NOT statistically significant"" at the overall level. However, for BR Mobile Challenger A specifically, Conversion showed a statistically significant lift, which is what the +$800K estimate is based on.
+Here's the full picture from the results:
+Challenger A (Show Promo Drawer + Sticky ATB, smaller CTA) had very low engagement — only 0.12% of customers interacted with the sticky cart
+Despite that, it showed a significant lift in Conversion along with large drops in PDP and Shopping Bag exit rates
+However, AOS did not lift — while there was higher unit spend, fewer add-to-cart actions meant it didn't translate into a demand lift vs. control
+What the +$800K is based on
+The +$800K is the estimated annual impact calculated solely from the statistically significant Conversion lift. It's not based on total RPV (which was flat/mixed) — it isolates the conversion improvement and annualizes the incremental orders that lift would produce at scale.
+For comparison, Challenger B (Hide Promo Drawer, show larger Sticky ATB) had a higher estimate of +$1.2M from its Conversion significance, but it also showed negative AOS and higher PDP exit rates — it was turned off early because customers didn't respond well to the larger format.
+The Recommendation
+The team decided to scale Challenger A (the smaller format) for BR Mobile while turning off Desktop (which showed bag abandonment issues). They also flagged reviewing the new ON design when created. [BRONAT] PDP Sticky Add To Bag Page Test - Results
+Key caveat: The $800K is a ""best case"" number — it assumes the conversion lift holds at scale while ignoring the flat-to-negative AOS signal. The test was designed with an ~80% confidence threshold (lower than the conventional 95%), and the minimum detectable lift was ~2.0% for BR Mobile with ~1.9MM visits per variation over 5-6 weeks."
+Q-012,Was the Gen AI reviews 15 basis point return rate improvement statistically significant?,"The 15 basis point return rate figure actually appears in two Gen AI Reviews tests. I was able to extract the actual statistical data for the AT US test. Here's what the numbers show:
+[AT US] Model 1 vs Model 2 — Return Rate Data (Final as of 4/25)
+Variation
+Total Units
+Units Returned
+Return Rate
+Control (Model 1)
+226,962
+51,693
+22.78%
+Challenger (Model 2)
+229,839
+52,002
+22.63%
+Incremental
+ 
+ 
+?0.7% (~15 bps)
+
+p-value: 0.1 · Confidence: 90%
+Short answer: Borderline — it depends on your threshold.
+The test design specified a ~90% confidence threshold for the primary KPI (OPV). At that standard, the return rate improvement is exactly at the boundary (p = 0.1 = 90% confidence). At the conventional 95% confidence threshold, it's not significant.
+[GP US] No Summary vs Model 2 — Return Rate
+The GP test also reported a 15 bps improvement (~0.8% incremental, ~$2.25MM estimated savings), but that test ran for only ~2 weeks vs the planned 4–5 weeks (10/30–11/18). The results page does not report a p-value for GP's return rate, and the revenue metrics were explicitly flagged as not statistically significant.
+Why This Is a Tricky Call
+A few considerations worth flagging:
+Return rate wasn't the primary KPI. These tests were designed and powered for OPV (conversion). Return rate was a secondary/exploratory metric, meaning the sample size calculations weren't built around detecting a 15 bps return rate shift — they happened to pick one up, but the test wasn't optimized for that sensitivity.
+Multiple comparisons. Return rate is one of ~15 metrics examined across multiple brands. When you test many metrics, some will hit p = 0.1 by chance. No multiple-comparison correction (e.g., Bonferroni) was applied.
+But the pattern is remarkably consistent. This is the strongest argument in favor of the finding being real — every single brand showed a return rate improvement with Gen AI Reviews:
+Brand/Test
+Return Rate Improvement
+Estimated Savings
+ON US (Model 2)
+~1.0% incremental
+~$7MM
+BR US
+~1.1% incremental
+~$1.9MM
+AT US (M1 vs M2)
+~0.7% (15 bps)
+~$1.7MM
+GP US
+~0.8% (15 bps)
+~$2.25MM
+GFS
+~1.0% (11 bps)
+~$625K
+
+The probability of all five brands independently showing return rate improvement in the same direction by chance is very low (~3%), even if no individual test crosses 95% confidence. That cross-brand consistency is itself a form of statistical evidence.
+The business acted on it. Gap waited specifically for return rate data before scaling to 100% (the 11/21 feature flag was held through peak; the 1/20 deployment only went out after returns data confirmed the improvement).
+Bottom Line
+Any single brand's 15 bps improvement at p = 0.1 is not conclusive on its own. But the consistent direction across all five brands makes the overall finding credible — Gen AI Review Summaries likely do reduce returns, probably through better size/fit expectation-setting on PDP. The estimated combined savings across brands is ~$13.5MM annually.
+[AT US] Gen AI PDP Reviews Summary Test 2: Model 1 vs Model 2 V1- Results · [GP & GFS] Gen AI PDP Reviews Summary Test - Results
+Would you like me to pull the ON US or BR US return rate data to see if any of those achieved stronger individual significance?
+"
+Q-013,Which brand-challenger combinations reached significance in the Fit Tool test?,"Here's every brand-challenger combination from the [BRONGA + Factory] Value of Fit Tool Test: Drapr and TrueFit and whether it reached statistical significance. Test ran 2/28–3/31, all vs Control (No Fit Tool).
+Significance Summary
+Brand
+Challenger
+Net RPV ?
+Stat Sig?
+Significant On
+BR US
+A – TrueFit Only
+?1.0%
+? Yes
+Conversion
+ON US
+A – TrueFit Only
+?0.3%
+? Yes
+Basket Size
+ON US
+B – Drapr Only
+?1.3%
+? Yes
+Conversion + Basket Size
+ON US
+C – Drapr + TrueFit Fallback
+?1.4%
+? Yes
+Conversion + Basket Size
+GP US
+A – TrueFit Only
+?1.5%
+? Yes
+Conversion + Basket Size
+GP US
+B – Drapr Only
+?0.6%
+? Yes
+Conversion
+GP US
+C – Drapr + TrueFit Fallback
+?0.9%
+? Yes
+Conversion + Basket Size
+AT US
+TrueFit Only
+?0.5%
+? Yes
+Basket Size
+GFS US
+A – TrueFit Only
+?0.9%
+? Yes
+Conversion
+GFS US
+B – Drapr Only
+?0.9%
+? Yes
+Conversion + Basket Size
+GFS US
+C – Drapr + TrueFit Fallback
+?1.3%
+? Yes
+Conversion + Basket Size
+BRFS US
+TrueFit Only
++0.4%
+? No
+—
+
+Key Takeaway
+11 out of 12 brand-challenger combinations reached statistical significance — and every single one was negative. The only non-significant result was BRFS, which was the lone combination trending slightly positive (+0.4%).
+The consistent pattern: fit tools (both TrueFit and Drapr) hurt conversion and/or basket size across every mainline brand. The hypothesis was that when customers don't have a fit tool and are unsure between two sizes, they just buy one to try — effectively inflating conversion in the No Tool control. The fit tools may also have surfaced out-of-stock size recommendations, causing customers to abandon rather than substitute.
+[BRONGA + Factory] Value of Fit Tool Test: Drapr and TrueFit - Results · [BRONGA + Factory] Value of Fit Tool Test: Drapr and TrueFit
+Would you like me to pull the return rate data to see if the fit tools offset their RPV loss through fewer returns?"
+Q-014,Was the ON CTA Color test's 20-day run sufficient to reach significance?,"Based on the test results data, here's the statistical significance assessment:
+Sample Size & Power
+Market
+Control Visits
+Challenger Visits
+Total
+US
+2,523,787
+2,511,615
+5,035,402
+Canada
+485,205
+475,921
+961,126
+Combined
+—
+—
+~6MM visits
+
+With 5M+ visits in the US alone over 20 days, sample size was not the issue. At that volume, the test had more than enough statistical power to detect a meaningful lift — typically tests of this scale can detect effects as small as ±0.3–0.5% on Net RPV with 95% confidence.
+Why It Didn't Reach Significance
+The test didn't fail to reach significance because it was too short — it failed because the true effect size was essentially zero:
+Market
+Net RPV ?
+Confidence Level
+US
++0.1%
+Not significant
+Canada
++0.1%
+Not significant
+
+A +0.1% lift is well within normal noise. Even running this test for 60 or 90 days wouldn't have changed the outcome — you'd just get a more precise estimate of a near-zero effect. The confidence interval almost certainly straddles zero.
+Was 20 Days Sufficient?
+Yes, for the purpose of making a decision. Here's why:
+Volume was massive. ~250K visits/day in the US means the test stabilized quickly. Most e-commerce A/B tests need 2–4 weeks primarily to capture weekly seasonality cycles — this test covered nearly 3 full weeks (Mon 3/10 ? Sun 3/30), capturing all days of the week multiple times.
+The pattern was consistent across every cut. US and Canada showed the same directional result (+0.1%). New vs Returning — flat. Mobile vs Desktop — flat. When every segment tells the same story, additional runtime won't surface a hidden winner.
+The funnel told a coherent ""wash"" story. The Orange CTA consistently improved SB?Checkout but consistently hurt Checkout Conversion by a nearly identical offsetting amount. This isn't random noise — it's a real but self-canceling behavioral shift. More time would just confirm the same pattern.
+One caveat: The test ran entirely within mid-March, a relatively neutral retail period. It did not capture a promotional event (e.g., a site-wide sale). During promos, CTA visibility matters more because urgency is higher — so there's a theoretical argument that Orange could perform differently during peak events. But that would require a separate test, not a longer run of this one.
+Bottom Line
+20 days and ~6MM visits was more than sufficient. The test conclusively showed that CTA color has no meaningful impact on revenue in either market. The recommendation to keep Blue was well-supported — not because Orange was harmful, but because there was no evidence it helped, and Blue maintains brand consistency.
+[ON US+CA] CTA Color on Bag and Checkout - Results
+Would you like me to compare the statistical rigor of this test against other recent tests in the portfolio to see if run durations are generally appropriate?"
+Q-015,Did all four brands reach adequate sample sizes in the Certona vs Constructor test?,"Based on the results page for the [BRONGA US] Auto Discovery Test: Certona vs Constructor, here's what I found regarding sample sizes across the four brands:
+Only Old Navy (ON) achieved statistical significance. The other three brands did not:
+Brand
+Test Duration
+Required Sample Size (per variation)
+Statistical Significance
+ON
+3/27 – 4/29 (~5 weeks)
+~14MM visits
+? Yes (Conversion)
+BR
+4/1 – 5/8 (~5.3 weeks)
+~2.0MM visits
+? Not significant
+GP
+4/8 – 5/7 (~4.1 weeks)
+~6.2MM visits
+? Not significant
+AT
+4/9 – 5/8 (~4.1 weeks)
+~2.1MM visits
+? Not significant
+
+Each brand ran for approximately its estimated duration (~4–5 weeks), so the tests likely did collect close to their planned sample sizes. However, the lack of statistical significance for BR, GP, and AT suggests the actual effect sizes were smaller than the minimum detectable lifts designed for (BR ~1%, GP ~0.5%, AT ~0.8%). ON's much higher traffic volume gave it a very low MDE (~0.3%), which is why it was the only brand to detect a significant result.
+Despite the lack of significance for three brands, the overall recommendation was to proceed with Constructor since the impact was ""either positive or flat"" across all brands, with an estimated ~+$9.0MM annual incremental impact for ON alone.
+[BRONGA US] Auto Discovery Test: Certona vs Constructor - Results · [BRONGA US] Auto Discovery Test: Certona vs Constructor
+Would you like me to dig into the brand-level incremental impact details from the embedded charts on the results page?"

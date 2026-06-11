@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>[ATH ANDROID APP] Loyalty progress widget on account page - Feb 2024</title>
+  <link rel="canonical" href="https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010449"/>
+  <meta name="test_id" content="T-ATH-00449"/>
+  <meta name="confluence_page_id" content="TLCOE-2010449"/>
+  <meta name="confluence_url" content="https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010449"/>
+  <meta name="title" content="[ATH ANDROID APP] Loyalty progress widget on account page - Feb 2024"/>
+  <meta name="brand" content="Athleta"/>
+  <meta name="brand_code" content="ATH"/>
+  <meta name="market" content="US"/>
+  <meta name="value_stream" content="Account"/>
+  <meta name="channel" content="Android App"/>
+  <meta name="channel_section" content="Android Native"/>
+  <meta name="device" content="Mobile"/>
+  <meta name="audience" content="New Visitors"/>
+  <meta name="tactic" content="Value"/>
+  <meta name="test_type" content="Client-Side"/>
+  <meta name="vendor" content="Optimizely (Client-Side)"/>
+  <meta name="primary_kpi" content="Net RPV"/>
+  <meta name="secondary_kpis" content="PDP Exit Rate, Visits Split (Visit/Visitor), PDP Certona Engagement Rate"/>
+  <meta name="start_date" content="2024-02-01"/>
+  <meta name="end_date" content="2024-06-30"/>
+  <meta name="duration_days" content="150"/>
+  <meta name="sample_size_per_arm" content="1200000"/>
+  <meta name="mde_pct" content="1.38"/>
+  <meta name="confidence_pct" content="85"/>
+  <meta name="power_pct" content="80"/>
+  <meta name="exposure_pct" content="50"/>
+  <meta name="split" content="25/25/25/25"/>
+  <meta name="outcome" content="Loss"/>
+  <meta name="primary_kpi_delta_pct" content="-2.8"/>
+  <meta name="net_rpv_delta_pct" content="-2.61"/>
+  <meta name="aos_delta_pct" content="-2.33"/>
+  <meta name="visits_total" content="4800000"/>
+  <meta name="incremental_revenue_usd" content="0"/>
+  <meta name="averted_loss_usd" content="2293450"/>
+  <meta name="recommendation_adopted" content="No (averted loss)"/>
+  <meta name="related_test_ids" content=""/>
+  <meta name="sha256_source" content="d6cb30d436458db7fee0b29d519c45e4dff5d75aa11e786be0b240ce4aae7dd7"/>
+  <meta name="metadata_quality" content="high"/>
+  <meta name="template_version" content="2017.stable"/>
+  <script type="application/ld+json">{"test_id": "T-ATH-00449", "confluence_page_id": "TLCOE-2010449", "confluence_url": "https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010449", "title": "[ATH ANDROID APP] Loyalty progress widget on account page - Feb 2024", "brand": "Athleta", "brand_code": "ATH", "market": "US", "value_stream": "Account", "channel": "Android App", "channel_section": "Android Native", "device": "Mobile", "audience": "New Visitors", "tactic": "Value", "test_type": "Client-Side", "vendor": "Optimizely (Client-Side)", "primary_kpi": "Net RPV", "secondary_kpis": ["PDP Exit Rate", "Visits Split (Visit/Visitor)", "PDP Certona Engagement Rate"], "start_date": "2024-02-01", "end_date": "2024-06-30", "duration_days": 150, "sample_size_per_arm": 1200000, "mde_pct": 1.38, "confidence_pct": 85, "power_pct": 80, "exposure_pct": 50, "split": "25/25/25/25", "outcome": "Loss", "primary_kpi_delta_pct": -2.8, "net_rpv_delta_pct": -2.61, "aos_delta_pct": -2.33, "visits_total": 4800000, "incremental_revenue_usd": 0, "averted_loss_usd": 2293450, "recommendation_adopted": "No (averted loss)", "related_test_ids": [], "sha256_source": "d6cb30d436458db7fee0b29d519c45e4dff5d75aa11e786be0b240ce4aae7dd7", "metadata_quality": "high", "template_version": "2017.stable"}</script>
+</head>
+<body>
+<h1>[ATH ANDROID APP] Loyalty progress widget on account page - Feb 2024</h1>
+<blockquote><strong>Brand</strong>: Athleta (ATH) · <strong>Market</strong>: US · <strong>Value Stream</strong>: Account<br/><strong>Channel</strong>: Android App (Android Native) · <strong>Device</strong>: Mobile · <strong>Audience</strong>: New Visitors<br/><strong>Tactic</strong>: Value · <strong>Test Type</strong>: Client-Side · <strong>Vendor</strong>: Optimizely (Client-Side)<br/><strong>Window</strong>: 2024-02-01 → 2024-06-30 (150 days)<br/><strong>Outcome</strong>: <strong>Loss</strong> · <strong>Recommendation Adopted</strong>: No (averted loss)</blockquote>
+<hr/>
+<h2>1. Test Plan</h2>
+<h3>1.1 Problem Statement</h3>
+<p>On Athleta Account, the current control experience does not sufficiently support net rpv for the new visitors segment. Based on prior value-tactic learnings across the premium tier, we want to evaluate whether the proposed change moves the needle within the 150-day window.</p>
+<h3>1.2 Hypothesis</h3>
+<p>If we apply 'Loyalty progress widget' on Athleta Account (Android Native) to new visitors, then we expect a lift of at least 1.38% on Net RPV because a progress widget toward the next loyalty tier raises return-visit rate among members.</p>
+<h3>1.3 Experimental Changes</h3>
+<ul><li><strong>Control</strong>: existing Account experience on Athleta Android Native.</li><li><strong>Challenger</strong>: Loyalty progress widget variant — a progress widget toward the next loyalty tier raises return-visit rate among members.</li></ul>
+<h3>1.4 Significance Calculations &amp; Experimental Design</h3>
+<table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Brand</td><td>Athleta</td></tr><tr><td>Scenarios</td><td>1 Control + 1 Challenger (25/25/25/25)</td></tr><tr><td>Primary KPI</td><td>Net RPV</td></tr><tr><td>Minimum Detectable Lift</td><td>~1.38%</td></tr><tr><td>Confidence Threshold</td><td>85%</td></tr><tr><td>Power Threshold</td><td>80%</td></tr><tr><td>Sample Size per Variation</td><td>~1,200,000 visits</td></tr><tr><td>Estimated Duration</td><td>~150 days</td></tr><tr><td>Test Exposure</td><td>50% of eligible traffic</td></tr><tr><td>Audience Limitation</td><td>New Visitors</td></tr></tbody></table>
+<h3>1.5 Adobe Workspace</h3>
+<ul><li>Project: <em>Athleta US — Production</em></li><li>Workspace: <code>[ATH US] Loyalty progress widget Test</code></li><li>Filters: Return vs. New Visits · Segment (Global Blanket Correction Segment [Approved]) · Device Type · Page Type · Extreme Orders (COE — Exclude Extreme)</li></ul>
+<h3>1.6 Measurement Strategy</h3>
+<p><strong>Metrics (All Experiments)</strong>: Conversion Rate (OPV) · Net RPV · AOS · UPT · AUR · Total Visits · Visits Split (Visit/Visitor) · Variation Overlap</p>
+<p><strong>Metrics (Test Specific)</strong>:</p>
+<ul><li>PDP Exit Rate</li><li>Visits Split (Visit/Visitor)</li><li>PDP Certona Engagement Rate</li></ul>
+<p><strong>Segments (All Experiments)</strong>: New vs. Returning</p>
+<p><strong>Segments (Test Specific)</strong>: Desktop vs. Mobile · Loyalty vs. Non-Loyalty</p>
+<h3>1.7 Custom Metrics</h3>
+<table><thead><tr><th>Description / Location</th><th>Custom Variable</th><th>Tracking Notes</th></tr></thead><tbody><tr><td>Loyalty progress widget click</td><td>eVar47 — loyalty_progress_widget_click</td><td>Track once per visit</td></tr><tr><td>Loyalty progress widget view</td><td>eVar48 — loyalty_progress_widget_view</td><td>Track always</td></tr><tr><td>Account arrival from Loyalty progress widget</td><td>eVar49 — account_arrival</td><td>Track once per session</td></tr></tbody></table>
+<hr/>
+<h2>2. Test Results</h2>
+<h3>2.1 Findings (TL;DR)</h3>
+<p>Across the 150-day test window, the challenger underperformed the control on the primary KPI (Net RPV) by <strong>2.8%</strong> (statistically significant in the wrong direction). Net RPV moved by -2.61% and AOS by -2.33%.</p>
+<h3>2.2 Variation Description</h3>
+<ul><li><strong>Control</strong>: as-is Account on Athleta Android Native.</li><li><strong>Challenger</strong>: applies the <em>Loyalty progress widget</em> treatment described in §1.3.</li><li><em>Screenshots</em>: see Confluence attachments <code>control_T-ATH-00449.png</code>, <code>challenger_T-ATH-00449.png</code> (omitted from this synthetic export).</li></ul>
+<h3>2.3 Details</h3>
+<p>Across the 150-day test window, the challenger underperformed the control on the primary KPI (Net RPV) by <strong>2.8%</strong> (statistically significant in the wrong direction). Net RPV moved by -2.61% and AOS by -2.33%.</p>
+<p>Statistical significance was computed <strong>outside</strong> Optimizely (Excel + online calculator) per standard Test &amp; Learn COE practice — Optimizely's built-in significance is not reliable for GAP because of cross-brand basket attribution.</p>
+<h3>2.4 Impacts</h3>
+<table><thead><tr><th>Metric</th><th>Control</th><th>Challenger</th><th>Δ %</th></tr></thead><tbody><tr><td>Net RPV</td><td>baseline</td><td>challenger</td><td>▼ 2.61%</td></tr><tr><td>Net RPV</td><td>baseline</td><td>challenger</td><td>▼ 2.8%</td></tr><tr><td>AOS</td><td>baseline</td><td>challenger</td><td>▼ 2.33%</td></tr><tr><td>UPT</td><td>baseline</td><td>challenger</td><td>▼ 1.4%</td></tr><tr><td>AUR</td><td>baseline</td><td>challenger</td><td>▼ 0.93%</td></tr><tr><td>Total Visits (test arm)</td><td>—</td><td>1,200,000</td><td>—</td></tr><tr><td>Incremental Revenue (USD)</td><td>—</td><td>—</td><td>$0</td></tr><tr><td>Averted Loss (USD)</td><td>—</td><td>—</td><td>$2,293,450</td></tr></tbody></table>
+<h3>2.5 Segment Break-down</h3>
+<table><thead><tr><th>Segment</th><th>Value</th><th>Primary KPI Δ</th><th>Net RPV Δ</th></tr></thead><tbody><tr><td>Visit Type</td><td>New</td><td>-2.74%</td><td>-2.78%</td></tr><tr><td>Visit Type</td><td>Returning</td><td>-2.81%</td><td>-2.92%</td></tr><tr><td>Loyalty</td><td>Member</td><td>-3.11%</td><td>-2.9%</td></tr><tr><td>Loyalty</td><td>Non-Member</td><td>-2.96%</td><td>-2.56%</td></tr></tbody></table>
+<h3>2.6 Product Mix</h3>
+<p>Top contributing categories during the test window: women's tops, women's denim, men's polos, accessories. No anomalous category-level skew detected.</p>
+<h3>2.7 Gross Margin (GMS / Visit)</h3>
+<p>GMS/Visit moved in the wrong direction in line with the Net RPV decline; the loss is real revenue, not a mix shift.</p>
+<hr/>
+<h2>3. Recommendation</h2>
+<p><strong>Do NOT roll out. Investigate whether copy variant caused friction.</strong></p>
+<p>Recommendation adopted: <strong>No (averted loss)</strong>.</p>
+<h2>4. Optimization Opportunities (feeds next brainstorm)</h2>
+<ul><li>Re-run with a tighter MDE on the new visitors segment to confirm.</li><li>Explore the same hypothesis on the sister brand in the premium tier.</li><li>Consider follow-up on Shopping Bag where the same tactic (Value) has not yet been tested for Athleta.</li></ul>
+<h2>5. Related Tests</h2>
+<p><em>No prior closely-related tests recorded.</em></p>
+<hr/>
+<p><em>Generated synthetic record for POC retrieval testing. Template version 2017.stable, mirroring the Test &amp; Learn COE Confluence template walked through by Prateek Oberoi on 2026-05-06.</em></p>
+</body>
+</html>

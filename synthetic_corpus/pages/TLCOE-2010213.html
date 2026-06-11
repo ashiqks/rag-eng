@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>[BR EMAIL] Show estimated delivery date at checkout - May 2025</title>
+  <link rel="canonical" href="https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010213"/>
+  <meta name="test_id" content="T-BR-00213"/>
+  <meta name="confluence_page_id" content="TLCOE-2010213"/>
+  <meta name="confluence_url" content="https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010213"/>
+  <meta name="title" content="[BR EMAIL] Show estimated delivery date at checkout - May 2025"/>
+  <meta name="brand" content="Banana Republic"/>
+  <meta name="brand_code" content="BR"/>
+  <meta name="market" content="US"/>
+  <meta name="value_stream" content="Checkout"/>
+  <meta name="channel" content="Email"/>
+  <meta name="channel_section" content="Loyalty Email"/>
+  <meta name="device" content="All Devices"/>
+  <meta name="audience" content="First-time Buyers"/>
+  <meta name="tactic" content="Value"/>
+  <meta name="test_type" content="Client-Side"/>
+  <meta name="vendor" content="Optimizely (Client-Side)"/>
+  <meta name="primary_kpi" content="OPV Conversion Rate"/>
+  <meta name="secondary_kpis" content="PDP Certona Engagement Rate, Total Visits, Search Engagement Rate, PDP Exit Rate, Free Shipping Threshold Crossings"/>
+  <meta name="start_date" content="2025-05-11"/>
+  <meta name="end_date" content="2025-06-01"/>
+  <meta name="duration_days" content="21"/>
+  <meta name="sample_size_per_arm" content="15000000"/>
+  <meta name="mde_pct" content="1.04"/>
+  <meta name="confidence_pct" content="80"/>
+  <meta name="power_pct" content="80"/>
+  <meta name="exposure_pct" content="100"/>
+  <meta name="split" content="90/10 (holdback)"/>
+  <meta name="outcome" content="Flat"/>
+  <meta name="primary_kpi_delta_pct" content="0.21"/>
+  <meta name="net_rpv_delta_pct" content="0.16"/>
+  <meta name="aos_delta_pct" content="-0.21"/>
+  <meta name="visits_total" content="30000000"/>
+  <meta name="incremental_revenue_usd" content="0"/>
+  <meta name="averted_loss_usd" content="0"/>
+  <meta name="recommendation_adopted" content="N/A"/>
+  <meta name="related_test_ids" content=""/>
+  <meta name="sha256_source" content="898d21b0bcd04ab0b30e74fdb0f799adcee6a43376b6968d0324628df43907dc"/>
+  <meta name="metadata_quality" content="high"/>
+  <meta name="template_version" content="2017.stable"/>
+  <script type="application/ld+json">{"test_id": "T-BR-00213", "confluence_page_id": "TLCOE-2010213", "confluence_url": "https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010213", "title": "[BR EMAIL] Show estimated delivery date at checkout - May 2025", "brand": "Banana Republic", "brand_code": "BR", "market": "US", "value_stream": "Checkout", "channel": "Email", "channel_section": "Loyalty Email", "device": "All Devices", "audience": "First-time Buyers", "tactic": "Value", "test_type": "Client-Side", "vendor": "Optimizely (Client-Side)", "primary_kpi": "OPV Conversion Rate", "secondary_kpis": ["PDP Certona Engagement Rate", "Total Visits", "Search Engagement Rate", "PDP Exit Rate", "Free Shipping Threshold Crossings"], "start_date": "2025-05-11", "end_date": "2025-06-01", "duration_days": 21, "sample_size_per_arm": 15000000, "mde_pct": 1.04, "confidence_pct": 80, "power_pct": 80, "exposure_pct": 100, "split": "90/10 (holdback)", "outcome": "Flat", "primary_kpi_delta_pct": 0.21, "net_rpv_delta_pct": 0.16, "aos_delta_pct": -0.21, "visits_total": 30000000, "incremental_revenue_usd": 0, "averted_loss_usd": 0, "recommendation_adopted": "N/A", "related_test_ids": [], "sha256_source": "898d21b0bcd04ab0b30e74fdb0f799adcee6a43376b6968d0324628df43907dc", "metadata_quality": "high", "template_version": "2017.stable"}</script>
+</head>
+<body>
+<h1>[BR EMAIL] Show estimated delivery date at checkout - May 2025</h1>
+<blockquote><strong>Brand</strong>: Banana Republic (BR) · <strong>Market</strong>: US · <strong>Value Stream</strong>: Checkout<br/><strong>Channel</strong>: Email (Loyalty Email) · <strong>Device</strong>: All Devices · <strong>Audience</strong>: First-time Buyers<br/><strong>Tactic</strong>: Value · <strong>Test Type</strong>: Client-Side · <strong>Vendor</strong>: Optimizely (Client-Side)<br/><strong>Window</strong>: 2025-05-11 → 2025-06-01 (21 days)<br/><strong>Outcome</strong>: <strong>Flat</strong> · <strong>Recommendation Adopted</strong>: N/A</blockquote>
+<hr/>
+<h2>1. Test Plan</h2>
+<h3>1.1 Problem Statement</h3>
+<p>On Banana Republic Checkout, the current control experience does not sufficiently support opv conversion rate for the first-time buyers segment. Based on prior value-tactic learnings across the premium tier, we want to evaluate whether the proposed change moves the needle within the 21-day window.</p>
+<h3>1.2 Hypothesis</h3>
+<p>If we apply 'Checkout EDD' on Banana Republic Checkout (Loyalty Email) to first-time buyers, then we expect a lift of at least 1.04% on OPV Conversion Rate because surfacing the edd at checkout reduces last-minute drop-off.</p>
+<h3>1.3 Experimental Changes</h3>
+<ul><li><strong>Control</strong>: existing Checkout experience on Banana Republic Loyalty Email.</li><li><strong>Challenger</strong>: Checkout EDD variant — surfacing the edd at checkout reduces last-minute drop-off.</li></ul>
+<h3>1.4 Significance Calculations &amp; Experimental Design</h3>
+<table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Brand</td><td>Banana Republic</td></tr><tr><td>Scenarios</td><td>1 Control + 1 Challenger (90/10 (holdback))</td></tr><tr><td>Primary KPI</td><td>OPV Conversion Rate</td></tr><tr><td>Minimum Detectable Lift</td><td>~1.04%</td></tr><tr><td>Confidence Threshold</td><td>80%</td></tr><tr><td>Power Threshold</td><td>80%</td></tr><tr><td>Sample Size per Variation</td><td>~15,000,000 visits</td></tr><tr><td>Estimated Duration</td><td>~21 days</td></tr><tr><td>Test Exposure</td><td>100% of eligible traffic</td></tr><tr><td>Audience Limitation</td><td>First-time Buyers</td></tr></tbody></table>
+<h3>1.5 Adobe Workspace</h3>
+<ul><li>Project: <em>Banana Republic US — Production</em></li><li>Workspace: <code>[BR US] Checkout EDD Test</code></li><li>Filters: Return vs. New Visits · Segment (Global Blanket Correction Segment [Approved]) · Device Type · Page Type · Extreme Orders (COE — Exclude Extreme)</li></ul>
+<h3>1.6 Measurement Strategy</h3>
+<p><strong>Metrics (All Experiments)</strong>: Conversion Rate (OPV) · Net RPV · AOS · UPT · AUR · Total Visits · Visits Split (Visit/Visitor) · Variation Overlap</p>
+<p><strong>Metrics (Test Specific)</strong>:</p>
+<ul><li>PDP Certona Engagement Rate</li><li>Total Visits</li><li>Search Engagement Rate</li><li>PDP Exit Rate</li><li>Free Shipping Threshold Crossings</li></ul>
+<p><strong>Segments (All Experiments)</strong>: New vs. Returning</p>
+<p><strong>Segments (Test Specific)</strong>: Desktop vs. Mobile · Loyalty vs. Non-Loyalty</p>
+<h3>1.7 Custom Metrics</h3>
+<table><thead><tr><th>Description / Location</th><th>Custom Variable</th><th>Tracking Notes</th></tr></thead><tbody><tr><td>Checkout EDD click</td><td>eVar47 — checkout_edd_click</td><td>Track once per visit</td></tr><tr><td>Checkout EDD view</td><td>eVar48 — checkout_edd_view</td><td>Track always</td></tr><tr><td>Checkout arrival from Checkout EDD</td><td>eVar49 — checkout_arrival</td><td>Track once per session</td></tr></tbody></table>
+<hr/>
+<h2>2. Test Results</h2>
+<h3>2.1 Findings (TL;DR)</h3>
+<p>Across the 21-day test window, no statistically significant difference was observed on the primary KPI (OPV Conversion Rate); observed delta 0.21% sits within MDE (1.04%). Net RPV 0.16%, AOS -0.21% — also within noise.</p>
+<h3>2.2 Variation Description</h3>
+<ul><li><strong>Control</strong>: as-is Checkout on Banana Republic Loyalty Email.</li><li><strong>Challenger</strong>: applies the <em>Checkout EDD</em> treatment described in §1.3.</li><li><em>Screenshots</em>: see Confluence attachments <code>control_T-BR-00213.png</code>, <code>challenger_T-BR-00213.png</code> (omitted from this synthetic export).</li></ul>
+<h3>2.3 Details</h3>
+<p>Across the 21-day test window, no statistically significant difference was observed on the primary KPI (OPV Conversion Rate); observed delta 0.21% sits within MDE (1.04%). Net RPV 0.16%, AOS -0.21% — also within noise.</p>
+<p>Statistical significance was computed <strong>outside</strong> Optimizely (Excel + online calculator) per standard Test &amp; Learn COE practice — Optimizely's built-in significance is not reliable for GAP because of cross-brand basket attribution.</p>
+<h3>2.4 Impacts</h3>
+<table><thead><tr><th>Metric</th><th>Control</th><th>Challenger</th><th>Δ %</th></tr></thead><tbody><tr><td>Net RPV</td><td>baseline</td><td>challenger</td><td>▲ 0.16%</td></tr><tr><td>OPV Conversion Rate</td><td>baseline</td><td>challenger</td><td>▲ 0.21%</td></tr><tr><td>AOS</td><td>baseline</td><td>challenger</td><td>▼ 0.21%</td></tr><tr><td>UPT</td><td>baseline</td><td>challenger</td><td>▼ 0.13%</td></tr><tr><td>AUR</td><td>baseline</td><td>challenger</td><td>▼ 0.08%</td></tr><tr><td>Total Visits (test arm)</td><td>—</td><td>15,000,000</td><td>—</td></tr><tr><td>Incremental Revenue (USD)</td><td>—</td><td>—</td><td>$0</td></tr><tr><td>Averted Loss (USD)</td><td>—</td><td>—</td><td>$0</td></tr></tbody></table>
+<h3>2.5 Segment Break-down</h3>
+<table><thead><tr><th>Segment</th><th>Value</th><th>Primary KPI Δ</th><th>Net RPV Δ</th></tr></thead><tbody><tr><td>Visit Type</td><td>New</td><td>0.33%</td><td>0.17%</td></tr><tr><td>Visit Type</td><td>Returning</td><td>0.53%</td><td>-0.11%</td></tr><tr><td>Loyalty</td><td>Member</td><td>0.44%</td><td>-0.04%</td></tr><tr><td>Loyalty</td><td>Non-Member</td><td>-0.36%</td><td>0.1%</td></tr></tbody></table>
+<h3>2.6 Product Mix</h3>
+<p>Top contributing categories during the test window: women's tops, women's denim, men's polos, accessories. No anomalous category-level skew detected.</p>
+<h3>2.7 Gross Margin (GMS / Visit)</h3>
+<p>GMS/Visit was flat across both arms within MDE.</p>
+<hr/>
+<h2>3. Recommendation</h2>
+<p><strong>No change. The effect, if any, is below MDE.</strong></p>
+<p>Recommendation adopted: <strong>N/A</strong>.</p>
+<h2>4. Optimization Opportunities (feeds next brainstorm)</h2>
+<ul><li>Re-run with a tighter MDE on the first-time buyers segment to confirm.</li><li>Explore the same hypothesis on the sister brand in the premium tier.</li><li>Consider follow-up on PLP where the same tactic (Value) has not yet been tested for Banana Republic.</li></ul>
+<h2>5. Related Tests</h2>
+<p><em>No prior closely-related tests recorded.</em></p>
+<hr/>
+<p><em>Generated synthetic record for POC retrieval testing. Template version 2017.stable, mirroring the Test &amp; Learn COE Confluence template walked through by Prateek Oberoi on 2026-05-06.</em></p>
+</body>
+</html>

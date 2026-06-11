@@ -1,0 +1,7 @@
+google-cloud-aiplatform[evaluation]>=1.71.0
+google-cloud-discoveryengine>=0.13.0
+google-auth>=2.30.0
+pandas>=2.2.0
+python-dotenv>=1.0.0
+requests>=2.32.0
+tqdm>=4.66.0

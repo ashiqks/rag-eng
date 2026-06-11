@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>[GAP WEB] Per-tile colour swatches - Sep 2023</title>
+  <link rel="canonical" href="https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010278"/>
+  <meta name="test_id" content="T-GAP-00278"/>
+  <meta name="confluence_page_id" content="TLCOE-2010278"/>
+  <meta name="confluence_url" content="https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010278"/>
+  <meta name="title" content="[GAP WEB] Per-tile colour swatches - Sep 2023"/>
+  <meta name="brand" content="Gap"/>
+  <meta name="brand_code" content="GAP"/>
+  <meta name="market" content="US"/>
+  <meta name="value_stream" content="PLP"/>
+  <meta name="channel" content="Web"/>
+  <meta name="channel_section" content="Desktop"/>
+  <meta name="device" content="Desktop"/>
+  <meta name="audience" content="New Visitors"/>
+  <meta name="tactic" content="Value"/>
+  <meta name="test_type" content="Client-Side"/>
+  <meta name="vendor" content="Optimizely (Client-Side)"/>
+  <meta name="primary_kpi" content="Add-to-Bag Rate"/>
+  <meta name="secondary_kpis" content="Variation Overlap, Return Rate, Search Engagement Rate"/>
+  <meta name="start_date" content="2023-09-23"/>
+  <meta name="end_date" content="2024-01-21"/>
+  <meta name="duration_days" content="120"/>
+  <meta name="sample_size_per_arm" content="7200000"/>
+  <meta name="mde_pct" content="0.32"/>
+  <meta name="confidence_pct" content="85"/>
+  <meta name="power_pct" content="80"/>
+  <meta name="exposure_pct" content="10"/>
+  <meta name="split" content="90/10 (holdback)"/>
+  <meta name="outcome" content="Loss"/>
+  <meta name="primary_kpi_delta_pct" content="-3.93"/>
+  <meta name="net_rpv_delta_pct" content="-1.99"/>
+  <meta name="aos_delta_pct" content="-1.24"/>
+  <meta name="visits_total" content="14400000"/>
+  <meta name="incremental_revenue_usd" content="0"/>
+  <meta name="averted_loss_usd" content="1212021"/>
+  <meta name="recommendation_adopted" content="No (averted loss)"/>
+  <meta name="related_test_ids" content=""/>
+  <meta name="sha256_source" content="bdb2ed50ff187d384ce6466dcb8c110a5061df511b5da3f881658ce875ed84af"/>
+  <meta name="metadata_quality" content="high"/>
+  <meta name="template_version" content="2017.stable"/>
+  <script type="application/ld+json">{"test_id": "T-GAP-00278", "confluence_page_id": "TLCOE-2010278", "confluence_url": "https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010278", "title": "[GAP WEB] Per-tile colour swatches - Sep 2023", "brand": "Gap", "brand_code": "GAP", "market": "US", "value_stream": "PLP", "channel": "Web", "channel_section": "Desktop", "device": "Desktop", "audience": "New Visitors", "tactic": "Value", "test_type": "Client-Side", "vendor": "Optimizely (Client-Side)", "primary_kpi": "Add-to-Bag Rate", "secondary_kpis": ["Variation Overlap", "Return Rate", "Search Engagement Rate"], "start_date": "2023-09-23", "end_date": "2024-01-21", "duration_days": 120, "sample_size_per_arm": 7200000, "mde_pct": 0.32, "confidence_pct": 85, "power_pct": 80, "exposure_pct": 10, "split": "90/10 (holdback)", "outcome": "Loss", "primary_kpi_delta_pct": -3.93, "net_rpv_delta_pct": -1.99, "aos_delta_pct": -1.24, "visits_total": 14400000, "incremental_revenue_usd": 0, "averted_loss_usd": 1212021, "recommendation_adopted": "No (averted loss)", "related_test_ids": [], "sha256_source": "bdb2ed50ff187d384ce6466dcb8c110a5061df511b5da3f881658ce875ed84af", "metadata_quality": "high", "template_version": "2017.stable"}</script>
+</head>
+<body>
+<h1>[GAP WEB] Per-tile colour swatches - Sep 2023</h1>
+<blockquote><strong>Brand</strong>: Gap (GAP) · <strong>Market</strong>: US · <strong>Value Stream</strong>: PLP<br/><strong>Channel</strong>: Web (Desktop) · <strong>Device</strong>: Desktop · <strong>Audience</strong>: New Visitors<br/><strong>Tactic</strong>: Value · <strong>Test Type</strong>: Client-Side · <strong>Vendor</strong>: Optimizely (Client-Side)<br/><strong>Window</strong>: 2023-09-23 → 2024-01-21 (120 days)<br/><strong>Outcome</strong>: <strong>Loss</strong> · <strong>Recommendation Adopted</strong>: No (averted loss)</blockquote>
+<hr/>
+<h2>1. Test Plan</h2>
+<h3>1.1 Problem Statement</h3>
+<p>On Gap PLP, the current control experience does not sufficiently support add-to-bag rate for the new visitors segment. Based on prior value-tactic learnings across the mid tier, we want to evaluate whether the proposed change moves the needle within the 120-day window.</p>
+<h3>1.2 Hypothesis</h3>
+<p>If we apply 'PLP swatches' on Gap PLP (Desktop) to new visitors, then we expect a lift of at least 0.32% on Add-to-Bag Rate because showing colour swatches on the plp tile lets shoppers find their preferred colour without entering pdp.</p>
+<h3>1.3 Experimental Changes</h3>
+<ul><li><strong>Control</strong>: existing PLP experience on Gap Desktop.</li><li><strong>Challenger</strong>: PLP swatches variant — showing colour swatches on the plp tile lets shoppers find their preferred colour without entering pdp.</li></ul>
+<h3>1.4 Significance Calculations &amp; Experimental Design</h3>
+<table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Brand</td><td>Gap</td></tr><tr><td>Scenarios</td><td>1 Control + 1 Challenger (90/10 (holdback))</td></tr><tr><td>Primary KPI</td><td>Add-to-Bag Rate</td></tr><tr><td>Minimum Detectable Lift</td><td>~0.32%</td></tr><tr><td>Confidence Threshold</td><td>85%</td></tr><tr><td>Power Threshold</td><td>80%</td></tr><tr><td>Sample Size per Variation</td><td>~7,200,000 visits</td></tr><tr><td>Estimated Duration</td><td>~120 days</td></tr><tr><td>Test Exposure</td><td>10% of eligible traffic</td></tr><tr><td>Audience Limitation</td><td>New Visitors</td></tr></tbody></table>
+<h3>1.5 Adobe Workspace</h3>
+<ul><li>Project: <em>Gap US — Production</em></li><li>Workspace: <code>[GAP US] PLP swatches Test</code></li><li>Filters: Return vs. New Visits · Segment (Global Blanket Correction Segment [Approved]) · Device Type · Page Type · Extreme Orders (COE — Exclude Extreme)</li></ul>
+<h3>1.6 Measurement Strategy</h3>
+<p><strong>Metrics (All Experiments)</strong>: Conversion Rate (OPV) · Net RPV · AOS · UPT · AUR · Total Visits · Visits Split (Visit/Visitor) · Variation Overlap</p>
+<p><strong>Metrics (Test Specific)</strong>:</p>
+<ul><li>Variation Overlap</li><li>Return Rate</li><li>Search Engagement Rate</li></ul>
+<p><strong>Segments (All Experiments)</strong>: New vs. Returning</p>
+<p><strong>Segments (Test Specific)</strong>: Desktop vs. Mobile · Loyalty vs. Non-Loyalty</p>
+<h3>1.7 Custom Metrics</h3>
+<table><thead><tr><th>Description / Location</th><th>Custom Variable</th><th>Tracking Notes</th></tr></thead><tbody><tr><td>PLP swatches click</td><td>eVar47 — plp_swatches_click</td><td>Track once per visit</td></tr><tr><td>PLP swatches view</td><td>eVar48 — plp_swatches_view</td><td>Track always</td></tr><tr><td>PLP arrival from PLP swatches</td><td>eVar49 — plp_arrival</td><td>Track once per session</td></tr></tbody></table>
+<hr/>
+<h2>2. Test Results</h2>
+<h3>2.1 Findings (TL;DR)</h3>
+<p>Across the 120-day test window, the challenger underperformed the control on the primary KPI (Add-to-Bag Rate) by <strong>3.93%</strong> (statistically significant in the wrong direction). Net RPV moved by -1.99% and AOS by -1.24%.</p>
+<h3>2.2 Variation Description</h3>
+<ul><li><strong>Control</strong>: as-is PLP on Gap Desktop.</li><li><strong>Challenger</strong>: applies the <em>PLP swatches</em> treatment described in §1.3.</li><li><em>Screenshots</em>: see Confluence attachments <code>control_T-GAP-00278.png</code>, <code>challenger_T-GAP-00278.png</code> (omitted from this synthetic export).</li></ul>
+<h3>2.3 Details</h3>
+<p>Across the 120-day test window, the challenger underperformed the control on the primary KPI (Add-to-Bag Rate) by <strong>3.93%</strong> (statistically significant in the wrong direction). Net RPV moved by -1.99% and AOS by -1.24%.</p>
+<p>Statistical significance was computed <strong>outside</strong> Optimizely (Excel + online calculator) per standard Test &amp; Learn COE practice — Optimizely's built-in significance is not reliable for GAP because of cross-brand basket attribution.</p>
+<h3>2.4 Impacts</h3>
+<table><thead><tr><th>Metric</th><th>Control</th><th>Challenger</th><th>Δ %</th></tr></thead><tbody><tr><td>Net RPV</td><td>baseline</td><td>challenger</td><td>▼ 1.99%</td></tr><tr><td>Add-to-Bag Rate</td><td>baseline</td><td>challenger</td><td>▼ 3.93%</td></tr><tr><td>AOS</td><td>baseline</td><td>challenger</td><td>▼ 1.24%</td></tr><tr><td>UPT</td><td>baseline</td><td>challenger</td><td>▼ 0.74%</td></tr><tr><td>AUR</td><td>baseline</td><td>challenger</td><td>▼ 0.5%</td></tr><tr><td>Total Visits (test arm)</td><td>—</td><td>7,200,000</td><td>—</td></tr><tr><td>Incremental Revenue (USD)</td><td>—</td><td>—</td><td>$0</td></tr><tr><td>Averted Loss (USD)</td><td>—</td><td>—</td><td>$1,212,021</td></tr></tbody></table>
+<h3>2.5 Segment Break-down</h3>
+<table><thead><tr><th>Segment</th><th>Value</th><th>Primary KPI Δ</th><th>Net RPV Δ</th></tr></thead><tbody><tr><td>Device</td><td>Desktop</td><td>-3.65%</td><td>-1.62%</td></tr><tr><td>Device</td><td>Mobile</td><td>-3.52%</td><td>-1.8%</td></tr><tr><td>Device</td><td>Tablet</td><td>-3.45%</td><td>-2.01%</td></tr><tr><td>Visit Type</td><td>New</td><td>-3.84%</td><td>-1.79%</td></tr><tr><td>Visit Type</td><td>Returning</td><td>-4.35%</td><td>-1.61%</td></tr><tr><td>Loyalty</td><td>Member</td><td>-3.36%</td><td>-1.83%</td></tr><tr><td>Loyalty</td><td>Non-Member</td><td>-3.89%</td><td>-1.82%</td></tr></tbody></table>
+<h3>2.6 Product Mix</h3>
+<p>Top contributing categories during the test window: women's tops, women's denim, men's polos, accessories. No anomalous category-level skew detected.</p>
+<h3>2.7 Gross Margin (GMS / Visit)</h3>
+<p>GMS/Visit moved in the wrong direction in line with the Net RPV decline; the loss is real revenue, not a mix shift.</p>
+<hr/>
+<h2>3. Recommendation</h2>
+<p><strong>Do NOT roll out. Investigate whether copy variant caused friction.</strong></p>
+<p>Recommendation adopted: <strong>No (averted loss)</strong>.</p>
+<h2>4. Optimization Opportunities (feeds next brainstorm)</h2>
+<ul><li>Re-run with a tighter MDE on the new visitors segment to confirm.</li><li>Explore the same hypothesis on the sister brand in the discount tier.</li><li>Consider follow-up on PDP where the same tactic (Value) has not yet been tested for Gap.</li></ul>
+<h2>5. Related Tests</h2>
+<p><em>No prior closely-related tests recorded.</em></p>
+<hr/>
+<p><em>Generated synthetic record for POC retrieval testing. Template version 2017.stable, mirroring the Test &amp; Learn COE Confluence template walked through by Prateek Oberoi on 2026-05-06.</em></p>
+</body>
+</html>

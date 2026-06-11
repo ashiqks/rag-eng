@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-05-21T00:00:00.000Z" agent="Copilot" version="24.7.0" type="device">
+  <diagram id="D4-DataFlow" name="D4 - Data Flow (DFD)">
+    <mxGraphModel dx="2400" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="D4 - Data Flow Diagram (OWASP-style)&#xa;External entities (rectangles), Processes (circles), Data stores (open rectangles), Trust boundaries (red dashed)" style="text;html=1;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;fontColor=#202124;" vertex="1" parent="1">
+          <mxGeometry x="20" y="10" width="1660" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="legend" value="Notation&#xa;Rectangle = External Entity   |   Circle = Process   |   Open rectangle (=) = Data store   |   Red dashed = Trust boundary&#xa;Edge label = data class + protocol + auth" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5F6368;dashed=1;fontSize=10;fontColor=#202124;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="20" y="60" width="1660" height="48" as="geometry" />
+        </mxCell>
+
+        <!-- ============ TRUST BOUNDARIES ============ -->
+        <mxCell id="tb_internet" value="TB1: Internet (untrusted)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#C62828;strokeWidth=2;dashed=1;fontSize=11;fontStyle=1;fontColor=#7F0000;verticalAlign=top;align=left;spacingLeft=10;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="20" y="120" width="320" height="1240" as="geometry" />
+        </mxCell>
+
+        <mxCell id="tb_iap" value="TB2: IAP-authenticated session (gap.com user)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#C62828;strokeWidth=2;dashed=1;fontSize=11;fontStyle=1;fontColor=#7F0000;verticalAlign=top;align=left;spacingLeft=10;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="350" y="120" width="320" height="600" as="geometry" />
+        </mxCell>
+
+        <mxCell id="tb_internal" value="TB3: Internal Cloud Run mesh (IAM run.invoker, ingress=internal)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#C62828;strokeWidth=2;dashed=1;fontSize=11;fontStyle=1;fontColor=#7F0000;verticalAlign=top;align=left;spacingLeft=10;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="680" y="120" width="320" height="1240" as="geometry" />
+        </mxCell>
+
+        <mxCell id="tb_vpcsc" value="TB4: VPC-SC perimeter (managed Google services - private path only)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#C62828;strokeWidth=2;dashed=1;fontSize=11;fontStyle=1;fontColor=#7F0000;verticalAlign=top;align=left;spacingLeft=10;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="120" width="380" height="1240" as="geometry" />
+        </mxCell>
+
+        <mxCell id="tb_saas" value="TB5: SaaS (Atlassian-controlled)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#C62828;strokeWidth=2;dashed=1;fontSize=11;fontStyle=1;fontColor=#7F0000;verticalAlign=top;align=left;spacingLeft=10;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="120" width="280" height="1240" as="geometry" />
+        </mxCell>
+
+        <!-- ============ EXTERNAL ENTITIES (rectangles) ============ -->
+        <mxCell id="EE_USER" value="E1: User (gap.com)&#xa;senior analyst / PDM /&#xa;brand mgr / leadership" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#37474F;strokeWidth=2;fontSize=11;fontStyle=1;fontColor=#263238;" vertex="1" parent="1">
+          <mxGeometry x="60" y="170" width="240" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="EE_WS" value="E2: Google Workspace IdP&#xa;OIDC issuer for IAP&#xa;hd: gap.com" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#37474F;strokeWidth=2;fontSize=11;fontColor=#263238;" vertex="1" parent="1">
+          <mxGeometry x="60" y="280" width="240" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="EE_CONF" value="E3: Atlassian Confluence Cloud&#xa;Test &amp; Learn COE space&#xa;HTTPS + PAT (read-only)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#37474F;strokeWidth=2;fontSize=11;fontStyle=1;fontColor=#263238;" vertex="1" parent="1">
+          <mxGeometry x="1430" y="170" width="220" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="EE_GH" value="E4: GitHub (gap-genai-discovery)&#xa;source code, OIDC -&gt; Cloud Build" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#37474F;strokeWidth=2;fontSize=11;fontColor=#263238;" vertex="1" parent="1">
+          <mxGeometry x="60" y="380" width="240" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ============ EDGE PROCESS in TB2 ============ -->
+                <mxCell id="P_LB" value="P0: IAP (Cloud Run native)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#E8F0FE;strokeColor=#1A73E8;strokeWidth=2;fontSize=11;fontStyle=1;fontColor=#174EA6;" vertex="1" parent="1">
+          <mxGeometry x="380" y="170" width="260" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ============ PROCESSES (circles) in TB3 ============ -->
+        <mxCell id="P_WEB" value="P1: web (Cloud Run)&#xa;static SPA + BFF&#xa;sa-web" style="ellipse;whiteSpace=wrap;html=1;fillColor=#E6F4EA;strokeColor=#137333;strokeWidth=2;fontSize=11;fontStyle=1;fontColor=#0D652D;" vertex="1" parent="1">
+          <mxGeometry x="710" y="170" width="260" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="P_GW" value="P2: gateway (Cloud Run)&#xa;auth, rate-limit, prompt redaction&#xa;sa-gateway" style="ellipse;whiteSpace=wrap;html=1;fillColor=#E6F4EA;strokeColor=#137333;strokeWidth=2;fontSize=11;fontStyle=1;fontColor=#0D652D;" vertex="1" parent="1">
+          <mxGeometry x="710" y="290" width="260" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="P_AGENT" value="P3: agent (Cloud Run, ADK)&#xa;orchestrates skills, calls VAIS + Gemini&#xa;sa-agent" style="ellipse;whiteSpace=wrap;html=1;fillColor=#E6F4EA;strokeColor=#137333;strokeWidth=2;fontSize=11;fontStyle=1;fontColor=#0D652D;" vertex="1" parent="1">
+          <mxGeometry x="710" y="410" width="260" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="P_MCP" value="P4: BigQuery MCP server (managed)&#xa;bigquery.googleapis.com/mcp&#xa;Google-hosted (no SA in our project)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#D1F2EB;strokeColor=#1ABC9C;strokeWidth=2;fontSize=11;fontStyle=1;fontColor=#0E6655;" vertex="1" parent="1">
+          <mxGeometry x="710" y="530" width="260" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="P_EXP" value="P5: exporter (Cloud Run Job, weekly)&#xa;Confluence -&gt; HTML -&gt; GCS&#xa;sa-exporter" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#E65100;strokeWidth=2;fontSize=11;fontStyle=1;fontColor=#5F2C00;" vertex="1" parent="1">
+          <mxGeometry x="710" y="710" width="260" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="P_REIDX" value="P6: reindex (Cloud Run Job, weekly)&#xa;triggers VAIS documents.import&#xa;sa-reindex" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#E65100;strokeWidth=2;fontSize=11;fontStyle=1;fontColor=#5F2C00;" vertex="1" parent="1">
+          <mxGeometry x="710" y="820" width="260" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="P_EVAL" value="P7: weekly eval (Scheduler -&gt; agent endpoint)&#xa;runs golden_evals via Vertex Eval&#xa;sa-agent" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F3E8FD;strokeColor=#8430CE;strokeWidth=2;fontSize=11;fontStyle=1;fontColor=#3C1361;" vertex="1" parent="1">
+          <mxGeometry x="710" y="930" width="260" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="P_LOG" value="P8: Cloud Logging sink -&gt; Pub/Sub -&gt; BQ" style="ellipse;whiteSpace=wrap;html=1;fillColor=#E8F0FE;strokeColor=#1A73E8;strokeWidth=2;fontSize=11;fontStyle=1;fontColor=#174EA6;" vertex="1" parent="1">
+          <mxGeometry x="710" y="1040" width="260" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="P_CB" value="P9: Cloud Build&#xa;build + sign + deploy" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5F6368;strokeWidth=2;fontSize=11;fontColor=#202124;" vertex="1" parent="1">
+          <mxGeometry x="710" y="1130" width="260" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ============ DATA STORES in TB4 (VPC-SC) ============ -->
+        <mxCell id="DS_VAIS" value="DS1: Vertex AI Search&#xa;engine + data store + Sessions&#xa;(query corpus + chat history)" style="shape=datastore;whiteSpace=wrap;html=1;fillColor=#F3E8FD;strokeColor=#8430CE;strokeWidth=2;fontSize=11;fontStyle=1;fontColor=#3C1361;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="170" width="300" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="DS_MG" value="DS2: Vertex Model Garden endpoints&#xa;Gemini 2.5 Flash + Pro" style="shape=datastore;whiteSpace=wrap;html=1;fillColor=#F3E8FD;strokeColor=#8430CE;strokeWidth=2;fontSize=11;fontColor=#3C1361;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="290" width="300" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="DS_GCS" value="DS3: GCS gap-genai-discovery-corpus-html&#xa;(HTML pages, CMEK key-gcs)" style="shape=datastore;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;strokeWidth=2;fontSize=11;fontStyle=1;fontColor=#5F4300;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="410" width="300" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="DS_BQ_OPS" value="DS4: BigQuery (gap_genai_app)&#xa;request_logs, skill_invocations, feedback,&#xa;eval_runs, golden_evals, audit_logs (CMEK key-bq)" style="shape=datastore;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;strokeWidth=2;fontSize=11;fontStyle=1;fontColor=#5F4300;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="530" width="300" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="DS_BQ_EXP" value="DS5: BigQuery v_experiment_kpis (authorized view)&#xa;over experiments + experiment_clusters&#xa;(sa-agent dataViewer on view only, CMEK key-bq)" style="shape=datastore;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;strokeWidth=2;fontSize=11;fontColor=#5F4300;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="660" width="300" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="DS_SM" value="DS6: Secret Manager&#xa;confluence-pat" style="shape=datastore;whiteSpace=wrap;html=1;fillColor=#FFEBEE;strokeColor=#C62828;strokeWidth=2;fontSize=11;fontStyle=1;fontColor=#7F0000;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="770" width="300" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="DS_KMS" value="DS7: Cloud KMS keyring gap-genai-kr&#xa;keys: key-gcs, key-bq" style="shape=datastore;whiteSpace=wrap;html=1;fillColor=#FFEBEE;strokeColor=#C62828;strokeWidth=2;fontSize=11;fontColor=#7F0000;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="850" width="300" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="DS_AR" value="DS8: Artifact Registry&#xa;gap-web, gap-backend, gap-jobs" style="shape=datastore;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;strokeWidth=2;fontSize=11;fontColor=#5F4300;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="930" width="300" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="DS_AUD" value="DS9: BigQuery audit_logs&#xa;1y retention, append-only" style="shape=datastore;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;strokeWidth=2;fontSize=11;fontColor=#5F4300;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="1010" width="300" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ============ FLOWS ============ -->
+        <!-- F1 user -> LB -->
+        <mxCell id="F1" value="F1: question + session_id&#xa;HTTPS/443, IAP OIDC&#xa;PII: low (free-text query)" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#137333;strokeWidth=2;fontSize=10;fontColor=#0D652D;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="EE_USER" target="P_LB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- F1a OIDC token -->
+        <mxCell id="F1a" value="F1a: OIDC token (signed JWT)" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#5F6368;strokeWidth=1.2;dashed=1;dashPattern=4 3;fontSize=9;fontColor=#5F6368;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="EE_WS" target="P_LB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- F2 LB -> WEB -->
+        <mxCell id="F2" value="F2: question + JWT&#xa;HTTPS/443 internal, run.invoker" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#137333;strokeWidth=2;fontSize=10;fontColor=#0D652D;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="P_LB" target="P_WEB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- F3 WEB -> GW -->
+        <mxCell id="F3" value="F3: AskRequest{ question, session_id, user_pseudo_id }&#xa;HTTPS internal, run.invoker (sa-web)" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#137333;strokeWidth=2;fontSize=10;fontColor=#0D652D;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="P_WEB" target="P_GW">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- F4 GW -> AGENT -->
+        <mxCell id="F4" value="F4: validated request (rate-limited, PII-redacted)&#xa;HTTPS internal, run.invoker (sa-gateway)" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#137333;strokeWidth=2;fontSize=10;fontColor=#0D652D;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="P_GW" target="P_AGENT">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- F5 AGENT -> VAIS -->
+        <mxCell id="F5" value="F5: search/answer({ query, session })&#xa;gRPC/443 (sa-agent, discoveryengine.user)" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#8430CE;strokeWidth=2;fontSize=10;fontStyle=1;fontColor=#3C1361;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="P_AGENT" target="DS_VAIS">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- F6 AGENT -> Model Garden -->
+        <mxCell id="F6" value="F6: predict({ prompt, grounding_chunks })&#xa;TLS/443 (sa-agent, aiplatform.user)" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#8430CE;strokeWidth=2;fontSize=10;fontStyle=1;fontColor=#3C1361;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="P_AGENT" target="DS_MG">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- F7 AGENT -> MCP -->
+        <mxCell id="F7" value="F7: MCP call (skill: experiments.read)&#xa;HTTPS internal, run.invoker (sa-agent)" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#1A73E8;strokeWidth=2;fontSize=10;fontStyle=1;fontColor=#174EA6;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="P_AGENT" target="P_MCP">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- F8 MCP -> BQ experiments -->
+        <mxCell id="F8" value="F8: jobs.query on v_experiment_kpis&#xa;(sa-agent identity propagated by managed MCP;&#xa;auto Cloud Audit Logs tag goog-mcp-server:true)" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#F9A825;strokeWidth=2;fontSize=10;fontStyle=1;fontColor=#5F4300;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="P_MCP" target="DS_BQ_EXP">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- F9 AGENT -> BQ ops (logs/feedback) -->
+        <mxCell id="F9" value="F9: insert request_log + skill_invocation + (later) feedback&#xa;BQ insertAll (sa-agent, dataEditor on those tables only)" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#F9A825;strokeWidth=1.5;dashed=1;dashPattern=1 3;fontSize=10;fontColor=#5F4300;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="P_AGENT" target="DS_BQ_OPS">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- F10 VAIS Sessions internal -->
+        <mxCell id="F10" value="F10: VAIS Sessions auto-store&#xa;(turns indexed by user_pseudo_id)" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#8430CE;strokeWidth=1.2;dashed=1;dashPattern=1 3;fontSize=9;fontColor=#3C1361;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="DS_VAIS" target="DS_VAIS">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1380" y="170" />
+              <mxPoint x="1380" y="220" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- F11 AGENT -> WEB response -->
+        <mxCell id="F11" value="F11: AskResponse&#xa;{ answer_text, citations, session_id }" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#137333;strokeWidth=2;fontSize=10;fontColor=#0D652D;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="P_AGENT" target="P_WEB">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="660" y="450" />
+              <mxPoint x="660" y="210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- F12 WEB -> User -->
+        <mxCell id="F12" value="F12: rendered answer + citation links&#xa;HTTPS/443 (browser session cookie, IAP)" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#137333;strokeWidth=2;fontSize=10;fontColor=#0D652D;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="P_WEB" target="EE_USER">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="660" y="210" />
+              <mxPoint x="320" y="210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ===== Weekly ingest (orange) ===== -->
+        <mxCell id="F13" value="F13: get confluence-pat&#xa;TLS (sa-exporter, secretAccessor)" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#C62828;strokeWidth=1.5;fontSize=10;fontColor=#7F0000;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="P_EXP" target="DS_SM">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="F14" value="F14: GET /wiki/rest/api/content&#xa;HTTPS via Cloud NAT (PAT bearer)" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#E65100;strokeWidth=2;fontSize=10;fontStyle=1;fontColor=#BF360C;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="P_EXP" target="EE_CONF">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="F15" value="F15: HTML page upload&#xa;TLS (sa-exporter, objectAdmin)" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#F9A825;strokeWidth=2;fontSize=10;fontStyle=1;fontColor=#5F4300;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="P_EXP" target="DS_GCS">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="F16" value="F16: documents.import(gs://corpus-html)&#xa;gRPC (sa-reindex, discoveryengine.editor)" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#8430CE;strokeWidth=2;fontSize=10;fontStyle=1;fontColor=#3C1361;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="P_REIDX" target="DS_VAIS">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="F16a" value="F16a: VAIS reads HTML (Discoveryengine SA)&#xa;TLS internal" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#F9A825;strokeWidth=1.2;dashed=1;dashPattern=1 3;fontSize=9;fontColor=#5F4300;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="DS_VAIS" target="DS_GCS">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== Eval & ops ===== -->
+        <mxCell id="F17" value="F17: golden_evals read + eval_runs write&#xa;BQ (sa-agent dataEditor on those tables)" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#F9A825;strokeWidth=1.5;dashed=1;dashPattern=1 3;fontSize=10;fontColor=#5F4300;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="P_EVAL" target="DS_BQ_OPS">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="F18" value="F18: Vertex Eval Service&#xa;TLS (sa-agent, aiplatform.user)" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#8430CE;strokeWidth=1.2;dashed=1;dashPattern=1 3;fontSize=10;fontColor=#3C1361;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="P_EVAL" target="DS_MG">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="F19" value="F19: app + access logs (Cloud Logging API, all SAs)" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#1A73E8;strokeWidth=1.2;dashed=1;dashPattern=1 3;fontSize=10;fontColor=#174EA6;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="P_AGENT" target="P_LOG">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="F20" value="F20: log sink -&gt; BQ (request_logs / audit_logs)" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#1A73E8;strokeWidth=1.2;dashed=1;dashPattern=1 3;fontSize=10;fontColor=#174EA6;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="P_LOG" target="DS_AUD">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- KMS encrypts -->
+        <mxCell id="K1" value="key-gcs (CMEK)" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#C62828;strokeWidth=1;dashed=1;dashPattern=1 3;fontSize=9;fontColor=#7F0000;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="DS_KMS" target="DS_GCS">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="K2" value="key-bq (CMEK)" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#C62828;strokeWidth=1;dashed=1;dashPattern=1 3;fontSize=9;fontColor=#7F0000;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="DS_KMS" target="DS_BQ_OPS">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="K3" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#C62828;strokeWidth=1;dashed=1;dashPattern=1 3;" edge="1" parent="1" source="DS_KMS" target="DS_BQ_EXP">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- CI/CD -->
+        <mxCell id="F21" value="F21: webhook + OIDC&#xa;HTTPS" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#5F6368;strokeWidth=1.2;dashed=1;dashPattern=1 3;fontSize=9;fontColor=#5F6368;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="EE_GH" target="P_CB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="F22" value="F22: push image + deploy revision&#xa;Cloud Build SA (signed images)" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#5F6368;strokeWidth=1.2;dashed=1;dashPattern=1 3;fontSize=9;fontColor=#5F6368;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="P_CB" target="DS_AR">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,207 @@
+# D2 - Physical Diagram
+# Project: gap-genai-discovery | Region: us-central1 | Env: POC
+# Render: d2 --layout=elk --theme=1 D2_Physical.d2 D2_Physical.svg
+
+direction: right
+
+title: "D2 - Physical | Project gap-genai-discovery | Region us-central1 | Env POC" {
+  near: top-center
+  shape: text
+  style.font-size: 24
+  style.bold: true
+}
+
+# ============ EXTERNAL ENTITIES ============
+users: "Users (gap.com)\nanalysts / PDM / brand mgr / leadership" {
+  shape: person
+  style.fill: "#ECEFF1"
+}
+
+workspace: "Google Workspace IdP\nOIDC (hd=gap.com)" {
+  shape: cloud
+}
+
+confluence: "Atlassian Confluence Cloud\nTest & Learn COE space" {
+  shape: cloud
+  style.fill: "#0052CC"
+  style.font-color: "#FFFFFF"
+}
+
+github: "GitHub\ngap-genai-discovery repo" {
+  shape: cloud
+}
+
+# ============ EDGE PLANE ============
+edge: "Edge & Networking" {
+  style.fill: "#E8F0FE"
+  style.stroke: "#1A73E8"
+  style.stroke-dash: 5
+
+  dns: "Cloud DNS\ngap-genai.<domain>" {style.fill: "#4284F3"; style.font-color: "#FFFFFF"}
+  iap: "IAP-on-Cloud-Run\nWorkspace OIDC gate (hd=gap.com)\nmanaged TLS (Cloud Run native)" {style.fill: "#1976D2"; style.font-color: "#FFFFFF"}
+  vpc: "VPC gap-genai-vpc\nsubnet 10.10.0.0/24\nPrivate Google Access ON" {style.fill: "#E3F2FD"}
+  connector: "Serverless VPC Access\ngap-genai-connector (/28)" {style.fill: "#E3F2FD"}
+  nat: "Cloud NAT\n1 static IP (Confluence allowlist)" {style.fill: "#FFE0B2"}
+  vpcsc: "VPC-SC perimeter\nrestricts DE/AI/BQ/GCS/SM/Logs/Mon" {
+    style.fill: "#FFEBEE"
+    style.stroke: "#C62828"
+    style.stroke-dash: 3
+  }
+}
+
+# ============ COMPUTE PLANE ============
+compute: "Compute - Cloud Run" {
+  style.fill: "#E6F4EA"
+  style.stroke: "#137333"
+  style.stroke-dash: 5
+
+  web: "gap-genai-discovery-web\nReact SPA (AR-9)\nservice | min=1 max=10\ningress=internal+IAP\nSA: sa-web" {style.fill: "#4284F3"; style.font-color: "#FFFFFF"}
+  gateway: "gap-genai-discovery-gateway\nservice | ingress=internal\nSA: sa-gateway" {style.fill: "#4284F3"; style.font-color: "#FFFFFF"}
+  agent: "gap-genai-discovery-agent\nADK runtime | min=1 max=20\ningress=internal\nSA: sa-agent" {style.fill: "#4284F3"; style.font-color: "#FFFFFF"}
+  exporter: "gap-genai-discovery-exporter\nCloud Run Job (weekly)\nSA: sa-exporter" {style.fill: "#34A853"; style.font-color: "#FFFFFF"}
+  reindex: "gap-genai-discovery-reindex\nCloud Run Job (weekly)\nSA: sa-reindex" {style.fill: "#34A853"; style.font-color: "#FFFFFF"}
+}
+
+# ============ MANAGED AI PLANE ============
+ai: "Managed AI (regional us-central1)" {
+  style.fill: "#F3E8FD"
+  style.stroke: "#8430CE"
+  style.stroke-dash: 5
+
+  vais: "Vertex AI Search engine\ngap-genai-discovery-search\nEnterprise + LLM Add-on" {style.fill: "#8430CE"; style.font-color: "#FFFFFF"}
+  vds: "VAIS Data Store\ngap-genai-discovery-corpus\nunstructured HTML" {style.fill: "#F3E8FD"}
+  vsess: "VAIS Sessions store\nkeyed by user_pseudo_id" {style.fill: "#F3E8FD"}
+  mgarden: "Vertex Model Garden\ngemini-2.5-flash + gemini-2.5-pro" {style.fill: "#8430CE"; style.font-color: "#FFFFFF"}
+  eval: "Vertex AI\nEvaluation Service" {style.fill: "#8430CE"; style.font-color: "#FFFFFF"}
+  bqmcp: "BigQuery MCP server (managed)\nbigquery.googleapis.com/mcp\nGoogle-hosted, zero infra\nOAuth2 + IAM (sa-agent)\nModel Armor floor settings ON" {style.fill: "#1ABC9C"; style.font-color: "#FFFFFF"}
+}
+
+# ============ DATA PLANE ============
+data: "Data plane (regional us-central1)" {
+  style.fill: "#FFF8E1"
+  style.stroke: "#F9A825"
+  style.stroke-dash: 5
+
+  gcs: "GCS gap-genai-discovery-corpus-html\nCMEK key-gcs | versioned | UBLA" {
+    shape: cylinder
+    style.fill: "#F9A825"
+    style.font-color: "#FFFFFF"
+  }
+  bq: "BigQuery gap_genai_app\n(CMEK key-bq, us-central1)" {
+    shape: cylinder
+    style.fill: "#F9A825"
+    style.font-color: "#FFFFFF"
+  }
+  tables: |md
+  **Tables (CMEK key-bq) - product data only (AR-5)**
+  - feedback (thumbs + freetext)
+  - golden_evals, eval_runs
+  - app_config.skill_registry
+  - app_config.ingest_state
+  - experiments (raw)
+  - experiment_clusters (raw)
+
+  **Authorized view (read surface for the agent):**
+  - v_experiment_kpis
+    = experiments JOIN experiment_clusters
+    Agent sees only this view; raw tables are
+    hidden behind the view's authorized grant.
+
+  Operational telemetry (request_logs,
+  skill_invocations, traces, latency,
+  llm_tokens_in/out) lives in the
+  Cloud Observability Suite, not BQ.
+  |
+  ar: "Artifact Registry\nrepos: gap-web, gap-backend, gap-jobs" {style.fill: "#4284F3"; style.font-color: "#FFFFFF"}
+}
+
+# ============ SECURITY PLANE ============
+security: "Security" {
+  style.fill: "#FFEBEE"
+  style.stroke: "#C62828"
+  style.stroke-dash: 5
+
+  sm: "Secret Manager\nconfluence-pat" {style.fill: "#C62828"; style.font-color: "#FFFFFF"}
+  kms: "Cloud KMS keyring gap-genai-kr\nkeys: key-gcs, key-bq" {style.fill: "#C62828"; style.font-color: "#FFFFFF"}
+  iam: "Cloud IAM" {style.fill: "#C62828"; style.font-color: "#FFFFFF"}
+  sas: |md
+  **Service accounts (least privilege)**
+  - sa-web -> run.invoker on gateway
+  - sa-gateway -> run.invoker on agent
+  - sa-agent -> DE.user, AIP.user,
+      mcp.toolUser, BQ.jobUser,
+      BQ.dataViewer on v_experiment_kpis (view only),
+      BQ.dataEditor on feedback (writes only)
+      + IAM deny policy on read-write MCP tools
+  - sa-exporter -> GCS.objectAdmin (corpus), SM.secretAccessor (confluence-pat)
+  - sa-reindex -> DE.editor, GCS.objectViewer
+  |
+}
+
+# ============ OPS / CICD ============
+ops: "Ops & CI/CD" {
+  style.fill: "#FFFFFF"
+  style.stroke: "#5F6368"
+  style.stroke-dash: 5
+
+  logging: "Cloud Observability Suite (AR-5)\nLogging + Monitoring + Trace\nProfiler + Error Reporting" {style.fill: "#4284F3"; style.font-color: "#FFFFFF"}
+  monitoring: "Log-based metrics (AR-6)\ngap_genai/llm_tokens_in\ngap_genai/llm_tokens_out\ngap_genai/llm_calls\ngap_genai/llm_cost_usd\n+ SLOs + uptime + alerts" {style.fill: "#4284F3"; style.font-color: "#FFFFFF"}
+  billing: "Cloud Billing (AR-6)\nline-item budgets on\nDiscovery Engine + Vertex AI\nMonitoring alert policy on\nllm_tokens_out rate-of-change" {style.fill: "#FDFEFE"; style.stroke: "#595959"}
+  trace: "Cloud Trace + Error Reporting\n(OTel from Cloud Run)" {style.fill: "#E8F0FE"}
+  scheduler: "Cloud Scheduler\nweekly-export, weekly-reindex,\nweekly-eval, nightly-session-prune" {style.fill: "#4284F3"; style.font-color: "#FFFFFF"}
+  pubsub: "Pub/Sub gap-genai-events\n(scheduler -> jobs fan-out)" {style.fill: "#E8F0FE"}
+  cb: "Cloud Build\ntriggers from GitHub" {style.fill: "#4284F3"; style.font-color: "#FFFFFF"}
+}
+
+# ============ EDGES ============
+# Request path
+users -> workspace: "OIDC sign-in (TLS/443)" {style.stroke-dash: 4}
+users -> edge.dns: "HTTPS/443"
+edge.dns -> edge.iap: "A record"
+edge.iap -> compute.web: "HTTPS/443 (IAP-on-Cloud-Run, run.invoker via sa-web)"
+compute.web -> compute.gateway: "HTTPS internal\nrun.invoker (sa-web)"
+compute.gateway -> compute.agent: "HTTPS internal\nrun.invoker (sa-gateway)"
+
+# Agent -> Managed AI
+compute.agent -> ai.vais: ":answer (gRPC/443, sa-agent)" {style.stroke: "#8430CE"; style.bold: true}
+compute.agent -> ai.mgarden: "Gemini Flash + Pro\nTLS/443 (sa-agent)\nresp.usage_metadata -> AR-6" {style.stroke: "#8430CE"}
+compute.agent -> ai.bqmcp: "MCP JSON-RPC / HTTPS\nOAuth2 (sa-agent)\nexecute_sql_readonly on v_experiment_kpis" {style.stroke: "#1ABC9C"; style.bold: true}
+ai.vais -> ai.vds {style.stroke-dash: 3; style.stroke: "#8430CE"}
+ai.vais -> ai.vsess {style.stroke-dash: 3; style.stroke: "#8430CE"}
+
+# Managed AI <-> Data
+ai.vds -> data.gcs: "reads HTML (DE service agent)" {style.stroke: "#F9A825"}
+ai.bqmcp -> data.bq: "BQ jobs.query (sa-agent identity)\nview: v_experiment_kpis\nauto Cloud Audit Logs\n(goog-mcp-server:true)" {style.stroke: "#F9A825"; style.bold: true}
+compute.agent -> data.bq: "feedback writes (sa-agent)" {style.stroke: "#F9A825"; style.stroke-dash: 3}
+data.bq -> data.tables {style.stroke-dash: 1; style.stroke: "#F9A825"}
+
+# Weekly ingest
+ops.scheduler -> compute.exporter: "weekly cron"
+ops.scheduler -> compute.reindex: "weekly cron"
+ops.scheduler -> compute.agent: "weekly eval" {style.stroke: "#8430CE"; style.stroke-dash: 3}
+compute.exporter -> security.sm: "get confluence-pat" {style.stroke: "#C62828"; style.stroke-dash: 3}
+compute.exporter -> edge.connector: "via VPC connector" {style.stroke: "#E65100"; style.stroke-dash: 3}
+edge.connector -> edge.nat {style.stroke: "#E65100"}
+edge.nat -> confluence: "HTTPS/443 + PAT" {style.stroke: "#E65100"; style.bold: true}
+compute.exporter -> data.gcs: "HTML upload (sa-exporter)" {style.stroke: "#F9A825"}
+compute.reindex -> ai.vais: "documents.import (sa-reindex)" {style.stroke: "#8430CE"}
+
+# KMS
+security.kms -> data.gcs: "key-gcs (CMEK)" {style.stroke: "#C62828"; style.stroke-dash: 3}
+security.kms -> data.bq: "key-bq (CMEK)" {style.stroke: "#C62828"; style.stroke-dash: 3}
+
+# CICD
+github -> ops.cb: "trigger" {style.stroke-dash: 3}
+ops.cb -> data.ar: "push image" {style.stroke-dash: 3}
+data.ar -> compute.agent: "deploy revisions" {style.stroke-dash: 3}
+
+# Observability (AR-5, AR-6) - OTel from every service/job
+compute.web -> ops.logging: "OTel logs+traces" {style.stroke: "#1A73E8"; style.stroke-dash: 3}
+compute.gateway -> ops.logging {style.stroke: "#1A73E8"; style.stroke-dash: 3}
+compute.agent -> ops.logging: "OTel logs+traces+metrics\nskill_name, model_id,\nllm_tokens_in/out" {style.stroke: "#1A73E8"; style.stroke-dash: 3; style.bold: true}
+ai.bqmcp -> ops.logging: "Cloud Audit Logs\n(every MCP tool call,\nauto, no glue code)" {style.stroke: "#1A73E8"; style.stroke-dash: 3; style.bold: true}
+compute.exporter -> ops.logging {style.stroke: "#1A73E8"; style.stroke-dash: 3}
+compute.reindex -> ops.logging {style.stroke: "#1A73E8"; style.stroke-dash: 3}
+ops.logging -> ops.monitoring: "log-based metrics" {style.stroke: "#1A73E8"; style.stroke-dash: 3}
+ops.monitoring -> ops.billing: "alert policy on\nllm_tokens_out rate" {style.stroke: "#595959"; style.stroke-dash: 3; style.bold: true}
+ai.eval -> data.bq: "eval_runs (sa-eval)" {style.stroke: "#F9A825"; style.stroke-dash: 3}

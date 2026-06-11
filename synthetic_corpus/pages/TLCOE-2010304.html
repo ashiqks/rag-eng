@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>[GAP IOS APP] Checkout Button Position (sticky bottom) - Feb 2026</title>
+  <link rel="canonical" href="https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010304"/>
+  <meta name="test_id" content="T-GAP-00304"/>
+  <meta name="confluence_page_id" content="TLCOE-2010304"/>
+  <meta name="confluence_url" content="https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010304"/>
+  <meta name="title" content="[GAP IOS APP] Checkout Button Position (sticky bottom) - Feb 2026"/>
+  <meta name="brand" content="Gap"/>
+  <meta name="brand_code" content="GAP"/>
+  <meta name="market" content="CA"/>
+  <meta name="value_stream" content="Checkout"/>
+  <meta name="channel" content="iOS App"/>
+  <meta name="channel_section" content="iOS Native"/>
+  <meta name="device" content="Mobile"/>
+  <meta name="audience" content="High-AOV Customers"/>
+  <meta name="tactic" content="Quality"/>
+  <meta name="test_type" content="Server-Side"/>
+  <meta name="vendor" content="Optimizely (Server-Side)"/>
+  <meta name="primary_kpi" content="AUR (Average Unit Retail)"/>
+  <meta name="secondary_kpis" content="PDP Exit Rate, PDP Views Per Visit, Total Visits, Loyalty Sign-up Rate, PDP Certona Engagement Rate"/>
+  <meta name="start_date" content="2026-02-20"/>
+  <meta name="end_date" content="2026-04-03"/>
+  <meta name="duration_days" content="42"/>
+  <meta name="sample_size_per_arm" content="2400000"/>
+  <meta name="mde_pct" content="0.45"/>
+  <meta name="confidence_pct" content="80"/>
+  <meta name="power_pct" content="80"/>
+  <meta name="exposure_pct" content="10"/>
+  <meta name="split" content="90/10 (holdback)"/>
+  <meta name="outcome" content="Flat"/>
+  <meta name="primary_kpi_delta_pct" content="-0.12"/>
+  <meta name="net_rpv_delta_pct" content="-0.15"/>
+  <meta name="aos_delta_pct" content="-0.06"/>
+  <meta name="visits_total" content="4800000"/>
+  <meta name="incremental_revenue_usd" content="0"/>
+  <meta name="averted_loss_usd" content="0"/>
+  <meta name="recommendation_adopted" content="N/A"/>
+  <meta name="related_test_ids" content=""/>
+  <meta name="sha256_source" content="f1b300e26aa7d0aca6283b2eac5ed92834ba53d79d7e4c011e3867408b2c25f4"/>
+  <meta name="metadata_quality" content="high"/>
+  <meta name="template_version" content="2017.stable"/>
+  <script type="application/ld+json">{"test_id": "T-GAP-00304", "confluence_page_id": "TLCOE-2010304", "confluence_url": "https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010304", "title": "[GAP IOS APP] Checkout Button Position (sticky bottom) - Feb 2026", "brand": "Gap", "brand_code": "GAP", "market": "CA", "value_stream": "Checkout", "channel": "iOS App", "channel_section": "iOS Native", "device": "Mobile", "audience": "High-AOV Customers", "tactic": "Quality", "test_type": "Server-Side", "vendor": "Optimizely (Server-Side)", "primary_kpi": "AUR (Average Unit Retail)", "secondary_kpis": ["PDP Exit Rate", "PDP Views Per Visit", "Total Visits", "Loyalty Sign-up Rate", "PDP Certona Engagement Rate"], "start_date": "2026-02-20", "end_date": "2026-04-03", "duration_days": 42, "sample_size_per_arm": 2400000, "mde_pct": 0.45, "confidence_pct": 80, "power_pct": 80, "exposure_pct": 10, "split": "90/10 (holdback)", "outcome": "Flat", "primary_kpi_delta_pct": -0.12, "net_rpv_delta_pct": -0.15, "aos_delta_pct": -0.06, "visits_total": 4800000, "incremental_revenue_usd": 0, "averted_loss_usd": 0, "recommendation_adopted": "N/A", "related_test_ids": [], "sha256_source": "f1b300e26aa7d0aca6283b2eac5ed92834ba53d79d7e4c011e3867408b2c25f4", "metadata_quality": "high", "template_version": "2017.stable"}</script>
+</head>
+<body>
+<h1>[GAP IOS APP] Checkout Button Position (sticky bottom) - Feb 2026</h1>
+<blockquote><strong>Brand</strong>: Gap (GAP) · <strong>Market</strong>: CA · <strong>Value Stream</strong>: Checkout<br/><strong>Channel</strong>: iOS App (iOS Native) · <strong>Device</strong>: Mobile · <strong>Audience</strong>: High-AOV Customers<br/><strong>Tactic</strong>: Quality · <strong>Test Type</strong>: Server-Side · <strong>Vendor</strong>: Optimizely (Server-Side)<br/><strong>Window</strong>: 2026-02-20 → 2026-04-03 (42 days)<br/><strong>Outcome</strong>: <strong>Flat</strong> · <strong>Recommendation Adopted</strong>: N/A</blockquote>
+<hr/>
+<h2>1. Test Plan</h2>
+<h3>1.1 Problem Statement</h3>
+<p>On Gap Checkout, the current control experience does not sufficiently support aur for the high-aov customers segment. Based on prior quality-tactic learnings across the mid tier, we want to evaluate whether the proposed change moves the needle within the 42-day window.</p>
+<h3>1.2 Hypothesis</h3>
+<p>If we apply 'Sticky checkout CTA' on Gap Checkout (iOS Native) to high-aov customers, then we expect a lift of at least 0.45% on AUR because a sticky bottom cta on mobile checkout reduces drop-off at the payment step.</p>
+<h3>1.3 Experimental Changes</h3>
+<ul><li><strong>Control</strong>: existing Checkout experience on Gap iOS Native.</li><li><strong>Challenger</strong>: Sticky checkout CTA variant — a sticky bottom cta on mobile checkout reduces drop-off at the payment step.</li></ul>
+<h3>1.4 Significance Calculations &amp; Experimental Design</h3>
+<table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Brand</td><td>Gap</td></tr><tr><td>Scenarios</td><td>1 Control + 1 Challenger (90/10 (holdback))</td></tr><tr><td>Primary KPI</td><td>AUR (Average Unit Retail)</td></tr><tr><td>Minimum Detectable Lift</td><td>~0.45%</td></tr><tr><td>Confidence Threshold</td><td>80%</td></tr><tr><td>Power Threshold</td><td>80%</td></tr><tr><td>Sample Size per Variation</td><td>~2,400,000 visits</td></tr><tr><td>Estimated Duration</td><td>~42 days</td></tr><tr><td>Test Exposure</td><td>10% of eligible traffic</td></tr><tr><td>Audience Limitation</td><td>High-AOV Customers</td></tr></tbody></table>
+<h3>1.5 Adobe Workspace</h3>
+<ul><li>Project: <em>Gap CA — Production</em></li><li>Workspace: <code>[GAP CA] Sticky checkout CTA Test</code></li><li>Filters: Return vs. New Visits · Segment (Global Blanket Correction Segment [Approved]) · Device Type · Page Type · Extreme Orders (COE — Exclude Extreme)</li></ul>
+<h3>1.6 Measurement Strategy</h3>
+<p><strong>Metrics (All Experiments)</strong>: Conversion Rate (OPV) · Net RPV · AOS · UPT · AUR · Total Visits · Visits Split (Visit/Visitor) · Variation Overlap</p>
+<p><strong>Metrics (Test Specific)</strong>:</p>
+<ul><li>PDP Exit Rate</li><li>PDP Views Per Visit</li><li>Total Visits</li><li>Loyalty Sign-up Rate</li><li>PDP Certona Engagement Rate</li></ul>
+<p><strong>Segments (All Experiments)</strong>: New vs. Returning</p>
+<p><strong>Segments (Test Specific)</strong>: Desktop vs. Mobile · Loyalty vs. Non-Loyalty</p>
+<h3>1.7 Custom Metrics</h3>
+<table><thead><tr><th>Description / Location</th><th>Custom Variable</th><th>Tracking Notes</th></tr></thead><tbody><tr><td>Sticky checkout CTA click</td><td>eVar47 — sticky_checkout_cta_click</td><td>Track once per visit</td></tr><tr><td>Sticky checkout CTA view</td><td>eVar48 — sticky_checkout_cta_view</td><td>Track always</td></tr><tr><td>Checkout arrival from Sticky checkout CTA</td><td>eVar49 — checkout_arrival</td><td>Track once per session</td></tr></tbody></table>
+<hr/>
+<h2>2. Test Results</h2>
+<h3>2.1 Findings (TL;DR)</h3>
+<p>Across the 42-day test window, no statistically significant difference was observed on the primary KPI (AUR (Average Unit Retail)); observed delta -0.12% sits within MDE (0.45%). Net RPV -0.15%, AOS -0.06% — also within noise.</p>
+<h3>2.2 Variation Description</h3>
+<ul><li><strong>Control</strong>: as-is Checkout on Gap iOS Native.</li><li><strong>Challenger</strong>: applies the <em>Sticky checkout CTA</em> treatment described in §1.3.</li><li><em>Screenshots</em>: see Confluence attachments <code>control_T-GAP-00304.png</code>, <code>challenger_T-GAP-00304.png</code> (omitted from this synthetic export).</li></ul>
+<h3>2.3 Details</h3>
+<p>Across the 42-day test window, no statistically significant difference was observed on the primary KPI (AUR (Average Unit Retail)); observed delta -0.12% sits within MDE (0.45%). Net RPV -0.15%, AOS -0.06% — also within noise.</p>
+<p>Statistical significance was computed <strong>outside</strong> Optimizely (Excel + online calculator) per standard Test &amp; Learn COE practice — Optimizely's built-in significance is not reliable for GAP because of cross-brand basket attribution.</p>
+<h3>2.4 Impacts</h3>
+<table><thead><tr><th>Metric</th><th>Control</th><th>Challenger</th><th>Δ %</th></tr></thead><tbody><tr><td>Net RPV</td><td>baseline</td><td>challenger</td><td>▼ 0.15%</td></tr><tr><td>AUR (Average Unit Retail)</td><td>baseline</td><td>challenger</td><td>▼ 0.12%</td></tr><tr><td>AOS</td><td>baseline</td><td>challenger</td><td>▼ 0.06%</td></tr><tr><td>UPT</td><td>baseline</td><td>challenger</td><td>▼ 0.04%</td></tr><tr><td>AUR</td><td>baseline</td><td>challenger</td><td>▼ 0.02%</td></tr><tr><td>Total Visits (test arm)</td><td>—</td><td>2,400,000</td><td>—</td></tr><tr><td>Incremental Revenue (USD)</td><td>—</td><td>—</td><td>$0</td></tr><tr><td>Averted Loss (USD)</td><td>—</td><td>—</td><td>$0</td></tr></tbody></table>
+<h3>2.5 Segment Break-down</h3>
+<table><thead><tr><th>Segment</th><th>Value</th><th>Primary KPI Δ</th><th>Net RPV Δ</th></tr></thead><tbody><tr><td>Device</td><td>Desktop</td><td>-0.09%</td><td>-0.22%</td></tr><tr><td>Device</td><td>Mobile</td><td>0.12%</td><td>0.16%</td></tr><tr><td>Device</td><td>Tablet</td><td>-0.2%</td><td>-0.3%</td></tr><tr><td>Visit Type</td><td>New</td><td>-0.71%</td><td>0.08%</td></tr><tr><td>Visit Type</td><td>Returning</td><td>-0.7%</td><td>0.01%</td></tr><tr><td>Loyalty</td><td>Member</td><td>-0.08%</td><td>-0.39%</td></tr><tr><td>Loyalty</td><td>Non-Member</td><td>0.48%</td><td>-0.18%</td></tr></tbody></table>
+<h3>2.6 Product Mix</h3>
+<p>Top contributing categories during the test window: women's tops, women's denim, men's polos, accessories. No anomalous category-level skew detected.</p>
+<h3>2.7 Gross Margin (GMS / Visit)</h3>
+<p>GMS/Visit was flat across both arms within MDE.</p>
+<hr/>
+<h2>3. Recommendation</h2>
+<p><strong>No change. Keep the control as the production experience.</strong></p>
+<p>Recommendation adopted: <strong>N/A</strong>.</p>
+<h2>4. Optimization Opportunities (feeds next brainstorm)</h2>
+<ul><li>Re-run with a tighter MDE on the high-aov customers segment to confirm.</li><li>Explore the same hypothesis on the sister brand in the discount tier.</li><li>Consider follow-up on Homepage where the same tactic (Quality) has not yet been tested for Gap.</li></ul>
+<h2>5. Related Tests</h2>
+<p><em>No prior closely-related tests recorded.</em></p>
+<hr/>
+<p><em>Generated synthetic record for POC retrieval testing. Template version 2017.stable, mirroring the Test &amp; Learn COE Confluence template walked through by Prateek Oberoi on 2026-05-06.</em></p>
+</body>
+</html>

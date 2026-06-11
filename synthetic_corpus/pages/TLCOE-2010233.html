@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>[ON IOS APP] Infinite scroll vs paginated PLP - Nov 2026</title>
+  <link rel="canonical" href="https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010233"/>
+  <meta name="test_id" content="T-ON-00233"/>
+  <meta name="confluence_page_id" content="TLCOE-2010233"/>
+  <meta name="confluence_url" content="https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010233"/>
+  <meta name="title" content="[ON IOS APP] Infinite scroll vs paginated PLP - Nov 2026"/>
+  <meta name="brand" content="Old Navy"/>
+  <meta name="brand_code" content="ON"/>
+  <meta name="market" content="US"/>
+  <meta name="value_stream" content="PLP"/>
+  <meta name="channel" content="iOS App"/>
+  <meta name="channel_section" content="iOS Native"/>
+  <meta name="device" content="Mobile"/>
+  <meta name="audience" content="High-AOV Customers"/>
+  <meta name="tactic" content="Time Savings"/>
+  <meta name="test_type" content="Client-Side"/>
+  <meta name="vendor" content="In-house"/>
+  <meta name="primary_kpi" content="Add-to-Bag Rate"/>
+  <meta name="secondary_kpis" content="Variation Overlap, Loyalty Sign-up Rate, PDP Views Per Visit, Total Visits"/>
+  <meta name="start_date" content="2026-11-04"/>
+  <meta name="end_date" content="2026-05-13"/>
+  <meta name="duration_days" content="-175"/>
+  <meta name="sample_size_per_arm" content="3600000"/>
+  <meta name="mde_pct" content="1.09"/>
+  <meta name="confidence_pct" content="90"/>
+  <meta name="power_pct" content="80"/>
+  <meta name="exposure_pct" content="100"/>
+  <meta name="split" content="33/33/33"/>
+  <meta name="outcome" content="Flat"/>
+  <meta name="primary_kpi_delta_pct" content="0.06"/>
+  <meta name="net_rpv_delta_pct" content="-0.11"/>
+  <meta name="aos_delta_pct" content="-0.27"/>
+  <meta name="visits_total" content="10800000"/>
+  <meta name="incremental_revenue_usd" content="0"/>
+  <meta name="averted_loss_usd" content="0"/>
+  <meta name="recommendation_adopted" content="N/A"/>
+  <meta name="related_test_ids" content="T-BRF-00011, T-BRF-00080, T-GAPF-00047"/>
+  <meta name="sha256_source" content="912ef959b9d2dc07c0a970e16f2e9df2ca0347384cc3dae70c00c79375dd7b09"/>
+  <meta name="metadata_quality" content="high"/>
+  <meta name="template_version" content="2017.stable"/>
+  <script type="application/ld+json">{"test_id": "T-ON-00233", "confluence_page_id": "TLCOE-2010233", "confluence_url": "https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010233", "title": "[ON IOS APP] Infinite scroll vs paginated PLP - Nov 2026", "brand": "Old Navy", "brand_code": "ON", "market": "US", "value_stream": "PLP", "channel": "iOS App", "channel_section": "iOS Native", "device": "Mobile", "audience": "High-AOV Customers", "tactic": "Time Savings", "test_type": "Client-Side", "vendor": "In-house", "primary_kpi": "Add-to-Bag Rate", "secondary_kpis": ["Variation Overlap", "Loyalty Sign-up Rate", "PDP Views Per Visit", "Total Visits"], "start_date": "2026-11-04", "end_date": "2026-05-13", "duration_days": -175, "sample_size_per_arm": 3600000, "mde_pct": 1.09, "confidence_pct": 90, "power_pct": 80, "exposure_pct": 100, "split": "33/33/33", "outcome": "Flat", "primary_kpi_delta_pct": 0.06, "net_rpv_delta_pct": -0.11, "aos_delta_pct": -0.27, "visits_total": 10800000, "incremental_revenue_usd": 0, "averted_loss_usd": 0, "recommendation_adopted": "N/A", "related_test_ids": ["T-BRF-00011", "T-BRF-00080", "T-GAPF-00047"], "sha256_source": "912ef959b9d2dc07c0a970e16f2e9df2ca0347384cc3dae70c00c79375dd7b09", "metadata_quality": "high", "template_version": "2017.stable"}</script>
+</head>
+<body>
+<h1>[ON IOS APP] Infinite scroll vs paginated PLP - Nov 2026</h1>
+<blockquote><strong>Brand</strong>: Old Navy (ON) · <strong>Market</strong>: US · <strong>Value Stream</strong>: PLP<br/><strong>Channel</strong>: iOS App (iOS Native) · <strong>Device</strong>: Mobile · <strong>Audience</strong>: High-AOV Customers<br/><strong>Tactic</strong>: Time Savings · <strong>Test Type</strong>: Client-Side · <strong>Vendor</strong>: In-house<br/><strong>Window</strong>: 2026-11-04 → 2026-05-13 (-175 days)<br/><strong>Outcome</strong>: <strong>Flat</strong> · <strong>Recommendation Adopted</strong>: N/A</blockquote>
+<hr/>
+<h2>1. Test Plan</h2>
+<h3>1.1 Problem Statement</h3>
+<p>On Old Navy PLP, the current control experience does not sufficiently support add-to-bag rate for the high-aov customers segment. Based on prior time savings-tactic learnings across the discount tier, we want to evaluate whether the proposed change moves the needle within the -175-day window.</p>
+<h3>1.2 Hypothesis</h3>
+<p>If we apply 'PLP infinite scroll' on Old Navy PLP (iOS Native) to high-aov customers, then we expect a lift of at least 1.09% on Add-to-Bag Rate because infinite scroll reduces friction in browsing and lifts products viewed per visit.</p>
+<h3>1.3 Experimental Changes</h3>
+<ul><li><strong>Control</strong>: existing PLP experience on Old Navy iOS Native.</li><li><strong>Challenger</strong>: PLP infinite scroll variant — infinite scroll reduces friction in browsing and lifts products viewed per visit.</li></ul>
+<h3>1.4 Significance Calculations &amp; Experimental Design</h3>
+<table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Brand</td><td>Old Navy</td></tr><tr><td>Scenarios</td><td>1 Control + 1 Challenger (33/33/33)</td></tr><tr><td>Primary KPI</td><td>Add-to-Bag Rate</td></tr><tr><td>Minimum Detectable Lift</td><td>~1.09%</td></tr><tr><td>Confidence Threshold</td><td>90%</td></tr><tr><td>Power Threshold</td><td>80%</td></tr><tr><td>Sample Size per Variation</td><td>~3,600,000 visits</td></tr><tr><td>Estimated Duration</td><td>~-175 days</td></tr><tr><td>Test Exposure</td><td>100% of eligible traffic</td></tr><tr><td>Audience Limitation</td><td>High-AOV Customers</td></tr></tbody></table>
+<h3>1.5 Adobe Workspace</h3>
+<ul><li>Project: <em>Old Navy US — Production</em></li><li>Workspace: <code>[ON US] PLP infinite scroll Test</code></li><li>Filters: Return vs. New Visits · Segment (Global Blanket Correction Segment [Approved]) · Device Type · Page Type · Extreme Orders (COE — Exclude Extreme)</li></ul>
+<h3>1.6 Measurement Strategy</h3>
+<p><strong>Metrics (All Experiments)</strong>: Conversion Rate (OPV) · Net RPV · AOS · UPT · AUR · Total Visits · Visits Split (Visit/Visitor) · Variation Overlap</p>
+<p><strong>Metrics (Test Specific)</strong>:</p>
+<ul><li>Variation Overlap</li><li>Loyalty Sign-up Rate</li><li>PDP Views Per Visit</li><li>Total Visits</li></ul>
+<p><strong>Segments (All Experiments)</strong>: New vs. Returning</p>
+<p><strong>Segments (Test Specific)</strong>: Desktop vs. Mobile · Loyalty vs. Non-Loyalty</p>
+<h3>1.7 Custom Metrics</h3>
+<table><thead><tr><th>Description / Location</th><th>Custom Variable</th><th>Tracking Notes</th></tr></thead><tbody><tr><td>PLP infinite scroll click</td><td>eVar47 — plp_infinite_scroll_click</td><td>Track once per visit</td></tr><tr><td>PLP infinite scroll view</td><td>eVar48 — plp_infinite_scroll_view</td><td>Track always</td></tr><tr><td>PLP arrival from PLP infinite scroll</td><td>eVar49 — plp_arrival</td><td>Track once per session</td></tr></tbody></table>
+<hr/>
+<h2>2. Test Results</h2>
+<h3>2.1 Findings (TL;DR)</h3>
+<p>Across the -175-day test window, no statistically significant difference was observed on the primary KPI (Add-to-Bag Rate); observed delta 0.06% sits within MDE (1.09%). Net RPV -0.11%, AOS -0.27% — also within noise.</p>
+<h3>2.2 Variation Description</h3>
+<ul><li><strong>Control</strong>: as-is PLP on Old Navy iOS Native.</li><li><strong>Challenger</strong>: applies the <em>PLP infinite scroll</em> treatment described in §1.3.</li><li><em>Screenshots</em>: see Confluence attachments <code>control_T-ON-00233.png</code>, <code>challenger_T-ON-00233.png</code> (omitted from this synthetic export).</li></ul>
+<h3>2.3 Details</h3>
+<p>Across the -175-day test window, no statistically significant difference was observed on the primary KPI (Add-to-Bag Rate); observed delta 0.06% sits within MDE (1.09%). Net RPV -0.11%, AOS -0.27% — also within noise.</p>
+<p>Statistical significance was computed <strong>outside</strong> Optimizely (Excel + online calculator) per standard Test &amp; Learn COE practice — Optimizely's built-in significance is not reliable for GAP because of cross-brand basket attribution.</p>
+<h3>2.4 Impacts</h3>
+<table><thead><tr><th>Metric</th><th>Control</th><th>Challenger</th><th>Δ %</th></tr></thead><tbody><tr><td>Net RPV</td><td>baseline</td><td>challenger</td><td>▼ 0.11%</td></tr><tr><td>Add-to-Bag Rate</td><td>baseline</td><td>challenger</td><td>▲ 0.06%</td></tr><tr><td>AOS</td><td>baseline</td><td>challenger</td><td>▼ 0.27%</td></tr><tr><td>UPT</td><td>baseline</td><td>challenger</td><td>▼ 0.16%</td></tr><tr><td>AUR</td><td>baseline</td><td>challenger</td><td>▼ 0.11%</td></tr><tr><td>Total Visits (test arm)</td><td>—</td><td>3,600,000</td><td>—</td></tr><tr><td>Incremental Revenue (USD)</td><td>—</td><td>—</td><td>$0</td></tr><tr><td>Averted Loss (USD)</td><td>—</td><td>—</td><td>$0</td></tr></tbody></table>
+<h3>2.5 Segment Break-down</h3>
+<table><thead><tr><th>Segment</th><th>Value</th><th>Primary KPI Δ</th><th>Net RPV Δ</th></tr></thead><tbody><tr><td>Device</td><td>Desktop</td><td>0.46%</td><td>0.06%</td></tr><tr><td>Device</td><td>Mobile</td><td>0.36%</td><td>-0.12%</td></tr><tr><td>Device</td><td>Tablet</td><td>0.12%</td><td>-0.39%</td></tr><tr><td>Loyalty</td><td>Member</td><td>-0.23%</td><td>0.27%</td></tr><tr><td>Loyalty</td><td>Non-Member</td><td>-0.33%</td><td>-0.05%</td></tr></tbody></table>
+<h3>2.6 Product Mix</h3>
+<p>Top contributing categories during the test window: women's tops, women's denim, men's polos, accessories. No anomalous category-level skew detected.</p>
+<h3>2.7 Gross Margin (GMS / Visit)</h3>
+<p>GMS/Visit was flat across both arms within MDE.</p>
+<hr/>
+<h2>3. Recommendation</h2>
+<p><strong>No change. Consider re-testing during a higher-traffic window (Holiday).</strong></p>
+<p>Recommendation adopted: <strong>N/A</strong>.</p>
+<h2>4. Optimization Opportunities (feeds next brainstorm)</h2>
+<ul><li>Re-run with a tighter MDE on the high-aov customers segment to confirm.</li><li>Explore the same hypothesis on the sister brand in the discount tier.</li><li>Consider follow-up on PLP where the same tactic (Time Savings) has not yet been tested for Old Navy.</li></ul>
+<h2>5. Related Tests</h2>
+<table><thead><tr><th>Related Test ID</th><th>Relation</th></tr></thead><tbody><tr><td>T-BRF-00011</td><td>Same hypothesis, different brand</td></tr><tr><td>T-BRF-00080</td><td>Cross-brand follow-up</td></tr><tr><td>T-GAPF-00047</td><td>Cross-brand follow-up</td></tr></tbody></table>
+<hr/>
+<p><em>Generated synthetic record for POC retrieval testing. Template version 2017.stable, mirroring the Test &amp; Learn COE Confluence template walked through by Prateek Oberoi on 2026-05-06.</em></p>
+</body>
+</html>

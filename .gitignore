@@ -1,0 +1,125 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+.eggs/
+.installed.cfg
+build/
+dist/
+develop-eggs/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+pip-wheel-metadata/
+pip-log.txt
+pip-delete-this-directory.txt
+MANIFEST
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+ENV/
+.virtualenv/
+**/.venv/
+**/venv/
+
+# --- Test / coverage / type-checker caches ---
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+profile_default/
+ipython_config.py
+
+# --- Node / web ---
+node_modules/
+.npm/
+.yarn/
+.pnp.*
+.next/
+.nuxt/
+.parcel-cache/
+
+# --- IDE / editor ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Secrets / env ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+service-account*.json
+gcp-key*.json
+credentials.json
+client_secret*.json
+.gcloud/
+.config/gcloud/
+
+# --- Logs ---
+*.log
+logs/
+sweep_run.log
+*.log.*
+
+# --- OS junk ---
+$RECYCLE.BIN/
+ehthumbs.db
+Icon?
+
+# --- Build / packaging ---
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.7z
+
+# --- Project-specific ---
+# Eval run artifacts (regenerated)
+tests/eval/runs/
+tests/eval/.venv/
+tests/eval/sweep_run.log
+tests/eval/*.log
+
+# Misc scratch folders
+tests/New folder/
+tests/New folder (2)/
+
+# Drawio backups
+*.drawio.bkp
+*.bkp

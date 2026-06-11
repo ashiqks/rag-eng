@@ -1,0 +1,534 @@
+﻿20260507 - GAP ERD - Tool Walkthrough Session with Prateek
+0:00As I mentioned yesterday, there are two two ways through which we can set up the campaign in Optimisely.
+0:071 is client side which is much faster to do and the other one is server side which takes time because we need like actual changes on the site code for the experience to look different for the other group of the customers.
+0:26Now in Optimisely, we have different suites.
+0:31It is by brand.
+0:34So you can see like if you want to run a test for Athleta, you can go to Athleta Marketing.
+0:38If you are running for a banana, you can go to banana.
+0:43And then these are like server side stuff.
+0:47Usually whenever there is a test plan through server side, we are not touching it much because like I said, this involves coding in the back end.
+0:57So PDMS are managing this campaign.
+1:00The server side we don't touch much and on the client side also we help with the setup or we will validate the setup.
+1:10But all the coding part will be done by the developer within optimizer.
+1:18OK, so, so once you get the request or let's say on conference, it's a line that we do need to set up this experiment, then one like the developer will like, let's say develop the changes or the UI parts, whether it's server side or the client side.
+1:35But other than that, who is the other user who uses this, that Someone Like You or you mean optimizely?
+1:44Yeah, the setup experiment setup, who will be doing that?
+1:47So the PDM.
+1:48So if it's a server side, PDM will take the responsibility of setting it up.
+1:53OK.
+1:53If it's a client side, then someone, either someone from our team or someone from or the developer themselves will create a campaign and then they will ask us to validate if everything is looking right or not, if the setup looks right or not.
+2:10So it can be either ways.
+2:12Now the developers have worked with us so much, they know how to set up campaigns and optimizely.
+2:18Majority of the time they will do it by themselves when it's a client side test and then they will reach out to us and say, OK, can you take a quick look and make sure everything looks fine or not OK, OK, so and I'm just going to open like a sample campaign.
+2:38So we will like create different panels based on what we plan to do in the test.
+2:45Now there are different ways on how you can set it up.
+2:48You can create swim lanes.
+2:50You can do like a simple 5050 split or you can do personalization.
+2:56There are a lot of ways you can through which you can set up the campaign.
+3:02And then once the campaigns are set up inside each variation, oh, it's not open, but within each variation, that's where the developer will go and add the code.
+3:15And then we need to make sure that we are targeting the right pages.
+3:20So this is where we set up the targeting, the activation, which means like on which pages of the site the experiment will run on.
+3:28So let's say if this particular change is happening on the product page, you will see product page targeting here.
+3:36One important thing that we need to make sure is this is checked integrations because this makes sure that data flows from Optimisedly to Adobe.
+3:46So automatically once the test is done, the data is blooming into the Adobe exactly.
+3:51But if this is not checked, then you will not see the data in Adobe.
+3:55OK, there's an inbuilt feature within Optimizely.
+3:59Is it like yes, that yes, connectivity with OK, got it right.
+4:04That's a part of our integration with Optimizely.
+4:08Understood.
+4:12That's it.
+4:13So this is what we do in the setup.
+4:16And then the developers will come and add the code they can, they can QA the experience like the brands will QA the experience.
+4:25And let's say once everything is approved, everything is working as expected, then either they can turn it on manually on a desired date and time, or you can also schedule the campaign to start at a particular date and time or even stop at a particular date and time.
+4:41So like this it says start on May 13th, 12 AM and stop on June 8th.
+4:48So we can also schedule and then we can also manually start, stop the now once it starts.
+4:58Sorry, I had a question.
+4:59Yes, ma'am.
+5:00So please continue.
+5:02No, I was just thinking like once it starts, then it takes some time for data to flow in Adobe.
+5:07It takes up to an hour for data to flow in Adobe.
+5:09And then we have to create like segments within Adobe to identify the audience that are flowing in these panels that we have created.
+5:18And then we look for metrics for those audiences.
+5:23Noted.
+5:24OK.
+5:25I think my question now just remembered is that like the developers can also preview the changes that they're making here.
+5:30Is it like yes, yes.
+5:32So OK, without publishing into production, they can queue with experience in their prod, in their dev environment.
+5:41Understood.
+5:41OK.
+5:43Or stage environment.
+5:45OK, got it.
+5:46Yeah, Yeah.
+5:47I think that's pretty much like Summit.
+5:49Do you have any questions on this?
+5:50No, the optimize leaf.
+5:51No, no, that's fine.
+5:54Yeah, I think this is the level of work that we needed that they call it.
+5:57OK, OK, perfect.
+6:00Because like I said, there are like multiple ways through which you can set up the campaign.
+6:05You can personalize it.
+6:07You can do a simple AB test or you can create swim lanes.
+6:11There are different strategies based on what's needed for a particular test.
+6:16Then if it's a personalized 1, you can prioritize the panels, meaning if customers qualify for a certain criteria, first show them this experience, but if they don't, then take the next, check the next panel.
+6:31So it's like a waterfall logic that you can create.
+6:34So there are like multiple things we can do in optimizely to set up the test.
+6:39OK, No, I understand that.
+6:41Yeah, there are combinations.
+6:42I think it's a custom platform just built for the sole purpose of experimentation.
+6:46So yeah.
+6:47Yeah, exactly.
+6:47So it's base, its main purpose is to randomize the traffic into proportions that we set up here and try to keep it as much consistent as possible.
+7:00Does because allow you to do some sort of statistical testing and all that.
+7:03How do you like a sample size measurement all that does the self or how is this calculation done outside?
+7:08So Optimizely does have that capability, but it's not applicable for us because of the nature of our platform where we have 4 different brands and you, you can check out with any brand product from anywhere.
+7:25So it Optimizely is not able to distinguish.
+7:29Let's say if you are checking out, let's say the test is running on Banana Republic and you want to check performance of Banana Republic.
+7:36Then if a customer is checking out from Banana Republic shopping bag with products from let's say Gap and Old Navy and Athlete as well, then Optimizely will not be able to identify, distinguish or differentiate how much demand is coming from banana product and how much is coming from others.
+7:56It will just give you the whole number, which is not right because we are just measuring for banana.
+8:01So we just want to look into banana.
+8:04Got it.
+8:05OK, So it's not able to split the numbers or metrics by brand.
+8:11OK, OK, got it.
+8:16So I think we maybe spend like 5 minutes on the Adobe Analytics, but is, do we have like a view for that as well?
+8:23Like I just want to see the how the metric measurement is done.
+8:27But tell me before that.
+8:28Any other questions on the optimizely bit like we are no optimizely, it's clear for the Adobe only.
+8:33I was having one question like the same as you, what sort of measuring the information that we are measuring in Adobe.
+8:40And I did, you know, noted in a way wherein certain metrics are being dragged and robbed into Excel.
+8:48So there's a workaround happening over there.
+8:51I'm just trying to understand what sort of metrics are being dragged and dropped into Excel at the end that's being fed into the compliance page.
+9:01So I'm just opening Adobe, OK.
+9:05So there is not like a standard list.
+9:08I mean like I discussed yesterday or shared yesterday that across different tests that we do, there will always be certain common metrics that you will see, like primary metrics will always be there which is revenue conversion basket size.
+9:26But there will always be metrics which are specific to that particular test.
+9:31Let's say if a test is running on home page, then product page shouldn't be impacted.
+9:39So I will not include any metrics got it, which which are happening on the product page.
+9:45But if a test is running on product page then I will I will not include any metric that is on the home page.
+9:53So I understand some metrics are very related to the type of test that we are running and what it impacts.
+10:00And ideally we look at everything like we look at all the metrics, but we don't share all the metrics like all 200 metrics with our brand partners because we don't want to like overload them with information.
+10:14We just want to give them what's applicable to them.
+10:17OK.
+10:18So I think right now and optimizely you were showing that you will have a selection part where the output is directly transferred into the Adobe Analytics, right?
+10:27So does Adobe have so it's not directly transferred, it's a it.
+10:34So the when we check that integration, it links Adobe to Optimizely.
+10:39OK, Now in Optimizely, like I said, let's say if it's a client side test, OK, so you see that AB test client side.
+10:49Yeah.
+10:50So this is the variable that captures the Optimizely cookie.
+10:54So I can come here and look for the cookie value that Optimizely is pushing for customers that are either in Control or Challenger.
+11:03If it's a server side, then there is a separate variable that captures server side cookies.
+11:10So I can come here and look for those cookies and then use these cookies to create a segment to define like control and challenger here and then look for metrics for them.
+11:21So this is how you can create a segment in Adobe.
+11:25Like you, this is a client side test.
+11:27So I have used different combinations because this is how the test was set up to create the control group.
+11:34And similarly for challenger I have 4 different cookies from Optimisely that are identifying the challenger group and I use them to create my control and challenger group.
+11:48And once I created these segments then I'm looking for all the metrics for them and this is like an example of a dashboard.
+11:55This test is currently live and you can see here like I, I have a multiple things that I'm looking into for this particular test, like from where the customers are coming, how their funnel looks like, how their engagement looks like with search, how their engagement looks like with different elements on the product page.
+12:19So basically the exhaustive list of the metrics that you've had it while initiating the test.
+12:26Yes, and I keep on adding too, depending on what's required because sometimes you require more deep dives like why is this flat?
+12:36Like in this case, it's flat.
+12:37But let's say it's negative, then I can look into is it negative on desktop or is it negative on mobile?
+12:44Is it negative for a particular group of customers?
+12:47Is it negative for a particular loyalty tier?
+12:52OK.
+12:52So we can break it down by as many ways as we want it in Adobe.
+12:57We can even go to style level like which products are actually driving it down, which products are not having a positive impact through this experience.
+13:08So again, depends on the type of test and the analysis that we need to do.
+13:12Some test, some tests will run only on specific styles, like they're running only on women dresses and only 10 products within women dresses.
+13:22So in that case, we need to do a style level analysis to see how those 10 products are impacted or what their product mix looks like when customers are getting into Challenger experience versus control.
+13:35So OK, depending on the type of test, metrics do evolve.
+13:39But like I said, some of the metrics you will see common across all the tests, yeah.
+13:44So I think when you are mentioning that you will keep on adding these metrics, right?
+13:48Is it during the test or like how does that happen?
+13:53I mean, does it affect the result part because you've already had a set up, you know in the initial part of the test and while the test is running on, if you keep on adding these metrics as a part, will it not affect the end result or no, No, no, no, no.
+14:10So the metrics that I keep on adding is basically for me to give a better recommendation to my brand partners.
+14:17It's not gonna impact anything in the back end.
+14:19Test is running through Optimizely.
+14:21It's that in Adobe, I'm trying to break it down, break the numbers down by multiple ways, like I'm putting in additional layers over the data that I've already collected to see where exactly it's dropping or where exactly or which group of customers or segment is driving the lift, etcetera, etcetera, depending on the question I'm trying to answer.
+14:41So I'm just like trying to like play around with all the data that we have collected.
+14:45I'm trying to segment it to the lowest possible level.
+14:49So I'm not touching anything that's happening on the platform for the test.
+14:52I'm just playing around with all the data that we have already collected.
+14:58So it's my decoration over the data collect somewhere.
+15:00Exactly.
+15:00Exactly.
+15:01Exactly.
+15:04OK.
+15:04And so, Samir, do you have any question?
+15:06Like, like I had one.
+15:07That's why that's all That's all for.
+15:09Yeah.
+15:10OK.
+15:11No, I think the obvious thing is sorry.
+15:13Yep.
+15:13Kaushik.
+15:13Sorry.
+15:14So I have to jump at 11:30 for a product called with Holly.
+15:20I just wanna show this raising access to Pratik for one ID, and then Atul can be there when you raise all 7.
+15:27Is that OK?
+15:28It'll take two minutes.
+15:30Yeah, I mean, I'm finally yeah, Pratik, because I have to jump it.
+15:34I just got pulled in for call.
+15:35I don't know why they just sent me.
+15:37They just forwarded me.
+15:38So I think, you know, CIA portal on my identity, right?
+15:42I think we should already come there.
+15:45Yes, yes, CIA, right, Correct.
+15:48If you just go to that my identity portal and I can send you the link.
+15:52Yeah, send me the link.
+15:54I mean, yeah, Otherwise I can just give me a second.
+16:04I am just sending it to you.
+16:07I just have to do a sign in.
+16:18And I did talk to Dave this morning.
+16:20Yeah, I informed him that I will be helping you raise the access request and once I'm done I'm gonna like quickly ping him to let him know that it's done and then he will approve it.
+16:32So when so the and yes, I'll let me just send you the my identity link.
+16:36So there's a couple of process before which they won't get it.
+16:40Pratik, which is that gap resourcing, which is the TPMS or the procurement team essentially gets this request.
+16:49They first approve it.
+16:52Once they approve it, they will get an e-mail saying they will get an e-mail saying oh please approve it from his end and for him he just needs to click on one thing and it will be approved.
+17:04So then IDs and passwords get created.
+17:07Then again, there is one step, Pratik, where you have to raise MFA access, which is external.
+17:15It's like a authenticator system just to OK multifactor authentication ping ID right, basically and I'm sending it.
+17:28Yeah, it is for ping ID correct.
+17:30Oh, why am I getting so I think I've dropped an e-mail with all the details for folks who needs account created.
+17:38You should get that mail in like a minute.
+17:40Oh perfect.
+17:41Thank you.
+17:41We can just do it one live.
+17:43Atul, once you do it one live.
+17:46Yeah, it's just a 2 second thing to replicate it.
+17:49Same for.
+17:51Yeah.
+17:51I sent you the sale identity link.
+17:53Pratik.
+17:53If you click on that, you'll reach the home page and then you can share your screen and I can walk you through that.
+18:02This link is not working.
+18:05Let me see.
+18:06Oh, probably.
+18:07I'm not connected to VPN.
+18:08Oh yeah, same.
+18:11Yes, I also had to do the same.
+18:13OK, give me one minute.
+18:50The second link, right?
+18:51Yeah, the second link, the first one was yeah, because I didn't sign into VPN.
+18:57It's OK, I think it's open.
+19:00Let me share this.
+19:01Yeah, Atul, just can you paste the phone number and the name of basically your first thing?
+19:09We can do yours 1st and then we can do OK the rest.
+19:14So here you'll reach the My Identity portal.
+19:16You will?
+19:17Oh, OK.
+19:18I think it's still loading.
+19:28And why is this blank?
+19:35Can you just refresh again, Pratik?
+19:37Yeah.
+19:37OK, welcome.
+19:41Oh, yeah.
+19:41OK.
+19:42So now on top the three dots of the menu, if you click on, you'll see create accounts.
+19:47OK, create contractor.
+19:51Yeah.
+19:52Now you'll come to this page where sow now you can put other here.
+20:05Yeah, you can select that and then you can put MATHCO here.
+20:10Yeah, next.
+20:13So Atul is going to be working out of.
+20:15Folsom.
+20:16So it'll be two Folsom or Pleasanton?
+20:18Either 1.
+20:19Doesn't matter.
+20:21Yeah.
+20:22Can we add more than one area?
+20:25I don't think so.
+20:26No.
+20:26It doesn't matter that I just.
+20:28OK.
+20:28Yeah, it doesn't matter.
+20:29Oh, you have a preference?
+20:30I can change it.
+20:32No.
+20:32Folsom is fine, but I would like to have access to Pleasantness.
+20:36No.
+20:36No.
+20:36Yeah, you will.
+20:37You will have.
+20:37You will have.
+20:38You will have both.
+20:38It doesn't matter.
+20:39That's what I'm saying Yeah first name, last name, whatever Atul has just shared so Atul you want to it it Bab last name B A/B UB A/B U yeah gap EB A/B U yeah U end date.
+20:55You can just put any six months later or just put in any yeah gap e-mail required just put any six months later.
+21:03End date, Pratik.
+21:04Telephone number Atul will give any.
+21:09Yeah, just put anything.
+21:10It doesn't really, but November 1st.
+21:12Yeah.
+21:13And phone number Atul, you'll have to do this.
+21:15Plus one.
+21:16You'll have to do plus one dash.
+21:18OK.
+21:18And then your that format needs to be followed.
+21:21That's it.
+21:21650, 650.
+21:26Yeah.
+21:26642, 0597, Yeah.
+21:35And here you'll put Dave's name, Pradeep David Rose, you should, yes, he should get a department number.
+21:44And then it says we'll work in contract contractor will work in GAP tech, yes.
+21:51And next, yeah, I think that's same as Holly will be same and then acknowledge and it gets created.
+21:59Now this goes to resourcing but for the others the only change Prateek and Atul is instead of 2 Folsom you will put bespoke Bangalore.
+22:10So just put bespoke once you SP OK spoke itself and then once you do that you'll get two options Hyderabad or Bangalore.
+22:18We are obviously Bangalore OK select that.
+22:20That's the only difference and the obviously the phone code will be +91 and the India number of the team.
+22:28Other than that no change.
+22:29Everything else remains the same.
+22:32OK.
+22:32OK, thanks.
+22:34So, so how many more access?
+22:37Seven more.
+22:39Seven more.
+22:39OK, so I have to talk about Pratik and Atul and.
+22:42OK, so.
+22:45OK, thanks.
+22:46Thank you.
+22:49So Atul, I mean, I don't know.
+22:54Yeah.
+22:54We, we'll take 15 minutes back to the application, Pratik.
+22:59And then I think, or not, sorry, I think, oh, we have this 15 minutes more, right?
+23:05Oh, yeah, yeah.
+23:06I was just wondering like I will need Atul's help when I will be filling up.
+23:11Yeah, Yeah.
+23:11So do you want to like do it towards the end or do you want to do now let's do it towards the end, OK.
+23:21OK.
+23:22All right, yeah, I think see, OK, couple of final questions here.
+23:27Like I think this is also, I think we're good with this Hrithik, thanks for the walk through.
+23:32OK, just look at the metric.
+23:33I just I think, you know, final wrapping questions is like looks like like, you know once you do this, like just want to understand how is it transferred or consumed into the Excel or the conference?
+23:43Do we do it manually or is that export option that we use or anything like that?
+23:47Yeah.
+23:47Either way you can like export this, like you can export the entire.
+23:57OK, OK, Yeah, we can expect there is an option.
+24:07I don't know why it's not showing up, but you can export all the data in Excel or you can also like copy paste.
+24:15Understood.
+24:16OK, these are metric cards.
+24:18Is it is it there like no visuals to kind of know when it's becoming like statistically significant or anything like that?
+24:25So Adobe within the analytics tool will not check that.
+24:31But we do have, we use Adobe, we use like a, we done AP we run at Test to see yeah, if the if the significance has reached or not.
+24:42And now there are like multiple ways to run that D test.
+24:45You can run either in Excel or you can use any online calculator or you can use in SQL.
+24:53So OK, we have multiple so outside, outside this platform basically exactly because Adobe doesn't do that.
+25:00But you can create, but you can create any visual you like like these ones.
+25:08I'm just I just created to see like a summary change or the incremental change.
+25:14But there it will, it will always give you many options to visualize like you want to create like sure, OK, a bar chart or you want to create a line chart, plot Venn diagram.
+25:26It has many options that you can do.
+25:28But again, it depends on the individual, like how they want to view things.
+25:33But again, there is no end like which visual is right or wrong.
+25:37No, no.
+25:37Yeah.
+25:37The only reason I was trying to like my question for that, my question was because that like if we this is the platform you're using, then like, how do you know that, OK, this is the time we can stop the experiment.
+25:48Usually we do that once it becomes significant, right?
+25:50So do we do like the daily tech outside this platform saying that?
+25:54OK.
+25:54So no, no, no, no.
+25:56You asked a good question.
+25:57So you remember yesterday I showed you that test plan page and in that test plan, we calculate the estimated duration.
+26:05And within that estimated duration, you will see like how much sample size we hope to get and what is the expected estimated time we need to run this test for now as a as a practice at our end, we do a midpoint checkup like, OK, we definitely like look at things on daily basis if time allows.
+26:26But definitely at midpoint, we will do a check up to see how things are trending.
+26:32We'll check for significance and we'll see if it's trending in the right direction as expected.
+26:38If it's not trending in the right direction as expected, or if it's flat, then we will further drill down like why is that happening?
+26:47So we do, we do like a more more thorough check around midpoint.
+26:53But otherwise, yes, we keep looking on daily basis if time allows.
+26:57But sometimes we have like so many tests running, it's not possible to look at each and everything on daily basis.
+27:03And also I feel like looking at daily basis will not be helpful because this data may not may or may not have a big impact on the metrics.
+27:15It requires some amount of visits or sample size to have a significant change in the metrics.
+27:23Or if you look, if you look on daily basis, then it can also be very volatile.
+27:29Like one day you will see it's +2, but next day it's -2 yeah, yeah, yeah, yeah.
+27:32It's just because of the nature of the data.
+27:35It's so volatile that it hasn't stabilized yet.
+27:39So it can anything can happen.
+27:41So daily basis, it's not too helpful.
+27:43But yes, as a part of our practice, we do that sometimes if time allows.
+27:49Sure.
+27:49OK, no, got it.
+27:51OK.
+27:51I think yeah, we can, we can stop with this like the Adobe and this thing.
+27:57We're good.
+27:57Sound like right.
+27:58Like yeah, I think a couple of basic questions I have, which might feel like a repeat is 1 like sure, like after this is done, we go back, we put the metrics into conference, right.
+28:08That's where like you kind of wrap up the entire process and assume yes.
+28:12And then we go back with recommendations to the users or like to the PTMS on the experiment results, Right, exactly.
+28:20OK.
+28:20So I mean, depending again, it depends on person to person.
+28:24Sometimes people try to do all the analysis here itself, but some prefer to like transfer it to Excel and then modify it in a different way.
+28:35So it's users preference.
+28:37But yes, after we have all the metric.
+28:40Got it.
+28:41But when you say users like it's someone from your team, yeah, our team like, OK, our team, OK.
+28:47Like for example, Dave might just look at these metrics and he will like start creating a report directly versus me who would like to OK, let me try a different way of looking at things.
+28:59Let me try to put it in Excel and run a formula just to see thing how things look differently.
+29:03So again, preference, but we have all the data here in Adobe and we can like play around with it.
+29:09But see, at the end, when you go back to the PDMC, is there a fixed template or like a document that we go with or that also differs from user to user or now it's presented to?
+29:19No, no, no, that template, the conference template is the same.
+29:22Everyone will use the same template.
+29:25But sometimes, yeah, what happens is like people don't get time to create that and they will just share results over an e-mail, OK.
+29:35Or they will just create like a PowerPoint deck instead of writing everything in the Confluence.
+29:41Let's say if leadership team is involved in a particular test or, or they want to like look at what's happening with this particular test, then PowerPoint is preferred over Confluence because that's a better way of communicating with the leadership team versus going over the Confluence pages.
+29:57But like I said, 80 to 90% of our tests will be in conference.
+30:01It's just those 1015% that right will go either over e-mail or in PowerPoint.
+30:09OK, No, I think that is a good leading thing to my next question that I had since we spoke yesterday that only like if you're putting like, you know, 2-3 months of effort to run an experiment.
+30:19I was just wondering why is it not going into conference?
+30:22I thought initially the request comes through either like a mail or something and then we keep corresponding on mail.
+30:28But you're saying that in those cases, those are actually not entered into conference just because of like lack of time and effort?
+30:35Exactly.
+30:37Lack of.
+30:37Yeah, lack of time or the audience is leadership team because for them, you know, I understand, yeah, the visual representation error, but.
+30:46But you're saying there's significant effort involved in like transferring those information into a conference page, right.
+30:52Even if it means repeat of efforts just to maintain consistency and like uniformity in one source.
+30:59I mean it.
+31:02I mean, so I mean, if you want to just create a conference page, you can always create it and just link the deck there.
+31:09It's done.
+31:10Like if people wants to look at the results, they can just click on that deck.
+31:14So that's also another way, like you can create Confluence, but again, it's more of time.
+31:20Like you don't want to create same documents with same analysis, multiple places.
+31:26It depending on the audience, sometimes the path is different.
+31:30That's it.
+31:30There is no like limitation on not creating a conference because I can always like paste the deck in the confluence.
+31:37It takes like a minute and it's done.
+31:40Not it.
+31:41Sure.
+31:41No.
+31:42OK, no, I understand.
+31:43I think we have the full circle now.
+31:45But like I said, 80%, if it's there should be good, but we'll see on the PPT side.
+31:51OK, I think we could.
+31:55I did not have any other questions, Soumya.
+31:59Nothing from my end.
+32:00This was rewarding us from technique.
+32:03OK, I think, yeah.
+32:04Now it ties up all the open ends.
+32:06So we just like we completely understood the conference part yesterday.
+32:10We were not sure what happens in here.
+32:12That's all we needed as a walkthrough.
+32:14Sorry if it was a bit confusing in the beginning.
+32:17OK, perfect.
+32:18I mean, and if anytime you have any questions, yeah, feel free to reach out to me.
+32:23I mean, I'm happy to like share.
+32:25The only reason I was asking about Optimizely this morning is just to get more context, like how it will be helpful in your work.
+32:32Because like I said, Optimizely is a huge tool.
+32:35We can go in depth and that can take up the entire time.
+32:39But I didn't want it to do that.
+32:40Just want to understand what exactly or how much in depth you need for your purpose.
+32:46No, no, perfectly understand.
+32:47I I hope.
+32:48Yeah, I think it's clear now.
+32:49That's fine.
+32:50OK, I think that's all.
+32:51And we just had a couple of other questions outside this right.
+32:55So somewhere, but you want to quickly walk through that I'm we are almost on time and I think out Atul building that 5 minutes with this thing.
+33:02Yeah.
+33:03OK, so Pratik, I just wanted to check, you know, do we have any sample user queries you know that the user will input by the having the interaction with the AI board?
+33:24So basically, Pratik, we are coming up with a bunch of, from our understanding of the person as of now, what kind of questions are asked across different dimensions across each persona, right?
+33:35But at the same time, we just wanted to check if you already have any set such like like, you know, no, because this thing never existed.
+33:43So we are not sure like what or how people will use it or what will they ask because when so far they have been just reaching out to us and asking questions and asking question directly to US versus typing it down in AAI agent is very different.
+34:05So I don't have specific examples, but it can be something like, OK, have we done this particular test in the past?
+34:14If yes, for which brand did we do it?
+34:17Can you summarize the findings for those brands, something like that?
+34:20It will be on those lines, like where they're trying to drill into what happened in the past, What were the findings, What were the recommendations?
+34:30And yeah, something, yeah.
+34:34Also, I just want to align on the persona part.
+34:37So currently we're catering to the leadership to direct managers.
+34:43And is there any other person that we need to consider for us, I think brand partners, like brands, we have like brand partners that we work with.
+34:54I think it will be helpful for them too.
+34:59Pratik, is the brand partners within the ecosystem or outside?
+35:02No, No, within the ecosystem.
+35:04OK, Yeah.
+35:05So I think those are the like, you know, when Pratik said yesterday that 80% comes from PTMS, but then at the same time some are raised by the brand teams ad hoc.
+35:13I know, right, Right.
+35:14That, OK, so it's basically then 4% is right that so PTMS, brand team, then the main analytics team and then comes your leadership.
+35:24Yeah, double clicking into that, Pratik.
+35:28I know, Dave, when you're collating a list of folks we can interview, will that be ready by next week?
+35:36Because we're gonna start those interviews.
+35:39I can check with him.
+35:40I'm not sure like if he had actually started to put down the list together yet or not, but I can check with him.
+35:46Sure.
+35:46OK.
+35:48Yeah, because at the same, like I said, like one thing is the questions that we were saying, right?
+35:53So it like it'll really help.
+35:56We'll be sharing like maybe next week or later on like a bunch of sample questions we think that are expected to be asked by each person us we'll just need validation on like if we are in the right part so that, you know, we build in the right.
+36:09Yeah.
+36:10And so that's that.
+36:11Yeah, that's what we're all intend.
+36:13And at the same time that is one thing.
+36:15Second thing, we are also coming up with a bunch of questions that we need to ask each of the user personas, right, which is outside of the understanding that we have already gotten.
+36:24So, OK, that's something we are preparing and that's something that we can also send across while you and Dave figure out who should be attending those calls and all that.
+36:33So if you need any information from us to, you know, help identify that group and all that, please let us know.
+36:39I think Atul can let like you know, communicate with us and we.
+36:43OK.
+36:44And is there like a minimum number of people you need from each group?
+36:47I would, I guess 11 user interview per person.
+36:52I would really be helpful.
+36:55Oh no, no, I think per persona is saying I think yeah, like one or two is enough of I think OK, Max one or two OK.
+37:03Like Focus uses the I think it would be preferred like if they are also the ones who keep, you know who would be engaged throughout the next couple of months so that whether you do once when go on it.
+37:18Yeah, this is the focus group that we will be showcasing like each feature releases and collecting feedback.
+37:24Pratik.
+37:26So 00 to the same person, you mean?
+37:31Yeah, ideally like if we interview a person and we have some feature releases, we would ideally want for them to test out if the feature is working for them and have any feedback on that.
+37:41OK.
+37:41I mean, we can try our best to give you such a name, but no, no, we cannot guarantee that they will like always be available.
+37:47So that's fine.
+37:50We we will definitely try to give names who can like be with this work throughout.
+37:56But I have to double check with Dave.
+37:58Maybe he already started putting together a list for each persona.
+38:04But I I have to check with him.
+38:06Got it.
+38:06If they're all based sort of foursome office that makes everybody's life simpler.
+38:11Oh maybe.
+38:15OK OK I'll leave it up to you guys.
+38:17Yeah because I, I figure out workarounds.
+38:19Yeah.
+38:21I mean, people are widespread, like they're present.
+38:25A lot of PDMS are working from East Coast too.
+38:29So it's possible, like the person he already decided to pick or we decide to pick might be on the E 1st.
+38:38So I mean, again, it depends.
+38:40We'll see.
+38:41Oh, that's fine.
+38:41I'll figure it out.
+38:43Yeah.
+38:45OK, OK.
+38:45I think final question Samuel, like do you have anything else one or two, Fine.
+38:49I think we're all contact.
+38:50Yeah.
+38:52So the brand guidelines have been shared with us.
+38:55Any code guide that we need to follow from in specific, Sorry, say that one more time code.
+39:04We we have we have we have a set of brand guidelines already from our previous projects, Pratik that we were planning to follow at the same time.
+39:11We just wanted to check if you have, you know, if you're the right person to give us any kind of data API code guidelines.
+39:18You know that I think that would be Greg Christensen and I think they can probably OK connect you or got him.
+39:28Sure.
+39:28He's like our warehouse person.
+39:31So got it.
+39:34Sure.
+39:34If you have any we'll we'll ask Aditya.
+39:36Yeah, I think that would he would be the right person.
+39:39Got it.
+39:40Sure.
+39:42Yeah, I guess that's like from.
+39:45OK, OK, so one thing I think I'll just ask because it's the end of this.
+39:49Like, like how?
+39:51Like what is the expectation with respect to usage here?
+39:55I think like in in your, in your opinion that conference page for example, and let's say the tool that's gonna come out the daily usage, is it gonna be like 20-30 people or like just a range?
+40:09Yeah, I think.
+40:12To start off with, it could be 10 to 20, OK.
+40:20But I feel like depending on the usability and usage, the adoption can increase.
+40:29But to start off with it, it could be 10 to 20, yes, got it.
+40:33And I think most of the PDMS use like iPads and all that, right?
+40:37Also be thinking how, you know, responsive this tool has to be No, I think if I mean, I mean, probably that's a good question for to ask them in your one-on-one interviews with them.
+40:52But I feel like just like having it functional very well on desktop will be very helpful for now because I am not sure if people actually like will use it on when they're on mobile or when they are some browsing something on iPad.
+41:08I, I, I don't know, like their preferences like you, you, you have to like check with them.
+41:14We we'll park it.
+41:14Yeah, we'll park it further in Group.
+41:16Yeah, that's fine.
+41:17Because I think majority of our team that I know will probably access this through desktop.
+41:25Sure.
+41:26OK, thank you.
+41:30And I see that you all guys, are you all in Bangalore?
+41:34I am Soumya in Bangalore.
+41:36Atul is joining from US.
+41:39OK.
+41:40Where in Bangalore you are from or you are in?
+

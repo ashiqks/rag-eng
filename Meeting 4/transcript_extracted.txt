@@ -1,0 +1,297 @@
+Analytics User Interview  Experimentation Report Dicoverability (ERD)-20260513_093202-Meeting Recording
+May 13, 2026, 4:32PM
+38m 17s
+Athul Babu started transcription
+Kaushik B   0:03His voice breaking up a little.
+Sowmiya S   0:05Is that cooking?
+Athul Babu   0:07I think it's fine from my end, and I'm also recording the session, guys.
+Kaushik B   0:11OK, sure. Sorry, I think I heard some disruption. Sorry, go on, so, bye bye.
+Prateek Oberoi   0:13Yeah.
+Sowmiya S   0:15OK, cool. So I was just telling this today, the major part we'll be focusing on is this user interview for the scene is endless persona that we have. So we just wanted to annotate the key use cases, you know, identifying the friction points that you have in the current workflow before actually jumping into the solution part.
+Prateek Oberoi   0:25Okay.Okay.
+Sowmiya S   0:36So, uh, moving next with...Yeah, so with the workflow that you have given us in the previous sessions, we were able to put up this persona. Again, this is our view of, you know, what our senior analyst is responsible for, whatever the flexion points that he has in the current workflow. So I'm just taking you through the...
+Kaushik B   0:41Ops.
+Sowmiya S   1:01Sigma POV that we have, just give me one second.
+Prateek Oberoi   1:05Mhm.
+Kaushik B   1:09But before that, like...Sowmiya, like, let's just take a moment for Pratik to consume this. No, so Pratik, you know, the objective is to just, like, like Sowmiya said, in the last two calls, we aligned on what is the workflow overall, and then we were able to identify what are the personas, right, because based on the information you give, now we have identified 3.
+Sowmiya S   1:12Jha.Okay, go ahead.
+Prateek Oberoi   1:25Mm.
+Kaushik B   1:31The first one we want to pick is the senior analyst, which we are not sure if it's actually senior analyst, but we are referring to your persona in this entire process, essentially. As an analytics manager or as a senior data scientist, whatever responsibilities you're fulfilling within this context of work, right? And some of the challenges you face, some of the outcomes you want to.
+Prateek Oberoi   1:48Mhm.
+Kaushik B   1:52achieve and then the product features that we think will help you achieve this. So we just want your, like, you know, quick review on these pointers and just let us know if there's anything that we missed because all of our questions in the upcoming section for this person is based on this understanding.
+Prateek Oberoi   2:07Okay, but does level matter? Because, and I don't know, to be honest. We have senior analysts on our team.
+Kaushik B   2:14No.Oh.
+Prateek Oberoi   2:19Who?which may have a different perception versus what I have because I tend to look more at.a bigger picture versus everything in specific details. So I'm just trying to understand like...Um...
+Kaushik B   2:35Sure, okay. No, I think that's, yeah, I don't know, that's also a question for us and maybe we'll take a minute to discuss that. But see, like how we have kind of segregated is that from a personal perspective, one is the analyst perspective, which is the kind of responsibilities here, second is your brand manager, third is your product manager, and 4th is leadership.
+Prateek Oberoi   2:36If you have any.
+Kaushik B   2:53Let's say now, the other three are very clear, but here, like you said, maybe there are levels to it, but like to ask you back, like how, like what levels are present, like when we say a senior analyst, you, we, you walked us through your responsibility, right? Which basically involves like, you know, getting an experiment or talking to a PM.
+Prateek Oberoi   2:54OKOKOK.Mhm.Right.
+Kaushik B   3:13then kind of figuring out setting it up and then monitoring it and then creating recommendations based on your understanding and sharing it with them. That is, let's say, your role. So you're saying within your vertical, there are folks who are senior or junior to you who do slightly different things or are them very different things.
+Prateek Oberoi   3:20Right.No, they will do similar things, but the magnitude of things may be a little less. So, for example...They might be supporting fewer.versus me who as a senior manager might be supporting more teams, more broader, more critical teams. So.The process remains almost the same. It's just that the responsibilities grow as you increase the level.
+Kaushik B   3:52Okay, got it.Noted, so let's like clarify on this, right? So, if you just like, you know, glance through those four responsibilities that we have on the left top, that is essentially the flow of your persona. Like you said, the flow shouldn't change, so the scope might change. If the scope changes, we are OK. That's not a challenge to us, because...
+Prateek Oberoi   4:17Right.Yes, exactly. Yes.Yeah, yeah, exactly. Okay.
+Kaushik B   4:22you'll end up using the same features, probably the volume of the space at which you use it might change. But I'm assuming the responsibilities laid out there are accurate then, right?
+Prateek Oberoi   4:27Yes, exactly.Yes, that's accurate. Yes.
+Kaushik B   4:33Yeah, so I think then that's fine. Sowmiya, like, correct me if I'm wrong, but that shouldn't matter, right? The levels, if the scope is all that changed. Sure, yeah, we can jump in. Good. Okay.
+Sowmiya S   4:36No, no, that shouldn't matter. Yeah, yeah.Beard.
+Prateek Oberoi   4:43And I think the 4th point in challenges.
+Sowmiya S   4:47Mm.
+Kaushik B   4:47Mhm.
+Prateek Oberoi   4:48I don't know how we can avoid that because those are different tools and those will always exist as separate tools. We cannot combine them. So and it's not a constant switching. It's like one time setup in Optimizely and then it's done. We don't touch it again. And then we just rely on Adobe for all the analytics purposes.
+Sowmiya S   4:56Jha.Mm.Okay.
+Kaushik B   5:13Yes, noted, sure. And I think outcomes, essentially it's primarily these two, but let's forget the outcome. The product features, this is again based on our understanding and our questions are going to be around these features. So is there anything that you feel is missing?
+Prateek Oberoi   5:35Um...No, I think this is a good start and I thinkAnother thing could be...Uhh...I mean, just like more details around your.1, which is not just looking for any experiments, but also searching for like...
+Sowmiya S   5:54Okay.
+Prateek Oberoi   5:57What was the outcome and what was the recommendation?
+Kaushik B   6:02No, sure, no, that's good. Yeah, that's user query on how it's kind of broken down. I think we have questions around that that we'll share in a separate thing, but high level better aligned on the features, right? Sure, yeah. I think some of those questions are also the intent of this session is that only kind of to kind of deep dive on all these four things and get closer to what you would expect to.
+Prateek Oberoi   6:02And...Exactly.Okay, okay, perfect.Yes, yes.
+Kaushik B   6:21have on the app. So yeah, I think it's a good time to jump in Sowmiya. I think we have good on the context here.
+Prateek Oberoi   6:22OKOK.
+Sowmiya S   6:25Yeah.Yeah, is my screen visible?
+Prateek Oberoi   6:41Yes.
+Sowmiya S   6:42OK, good. And so, again, Padaki, this is just our only POP to help you, you know, have a visual experience or you know, just build upon this discussion. This will not be a final build. I'm just putting it out over here, so we just, you know, as we work through, we just wanted to understand your thoughts, the friction points that you have, and what is...
+Prateek Oberoi   6:57Okay.
+Sowmiya S   7:05What expectations in the final solution that we will go direct to?Will that, is that sound right?
+Kaushik B   7:16Yeah, no, just to clarify, I think Pratik just saying that this was, I think, a pre-kickoff, like when we're doing requirement gathering high level with your team. I don't know if you're involved, but I think the solutioning team had put this together. So this is the base. We are just using it here as a reference, because when we speak about search feature, for example, verbally, you might not be able to recollect. So we are just.
+Sowmiya S   7:17Good.
+Kaushik B   7:37Like, you know, make to make it easier for relatability, we are bringing it up, but the disclaimer is that it might significantly change as we get requirements from different personnel and everything, yeah, cool.
+Prateek Oberoi   7:38Mhm.Okay. Okay. Okay. Okay. Makes sense.
+Sowmiya S   7:50Yeah, I I just get started, but I think just to understand when you come in and you know you search for the previous experiment, right? So, on what scenarios would it primarily trigger you to come here and you know search for an experiment, or is it because a PM will come and ask for a double check to you, or is it gonna be?
+Prateek Oberoi   7:59Mhm.
+Sowmiya S   8:12on leadership ad hoc, like just trying to understand what scenarios you would be coming here and searching for the past results that's been done.
+Prateek Oberoi   8:21I would say it could be a multiple, it could be multiple reasons. Like first, like you said, it could be a product manager who's trying to like create their roadmap or think about their future roadmap and they want to understand if a particular test was conducted in the past.
+Sowmiya S   8:30Ohh.Okay.
+Prateek Oberoi   8:39or...If any other brand, let's say if, for example, they want to try to run it on Banana, so they want to understand if that test has been run on any other brand other than Banana in the past or not, and...
+Sowmiya S   8:53Mhm.
+Prateek Oberoi   8:58Another partner could be from the brand side where they can also come and say like, oh, did we do this test in the past? And if yes, what were the findings? Because sometimes what happens, like people keep changing. If let's say someone...
+Sowmiya S   9:09Okay.Yeah.
+Prateek Oberoi   9:16new, someone new joined the team and they have no knowledge of what happened in the year 2023 or 2022, then they will come back and ask me like, okay, where I can find these tests and if we have done this particular test in the past or not. And sometimes, and sometimes the third possibility could be us looking internally just to understand if.
+Sowmiya S   9:29Okay.So, uh, yeah, go ahead.Yeah.
+Prateek Oberoi   9:40we have done something similar in the past. Let's say we tested something four years back, but now, you know, like things have changed A lot. Traffic changes a lot, customer behavior changes a lot, and people want to test it again to see if the learnings from the past four years are still valid or not. Then we also go in internally and search in the tool.
+Sowmiya S   9:45Okay.
+Prateek Oberoi   10:00understand if this test was run or was conducted like in the past, what were the findings? Is it consistent to what we are seeing now or not? So it's possible to run the same test again. It won't be counted as a test.
+Sowmiya S   10:07Okay.Okay.
+Prateek Oberoi   10:20duplicate because if you're running it after three years or four years, just to validate if things are still the same or not, or if they have improved, then it's actually because.
+Sowmiya S   10:29Mhm.
+Prateek Oberoi   10:32are things in the retail world are continuously changing. Our website is evolving, the customer behavior is evolving, so they still want to understand if that change is still making the same impact or something.
+Sowmiya S   10:35Yeah.Mmh.
+Prateek Oberoi   10:45Different needs to be done, so three ways they we can like come here and search for the past test.
+Sowmiya S   10:45Okay, got it.Bye.Okay.Understood. So while searching for the experiments, right, you know, you'll go by either the name, the category or the experiment name as in whole. You would be receiving some exhaustive list like, you know, for the past six months if you're trying to filter it out or for the past nine months that you're trying to filter it out.So, we'll be having this exhaustive list of experiments when you want to reach to that one particular experiment you're trying to, you know, see or go through and implement, how do you narrow it down or on what level? If I could say you will be narrowing it down, either it's gonna be brand level, the...Channel or the value stream - like, how does that work?
+Prateek Oberoi   11:35Yes, so.And I can explain like how it works in today's world. So whenever we name our test and I can, can I share my screen for a minute so that it's easier for you to understand.
+Sowmiya S   11:41Okay.Yeah, sure, sure, sure, yeah.Yeah.
+Prateek Oberoi   11:57Okay.So, you see my screen?
+Sowmiya S   12:01Yeah, I can see.
+Prateek Oberoi   12:02Okay, so in today's world, this is how we name our test. We give like a brand name in front of it.
+Sowmiya S   12:09Mhm.
+Prateek Oberoi   12:09So, Bronga means all brands, P.R. Gap.
+Sowmiya S   12:12Okay.
+Prateek Oberoi   12:14Old Navy.
+Sowmiya S   12:16Mm.
+Prateek Oberoi   12:16So you can see for which brand this test has been running, and then definitely there is a name. Now name can be very tricky because...
+Sowmiya S   12:18Yeah.KS.Mhm.Yeah.
+Prateek Oberoi   12:46It can be show hide sister brand universal bar.
+Sowmiya S   12:50Okay.
+Prateek Oberoi   12:51So people can name it differently. So definitely.Like keeping a consistent naming is hard because there are so many people involved and the name is decided by the person who might be initiating the test or who might be asking for the test. So it's hard to keep it consistent and the naming always follows.
+Sowmiya S   12:57Mhm.Singh.
+Prateek Oberoi   13:15whatever they decide up front.
+Sowmiya S   13:16Mhm.
+Prateek Oberoi   13:18So.That's one challenge, but in Confluence, one good part is you can like tag the Confluence pages. So I can add tags here, which can help me to search it at a later point. So for example, I can tag it as Old Navy category page.
+Sowmiya S   13:30Mhm.Okay.
+Prateek Oberoi   13:40facet test, something like that, like naming or the keywords that I might look for or people might look for when they will search for it. And when you search for it in Confluence, based on those keywords, you can narrow down. So that's one way. Another way is if you know like which year the test was running, then we have things by year. We can also search.
+Sowmiya S   13:44Mhm.
+Kaushik B   13:55Yeah.
+Nilim Borah   13:56But.
+Prateek Oberoi   14:03in that respective years folder to see if something with a similar name exists or not. So there are different ways. Again, like I said, because the namings are not consistent, sometimes it does take one or two trials to see if we have filtered out all the possibilities.
+Sowmiya S   14:09Mhm.
+Prateek Oberoi   14:24before saying that this hasn't happened in the past or we found it and these were the findings.
+Sowmiya S   14:24Mm.
+Nilim Borah   14:30A Padaki, I have a question here. So I understand, let's say your naming conventions are not consistent, but so do you in that case enforce this that where everyone has to make sure that they're adding the tags for all the conference pages? Is that been enforced?
+Prateek Oberoi   14:32Yeah.No, no, it's not. It's up to the person who's creating the page.So.
+Nilim Borah   14:52OK.
+Kaushik B   14:52No, no, but the brand name in the beginning, that's mandated, right? Like...
+Prateek Oberoi   14:57We try to, but you will see here test without brand names too, like this one.
+Sowmiya S   15:03Okay.
+Kaushik B   15:03No, we're just looking for my tag data.
+Prateek Oberoi   15:03So, but you for majority of the tests, yeah, for the majority of the tests, you will see the name. But there will be like few in between.
+Kaushik B   15:09Okay.
+Prateek Oberoi   15:12Like this one.
+Kaushik B   15:14Sure, and the tags that you mentioned are added by the people who create the contact page, or like you said, you mostly do it when you're kind of going back in.
+Sowmiya S   15:15Yeah.
+Prateek Oberoi   15:22Like the person who creates the confluence result page.
+Kaushik B   15:24Okay.Sure, and it's like a Jira thing only, so it will help you kind of search for it quickly. Sure, got it. I think this helps.
+Prateek Oberoi   15:30Yeah, yeah, exactly. Ohh, so it's right here.Add labels.So I can add labels here, like for example, this is old name.
+Sowmiya S   15:45Mhm.
+Athul Babu   15:46I think we'll have some of these filters right at the search at the top.
+Prateek Oberoi   15:46And then...
+Athul Babu   15:52So we will post this call, we probably share an Excel file to get like a deeper understanding of what are the filters that you need while searching in the app. But those are like low priority questions which we can follow up with email. So we'll just go ahead with the next question.
+Prateek Oberoi   16:07Okay.Okay, perfect.
+Sowmiya S   16:10Yeah, got it. Let me pull up my screen.
+Athul Babu   16:11Ops.
+Sowmiya S   16:21So yeah, my follow up question to that was, currently you are searching for these experiments in a particular way, right? If you could do it a little bit differently, you know, in a way that you would feel sort of an order team. If I could see any way, if you could suggest, like say for example,Experiments on which has won a particular AOB in the past six months, so this is very detailed, right? So if you could run a search in the tool that we are going to build up, how it would be the ideal way if you would want to have the search to be done.
+Prateek Oberoi   17:00I think the best way for me would be to...Get.the best results with the minimal wording.
+Sowmiya S   17:10Yeah.
+Prateek Oberoi   17:11Because.Let's say if there's a person who's like outside our team, they may not know each and every details like you said.
+Sowmiya S   17:18Mhm.Mhm.
+Prateek Oberoi   17:22AOV this or run around this and they may not know anything about the test. They may not even know the name of the test.
+Sowmiya S   17:29Okay.
+Prateek Oberoi   17:29So if they come and search here and say, did we do this test of our Old Navy?In the past five years, that's it. Like minimal wordings without any details because definitely we can go in and add in more details, but I'm just thinking more from a perspective of customer, or sorry, a user who is outside our team. They may not have all the details.
+Sowmiya S   17:39Go ahead.Mhm.
+Prateek Oberoi   18:00And imagine if they're completely new to the company. They may not even know how to start. So I think some helpers, as you click on the search bar, will be helpful. Like, for example, if you click on it and then it says some random recommendations, like, give me winners from past five years.
+Sowmiya S   18:05Mhm.Yeah, OK.Yeah.
+Prateek Oberoi   18:20or give me all old Navy tests that ran on product page, give me all tests that ran on category page. Something like that, like some helpers to help them initiate the search. And once they start doing it, then they may know like, okay, what exactly they need. And then they can start using keywords.
+Sowmiya S   18:20Mm.Thanks.Mhm.Okay.
+Prateek Oberoi   18:41And I think that behavior will be a learning curve for us too, because we didn't have anything existing so far yet. So we also are excited to learn like what exactly customers search for, or sorry, keep saying customers, but people or colleagues search for when they use these tools and how they.
+Sowmiya S   18:41I.Yeah.Okay.
+Prateek Oberoi   19:00Use these tools.
+Sowmiya S   19:01Understood, so while you know you search and you get these cards or basically the test results, right? So if you are about to focus on certain numbers as it's displayed over here, which is which you feel like should be highlighted in a way, OK, I'll it will prompt me.To go and see that particular experiment, and you know, take some ideas so that I can go back to the PM and you know, again, do the brainstorming.
+Prateek Oberoi   19:33I think what you have is great. I think you are highlighting all the primary metrics, which I think will definitely be helpful.
+Sowmiya S   19:35Mhm.Okay.Mhm.
+Prateek Oberoi   19:44I think one more thing that might help them is the recommendation.
+Sowmiya S   19:47Okay.Go ahead.
+Prateek Oberoi   19:54Like this test has handed these were the findings. What was the recommendation or?
+Sowmiya S   19:54Understood.Yeah.
+Prateek Oberoi   20:01Like, maybe like...Not recommendation or I mean recommendation slash learning, which means like.
+Sowmiya S   20:09Okay, okay.
+Prateek Oberoi   20:10What was the high-level learning from this test?
+Sowmiya S   20:13Songs.
+Prateek Oberoi   20:14Like in just like a line or two.
+Sowmiya S   20:17Understood, OK.
+Prateek Oberoi   20:19so they can get like a glimpse of.what happened in the test without having to open it or get into the details. And if they want to, there will always be an option for them to get into the details.
+Sowmiya S   20:23Mhm.
+Nilim Borah   20:31Radhika, just one question here. So this learning should be very contextual, right? Like you said, because the, like I said, the detail landscape keeps on moving, right? Those things will be directly applicable to those learnings or if not.
+Sowmiya S   20:32Thanks.
+Athul Babu   20:32But...
+Prateek Oberoi   20:45Yeah, yeah, absolutely. It will be helpful because it is for that particular test that ran during that particular time. Now, what's going to happen in future? We don't predict. We cannot predict. And if they want to learn and see if the learning changed, then we have to run another test. And the new learnings will be on that new test.
+Nilim Borah   20:48Okay, yeah.Mhm.Okay.
+Prateek Oberoi   21:05product card, not on the old ones.So these learnings will be by test. So in this card that we are seeing by test, if we can just add like a high level learning, just like a one or two liner, that this is what we learn and these were the critical findings, thanks. That's it.
+Nilim Borah   21:22Okay.
+Kaushik B   21:27Okay.
+Nilim Borah   21:27Okay.
+Prateek Oberoi   21:27so that they can quickly, if we want to like quickly see like what were the learnings, we can just read those two lines and share it with the teams that ask.
+Kaushik B   21:37Got it.
+Athul Babu   21:37Praveena, I don't know if you have used Glean, usually at the end of the search result. At the top, you will have like a summary of all these results that you found together as well. I think that's something that will be helpful for you, right?Instead of all these cards, just a summary at the top of all the learnings that you find from the search result.
+Prateek Oberoi   21:58Again, if that search is done incorrectly, that means the learnings will be reflected incorrectly.
+Athul Babu   22:02Ah.Okay.
+Prateek Oberoi   22:06Because when customers are searching, like I said, if they are outside our team, they may not know what exactly to search for and they will do random searches. So I just don't want them to make any decision based on.
+Kaushik B   22:06Think at all.
+Prateek Oberoi   22:19the learning from all the search results because it may not have all the correct tests that they actually came to look for.
+Kaushik B   22:21Bye.
+Sowmiya S   22:26I miss.
+Kaushik B   22:27So, the the it will depend on the quality of the search or the user input rather than, so you prefer that it it be kept at the experiment level only, right? Learning, so that it, yeah, sure, noted.
+Prateek Oberoi   22:31Exactly, exactly, exactly right.I think so, yes, because if your search is done incorrectly, that means the learnings that you're going to get on top will be incorrect.
+Kaushik B   22:46And it might.
+Nilim Borah   22:47Combination of two experiments as well, right? That's what the learnings are there.
+Kaushik B   22:50Yeah, no, that is that is the point, Nilim, that if you search wrongly, you might get a mix of experiments that you didn't intend for. Therefore, the learnings also will be not something you're looking for. So, I think that's the entire thought process, but sure, okay, I think that's correct. So, I think, sorry, Sowmiya, we just have like 5 minutes left, so...
+Sowmiya S   23:09Yeah, yeah, yeah, so that is, so when you know you create that conference page, right?
+Kaushik B   23:10Let's.
+Prateek Oberoi   23:19Mhm.
+Sowmiya S   23:19Has there been any kind of error fails? Like, okay, for this particular section, I'll spend most of it. I do feel that this part is somewhere, most of the time it is getting messed and actually no one reads about it or...Is there any area like say, for example, you did mention that you're sending this, you know, complaints page to the PMs, the BMs and the leadership. So do you think that we could bucket the output in a way OK for PMs, this level of information or the?We are going to segregate and then send it out to them. Are there any ways that we are doing it right now?
+Prateek Oberoi   24:03So.Ohh.I mean, to broadly answer your question, yes, because that's how, I mean, we give everything from our end, but then let user decide what they need. Because for us, it's not like a one-to-one connection, like we are creating a confluence page and only PDMs are reading.
+Sowmiya S   24:09Mhm.Okay.Mhm.
+Prateek Oberoi   24:28We are creating a confluence page and only a particular brand person is reading. Because when we create a confluence page, then it's get distributed or passed on to multiple partners.
+Sowmiya S   24:28Okay.Mhm.OK.
+Prateek Oberoi   24:39And, like you said...that's 100% possible that some of them just want to read a high-level summary.
+Sowmiya S   24:46Yeah.
+Prateek Oberoi   24:47And some of them may also want to read in detail like what exactly is happening. So I am, I have examples of partners who would love to read in details, but there are also partners who just go with the summary and don't even like read the details. But in the conference we have both. Like you will see summary on top as well as details at the bottom.
+Sowmiya S   24:53Okay.Okay.Shivam.So, in that case, you know, if, if say, for example, the PDM fields like, okay, it's too long to read, why don't I just go and ask, you know, the analytics, the senior analyst who has made this, but the question that they're asking, the answer is already there in the complaints page.But somehow they skipped, you know, to get an understanding of it and they come back to you again.
+Athul Babu   25:30Well, maybe Sowmiya we park that for the PM so we know what is relevant for them during the search.
+Prateek Oberoi   25:36Yeah, yeah.
+Sowmiya S   25:36Okay.
+Athul Babu   25:37Yeah, let's go to the next one.
+Sowmiya S   25:39Got it, so the last part I just want to cover is the the AI bot, as you could see it over here.Yeah.Okay, let me just skip this part. So, Kritik, I just wanted to understand if there could be any three to five, you know, most common questions that the user will be asking the bot. So, that can be, you know, given as a predefined prompt when the user is going to have this interaction with the bot.Maybe putting it in like categories or any other way which makes them to have the conversation with a bird and much more easier way to.
+Prateek Oberoi   26:27Yes, I think when we enter data in now the SharePoint that Aditya helped us to create previously, we have.
+Sowmiya S   26:27When, yeah.Mm-hmm.Okay.
+Prateek Oberoi   26:43Multiple columns there.
+Sowmiya S   26:46Mmh.
+Prateek Oberoi   26:47And we have all the information about that test, whether it's like a digital test or it's a store test, which section of the site the test is running on, like if it's on a product page, category search, shopping bag, or checkout. We have broken it down by.app, mobile, or desktop, or both, like device level.
+Sowmiya S   27:14Okay.
+Prateek Oberoi   27:14So...I think starting with that will be helpful. Let's say if there is a...PDM who's coming and they want to look at all the product, all the tests that we did on the product page in the last 12 months, then they can like you have 10 in test experiments, they can just do like product page experiment and it gives them a summary.
+Sowmiya S   27:24Mhm.Okay.Mm.Thank you.Okay.
+Prateek Oberoi   27:38Like these menu were run, these were the total lift we saw, this was the drop.These were the tests that were the highest winners or except like however you want to create that summary.
+Sowmiya S   27:48Mm.Connect.
+Prateek Oberoi   27:53So I think by site section will be helpful because that's how our PDMs are working in today's world. They have different sections on the site and they are interested in learning about their section. Similarly, we have PDMs by device too, like some are focusing more on app.
+Sowmiya S   28:06KS.
+Prateek Oberoi   28:11versus on web. So they would like to see it broken down by their preferred device, which is, let's say, if you want to look at app, then you can get to somebody of all the app tests. So we do have those breaks in the data that we input.Or.put it in the SharePoint.
+Sowmiya S   28:31Yeah.
+Prateek Oberoi   28:33And maybe that would be a good.
+Athul Babu   28:33But, Padaki, what about you? What is, if the AI is supposed to give you an answer, what is more important to you?
+Prateek Oberoi   28:43When you say answer in terms of what? Like how?
+Athul Babu   28:47If you're, yeah, if you're searching for an experiment from the past or summarizing something using the AI, what is important for you, like...
+Prateek Oberoi   28:51Mhm.Um...I think just giving like if we have done that test in the past, yes or no, for which brand we did it, what were the findings, and if there was any lift Ops.
+Athul Babu   29:13Okay.
+Prateek Oberoi   29:14And this is, I'm giving an example, let's say I'm looking for a very specific test, and yes, this. But let's say if multiple tests were done in the past, then a combined summary will be helpful that we did this test multiple times, the findings were consistent, or the findings were different every time we did it, something like that.
+Athul Babu   29:36Okay.
+Nilim Borah   29:38A Padaki, I mean this might also depend on, let's say, what stage.
+Sowmiya S   29:42Yeah.
+Nilim Borah   29:43I mean, a product manager isn't creating the experiment, right? Let's say if it's the very first time it's let's say it's completely exploratory, he might be trying to look at different answers, right? And let's say all is contrasting, right? So I think that's something also needs to be figured out here, yeah.
+Prateek Oberoi   29:51Hundred percent.100%. And I think that would be best answered by them, like how they prefer and which stage they prefer to use it. Because like I said, this tool hasn't existed in the past and they have been just reaching out to us and we have been helping them with their queries. But let's say if they have access to this tool, it's very much possible that.
+Nilim Borah   30:02Okay.Singh.Mhm.
+Prateek Oberoi   30:16they might use it more and every stage as compared to now, because now they have to like ping us to ask us. And sometimes we reply right away and sometimes we take time to reply to them. So they might be thinking they can just move forward with what information they have. But let's say if they have access to this tool with all the information available.
+Nilim Borah   30:20Mhm.
+Prateek Oberoi   30:37Then it might.just trigger more usage of it and more questions from it versus what they're asking right now.
+Nilim Borah   30:41Singh.Okay.Okay.Okay.
+Sowmiya S   30:53So, I guess, so that's all I had for today, Pratik. Like, you would like to...
+Kaushik B   31:01Uh, did we cover all the questions, uh, Sanjeet Padaki? Do you have like one or two ways to extend? Just taking the liquidity here.
+Sowmiya S   31:03Yeah, yeah, yeah.Yeah, I guess, yeah.
+Kaushik B   31:09Okay, Sowmiya, like we have covered everything, right? Okay, sure. Like, I think one thing, I don't know if we discussed this, but like, like, Pratik, is this a problem that's faced generally within Gap and like, just also a follow-up question on the maturity and like the acceptance of AI, right, within the, like, whenever such apps have been released before?Like we are thinking from our end, like just to improve the trust. I think in this case it's simpler because it's just limited scope it's referring to. We can give the link of the conference page itself below that if you have any, go and see that. But do you see the need to for any other reinforcements with regards to to improve the trust or like do you see that as a common trend within your org where you?Feel like adoption will be a problem among the group, given the distrust or, you know, like...
+Prateek Oberoi   31:58I think that's very much dependent on the response we get back from the tool, because if...
+Kaushik B   31:58Okay.
+Prateek Oberoi   32:05If, let's say, the response is very mixed and they're not able to understand it, or it's a lot of words which they don't have time to read it, then they might think it's too much information for them to absorb, or...
+Kaushik B   32:10Yeah.
+Prateek Oberoi   32:21Something is very different versus what they had thought of, and that might lead.them to think that maybe this tool is still learning and is not or is not fully optimized and is not giving them and it's not giving them the answer that they might be looking for. So I think again it depends on the type of response that they get.
+Kaushik B   32:32Mm.
+Prateek Oberoi   32:45If it's exactly what...they like to see, then 100% they're going to like it. But if it's different, then it's going to generate more questions for them and then they will start thinking, should I be using this tool more in future or should I just go and ask the person?
+Kaushik B   33:04Okay, noted, sure. Got it. Okay, and one last question from my end. Sorry, we're spilling over 5 minutes, but I think you already answered this, but want to double, like, you know, ensure that we're talking. So you're saying that right now the conference page is free for all access, like one brand manager can view the information of another brand manager.But just want to like, you know, check so that we are thinking about it in a future manner that like, do you feel that is was a limitation of conference and therefore it was that way? Or like, do you not feel that might be a requirement? I'm saying basically role-based access would that not be like a requirement on the application?
+Prateek Oberoi   33:43No, I don't think so because people can move within team, people can move within functions. So let's say if you are a PDM for product page today, it's possible that you might want to move to a...
+Kaushik B   33:50Mm.No, no, I'm I know within within the pages I'm fine. Am I saying across brands because financial numbers and all are shared, right? So across like a BR, okay.
+Prateek Oberoi   34:04No, no, no, it's no, no, because single product manager is responsible across all brands.We don't have different product managers for different brands. It's like 1 PDM responsible for that side section across all brands.
+Kaushik B   34:10Ohh.
+Athul Babu   34:12Ohh.
+Kaushik B   34:18Okay, got it. Sure. Okay, that answered my question.Sure, and I talk across the hierarchy also, there's nothing like, like a junior person cannot see this information with respect to whatever is there. Okay.
+Prateek Oberoi   34:29No, no, no. I think whatever we have in Confluence is open to everyone. Anyone with a GAP ID can access it.
+Kaushik B   34:38Sure, okay, cool. I think that was some two questions from my end. I think we're good from my end. Sowmiya, I think you're also good. Anyone else, any questions?
+Sowmiya S   34:45Yeah.
+Athul Babu   34:47We probably will have some follow-up questions for the low priority ones, which will send over email with already the responses that we got from this call.
+Kaushik B   34:48No.
+Sowmiya S   34:48Okay.
+Nilim Borah   34:48Thank you.
+Prateek Oberoi   34:55Okay, alright, bye.
+Athul Babu   34:56Also, as a follow-up, we definitely need those calls with the PMs and brand managers similar to this. So I think I praised this as well yesterday. We still haven't gotten a list. And because we don't have an ID, I can't find the time on their calendars as well. So.
+Prateek Oberoi   35:11Okay, I will be connecting with Dave tomorrow morning, so I can like check with him if he has that list in mind, or if not, then we can just put together some names together and send it your way.
+Athul Babu   35:16Sure.
+Prateek Oberoi   35:27But give me time until tomorrow morning when I'm going to connect with him and then I can follow.
+Athul Babu   35:33Sure, Pratik. Also, we want to kickstart the weekly business review with you folks. Probably we'll keep it at a biweekly basis. But tomorrow feels like a good time to start that. So I'll probably check with Adi if I have time on your calendar for tomorrow for the WBR.Is tomorrow a good time for you?
+Prateek Oberoi   35:56Do you need just me or you need both me and Dave?
+Athul Babu   35:59He probably you and David.
+Prateek Oberoi   36:02Okay.
+Kaushik B   36:06We can keep David optional if that's so be a challenge.
+Prateek Oberoi   36:10No, I think Dave will be needed because I would definitely need his inputs too.I think...I mean, our calendar is open, but mostly in the afternoon, which will be very late for you, so...
+Athul Babu   36:29Mhm.
+Prateek Oberoi   36:30Maybe, and you need like 30 minutes.
+Athul Babu   36:33Yeah, probably 30 minutes.
+Prateek Oberoi   36:36Do you think Friday morning?Is doable, or it will be? Yeah, it will.
+Athul Babu   36:39Ohh.Bye.It, I'm gonna check with, I'll check internally and see what the best time is.
+Prateek Oberoi   36:48Yeah, yeah, because morning time I think we both have availability on Friday.
+Athul Babu   36:53Okay.
+Prateek Oberoi   36:55But if not, then Thursday.Afternoon, it will be late afternoon, like after 130.
+Athul Babu   37:02Oh, sure. I'll check your calendars with Aditya and like let you know.
+Prateek Oberoi   37:06Okay.
+Athul Babu   37:07Also, just keep an eye out for any MFA emails that's coming your way.
+Prateek Oberoi   37:12Yes, I will. I will. It hasn't come my way, but I'm going to ask again Dave tomorrow morning if he got a chance to approve those requests. And if not, then we'll just do it. And once I have those emails, I will send it your way.
+Athul Babu   37:12Jha.Thank you so much. I know I'm pinging you a lot about this.
+Prateek Oberoi   37:28No, no, all good. I know you need to get access to start working, so that's important. But it will happen. It will happen.
+Kaushik B   37:38Thank you, Pratik.
+Athul Babu   37:39Thanks, Deepak.
+Nilim Borah   37:40Thank you.
+Kaushik B   37:40Thanks to you a lot. I hope this 40 minutes was useful to you, but it was definitely useful for us. Good cause.
+Prateek Oberoi   37:46Okay, and yeah, if you have any follow-ups, just let me know. We can schedule another 10, 15 minutes to go over things. Or if you want to like...
+Athul Babu   37:47Yeah.
+Prateek Oberoi   37:56meet after you interview everyone and then have some follow-ups, then we can do that too.
+Kaushik B   38:00Yeah, we'll load that. I think we'll talk to the other person, put up like a point of view, and then probably we'll circle back with you and Dave, you know, once we have.
+Prateek Oberoi   38:07Okay, perfect.Perfect.
+Kaushik B   38:12Thank you, Padaki. Have a very good day.
+Sowmiya S   38:12Thanks, Srinidhi. Thank you.
+Prateek Oberoi   38:13All right, thank you. Bye.
+Athul Babu   38:13Thank you.
+Nilim Borah   38:15Thank you.
+Athul Babu stopped transcription

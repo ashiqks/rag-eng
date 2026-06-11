@@ -1,0 +1,9 @@
+question_id,question,reference_answer
+Q-001,What experiments are currently active?,"There are active experiments running across Old Navy, Gap, Banana Republic, and Athleta brands. List the ones with end_date in the future and outcome 'In Flight'."
+Q-002,How many experiments resulted in a loss in 2026?,"Count of experiments with outcome='Loss' and start_date or end_date within calendar year 2026."
+Q-003,What is the incremental revenue from the Athleta Push test on recent searches?,"The Athleta Push (Android) test 'Recent searches as quick chips - Jul 2024' generated ~$3.77M incremental revenue with a primary KPI delta of +1.98% on AUR."
+Q-004,Summarise the Banana Republic free-shipping thermometer test results.,"The Banana Republic Tablet Web client-side test for the Cart Abandoners audience tests whether showing a persistent bag thermometer increases AOV. Report on outcome, primary KPI delta, and recommendation."
+Q-005,Which experiments tested PLP sorting in Brazil?,"List all experiments where value_stream='PLP' and market='BR'. Include test_id, brand, channel, dates, and outcome."
+Q-006,What was the impact on revenue of all 2026 experiments combined?,"Sum of incremental_revenue_usd minus averted_loss_usd across all experiments with start_date in 2026. Report total wins, total losses, net impact."
+Q-007,Show experiments where the recommendation was adopted.,"List experiments where recommendation_adopted='Yes'. Include test_id, primary_kpi_delta_pct, incremental_revenue_usd."
+Q-008,What is the average duration of experiments at Gap Factory?,"Average of duration_days across experiments where brand_code='GAPF'."

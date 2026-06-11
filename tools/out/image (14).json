@@ -1,0 +1,78 @@
+{
+  "tables": [
+    {
+      "title": null,
+      "footnotes": [],
+      "headers": [
+        "Variations",
+        "#Visits",
+        "Net RPV",
+        "OPV",
+        "AOS",
+        "UPT",
+        "AUR",
+        "Category Views/Visit",
+        "Product Views/Visit",
+        "Category -> PDP",
+        "PDP -> SB",
+        "SB -> Checkout",
+        "Bounce Rate - Category",
+        "Category: Any Facet Engagement Rate",
+        "Category: Sort By Facet Engagement Rate"
+      ],
+      "rows": [
+        {
+          "Variations": "Control - Certona Auto-Discovery",
+          "#Visits": "742,980",
+          "Net RPV": "$3.95",
+          "OPV": "2.39%",
+          "AOS": "$165.45",
+          "UPT": "2.16",
+          "AUR": "$76.70",
+          "Category Views/Visit": "1.47",
+          "Product Views/Visit": "1.74",
+          "Category -> PDP": "53.68%",
+          "PDP -> SB": "16.58%",
+          "SB -> Checkout": "27.03%",
+          "Bounce Rate - Category": "53.08%",
+          "Category: Any Facet Engagement Rate": "22.45%",
+          "Category: Sort By Facet Engagement Rate": "3.73%"
+        },
+        {
+          "Variations": "Challenger - Constructor Auto-Discovery",
+          "#Visits": "734,215",
+          "Net RPV": "$3.96",
+          "OPV": "2.46%",
+          "AOS": "$161.06",
+          "UPT": "2.15",
+          "AUR": "$74.97",
+          "Category Views/Visit": "1.49",
+          "Product Views/Visit": "1.78",
+          "Category -> PDP": "55.18%",
+          "PDP -> SB": "16.70%",
+          "SB -> Checkout": "27.01%",
+          "Bounce Rate - Category": "52.15%",
+          "Category: Any Facet Engagement Rate": "22.68%",
+          "Category: Sort By Facet Engagement Rate": "3.57%"
+        },
+        {
+          "Variations": "Incremental",
+          "#Visits": "",
+          "Net RPV": "0.1%",
+          "OPV": "2.9%",
+          "AOS": "-2.7%",
+          "UPT": "-0.4%",
+          "AUR": "-2.3%",
+          "Category Views/Visit": "0.9%",
+          "Product Views/Visit": "2.6%",
+          "Category -> PDP": "2.8%",
+          "PDP -> SB": "0.7%",
+          "SB -> Checkout": "-0.1%",
+          "Bounce Rate - Category": "-1.8%",
+          "Category: Any Facet Engagement Rate": "1.0%",
+          "Category: Sort By Facet Engagement Rate": ""
+        }
+      ]
+    }
+  ]
+}

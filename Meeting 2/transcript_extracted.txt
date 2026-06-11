@@ -1,0 +1,840 @@
+﻿
+
+GapMathco Experimentation - Working Session-20260506_103353-Meeting Recording
+
+0:02In like 1 minute, just to like tell you how things are, our understanding of it.
+
+0:08And then probably you can expand on where we are missing.
+
+0:11OK, perfect.
+
+0:13However you want to drive this meeting, I&apos;m happy to contribute.
+
+0:17And then if you want, I can also like show you a quick process like how things are at our end.
+
+0:23But we&apos;ll start with what you have now and then if I&apos;m sure you all will be much better than mine.
+
+0:29No, no, no.
+
+0:30I, I quickly put together something very fast.
+
+0:33But we can go what you have first.
+
+0:35And then if something is missing, I can add in.
+
+0:38Shar.
+
+0:38This is just so until we get our IDs created because then we can explore from our own friend.
+
+0:43But since that till then, we don&apos;t wanna waste any time and just get as much info as possible.
+
+0:48OK, Perfect.
+
+0:49Shar, show me our way to you.
+
+0:51Thanks.
+
+0:53I&apos;m just sharing my screen.
+
+0:55Yeah, I think I think the intent is to just level set you so that you know what we are so that we can also you can also use your time best.
+
+1:03So yeah.
+
+1:04So may I think my screen best?
+
+1:06Yes, it&apos;s up.
+
+1:07Yes, it&apos;s up.
+
+1:07Yes.
+
+1:07OK, So hey, hi Prateek.
+
+1:10I&apos;m just giving you a quick work through.
+
+1:12This is basically our understanding with, you know, the previous conversations we had our job.
+
+1:18So the entire AB testing starts with where the PM has an idea to test, say for example a feature or a checkout option to be placed in such a position.
+
+1:28The request is being passed on to the experimentation team, which is David and his team where they validate, you know what the hypothesis to be said or the duration to be set up for this entire test to be run.
+
+1:42And from there on when the experimentation team validates the request and if it&apos;s getting approved, so the test is automatically moved into Optimizely where the entire AB testing is happening currently.
+
+1:55And we&apos;re not sure once if the idea is being rejected, what happened.
+
+2:00So that&apos;s the reason we just put it as a question mark to you over here.
+
+2:04So once the Optimizely runs the AB testing simultaneously there&apos;s a manual initiation of the conference page wherein we believe there&apos;s a user adding all those information to what hypothesis we are defining it.
+
+2:20And once the test is ending, the output is also being added in the single conference page as well.
+
+2:26And optimizely, once the test being confirmed by the optimize laser getting finished, Adobe&apos;s measures some part of these tests.
+
+2:37And from Adobe, we were having an understanding where some metrics or or some part of the data is being and dropped into exit, wherein there&apos;s a further bit of a work around happening over there.
+
+2:53And the little part where the user comes in and feeds all those outputs to reconference page.
+
+3:01So this is just a quick understanding that we had currently and we just wanted your thoughts over here.
+
+3:09No, you, you covered it really well and you have a lot of good things here.
+
+3:14But I just want to add few more points.
+
+3:17OK, I will start from the beginning.
+
+3:18OK, So this is a very recent change that we made within our org.
+
+3:24We have divided the work by value streams.
+
+3:28And by value streams, I mean like for example, there are specific sections on our website.
+
+3:34For example, we have and please ask me if you don&apos;t know like PLP pages which is category and search.
+
+3:41We have product page, we have a bypass which is product page, then we have a shopping bag and then check out.
+
+3:48So the value streams are divided based on these pages.
+
+3:56And there is a product manager that is responsible for each of these value streams.
+
+4:01So in the new structure that recently happened, we are working with those product managers and initiating any experimentation that they want to run.
+
+4:12Previously there were like more streams and even now there are more streams from which we get requests other than product managers.
+
+4:20But going forward, this will be the only, this should be the only stream, OK, as what we hope for.
+
+4:28So while dividing those streams, right, are there any dedicated site from the experimentation team that cater only to a particular stream or is it gonna be a yes?
+
+4:38So we are in the process of planning for that like how the resources will be split because like I said, it&apos;s a recent change.
+
+4:47So our team is adopting to that change right now.
+
+4:51Got it.
+
+4:51So we&apos;re gonna see like how we can split resources within our team to support it got different value streams.
+
+4:59Understood.
+
+5:00So it&apos;s still TBD, but in future, that&apos;s the plan.
+
+5:05OK, got it.
+
+5:05So one more further question that I&apos;ve mentioned it over here is when the PM has an idea when they&apos;re reaching out to the experimentation team.
+
+5:13So from the ideation stage to actually having the test run, it was mentioned that there&apos;s a part where three months is the process time that&apos;s actually being taken.
+
+5:24I just wanted to verify it with you.
+
+5:27So it depends.
+
+5:29And OK, OK, before that, I want to add more that PMS, like I said, will be or ideally will be our future only source that that we work with for experimentation.
+
+5:44But there are other streams within the company, like there are small teams within each brand that can sometimes start that experimentation request and we still support it.
+
+5:56So there are like different teams through which the work can flow into our funnel.
+
+6:04Now the idea initiation or the brainstorming session, it&apos;s, it&apos;s not just PDM&apos;s deciding that definitely they have a road map.
+
+6:15But I think brands have a bigger say in deciding those ideas.
+
+6:20Like sometimes brands say like, oh, we want to test, we want to implement this new feature because this is something we observed on our competitor or something we want to do, which is completely new in the industry.
+
+6:32So they are also a part of this brainstorming session because PBMS definitely support the brands, but then brands have more ideas like what exactly they need to do for their website.
+
+6:44So it&apos;s not summarizing it.
+
+6:45OK, Summarizing it over here, The experimentation team, just after receiving the request, it involves the brand team as well in the brainstorming part.
+
+6:55So it&apos;s before actually.
+
+6:57So it&apos;s before, even before, right?
+
+6:59OK.
+
+6:59So like how do we generate an idea that&apos;s where everyone is involved, like brands, PDMS, and it&apos;s actually a loop.
+
+7:08It&apos;s not like a linear flow.
+
+7:09There is a loop because what insights we generate flows back to that brainstorming session because that has to continue iterating on that particular feature, like how we can improve it further.
+
+7:23So it&apos;s a loop.
+
+7:24It&apos;s not a linear process.
+
+7:25It&apos;s always circular.
+
+7:28So what are the type of changes or experiments that you usually run on?
+
+7:33I&apos;ve heard it&apos;s mostly digital, yes.
+
+7:36So like under Dave, we have both store and digital.
+
+7:42So for store, we have another resource that is primary responsible for all the retail experimentation.
+
+7:49And then we have resources that are responsible for digital and I am on digital side.
+
+7:57OK, got it, got it.
+
+8:00So I think, I think before we proceed, I this, I think this is exactly the direction in which we wanted this call to go, right?
+
+8:05And that&apos;s why we brought this up.
+
+8:07But I, I also remember you said that you have something prepared.
+
+8:10So I&apos;d like to give you enough time to maybe walk through that.
+
+8:13Meanwhile, you while you bring that up like a few, I know we just have 30 minutes.
+
+8:18So we just three main questions we wanted to focus right as an outcome.
+
+8:221 is just understand which other user person is involved in this process.
+
+8:25I think that&apos;s where you just started off with 2nd, just understand what are the different touch points they have with that confidence speech that we are trying to, you know, can completely redesign.
+
+8:36And then third, what are different platforms that are used in this entire process?
+
+8:40I think I just want to anchor this conversation around those 3 points.
+
+8:44And with that, we&apos;ll be able to, you know, take this conversion for the two other personas.
+
+8:48OK, sounds good.
+
+8:49So like I said, I didn&apos;t have anything fancy, but I just wanted to highlight that it&apos;s a circular process.
+
+8:56It&apos;s in loop always and it&apos;s not like a linear process.
+
+9:01We always start with the brainstorming and in brainstorming everything flows in.
+
+9:04It could be ideas from the brand, it could be something from PDMS Road Map, or it could be something from our recommendation that we have told brands that this is something we have observed in the data and you should try it out.
+
+9:19Or it could be a learning from a test that OK, this thing didn&apos;t work it out, but maybe we feel that by changing it slightly more, it will work out for the customer.
+
+9:29So everything goes back as a loop in that brainstorming session where we all discuss about the ideas.
+
+9:36Then once the idea is generated, then we talk about the feasibility because that is also an important part.
+
+9:43Oh, Justin, do you have a question?
+
+9:44Yeah.
+
+9:45So in that brainstorming, is that like a thing?
+
+9:49Is there like a set time that that happens?
+
+9:51Is there like a forum that happens in or is that like ad hoc?
+
+9:55Like how does that come about?
+
+9:56It&apos;s both because PDMS have a road map, so it&apos;s a defined thing.
+
+10:01Like they&apos;re gonna do these things in the quarter, but then brands can come up with ad hoc requests like we want to do this tomorrow, we want to do this in a week&apos;s time.
+
+10:11So it&apos;s a mix of both.
+
+10:13And then our learnings also play a part.
+
+10:16Like, for example, we found out, oh, this is something very interesting.
+
+10:18We found out in the data, we should try it.
+
+10:20And then if it interests brand, then they&apos;re going to push PDMS to implement it or run it as a test sooner than other things.
+
+10:30I see.
+
+10:30So there&apos;s essentially like three ways that it happens, right?
+
+10:33So you get the PDS have a road map.
+
+10:35So there&apos;s like certain set things that you know you&apos;re going to have discussions with those PDS.
+
+10:38Then sometimes the brands go, hey, our competitors just did X, can we try this?
+
+10:43And then you all either have to get back to them with, well, we&apos;ve tried this in a different brand here with some information.
+
+10:48Should we still try it or not yet?
+
+10:49And then the third is sometimes you all, and this is one thing that this solution will help with more is that you all can make recognitions to them now, right, Based on like cross learnings and everything like that.
+
+11:02OK, great.
+
+11:03Exactly.
+
+11:03Love it.
+
+11:04Yeah, Justin, we want to like focus more on the Phase 1 of this call.
+
+11:09So recommendation and all of it come to the Phase 2.
+
+11:12So like basically what Kaushik said, we, I just, I wanted to know the, the like where the brainstorming SAT because I thought it sounded like what he was discussing was there&apos;s actually like multiple prongs that it comes from.
+
+11:24OK, yes, exactly.
+
+11:27And yeah.
+
+11:29And then we talk about the feasibility because it&apos;s important to know if that idea can actually be implemented or not because there are always like code limitations.
+
+11:38And from there, there are a couple of parts which we follow for the testing process.
+
+11:44One in optimizely 1 is the client side and the other one is called server side.
+
+11:49So what is the biggest difference between 2 is that client side are much quicker to implement because it&apos;s just like an override on your website.
+
+11:59So as your site loads, the optimizer just overrides it with that new experience.
+
+12:03But server side is where it takes more time to develop because the developers have to code on the actual site.
+
+12:11It&apos;s like on the server it loads it, the experience shows up before the site loads on your browser.
+
+12:18So it&apos;s that&apos;s the difference between client side and server side.
+
+12:22Like client side are much quicker and server side are take more time to develop.
+
+12:30But then there is also an advantage of server side that the process or the experience is much more smoother because it shows up before the IT the site loads in your browser.
+
+12:40Whereas client side, sometimes it could be like there&apos;s a like a a second delay in the experience being loaded in your browser because it overrides after your site loads.
+
+12:52So there are different ways through which we test.
+
+12:55We support both, but those are two ways through which we test.
+
+13:00And then once we have like what test we want to run, we have prioritized like this is something we want to do for based on brands input.
+
+13:10Then we create a confluence page.
+
+13:12And within the confluence page, there are two things that we create.
+
+13:15One is test plan and the other is called test results.
+
+13:20So in test plans, I, I will show you an example.
+
+13:29I don&apos;t know why my I think one more thing, this test plan and test, I don&apos;t think conference has like a standardized template right now, right.
+
+13:38It has, it has.
+
+13:38So that&apos;s what I want.
+
+13:39OK.
+
+13:40I&apos;m just gonna like unshare my screen for a minute.
+
+13:42Yeah, I just yeah, I&apos;ll see if I tab at the bottom.
+
+13:45Yeah.
+
+13:46While you&apos;re pulling that up, one just quick question about the feasibility piece.
+
+13:49You were talking about investigating both the feasibility of running the test as well as also if the test gives you a thing actually implementing what you learn out of the test.
+
+14:01It&apos;s both, right, that feasibility assessment, Yes, exactly because I just want to make sure, yeah, yes, we want to like decide on these will be the success metrics that we want to look for.
+
+14:14And sometimes the changes are so small that we just say band that is it right to even test it.
+
+14:20You can just roll it out.
+
+14:21You can just roll it out.
+
+14:22So yeah, yeah, we can just make those decisions.
+
+14:24That&apos;s where that.
+
+14:25Yeah, I was just wondering where that&apos;s at, right.
+
+14:26Like where that particular piece at exactly it, it comes in that discussion.
+
+14:30Yeah, right.
+
+14:31So this is an example of a test plan and it&apos;s a template where we have like the brand name, which pages we are targeting, which customers we are targeting, what&apos;s the problem statement, what&apos;s the hypothesis, what&apos;s the experience between control and Challenger?
+
+14:48And this is like a snapshot of what changed.
+
+14:51So it&apos;s in this example, we are testing performance improvement between two models that we rolled out on our site.
+
+14:58And this is a summary of like what&apos;s the difference between those two models?
+
+15:02We have a link to the Adobe dashboard and then we have like a sample calculation like how much time will it take to run this test if you observe a lift off, for example, .4% to conversion.
+
+15:15So we do a power calculation to estimate the time it will take to run the test.
+
+15:20And then we do have some metrics that we write down like which one are important for this test.
+
+15:27There will always be certain primary metrics which are common across all the tests, which is revenue conversion and basket size.
+
+15:33But then there will be some test specific metrics that we write down here usually.
+
+15:38And so there&apos;s a whole list of this piece though, right.
+
+15:41So for like the measurement and the like the power calculation, all of those things.
+
+15:46So this is something that like you or your team do for the like after the feasibility, like you all do this directly, like this is something that you all do, right?
+
+15:56Exactly.
+
+15:56This is something this is fully maintained by RT.
+
+15:59Got it.
+
+16:00OK.
+
+16:02And then we do have a list of all the metrics that we look into.
+
+16:05Again, it&apos;s not like a full list, but it does captures a lot of metrics that we look into across all our tests.
+
+16:12And if there are any particular test specific metrics, then we do write it down here that we feel are important for the brand or for the experience.
+
+16:21So this is a test plan page.
+
+16:23And then similarly, we have a test result page.
+
+16:26Again, this is like a template where we add in the screenshots of the experience to tell brands like this is what we saw for Control and Challenger.
+
+16:37Then we do have like a detailed analysis at the bottom with data that we pulled from Adobe and a commentary like what we observe, what for our findings, we do put like a summary on top and then our recommendation.
+
+16:55And then like I said, from our findings, we always share recommendations like you can see here, there are optimization opportunities like what we can improve further.
+
+17:05And that&apos;s what again goes back into that brainstorming session that we have with our brand partners and PDM partners that this worked fine, but there are more opportunities that we can improve.
+
+17:16And then we give a list of those opportunities.
+
+17:20This is like from our analysis, from our findings that we share with them.
+
+17:25So this is like a test result confluence page.
+
+17:28And both these pages like test plan and test results exist in our space.
+
+17:33And I can show you that space here.
+
+17:36It, it is by ear.
+
+17:37So we have starting 2017 now.
+
+17:42It&apos;s not, it&apos;s not all the tests.
+
+17:44Like I said, it&apos;s only from our team and it probably covers 80% of test that our team runs.
+
+17:51Still, there could be 20% for which we don&apos;t have conference pages because sometimes they are shared over e-mail or sometimes they are shared over as APDF and we didn&apos;t have much time to create a conference page.
+
+18:03Or maybe like people prefer to have a deck for it like a PowerPoint and not a conference space.
+
+18:09So it depends.
+
+18:10And that&apos;s sure, that&apos;s one thing I was asking last time, like if the input in that model only Confluence or we can have like PBS or PowerPoints too, so that we can bring in everything.
+
+18:20Yeah, I think honestly like first and I think we talked about this book, but for phase one, I think that we will want to limit it to confluence and and then standardize what is that version, right.
+
+18:33So like let&apos;s say we talk to the people that you&apos;re going to be interacting with in your team, they go, OK.
+
+18:38But honestly what we really need is we need this to actually live as a PowerPoint when you give it to us, right?
+
+18:44We can at that point just just to determine like, OK, what&apos;s the ongoing way that this is gonna happen and and and do that.
+
+18:52But I think that for the the first piece of this right, we have to work from what where most of the stuff is I think right and obviously I have to keep me yeah, keep me honest if that&apos;s wrong.
+
+19:03But so yeah, from our team from our team, 80% of the work will be here.
+
+19:10So I see two hands I see two hands.
+
+19:14So Abbas, I think you can go ahead before handing over just one question back till.
+
+19:18So I know you have standardized this template, but since 2017, is this template the same or is it is the template OK, almost I&apos;ll pass over to you.
+
+19:30Yeah.
+
+19:31So I just wanted to understand.
+
+19:33So for every test you select the metrics, right?
+
+19:37That is what you mentioned.
+
+19:39So has it happened anytime that you have done similar kind of 10 test twice or thrice or something or like how you just start like how you tackle that scenario like suppose you have got same kind of test appearing in your system multiple times or something.
+
+20:01Has it come in your scenario?
+
+20:04So same test for the same brand or for different brand?
+
+20:09Maybe I&apos;m I&apos;m just raising in a yes in a highlight.
+
+20:14I&apos;m just thinking, yeah, same test for different brand is 100% possible and we do all the time because it&apos;s possible that customer for one and not possible.
+
+20:24It is actually true that BR and Athleta customers are very different from Old Navy and Cab customers because Athleta and BR you know, they&apos;re like more higher end products.
+
+20:35So their customer base is very different, their preferences are very different versus Old Navy and Gap, which is like more discount focused customers.
+
+20:43So we do run same test across all the brands.
+
+20:46We, I mean, like I said, depending on like how critical the change is, if it&apos;s like a small font change, we&apos;ll be like, Oh yeah, we tested it on one brand.
+
+20:56For other brands, you can just roll it out.
+
+20:57There&apos;s no need to test.
+
+20:58But let&apos;s say if it, if it&apos;s a change happening on shopping bag or check out, then we will definitely say like, Oh yeah, you should test it because customer base is very different across.
+
+21:07And that&apos;s what happens majority of the time.
+
+21:09Like we test it across all brands because all brands wants to make sure that the change is not impacting their business, right?
+
+21:16OK.
+
+21:17So that&apos;s the first one.
+
+21:18Second I have is like when you choose the metrics, is there like any scenario where you have chosen similar kind of metrics for similar kind of test like as anything this kind of thing has happened with you like a pinpoint or something?
+
+21:37I&apos;m just trying to understand.
+
+21:41So if the test is same, then metrics will remain the same.
+
+21:46And I would say like majority of the time you will see that metrics are almost same.
+
+21:54I mean we look at all the metrics across the site like everything we will look at the entire funnel.
+
+22:00But what we shared with the brand is what is specific to that test.
+
+22:05Like for example, in this case, if something is running on a product page, we&apos;ll share metrics which are around product page with the brand.
+
+22:11We will not share with them all other 100 metrics that we have looked but are not around product page.
+
+22:19So that&apos;s where we filter at our end.
+
+22:22Like we need to be careful of what we&apos;re sharing because we want to like do like an information overload.
+
+22:29So yeah, we keep it very specific to what they need and will be helpful for them to make a decision.
+
+22:35So I&apos;m just trying to understand like if this is a repetitive thing which is happening.
+
+22:43So suppose I did this last week, OK, suppose with some sets of metrics and now again this week I&apos;m doing some same set of metrics.
+
+22:52So how does this like impact on the testing results and the like taking of decisions?
+
+23:03I&apos;m just trying to understand.
+
+23:07So when you say how will this happen in scenario like running same test twice?
+
+23:13Yeah, in a in a period of time it&apos;s possible.
+
+23:18Like for example, let&apos;s say if there is a test that is specific around the promo messaging, OK, let&apos;s say you&apos;re testing 50% off versus and I&apos;m just making this up 80% off.
+
+23:30OK.
+
+23:31Now the promos are not running throughout the year.
+
+23:35They run in very specific durations and they have like very short intervals.
+
+23:39Like for example, it&apos;s going to run only for three days and sometimes those three days are not sufficient for us to read because the data is so small.
+
+23:46So we&apos;re going to run the same test multiple times for those for those three days over a course of time.
+
+23:53So we&apos;re going to run the same test for the same promotion, let&apos;s say over a month, which are at interval of two weeks.
+
+24:04And let, I&apos;m just making the two weeks, let&apos;s say.
+
+24:06So yes, we will run the same test with the same metrics again and again if the estimated duration that we get for the first step is very small.
+
+24:16So we do ask them to give us more time.
+
+24:18OK, you guys big time check, which is 2 more minutes.
+
+24:22Yeah.
+
+24:23Pratik, are you OK to like extend this a bit more or do you have another call?
+
+24:28No, I can extend for 5-10 minutes.
+
+24:29Yeah, yeah.
+
+24:31Depending on everybody&apos;s bandwidth, they can like stay or drop off.
+
+24:36You have a hand raised.
+
+24:37I just have a quick question.
+
+24:38I know we are on time in it.
+
+24:39Probably it will also be to the next section like I think I was just wondering like I think you&apos;ve already answered this, but this conference page currently is accessible to only your team and the PMS currently do not have access or they do not refer to this.
+
+24:55So anyone with the gap e-mail can access.
+
+24:59OK, but in from your understanding, do they look into this?
+
+25:03Do they refer to this?
+
+25:04Do they look at the results or is it you Yeah, like you know take the results to them in some shape or form that assume the next step after this Yes.
+
+25:12So it&apos;s both like when we have the results and we connect with them, we present the findings to them and then we have this document living so that let&apos;s say if they want to come back after a month and see what happened during the test, they can always come back and refer to these documents.
+
+25:32And that&apos;s and that happens.
+
+25:34Like for example, let&apos;s say this test is only running for Athleta.
+
+25:37Now after a month, Old Navy is interested in running the same test.
+
+25:41So PDMS will share this page that we created with Old Navy team and tell them that these were the findings for Athleta.
+
+25:50We saw some interesting findings.
+
+25:52You want to do it so they do come back and refer to these pages and brands themselves will ask for it like what happened for Athleta.
+
+25:59Can you share the findings?
+
+26:01Right.
+
+26:01OK but they don&apos;t traverse the the all of the confluences and like look through it except for when you say like hey, here&apos;s your the answers to your thing.
+
+26:11They&apos;re currently not yeah because there&apos;s and that&apos;s part of the point of this project is that there&apos;s no good way to do that right now so exactly exactly.
+
+26:18We have to manually go and look into it right and exactly.
+
+26:22And the whole point of getting this new project is that they can just ask that question and then it can throw up results quickly without having them to search like, oh, which year we did that test.
+
+26:33And I give an example for a month.
+
+26:34Sometimes that test ran like 2 years back.
+
+26:37And I still get questions from tests that ran in 2023.
+
+26:40And I, I know those tests ran because I did them.
+
+26:44But if, let&apos;s say, if somebody asks someone from my team, they might not know about it.
+
+26:50And that&apos;s where this tool will be so helpful that if somebody can ask that question in the tool, it will show up.
+
+26:57Getting just one more thing, adding a point to Kaushik&apos;s question.
+
+27:01So you were telling at times PMS will directly refer to this, or at times they&apos;ll reach out to your team and they&apos;ll go back to these findings again, right?
+
+27:11So has it happened in ASR where PMS has come to your team and told that is part of the conference, the results page we&apos;re not able to consume or on what level of difficulty that they face either?
+
+27:24Is it gonna be the way the information is being put up or the way the informations are being structured upon?
+
+27:30I I&apos;m just trying to understand on the experience part, like where is yeah, the difficulty that&apos;s lying for that so that it&apos;s not consumable to the fullest that it should have been at the current, right.
+
+27:41I think with this much, with this many years of working with the PDMS and brands, they are very well aware of these metrics.
+
+27:50But sometimes there are definitely new metrics that we add, OK, like for example, and like, and like I said, like majority of the metrics you will see across different confluence pages, you will see like, Oh yeah, this is what this looks similar between the two or between or among like 10 pages that you will check for results.
+
+28:10But there will always be like one or two metrics which would be different between those tests.
+
+28:14And sometimes they do have those questions like what exactly those move because we defined them newly and it&apos;s not something that they are used to.
+
+28:22So sometimes they will just ask that question like how you defined it.
+
+28:24And as we explain it, it&apos;s clear.
+
+28:27So basically they&apos;re new to some kind of attention that you&apos;re making upon and they&apos;re totally unaware about what is it or where do I go and refer it to.
+
+28:37They&apos;re not unaware of because they know like this is a part of the analysis.
+
+28:43And it&apos;s also reflected in the commentary that we have above as well as in the summary that we share with them.
+
+28:50It&apos;s just that sometimes when this come down and see the tables, the numbers, then they&apos;re like, oh, how you define this metric?
+
+28:56Like what does gross margin dollar per visit actually mean?
+
+28:59Yeah.
+
+29:00So it&apos;s just the definition that we need to like share with them how exactly we define them.
+
+29:05And if they have any follow up question, they&apos;ll be like, oh, you defined it this way.
+
+29:08Can we look at this way?
+
+29:09OK.
+
+29:11So it&apos;s just like the definition like how they prefer to see versus how we thought of sharing with them.
+
+29:17And Samia, I think that from a like &apos;cause I understand that your point is like, how do I make this usable for the different users that yeah, exactly right.
+
+29:26Versus where some of the other questions are like how do we make the the findings more easier?
+
+29:31How do we right.
+
+29:31So like from a workflow perspective, the two pain points that the tool solving.
+
+29:35So this is for you, Samia right is PMS can first search for information before they ever come to Prateik in team and maybe get the answer they need, which isn&apos;t doable right now because they would literally just have to open up a a bajillion confluence pages.
+
+29:49And then the second is when a new thing does come to them, then critique team can immediately see all of the relevant stuff, right, with some kind of summary of what&apos;s been done so far to then make recommendations on how to build the thing out right.
+
+30:04And I say, and specifically I think that like you critique you and your team would still make those recommendations, but you&apos;d have multiple tests that you&apos;re drawing from information out of which you that way you don&apos;t have to go through and find those manually, which would also suck, right, right.
+
+30:22And it&apos;s not just me who can do it like it will any, anyone in the team can now look for it, right?
+
+30:27Not just like, like, like I said, like in future we will be assigned to specific yeah values.
+
+30:36So if somebody is working in a different value tier, then they can come and see like what work I did.
+
+30:42They don&apos;t have to like rely on me or ask me.
+
+30:44They can just go into that to ask it and then share it with the PDMS.
+
+30:47Yeah, yeah.
+
+30:48And so that&apos;s really the from a workflow and pain point perspective.
+
+30:52Some, yeah, like those are like the two primary, like the points that this is solving from a a flow perspective, right?
+
+30:59There are technical things that this is also solving, which would be more for like how we&apos;re looking at the, you know, the metrics, how are they defined?
+
+31:08Why are these the main metrics that we look at?
+
+31:10And there&apos;s some questions that I have critique that we can talk about later of like what about the process of suggesting the types of analysis, picking the like the the metrics, picking the solution criteria, picking the way in which the test will be run?
+
+31:25Like, I don&apos;t know, there&apos;s probably some some steps of that that can be augmented as opposed to all the manual.
+
+31:32So, but in terms of user interface and user flow, I think these are the two primary ones.
+
+31:38So yeah, go ahead.
+
+31:41Yeah, cool.
+
+31:45I don&apos;t know about the rest of your I I have to drop the petite.
+
+31:47Thank you so much for this has been really helpful.
+
+31:50Yes, No, I think the rest of the group also have a lot of questions, Pratik, but we can&apos;t hold you here forever.
+
+31:57So we&apos;ll let you complete the last two sections that you had right on the slide.
+
+32:01And then what we can do is we&apos;ll maybe collate the questions to Atul and Atul maybe then reach out to you later in the day and or something so like let you complete your flow.
+
+32:10Yeah, Yeah, I, I think it&apos;s so mostly done because like I said, like once the feasibility is data mined, then we run the test.
+
+32:17It could be either server side or client side.
+
+32:20Then we have the duration like I showed you in the test plan, we run for that estimated duration or at least we when we get that sample size that we hope to get for each test.
+
+32:31Then we run the analytics, we share our recommendation, we create that Confluence page.
+
+32:36And again, it goes back to the next brainstorming session where we tell brands or PTMS that this are, this is our findings and these are some of the things you can try or improve on in the current experience.
+
+32:49And it&apos;s not always that every test that we run will have like an optimization opportunity.
+
+32:57Sometimes it would be a simple recommendation that this change work, let&apos;s roll it out to 100% of customers.
+
+33:03So it&apos;s not that Each and every test we will be like, Oh yeah, you should do this next.
+
+33:07You should some tests that will definitely have it, but not all.
+
+33:16OK, got it.
+
+33:19Like Atul, I&apos;ll let you.
+
+33:21But should we do like a quick walkthrough of the process like on the Optimizely and other things or do we take it to later?
+
+33:30I have 3 minutes.
+
+33:31You can use me like you want in 3 minutes.
+
+33:35OK.
+
+33:36No, I think then that&apos;s too short, right?
+
+33:38Yeah.
+
+33:38Yeah.
+
+33:38Can long time.
+
+33:42Pratik, I had a question for you.
+
+33:45We just, I just wanted your time to raise IDs.
+
+33:49So I just thought before we let you go, when would that be?
+
+33:53So that is that something Dave is helping with or he&apos;s not aware of it at all, so he will help.
+
+34:03So basically what I&apos;m now doing is if I raise it, the problem is Holly gets the approval plus it&apos;ll be like 7 IDs.
+
+34:11So instead of doing that, I thought if I walk you through how you would raise it and I can walk you through how you can raise it, Dave gets the OK approval.
+
+34:23Yeah.
+
+34:24And then Dave can, because you are his, he&apos;s your manager.
+
+34:26So it basically goes to him because Holly is my manager on the system.
+
+34:30So I just wanted to know if you have some time later in the afternoon.
+
+34:33So.
+
+34:34Oh yeah.
+
+34:34And how much time it takes?
+
+34:36Are they there?
+
+34:36It takes like we have 7 IDs, so at the most, 15 minutes tops.
+
+34:43Perfect.
+
+34:44OK, Yeah, I can connect with you over Teams and I will share my availability and then we can find 15.
+
+34:51Yeah.
+
+34:51So then two steps here just to 1st raise the ID, then gap sourcing approves it, then Dave approves it, then there is an external MFA for your phone access that anyways, it&apos;s just a, it&apos;s just a 15 minute thing today and tomorrow I will bug Dave for him to approve it.
+
+35:11That&apos;s fine.
+
+35:13But today I just wanted you to raise it so that it goes to him through you.
+
+35:17Yeah, that&apos;s all.
+
+35:18Yeah.
+
+35:18OK.
+
+35:19I, I, I, I&apos;ll ping you some time.
+
+35:21No worries.
+
+35:21Not for afternoon.
+
+35:22Then we can do it together.
+
+35:25OK.
+
+35:25And just as a follow up, Pratik, just want to reject one thing.
+
+35:28I think after that, I these days will be able to quickly provision like a GCP project, right, So that we can get started on some of the data processing and all that.
+
+35:38Or is there like a process to like, you know, first review our solution architecture and then we need to go through that process to, you know, the resources or the services allocated?
+
+35:48Do you are you aware of that or?
+
+35:50No, I&apos;m not.
+
+35:51Maybe Dave is aware of that and I don&apos;t know.
+
+35:54Adita, like what has been your experience with data breaks?
+
+35:57Yeah, so Greg helps us with data breaks.
+
+35:59But because this is GCP, I&apos;ll talk to Greg Christensen and see what the process is and who can give us GCP access and so on and so forth.
+
+36:10But yeah, Kaushik, I will talk to Greg can see that.
+
+36:15But first, if your IDs get raised, I think that&apos;s the first step either ways.
+
+36:18Yeah, if you&apos;re in the system, then further steps will be easier.
+
+36:22Yeah.
+
+36:22Yeah, sure.
+
+36:24OK.
+
+36:24Thanks, Aditya.
+
+36:25So I think I&apos;m on this time.
+
+36:29Thank you, Pratik.
+
+36:30Alright.
+
+36:30Thank you.
+
+36:30Yeah, Alright.
+
+36:32Thank you.
+
+36:33Alright, thank you.
+
+
+

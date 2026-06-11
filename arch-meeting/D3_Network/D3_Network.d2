@@ -1,0 +1,146 @@
+# D3 - Network Diagram
+# Render: d2 --layout=elk --theme=1 D3_Network.d2 D3_Network.svg
+
+direction: right
+
+title: "D3 - Network | VPC gap-genai-vpc | Subnet 10.10.0.0/24 (us-central1)" {
+  near: top-center
+  shape: text
+  style.font-size: 24
+  style.bold: true
+}
+
+# ============ INTERNET ZONE ============
+internet: "Internet (untrusted)" {
+  style.fill: "#ECEFF1"
+  style.stroke: "#5F6368"
+  style.stroke-dash: 5
+
+  users: "Users (gap.com)\nbrowser HTTPS/443" {shape: person}
+  workspace: "Google Workspace IdP\nOIDC for IAP (hd=gap.com)" {shape: cloud}
+  confluence: "Atlassian Confluence Cloud\nHTTPS/443 + PAT" {
+    shape: cloud
+    style.fill: "#0052CC"
+    style.font-color: "#FFFFFF"
+  }
+}
+
+# ============ GOOGLE FRONT DOOR ============
+edge: "Google front door (global - outside VPC)" {
+  style.fill: "#E8F0FE"
+  style.stroke: "#1A73E8"
+  style.stroke-dash: 5
+
+  dns: "Cloud DNS\nA: gap-genai.<domain>" {style.fill: "#4284F3"; style.font-color: "#FFFFFF"}
+  iap: "IAP-on-Cloud-Run\nOIDC verify -> gap.com\nmanaged TLS (Cloud Run native)" {style.fill: "#1976D2"; style.font-color: "#FFFFFF"}
+}
+
+# ============ FIREWALL POLICY (sidebar) ============
+firewall: |md
+**Firewall rules (lowest priority wins)**
+- 1000 INGRESS allow-iap-tcp: 35.235.240.0/20 -> tag iap-target :8080/:443
+- 1000 EGRESS allow-vpc-connector-to-psc: 10.10.10.0/28 -> *.p.googleapis.com :443
+- 1000 EGRESS allow-nat-egress: tag confluence-egress -> 0.0.0.0/0 :443 (via NAT)
+- 65000 EGRESS deny-internet-egress-default: 10.10.0.0/24 -> 0.0.0.0/0
+- 65535 INGRESS default deny
+
+**Hierarchical org policy**
+- deny-all-public-internet-egress (baseline)
+- allow-private-google-access (subnet)
+|
+
+dnsbox: |md
+**Private DNS**
+Cloud DNS private zones for *.googleapis.com / *.p.googleapis.com
+-> PSC endpoints (10.10.20.0/28)
+|
+
+# ============ VPC ============
+vpc: "VPC gap-genai-vpc (custom mode)" {
+  style.fill: "#E3F2FD"
+  style.stroke: "#1565C0"
+  style.stroke-dash: 5
+
+  router: "Cloud Router\ngap-genai-router" {style.fill: "#FFE0B2"}
+  nat: "Cloud NAT\ngap-genai-nat\n1 static IP allowlisted on Atlassian\ntag: confluence-egress" {style.fill: "#FFE0B2"}
+
+  subnet: "Subnet gap-genai-sn-uc1\nus-central1, 10.10.0.0/24\nPrivate Google Access ON" {
+    style.fill: "#BBDEFB"
+    style.stroke: "#1565C0"
+
+    connector: "Serverless VPC Access connector\ngap-genai-connector\nrange: 10.10.10.0/28 (carved from subnet)\nmin=2 max=10 (e2-micro)" {style.fill: "#E8F0FE"}
+
+    runs: "Cloud Run services + jobs\negress=all-traffic via VPC connector" {
+      style.fill: "#E6F4EA"
+      style.stroke: "#137333"
+      style.stroke-dash: 3
+
+      web: "web\ningress: internal+IAP" {style.fill: "#4284F3"; style.font-color: "#FFFFFF"}
+      gateway: "gateway\ningress: internal" {style.fill: "#4284F3"; style.font-color: "#FFFFFF"}
+      agent: "agent\ningress: internal" {style.fill: "#4284F3"; style.font-color: "#FFFFFF"}
+      exporter: "exporter Job\ntag: confluence-egress" {style.fill: "#34A853"; style.font-color: "#FFFFFF"}
+      reindex: "reindex Job" {style.fill: "#34A853"; style.font-color: "#FFFFFF"}
+    }
+  }
+
+  # ============ VPC-SC PERIMETER ============
+  vpcsc: "VPC-SC perimeter gap-genai-perimeter\nrestricted: DE, AIP, BQ, GCS, SM, Logging, Monitoring" {
+    style.fill: "#FFEBEE"
+    style.stroke: "#C62828"
+    style.stroke-width: 2
+    style.stroke-dash: 3
+
+    psc_de: "PSC: discoveryengine.p.googleapis.com" {style.fill: "#FFFFFF"; style.stroke: "#C62828"}
+    psc_ai: "PSC: aiplatform.p.googleapis.com" {style.fill: "#FFFFFF"; style.stroke: "#C62828"}
+    psc_bq: "PSC: bigquery.p.googleapis.com\n(also covers managed BQ MCP\nat bigquery.googleapis.com/mcp)" {style.fill: "#FFFFFF"; style.stroke: "#C62828"}
+    psc_st: "PSC: storage.p.googleapis.com" {style.fill: "#FFFFFF"; style.stroke: "#C62828"}
+    psc_sm: "PSC: secretmanager.p.googleapis.com" {style.fill: "#FFFFFF"; style.stroke: "#C62828"}
+    psc_lg: "PSC: logging.p.googleapis.com" {style.fill: "#FFFFFF"; style.stroke: "#C62828"}
+    psc_mn: "PSC: monitoring.p.googleapis.com" {style.fill: "#FFFFFF"; style.stroke: "#C62828"}
+
+    vais: "Vertex AI Search\nengine + data store" {style.fill: "#8430CE"; style.font-color: "#FFFFFF"}
+    mgarden: "Vertex Model Garden\nGemini 2.5 F/P" {style.fill: "#8430CE"; style.font-color: "#FFFFFF"}
+    bq: "BigQuery gap_genai_app\n(includes managed MCP server\nendpoint /mcp)" {shape: cylinder; style.fill: "#F9A825"; style.font-color: "#FFFFFF"}
+    gcs: "GCS corpus-html" {shape: cylinder; style.fill: "#F9A825"; style.font-color: "#FFFFFF"}
+    sm: "Secret Manager\nconfluence-pat" {style.fill: "#C62828"; style.font-color: "#FFFFFF"}
+    logging: "Cloud Observability Suite\n(Logging + Monitoring + Trace,\nProfiler + Error Reporting)\nlog-based metrics: gap_genai/llm_tokens_in/out,\nllm_calls, llm_cost_usd (AR-5, AR-6)" {style.fill: "#4284F3"; style.font-color: "#FFFFFF"}
+    monitoring: "(folded into Observability Suite above)" {style.fill: "#E8F0FE"}
+  }
+}
+
+# ============ EDGES ============
+# Inbound user path
+internet.users -> edge.dns: "HTTPS/443"
+internet.users -> internet.workspace: "OIDC sign-in" {style.stroke-dash: 4}
+edge.dns -> edge.iap
+edge.iap -> vpc.subnet.runs.web: "IAP-on-Cloud-Run"
+
+# Cloud Run -> connector
+vpc.subnet.runs.web -> vpc.subnet.connector {style.stroke-dash: 3; style.stroke: "#1A73E8"}
+vpc.subnet.runs.gateway -> vpc.subnet.connector {style.stroke-dash: 3; style.stroke: "#1A73E8"}
+vpc.subnet.runs.agent -> vpc.subnet.connector {style.stroke-dash: 3; style.stroke: "#1A73E8"}
+vpc.subnet.runs.exporter -> vpc.subnet.connector {style.stroke-dash: 3; style.stroke: "#1A73E8"}
+vpc.subnet.runs.reindex -> vpc.subnet.connector {style.stroke-dash: 3; style.stroke: "#1A73E8"}
+
+# Connector -> PSC endpoints (private path)
+vpc.subnet.connector -> vpc.vpcsc.psc_de: "private path via PSC + PGA" {style.stroke: "#8430CE"}
+vpc.subnet.connector -> vpc.vpcsc.psc_ai {style.stroke: "#8430CE"; style.stroke-dash: 3}
+vpc.subnet.connector -> vpc.vpcsc.psc_bq {style.stroke: "#F9A825"; style.stroke-dash: 3}
+vpc.subnet.connector -> vpc.vpcsc.psc_st {style.stroke: "#F9A825"; style.stroke-dash: 3}
+vpc.subnet.connector -> vpc.vpcsc.psc_sm {style.stroke: "#C62828"; style.stroke-dash: 3}
+vpc.subnet.connector -> vpc.vpcsc.psc_lg {style.stroke: "#1A73E8"; style.stroke-dash: 3}
+vpc.subnet.connector -> vpc.vpcsc.psc_mn {style.stroke: "#1A73E8"; style.stroke-dash: 3}
+
+# PSC -> backing services
+vpc.vpcsc.psc_de -> vpc.vpcsc.vais {style.stroke: "#8430CE"}
+vpc.vpcsc.psc_ai -> vpc.vpcsc.mgarden {style.stroke: "#8430CE"}
+vpc.vpcsc.psc_bq -> vpc.vpcsc.bq {style.stroke: "#F9A825"}
+vpc.vpcsc.psc_st -> vpc.vpcsc.gcs {style.stroke: "#F9A825"}
+vpc.vpcsc.psc_sm -> vpc.vpcsc.sm {style.stroke: "#C62828"}
+vpc.vpcsc.psc_lg -> vpc.vpcsc.logging {style.stroke: "#1A73E8"}
+vpc.vpcsc.psc_mn -> vpc.vpcsc.monitoring {style.stroke: "#1A73E8"}
+
+# NAT egress for Confluence
+vpc.router -> vpc.nat: "NAT GW config" {style.stroke-dash: 3; style.stroke: "#E65100"}
+vpc.subnet.runs.exporter -> vpc.nat: "egress\ntag confluence-egress" {style.stroke: "#E65100"}
+vpc.nat -> internet.confluence: "HTTPS/443 from 1 static IP\nallowlisted on Atlassian" {style.stroke: "#E65100"; style.bold: true}

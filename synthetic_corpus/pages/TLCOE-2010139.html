@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>[BRF EMAIL] Show vs. hide free-shipping thermometer - Apr 2019</title>
+  <link rel="canonical" href="https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010139"/>
+  <meta name="test_id" content="T-BRF-00139"/>
+  <meta name="confluence_page_id" content="TLCOE-2010139"/>
+  <meta name="confluence_url" content="https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010139"/>
+  <meta name="title" content="[BRF EMAIL] Show vs. hide free-shipping thermometer - Apr 2019"/>
+  <meta name="brand" content="Banana Republic Factory"/>
+  <meta name="brand_code" content="BRF"/>
+  <meta name="market" content="US"/>
+  <meta name="value_stream" content="Shopping Bag"/>
+  <meta name="channel" content="Email"/>
+  <meta name="channel_section" content="Loyalty Email"/>
+  <meta name="device" content="All Devices"/>
+  <meta name="audience" content="High-AOV Customers"/>
+  <meta name="tactic" content="Value"/>
+  <meta name="test_type" content="Server-Side"/>
+  <meta name="vendor" content="Optimizely (Server-Side)"/>
+  <meta name="primary_kpi" content="Checkout Start Rate"/>
+  <meta name="secondary_kpis" content="Bag Edit Rate, Search Engagement Rate, Free Shipping Threshold Crossings, PDP Views Per Visit"/>
+  <meta name="start_date" content="2019-04-03"/>
+  <meta name="end_date" content="2019-06-02"/>
+  <meta name="duration_days" content="60"/>
+  <meta name="sample_size_per_arm" content="1200000"/>
+  <meta name="mde_pct" content="1.38"/>
+  <meta name="confidence_pct" content="80"/>
+  <meta name="power_pct" content="80"/>
+  <meta name="exposure_pct" content="20"/>
+  <meta name="split" content="33/33/33"/>
+  <meta name="outcome" content="Flat"/>
+  <meta name="primary_kpi_delta_pct" content="0.21"/>
+  <meta name="net_rpv_delta_pct" content="0.3"/>
+  <meta name="aos_delta_pct" content="0.29"/>
+  <meta name="visits_total" content="3600000"/>
+  <meta name="incremental_revenue_usd" content="0"/>
+  <meta name="averted_loss_usd" content="0"/>
+  <meta name="recommendation_adopted" content="N/A"/>
+  <meta name="related_test_ids" content=""/>
+  <meta name="sha256_source" content="a1de5def202a4101421e7eb1b10581fa959cc05652490c08c3c86edbba20176e"/>
+  <meta name="metadata_quality" content="high"/>
+  <meta name="template_version" content="2017.stable"/>
+  <script type="application/ld+json">{"test_id": "T-BRF-00139", "confluence_page_id": "TLCOE-2010139", "confluence_url": "https://gap.atlassian.net/wiki/spaces/TLCOE/pages/TLCOE-2010139", "title": "[BRF EMAIL] Show vs. hide free-shipping thermometer - Apr 2019", "brand": "Banana Republic Factory", "brand_code": "BRF", "market": "US", "value_stream": "Shopping Bag", "channel": "Email", "channel_section": "Loyalty Email", "device": "All Devices", "audience": "High-AOV Customers", "tactic": "Value", "test_type": "Server-Side", "vendor": "Optimizely (Server-Side)", "primary_kpi": "Checkout Start Rate", "secondary_kpis": ["Bag Edit Rate", "Search Engagement Rate", "Free Shipping Threshold Crossings", "PDP Views Per Visit"], "start_date": "2019-04-03", "end_date": "2019-06-02", "duration_days": 60, "sample_size_per_arm": 1200000, "mde_pct": 1.38, "confidence_pct": 80, "power_pct": 80, "exposure_pct": 20, "split": "33/33/33", "outcome": "Flat", "primary_kpi_delta_pct": 0.21, "net_rpv_delta_pct": 0.3, "aos_delta_pct": 0.29, "visits_total": 3600000, "incremental_revenue_usd": 0, "averted_loss_usd": 0, "recommendation_adopted": "N/A", "related_test_ids": [], "sha256_source": "a1de5def202a4101421e7eb1b10581fa959cc05652490c08c3c86edbba20176e", "metadata_quality": "high", "template_version": "2017.stable"}</script>
+</head>
+<body>
+<h1>[BRF EMAIL] Show vs. hide free-shipping thermometer - Apr 2019</h1>
+<blockquote><strong>Brand</strong>: Banana Republic Factory (BRF) · <strong>Market</strong>: US · <strong>Value Stream</strong>: Shopping Bag<br/><strong>Channel</strong>: Email (Loyalty Email) · <strong>Device</strong>: All Devices · <strong>Audience</strong>: High-AOV Customers<br/><strong>Tactic</strong>: Value · <strong>Test Type</strong>: Server-Side · <strong>Vendor</strong>: Optimizely (Server-Side)<br/><strong>Window</strong>: 2019-04-03 → 2019-06-02 (60 days)<br/><strong>Outcome</strong>: <strong>Flat</strong> · <strong>Recommendation Adopted</strong>: N/A</blockquote>
+<hr/>
+<h2>1. Test Plan</h2>
+<h3>1.1 Problem Statement</h3>
+<p>On Banana Republic Factory Shopping Bag, the current control experience does not sufficiently support checkout start rate for the high-aov customers segment. Based on prior value-tactic learnings across the discount tier, we want to evaluate whether the proposed change moves the needle within the 60-day window.</p>
+<h3>1.2 Hypothesis</h3>
+<p>If we apply 'Bag thermometer visibility' on Banana Republic Factory Shopping Bag (Loyalty Email) to high-aov customers, then we expect a lift of at least 1.38% on Checkout Start Rate because a persistent thermometer educates the shopper on the free-ship benefit and raises aos.</p>
+<h3>1.3 Experimental Changes</h3>
+<ul><li><strong>Control</strong>: existing Shopping Bag experience on Banana Republic Factory Loyalty Email.</li><li><strong>Challenger</strong>: Bag thermometer visibility variant — a persistent thermometer educates the shopper on the free-ship benefit and raises aos.</li></ul>
+<h3>1.4 Significance Calculations &amp; Experimental Design</h3>
+<table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Brand</td><td>Banana Republic Factory</td></tr><tr><td>Scenarios</td><td>1 Control + 1 Challenger (33/33/33)</td></tr><tr><td>Primary KPI</td><td>Checkout Start Rate</td></tr><tr><td>Minimum Detectable Lift</td><td>~1.38%</td></tr><tr><td>Confidence Threshold</td><td>80%</td></tr><tr><td>Power Threshold</td><td>80%</td></tr><tr><td>Sample Size per Variation</td><td>~1,200,000 visits</td></tr><tr><td>Estimated Duration</td><td>~60 days</td></tr><tr><td>Test Exposure</td><td>20% of eligible traffic</td></tr><tr><td>Audience Limitation</td><td>High-AOV Customers</td></tr></tbody></table>
+<h3>1.5 Adobe Workspace</h3>
+<ul><li>Project: <em>Banana Republic Factory US — Production</em></li><li>Workspace: <code>[BRF US] Bag thermometer visibility Test</code></li><li>Filters: Return vs. New Visits · Segment (Global Blanket Correction Segment [Approved]) · Device Type · Page Type · Extreme Orders (COE — Exclude Extreme)</li></ul>
+<h3>1.6 Measurement Strategy</h3>
+<p><strong>Metrics (All Experiments)</strong>: Conversion Rate (OPV) · Net RPV · AOS · UPT · AUR · Total Visits · Visits Split (Visit/Visitor) · Variation Overlap</p>
+<p><strong>Metrics (Test Specific)</strong>:</p>
+<ul><li>Bag Edit Rate</li><li>Search Engagement Rate</li><li>Free Shipping Threshold Crossings</li><li>PDP Views Per Visit</li></ul>
+<p><strong>Segments (All Experiments)</strong>: New vs. Returning</p>
+<p><strong>Segments (Test Specific)</strong>: Desktop vs. Mobile · Loyalty vs. Non-Loyalty</p>
+<h3>1.7 Custom Metrics</h3>
+<table><thead><tr><th>Description / Location</th><th>Custom Variable</th><th>Tracking Notes</th></tr></thead><tbody><tr><td>Bag thermometer visibility click</td><td>eVar47 — bag_thermometer_visibility_click</td><td>Track once per visit</td></tr><tr><td>Bag thermometer visibility view</td><td>eVar48 — bag_thermometer_visibility_view</td><td>Track always</td></tr><tr><td>Shopping Bag arrival from Bag thermometer visibility</td><td>eVar49 — shopping_bag_arrival</td><td>Track once per session</td></tr></tbody></table>
+<hr/>
+<h2>2. Test Results</h2>
+<h3>2.1 Findings (TL;DR)</h3>
+<p>Across the 60-day test window, no statistically significant difference was observed on the primary KPI (Checkout Start Rate); observed delta 0.21% sits within MDE (1.38%). Net RPV 0.3%, AOS 0.29% — also within noise.</p>
+<h3>2.2 Variation Description</h3>
+<ul><li><strong>Control</strong>: as-is Shopping Bag on Banana Republic Factory Loyalty Email.</li><li><strong>Challenger</strong>: applies the <em>Bag thermometer visibility</em> treatment described in §1.3.</li><li><em>Screenshots</em>: see Confluence attachments <code>control_T-BRF-00139.png</code>, <code>challenger_T-BRF-00139.png</code> (omitted from this synthetic export).</li></ul>
+<h3>2.3 Details</h3>
+<p>Across the 60-day test window, no statistically significant difference was observed on the primary KPI (Checkout Start Rate); observed delta 0.21% sits within MDE (1.38%). Net RPV 0.3%, AOS 0.29% — also within noise.</p>
+<p>Statistical significance was computed <strong>outside</strong> Optimizely (Excel + online calculator) per standard Test &amp; Learn COE practice — Optimizely's built-in significance is not reliable for GAP because of cross-brand basket attribution.</p>
+<h3>2.4 Impacts</h3>
+<table><thead><tr><th>Metric</th><th>Control</th><th>Challenger</th><th>Δ %</th></tr></thead><tbody><tr><td>Net RPV</td><td>baseline</td><td>challenger</td><td>▲ 0.3%</td></tr><tr><td>Checkout Start Rate</td><td>baseline</td><td>challenger</td><td>▲ 0.21%</td></tr><tr><td>AOS</td><td>baseline</td><td>challenger</td><td>▲ 0.29%</td></tr><tr><td>UPT</td><td>baseline</td><td>challenger</td><td>▲ 0.17%</td></tr><tr><td>AUR</td><td>baseline</td><td>challenger</td><td>▲ 0.12%</td></tr><tr><td>Total Visits (test arm)</td><td>—</td><td>1,200,000</td><td>—</td></tr><tr><td>Incremental Revenue (USD)</td><td>—</td><td>—</td><td>$0</td></tr><tr><td>Averted Loss (USD)</td><td>—</td><td>—</td><td>$0</td></tr></tbody></table>
+<h3>2.5 Segment Break-down</h3>
+<table><thead><tr><th>Segment</th><th>Value</th><th>Primary KPI Δ</th><th>Net RPV Δ</th></tr></thead><tbody><tr><td>Device</td><td>Desktop</td><td>0.2%</td><td>-0.03%</td></tr><tr><td>Device</td><td>Mobile</td><td>0.64%</td><td>-0.03%</td></tr><tr><td>Device</td><td>Tablet</td><td>0.26%</td><td>0.22%</td></tr><tr><td>Visit Type</td><td>New</td><td>-0.17%</td><td>0.24%</td></tr><tr><td>Visit Type</td><td>Returning</td><td>-0.39%</td><td>0.16%</td></tr><tr><td>Loyalty</td><td>Member</td><td>0.55%</td><td>0.68%</td></tr><tr><td>Loyalty</td><td>Non-Member</td><td>-0.06%</td><td>0.1%</td></tr></tbody></table>
+<h3>2.6 Product Mix</h3>
+<p>Top contributing categories during the test window: women's tops, women's denim, men's polos, accessories. No anomalous category-level skew detected.</p>
+<h3>2.7 Gross Margin (GMS / Visit)</h3>
+<p>GMS/Visit was flat across both arms within MDE.</p>
+<hr/>
+<h2>3. Recommendation</h2>
+<p><strong>No change. Consider re-testing during a higher-traffic window (Holiday).</strong></p>
+<p>Recommendation adopted: <strong>N/A</strong>.</p>
+<h2>4. Optimization Opportunities (feeds next brainstorm)</h2>
+<ul><li>Re-run with a tighter MDE on the high-aov customers segment to confirm.</li><li>Explore the same hypothesis on the sister brand in the discount tier.</li><li>Consider follow-up on Checkout where the same tactic (Value) has not yet been tested for Banana Republic Factory.</li></ul>
+<h2>5. Related Tests</h2>
+<p><em>No prior closely-related tests recorded.</em></p>
+<hr/>
+<p><em>Generated synthetic record for POC retrieval testing. Template version 2017.stable, mirroring the Test &amp; Learn COE Confluence template walked through by Prateek Oberoi on 2026-05-06.</em></p>
+</body>
+</html>

@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-05-21T00:00:00.000Z" agent="Copilot" version="24.7.0" type="device">
+  <diagram id="D2-Physical" name="D2 - Physical">
+    <mxGraphModel dx="2400" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="D2 - Physical Diagram&#xa;Project: gap-genai-discovery   |   Region: us-central1   |   Env: POC" style="text;html=1;align=center;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#202124;" vertex="1" parent="1">
+          <mxGeometry x="20" y="10" width="1660" height="44" as="geometry" />
+        </mxCell>
+
+        <!-- ============ ORG / FOLDER / PROJECT BANNER ============ -->
+        <mxCell id="orgbanner" value="Organization: gap.com&#xa;Folder: experimentation (TBD)&#xa;Project: gap-genai-discovery (POC)&#xa;Region: us-central1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#5F4300;align=left;spacingLeft=12;" vertex="1" parent="1">
+          <mxGeometry x="20" y="60" width="380" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="legend" value="Legend&#xa;Edge / Networking | Compute (Cloud Run) | Managed AI | Data | Security | Ops/CICD | External" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5F6368;dashed=1;fontSize=11;fontColor=#202124;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="420" y="60" width="640" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Cross-ref panel -->
+        <mxCell id="xref" value="Cross-references&#xa;- HLD: ../High_Level_Design.drawio&#xa;- Service inventory: ../Vertex_AI_Search_Variant/GCP_Services_Required.md&#xa;- Ports / data flow: ../PSEC/PSEC_Answers.md section 5" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5F6368;dashed=1;fontSize=10;fontColor=#202124;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="60" width="600" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ============ EDGE PLANE (top band) ============ -->
+        <mxCell id="edge_grp" value="Edge / Networking" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#1A73E8;strokeWidth=2;dashed=1;fontSize=12;fontStyle=1;fontColor=#1A73E8;verticalAlign=top;align=left;spacingLeft=12;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="20" y="160" width="1660" height="170" as="geometry" />
+        </mxCell>
+
+        <mxCell id="DNS" value="Cloud DNS&#xa;gap-genai.&lt;gap-domain&gt;" style="sketch=0;outlineConnect=0;fontColor=#202124;gradientColor=none;fillColor=#4284F3;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;shape=mxgraph.gcp2.cloud_dns;" vertex="1" parent="1">
+          <mxGeometry x="60" y="200" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="LB" value="" style="none;" vertex="0" parent="1">
+          <mxGeometry x="0" y="0" width="0" height="0" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ARMOR" value="" style="none;" vertex="0" parent="1">
+          <mxGeometry x="0" y="0" width="0" height="0" as="geometry" />
+        </mxCell>
+
+        <mxCell id="CERT" value="" style="none;" vertex="0" parent="1">
+          <mxGeometry x="0" y="0" width="0" height="0" as="geometry" />
+        </mxCell>
+
+        <mxCell id="IAP" value="IAP-on-Cloud-Run&#xa;gap.com Workspace OIDC&#xa;managed TLS (Cloud Run native)" style="sketch=0;outlineConnect=0;fontColor=#202124;gradientColor=none;fillColor=#1976D2;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;shape=mxgraph.gcp2.identity_aware_proxy;" vertex="1" parent="1">
+          <mxGeometry x="300" y="200" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="CONNECTOR" value="Serverless VPC Access&#xa;gap-genai-connector&#xa;10.10.10.0/28" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F0FE;strokeColor=#1A73E8;fontSize=10;fontColor=#174EA6;" vertex="1" parent="1">
+          <mxGeometry x="800" y="205" width="160" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="NAT" value="Cloud NAT&#xa;gap-genai-nat&#xa;1 static IP (Confluence)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#E65100;fontSize=10;fontColor=#5F2C00;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="205" width="160" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="VPC" value="VPC: gap-genai-vpc (custom)&#xa;Subnet: gap-genai-sn-uc1 (10.10.0.0/24)&#xa;Private Google Access: ON" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=10;fontColor=#0D47A1;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="195" width="220" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="VPCSC" value="VPC-SC perimeter&#xa;protects: discoveryengine, aiplatform, bigquery, storage, secretmanager" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEBEE;strokeColor=#C62828;dashed=1;fontSize=10;fontColor=#7F0000;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1450" y="195" width="220" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- ============ COMPUTE PLANE ============ -->
+        <mxCell id="comp_grp" value="Compute - Cloud Run (services + jobs)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#137333;strokeWidth=2;dashed=1;fontSize=12;fontStyle=1;fontColor=#137333;verticalAlign=top;align=left;spacingLeft=12;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="20" y="350" width="1100" height="220" as="geometry" />
+        </mxCell>
+
+        <mxCell id="WEB" value="gap-genai-discovery-web&#xa;Cloud Run service&#xa;min=1 max=10, 512Mi/1vCPU&#xa;ingress: internal+IAP&#xa;SA: sa-web@..." style="sketch=0;outlineConnect=0;fontColor=#202124;gradientColor=none;fillColor=#4284F3;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;shape=mxgraph.gcp2.cloud_run;" vertex="1" parent="1">
+          <mxGeometry x="60" y="400" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="GW" value="gap-genai-discovery-gateway&#xa;Cloud Run service&#xa;min=1 max=10&#xa;ingress: internal&#xa;SA: sa-gateway@..." style="sketch=0;outlineConnect=0;fontColor=#202124;gradientColor=none;fillColor=#4284F3;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;shape=mxgraph.gcp2.cloud_run;" vertex="1" parent="1">
+          <mxGeometry x="280" y="400" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="AGENT" value="gap-genai-discovery-agent&#xa;Cloud Run (ADK runtime)&#xa;min=1 max=20, 2GiB/2vCPU&#xa;ingress: internal&#xa;SA: sa-agent@..." style="sketch=0;outlineConnect=0;fontColor=#202124;gradientColor=none;fillColor=#4284F3;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;shape=mxgraph.gcp2.cloud_run;" vertex="1" parent="1">
+          <mxGeometry x="500" y="400" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="MCPTB" value="BigQuery MCP server (managed)&#xa;bigquery.googleapis.com/mcp&#xa;Google-hosted, zero infra&#xa;OAuth2 + IAM (sa-agent, mcp.toolUser)&#xa;Model Armor floor settings ON" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ABC9C;strokeColor=#FFFFFF;strokeWidth=2;fontSize=10;fontStyle=1;fontColor=#FFFFFF;align=center;" vertex="1" parent="1">
+          <mxGeometry x="720" y="400" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="EXP" value="gap-genai-discovery-exporter&#xa;Cloud Run Job (weekly)&#xa;SA: sa-exporter@...&#xa;VPC connector + NAT egress" style="sketch=0;outlineConnect=0;fontColor=#202124;gradientColor=none;fillColor=#34A853;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;shape=mxgraph.gcp2.cloud_run;" vertex="1" parent="1">
+          <mxGeometry x="940" y="400" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="REIDX" value="gap-genai-discovery-reindex&#xa;Cloud Run Job (weekly)&#xa;SA: sa-reindex@..." style="sketch=0;outlineConnect=0;fontColor=#202124;gradientColor=none;fillColor=#34A853;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;shape=mxgraph.gcp2.cloud_run;" vertex="1" parent="1">
+          <mxGeometry x="940" y="500" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ============ MANAGED AI PLANE ============ -->
+        <mxCell id="ai_grp" value="Managed AI - regional us-central1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#8430CE;strokeWidth=2;dashed=1;fontSize=12;fontStyle=1;fontColor=#8430CE;verticalAlign=top;align=left;spacingLeft=12;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="350" width="540" height="220" as="geometry" />
+        </mxCell>
+
+        <mxCell id="VAIS" value="Vertex AI Search engine&#xa;gap-genai-discovery-search&#xa;tier: Enterprise + LLM Add-on&#xa;:answer + Sessions" style="sketch=0;outlineConnect=0;fontColor=#202124;gradientColor=none;fillColor=#8430CE;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;shape=mxgraph.gcp2.cloud_machine_learning;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="400" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="VDS" value="VAIS Data Store&#xa;gap-genai-discovery-corpus&#xa;unstructured (HTML)&#xa;source: GCS bucket" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E8FD;strokeColor=#8430CE;fontSize=10;fontColor=#3C1361;" vertex="1" parent="1">
+          <mxGeometry x="1290" y="400" width="140" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="MGARDEN" value="Vertex AI Model Garden&#xa;gemini-2.5-flash + gemini-2.5-pro&#xa;publisher endpoint" style="sketch=0;outlineConnect=0;fontColor=#202124;gradientColor=none;fillColor=#8430CE;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;shape=mxgraph.gcp2.ai_hub;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="400" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="EVAL" value="Vertex AI&#xa;Evaluation Service" style="sketch=0;outlineConnect=0;fontColor=#202124;gradientColor=none;fillColor=#8430CE;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;shape=mxgraph.gcp2.cloud_machine_learning;" vertex="1" parent="1">
+          <mxGeometry x="1600" y="400" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="VSESS" value="VAIS Sessions store&#xa;engine-scoped, keyed by userPseudoId&#xa;auto-appended by :answer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E8FD;strokeColor=#8430CE;fontSize=10;fontColor=#3C1361;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="490" width="250" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ============ DATA PLANE ============ -->
+        <mxCell id="data_grp" value="Data plane - regional us-central1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#F9A825;strokeWidth=2;dashed=1;fontSize=12;fontStyle=1;fontColor=#5F4300;verticalAlign=top;align=left;spacingLeft=12;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="20" y="600" width="820" height="240" as="geometry" />
+        </mxCell>
+
+        <mxCell id="GCS" value="GCS bucket&#xa;gap-genai-discovery-corpus-html&#xa;CMEK (key-gcs), versioned, UBLA&#xa;path: pages/&lt;space&gt;/&lt;page_id&gt;.html" style="sketch=0;outlineConnect=0;fontColor=#202124;gradientColor=none;fillColor=#F9A825;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;shape=mxgraph.gcp2.cloud_storage;" vertex="1" parent="1">
+          <mxGeometry x="60" y="660" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="BQ" value="BigQuery dataset&#xa;gap_genai_app (us-central1, CMEK key-bq)" style="sketch=0;outlineConnect=0;fontColor=#202124;gradientColor=none;fillColor=#F9A825;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=1;shape=mxgraph.gcp2.bigquery;" vertex="1" parent="1">
+          <mxGeometry x="280" y="660" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="bq_tables" value="Tables (CMEK key-bq):&#xa;- request_logs (partition: ts day)&#xa;- skill_invocations&#xa;- feedback&#xa;- golden_evals, eval_runs&#xa;- audit_logs (1y retention)&#xa;- app_config.skill_registry&#xa;- app_config.ingest_state&#xa;- experiments (read-only via MCP)&#xa;- experiment_clusters (read-only via MCP)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#F9A825;fontSize=10;fontColor=#5F4300;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="380" y="640" width="250" height="180" as="geometry" />
+        </mxCell>
+
+        <mxCell id="AR" value="Artifact Registry&#xa;us-central1-docker.pkg.dev/...&#xa;repos: gap-web, gap-backend, gap-jobs" style="sketch=0;outlineConnect=0;fontColor=#202124;gradientColor=none;fillColor=#4284F3;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;shape=mxgraph.gcp2.container_registry;" vertex="1" parent="1">
+          <mxGeometry x="680" y="660" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ============ SECURITY PLANE ============ -->
+        <mxCell id="sec_grp" value="Security" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#C62828;strokeWidth=2;dashed=1;fontSize=12;fontStyle=1;fontColor=#C62828;verticalAlign=top;align=left;spacingLeft=12;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="860" y="600" width="820" height="240" as="geometry" />
+        </mxCell>
+
+        <mxCell id="SM" value="Secret Manager&#xa;confluence-pat" style="sketch=0;outlineConnect=0;fontColor=#202124;gradientColor=none;fillColor=#C62828;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;shape=mxgraph.gcp2.key_management_service;" vertex="1" parent="1">
+          <mxGeometry x="900" y="660" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="KMS" value="Cloud KMS&#xa;keyring: gap-genai-kr&#xa;keys: key-gcs, key-bq" style="sketch=0;outlineConnect=0;fontColor=#202124;gradientColor=none;fillColor=#C62828;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;shape=mxgraph.gcp2.key_management_service;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="660" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="IAM" value="Cloud IAM" style="sketch=0;outlineConnect=0;fontColor=#202124;gradientColor=none;fillColor=#C62828;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;shape=mxgraph.gcp2.cloud_iam;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="660" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="sa_table" value="Service accounts (project: gap-genai-discovery)&#xa;- sa-web@... -- run.invoker on gateway&#xa;- sa-gateway@... -- run.invoker on agent&#xa;- sa-agent@... -- discoveryengine.user, aiplatform.user, mcp.toolUser, bigquery.jobUser,&#xa;     bigquery.dataViewer on v_experiment_kpis (view only),&#xa;     bigquery.dataEditor on feedback (writes only)&#xa;     + IAM deny policy on read-write execute_sql MCP tool&#xa;- sa-exporter@... -- storage.objectAdmin (corpus bucket), secretmanager.secretAccessor (confluence-pat)&#xa;- sa-reindex@... -- discoveryengine.editor (data store + engine), storage.objectViewer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEBEE;strokeColor=#C62828;fontSize=10;fontColor=#7F0000;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="640" width="430" height="180" as="geometry" />
+        </mxCell>
+
+        <!-- ============ OPS / CICD PLANE ============ -->
+        <mxCell id="ops_grp" value="Ops / CI-CD" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#5F6368;strokeWidth=2;dashed=1;fontSize=12;fontStyle=1;fontColor=#202124;verticalAlign=top;align=left;spacingLeft=12;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="20" y="870" width="1320" height="200" as="geometry" />
+        </mxCell>
+
+        <mxCell id="LOG" value="Cloud Logging&#xa;sink -&gt; Pub/Sub -&gt; BQ" style="sketch=0;outlineConnect=0;fontColor=#202124;gradientColor=none;fillColor=#4284F3;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;shape=mxgraph.gcp2.logging;" vertex="1" parent="1">
+          <mxGeometry x="60" y="930" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="MON" value="Cloud Monitoring&#xa;alerts, uptime, SLOs" style="sketch=0;outlineConnect=0;fontColor=#202124;gradientColor=none;fillColor=#4284F3;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;shape=mxgraph.gcp2.cloud_monitoring;" vertex="1" parent="1">
+          <mxGeometry x="180" y="930" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="TRACE" value="Cloud Trace + Error Reporting&#xa;OTel from Cloud Run" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F0FE;strokeColor=#1A73E8;fontSize=10;fontColor=#174EA6;" vertex="1" parent="1">
+          <mxGeometry x="280" y="940" width="180" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="SCHED" value="Cloud Scheduler&#xa;weekly-export Mon 02:00 PT&#xa;weekly-reindex Mon 03:00 PT&#xa;weekly-eval Sun 04:00 PT&#xa;nightly-session-prune" style="sketch=0;outlineConnect=0;fontColor=#202124;gradientColor=none;fillColor=#4284F3;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;shape=mxgraph.gcp2.cloud_scheduler;" vertex="1" parent="1">
+          <mxGeometry x="500" y="930" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="CB" value="Cloud Build&#xa;triggers from GitHub" style="sketch=0;outlineConnect=0;fontColor=#202124;gradientColor=none;fillColor=#4284F3;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;shape=mxgraph.gcp2.container_builder;" vertex="1" parent="1">
+          <mxGeometry x="660" y="930" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="GH" value="GitHub repo&#xa;gap-genai-discovery&#xa;(GAP enterprise org)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EAED;strokeColor=#5F6368;fontSize=10;fontColor=#202124;" vertex="1" parent="1">
+          <mxGeometry x="780" y="940" width="140" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="PUBSUB" value="Pub/Sub topic&#xa;gap-genai-logs (log sink transport)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F0FE;strokeColor=#1A73E8;fontSize=10;fontColor=#174EA6;" vertex="1" parent="1">
+          <mxGeometry x="950" y="940" width="180" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="USERS" value="Users (gap.com)&#xa;senior analysts, PDM, brand managers, leadership&#xa;groups: gap-genai-users / gap-genai-admins" style="sketch=0;outlineConnect=0;fontColor=#202124;gradientColor=none;fillColor=#5F6368;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;fontStyle=1;shape=mxgraph.gcp2.users;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="930" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ============ EXTERNAL ============ -->
+        <mxCell id="ext_grp" value="External (outside GCP)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#5F6368;strokeWidth=2;dashed=1;fontSize=12;fontStyle=1;fontColor=#5F6368;verticalAlign=top;align=left;spacingLeft=12;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="870" width="320" height="200" as="geometry" />
+        </mxCell>
+
+        <mxCell id="CONF" value="Atlassian Confluence Cloud&#xa;Test &amp; Learn COE space&#xa;PAT (read-only)" style="sketch=0;outlineConnect=0;fontColor=#202124;gradientColor=none;fillColor=#0052CC;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=1;shape=mxgraph.atlassian.confluence;" vertex="1" parent="1">
+          <mxGeometry x="1430" y="930" width="64" height="64" as="geometry" />
+        </mxCell>
+
+        <mxCell id="WSPACE" value="Google Workspace&#xa;gap.com IdP (OIDC)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EAED;strokeColor=#5F6368;fontSize=10;fontColor=#202124;" vertex="1" parent="1">
+          <mxGeometry x="1530" y="940" width="140" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ============ EDGES (request path + wiring) ============ -->
+        <!-- Users -> Workspace OIDC -->
+        <mxCell id="e_users_ws" value="OIDC sign-in (TLS/443)" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#5F6368;strokeWidth=1.5;fontSize=9;fontColor=#5F6368;dashed=1;dashPattern=4 3;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="USERS" target="WSPACE">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Users -> DNS -> IAP -->
+        <mxCell id="e_users_dns" value="HTTPS (TLS/443)" style="edgeStyle=orthogonalEdgeStyle;html=1;rounded=1;endArrow=classicThin;strokeColor=#137333;strokeWidth=2;fontSize=10;fontColor=#0D652D;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="USERS" target="DNS">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="90" y="960" />
+              <mxPoint x="90" y="230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="e_dns_iap" value="A record" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#137333;strokeWidth=2;fontSize=9;fontColor=#0D652D;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="DNS" target="IAP">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_iap_web" value="IAP-on-Cloud-Run&#xa;(IAM run.invoker)" style="edgeStyle=orthogonalEdgeStyle;html=1;rounded=1;endArrow=classicThin;strokeColor=#137333;strokeWidth=2;fontSize=10;fontColor=#0D652D;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="IAP" target="WEB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- (Cert / Armor / LB removed: Cloud Run native IAP provides TLS + auth) -->
+
+        <!-- Web -> Gateway -> Agent -->
+        <mxCell id="e_web_gw" value="HTTPS internal&#xa;(run.invoker)" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#137333;strokeWidth=2;fontSize=10;fontColor=#0D652D;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="WEB" target="GW">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_gw_agent" value="HTTPS internal&#xa;(run.invoker)" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#137333;strokeWidth=2;fontSize=10;fontColor=#0D652D;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="GW" target="AGENT">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Agent -> Managed BigQuery MCP -->
+        <mxCell id="e_agent_mcp" value="MCP JSON-RPC HTTPS&#xa;OAuth2 sa-agent (mcp.toolUser)&#xa;Model Armor floor settings" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#1ABC9C;strokeWidth=2;fontSize=10;fontStyle=1;fontColor=#0E6655;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="AGENT" target="MCPTB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Agent -> VAIS -->
+        <mxCell id="e_agent_vais" value=":answer (gRPC/443, sa-agent)" style="edgeStyle=orthogonalEdgeStyle;html=1;rounded=1;endArrow=classicThin;strokeColor=#8430CE;strokeWidth=2;fontSize=10;fontStyle=1;fontColor=#3C1361;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="AGENT" target="VAIS">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Agent -> Model Garden -->
+        <mxCell id="e_agent_mg" value="Gemini Flash + Pro (TLS/443, sa-agent)" style="edgeStyle=orthogonalEdgeStyle;html=1;rounded=1;endArrow=classicThin;strokeColor=#8430CE;strokeWidth=2;fontSize=10;fontStyle=1;fontColor=#3C1361;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="AGENT" target="MGARDEN">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="530" y="380" />
+              <mxPoint x="1510" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- VAIS internals -->
+        <mxCell id="e_vais_vds" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#8430CE;strokeWidth=1.5;dashed=1;dashPattern=1 3;" edge="1" parent="1" source="VAIS" target="VDS">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_vais_vsess" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#8430CE;strokeWidth=1.5;dashed=1;dashPattern=1 3;" edge="1" parent="1" source="VAIS" target="VSESS">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- VDS -> GCS -->
+        <mxCell id="e_vds_gcs" value="reads HTML (sa: discoveryengine SA)" style="edgeStyle=orthogonalEdgeStyle;html=1;rounded=1;endArrow=classicThin;strokeColor=#F9A825;strokeWidth=2;fontSize=10;fontColor=#5F4300;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="VDS" target="GCS">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1360" y="500" />
+              <mxPoint x="90" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Managed BQ MCP -> BigQuery view -->
+        <mxCell id="e_mcp_bq" value="jobs.query on v_experiment_kpis (sa-agent identity)&#xa;auto Cloud Audit Logs (goog-mcp-server:true)" style="edgeStyle=orthogonalEdgeStyle;html=1;rounded=1;endArrow=classicThin;strokeColor=#F9A825;strokeWidth=2;fontSize=10;fontStyle=1;fontColor=#5F4300;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="MCPTB" target="BQ">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Agent -> BQ (logs) -->
+        <mxCell id="e_agent_bq" value="logs + feedback (sa-agent)" style="edgeStyle=orthogonalEdgeStyle;html=1;rounded=1;endArrow=classicThin;strokeColor=#F9A825;strokeWidth=1.5;dashed=1;dashPattern=1 3;fontSize=10;fontColor=#5F4300;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="AGENT" target="BQ">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="310" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Exporter -> NAT -> Confluence -->
+        <mxCell id="e_exp_nat" value="VPC connector -&gt; NAT" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#E65100;strokeWidth=2;fontSize=10;fontColor=#BF360C;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="EXP" target="NAT">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_nat_conf" value="HTTPS/443 + PAT" style="edgeStyle=orthogonalEdgeStyle;html=1;rounded=1;endArrow=classicThin;strokeColor=#E65100;strokeWidth=2;fontSize=10;fontColor=#BF360C;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="NAT" target="CONF">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1080" y="290" />
+              <mxPoint x="1462" y="290" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Exporter -> GCS -->
+        <mxCell id="e_exp_gcs" value="HTML upload (sa-exporter)" style="edgeStyle=orthogonalEdgeStyle;html=1;rounded=1;endArrow=classicThin;strokeColor=#F9A825;strokeWidth=2;fontSize=10;fontColor=#5F4300;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="EXP" target="GCS">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Exporter -> Secret Manager -->
+        <mxCell id="e_exp_sm" value="get confluence-pat" style="edgeStyle=orthogonalEdgeStyle;html=1;rounded=1;endArrow=classicThin;strokeColor=#C62828;strokeWidth=1.5;dashed=1;dashPattern=1 3;fontSize=10;fontColor=#7F0000;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="EXP" target="SM">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Reindex -> VAIS -->
+        <mxCell id="e_reidx_vais" value="documents.import (sa-reindex)" style="edgeStyle=orthogonalEdgeStyle;html=1;rounded=1;endArrow=classicThin;strokeColor=#8430CE;strokeWidth=1.5;fontSize=10;fontColor=#3C1361;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="REIDX" target="VAIS">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Scheduler -> jobs -->
+        <mxCell id="e_sched_exp" value="weekly cron" style="edgeStyle=orthogonalEdgeStyle;html=1;rounded=1;endArrow=classicThin;strokeColor=#E65100;strokeWidth=1.5;fontSize=10;fontColor=#BF360C;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="SCHED" target="EXP">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_sched_reidx" value="weekly cron" style="edgeStyle=orthogonalEdgeStyle;html=1;rounded=1;endArrow=classicThin;strokeColor=#E65100;strokeWidth=1.5;fontSize=10;fontColor=#BF360C;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="SCHED" target="REIDX">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_sched_eval" value="weekly eval" style="edgeStyle=orthogonalEdgeStyle;html=1;rounded=1;endArrow=classicThin;strokeColor=#8430CE;strokeWidth=1.2;dashed=1;dashPattern=1 3;fontSize=10;fontColor=#3C1361;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="SCHED" target="AGENT">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- KMS -> GCS / BQ -->
+        <mxCell id="e_kms_gcs" value="key-gcs (CMEK)" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#C62828;strokeWidth=1.2;dashed=1;dashPattern=1 3;fontSize=9;fontColor=#7F0000;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="KMS" target="GCS">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_kms_bq" value="key-bq (CMEK)" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#C62828;strokeWidth=1.2;dashed=1;dashPattern=1 3;fontSize=9;fontColor=#7F0000;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="KMS" target="BQ">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- CICD -->
+        <mxCell id="e_gh_cb" value="trigger" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#5F6368;strokeWidth=1.2;dashed=1;dashPattern=1 3;fontSize=9;fontColor=#5F6368;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="GH" target="CB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_cb_ar" value="push image" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#5F6368;strokeWidth=1.2;dashed=1;dashPattern=1 3;fontSize=9;fontColor=#5F6368;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="CB" target="AR">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_ar_run" value="deploy revisions to all Cloud Run services + jobs" style="edgeStyle=orthogonalEdgeStyle;html=1;rounded=1;endArrow=classicThin;strokeColor=#5F6368;strokeWidth=1.2;dashed=1;dashPattern=1 3;fontSize=9;fontColor=#5F6368;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="AR" target="AGENT">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Logs sink -->
+        <mxCell id="e_log_pubsub" value="log sink" style="endArrow=classicThin;html=1;rounded=1;strokeColor=#1A73E8;strokeWidth=1.2;dashed=1;dashPattern=1 3;fontSize=9;fontColor=#174EA6;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="LOG" target="PUBSUB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_pubsub_bq" value="-&gt; request_logs / audit_logs" style="edgeStyle=orthogonalEdgeStyle;html=1;rounded=1;endArrow=classicThin;strokeColor=#1A73E8;strokeWidth=1.2;dashed=1;dashPattern=1 3;fontSize=9;fontColor=#174EA6;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="PUBSUB" target="BQ">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
