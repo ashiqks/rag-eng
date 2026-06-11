@@ -29,17 +29,28 @@ headers = {
 }
 
 candidates = [
-    "gemini-2.5-pro/answer_gen/v1",
-    "gemini-2.5-pro/answer_gen/v2",
-    "gemini-2.5-pro-preview/answer_gen/v1",
-    "gemini-2.5-pro-001/answer_gen/v1",
+    # Previously tried — kept for sanity
     "stable",
     "preview",
     "gemini-2.0-flash-001/answer_gen/v1",
     "gemini-2.5-flash/answer_gen/v1",
+    # Pro family — try fresh in case API now accepts them
+    "gemini-2.5-pro/answer_gen/v1",
+    "gemini-2.5-pro-preview/answer_gen/v1",
+    "gemini-2.5-pro-001/answer_gen/v1",
+    # Gemini 3 family — new ask
+    "gemini-3.1-pro/answer_gen/v1",
+    "gemini-3.1-pro-preview/answer_gen/v1",
+    "gemini-3-pro/answer_gen/v1",
+    "gemini-3-pro-preview/answer_gen/v1",
+    "gemini-3.0-pro/answer_gen/v1",
+    "gemini-3.0-pro-preview/answer_gen/v1",
+    "gemini-3.1-flash/answer_gen/v1",
+    "gemini-3-flash/answer_gen/v1",
+    # Other variants
     "gemini-2.5-flash-lite/answer_gen/v1",
     "gemini-2.5-flash/answer_gen/v2",
-    "gemini-1.5-pro-002/answer_gen/v1",
+    "gemini-2.5-pro/answer_gen/v2",
 ]
 for v in candidates:
     body = {

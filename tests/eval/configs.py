@@ -166,6 +166,75 @@ CONFIGS: dict[str, dict[str, Any]] = {
             "groundingSpec": {"filteringLevel": "FILTERING_LEVEL_HIGH"},
         },
     },
+    "gemini-3.1-pro+prompt": {
+        "description": (
+            "Strict preamble + gemini-3.1-pro-preview answer generator "
+            "(probed accepted by the :answer API). Default retrieval."
+        ),
+        "model_label": "gemini-3.1-pro-preview",
+        "request_overlay": {
+            "answerGenerationSpec": {
+                "modelSpec": {"modelVersion": "gemini-3.1-pro-preview/answer_gen/v1"},
+                "ignoreLowRelevantContent": True,
+                "promptSpec": {"preamble": PREAMBLE_STRICT},
+            },
+        },
+    },
+    "gemini-3.1-pro+recall": {
+        "description": (
+            "gemini-3.1-pro+prompt with maxReturnResults=25 and 3-step "
+            "query rephrasing. Pro 3.1 with broader retrieval."
+        ),
+        "model_label": "gemini-3.1-pro-preview",
+        "request_overlay": {
+            "answerGenerationSpec": {
+                "modelSpec": {"modelVersion": "gemini-3.1-pro-preview/answer_gen/v1"},
+                "ignoreLowRelevantContent": True,
+                "promptSpec": {"preamble": PREAMBLE_STRICT},
+            },
+            "searchSpec": {
+                "searchParams": {"maxReturnResults": 25},
+            },
+            "queryUnderstandingSpec": {
+                "queryRephraserSpec": {"maxRephraseSteps": 3},
+            },
+        },
+    },
+    "gemini-3.1-pro+grounding": {
+        "description": (
+            "gemini-3.1-pro+recall with groundingSpec.filteringLevel=HIGH. "
+            "Pro 3.1 + server-side abstention on unsupported claims."
+        ),
+        "model_label": "gemini-3.1-pro-preview",
+        "request_overlay": {
+            "answerGenerationSpec": {
+                "modelSpec": {"modelVersion": "gemini-3.1-pro-preview/answer_gen/v1"},
+                "ignoreLowRelevantContent": True,
+                "promptSpec": {"preamble": PREAMBLE_STRICT},
+            },
+            "searchSpec": {
+                "searchParams": {"maxReturnResults": 25},
+            },
+            "queryUnderstandingSpec": {
+                "queryRephraserSpec": {"maxRephraseSteps": 3},
+            },
+            "groundingSpec": {"filteringLevel": "FILTERING_LEVEL_HIGH"},
+        },
+    },
+    "gemini-3.1-pro+glossary": {
+        "description": (
+            "gemini-3.1-pro+prompt with the brand-glossary preamble. "
+            "Tests whether the glossary helps Pro 3.1 disambiguate brand codes."
+        ),
+        "model_label": "gemini-3.1-pro-preview",
+        "request_overlay": {
+            "answerGenerationSpec": {
+                "modelSpec": {"modelVersion": "gemini-3.1-pro-preview/answer_gen/v1"},
+                "ignoreLowRelevantContent": True,
+                "promptSpec": {"preamble": PREAMBLE_STRICT_WITH_GLOSSARY},
+            },
+        },
+    },
 }
 
 
