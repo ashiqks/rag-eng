@@ -90,7 +90,6 @@ Compact: `first → latest (Δ)` per metric. F=faithfulness, R=relevancy, C=corr
 | Eval questions | `tests/eval/eval_questions_user_set.csv` (15 questions, Q-001 … Q-015) |
 | Judge model (Vertex Eval Service) | `gemini-3.1-pro-preview` |
 | Concurrency | 8 |
-| Proxy | `http://proxy.wal-mart.com:8080` |
 | Eval metrics | `faithfulness`, `answer_relevancy`, `answer_correctness`, `context_precision`, `context_recall` (PointwiseMetrics, 1–5) |
 
 ### "First" run configuration (= `baseline`)
