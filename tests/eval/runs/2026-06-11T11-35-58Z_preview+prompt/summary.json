@@ -1,0 +1,13 @@
+{
+  "row_count": 15,
+  "faithfulness/mean": 4.066666666666666,
+  "faithfulness/std": 0.9611501047232549,
+  "answer_relevancy/mean": 4.866666666666666,
+  "answer_relevancy/std": 0.5163977794943222,
+  "answer_correctness/mean": 2.4,
+  "answer_correctness/std": 0.9102589898327995,
+  "context_precision/mean": 4.4,
+  "context_precision/std": 0.9856107606091623,
+  "context_recall/mean": 3.533333333333333,
+  "context_recall/std": 1.245945806357946
+}

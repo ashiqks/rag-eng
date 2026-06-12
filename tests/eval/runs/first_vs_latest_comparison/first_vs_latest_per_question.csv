@@ -1,0 +1,16 @@
+question_id,question,latency_first,faithfulness_first,answer_relevancy_first,answer_correctness_first,context_precision_first,context_recall_first,latency_latest,faithfulness_latest,answer_relevancy_latest,answer_correctness_latest,context_precision_latest,context_recall_latest,delta_faithfulness,delta_answer_relevancy,delta_answer_correctness,delta_context_precision,delta_context_recall,delta_latency_ms
+Q-001,Have we tested anything similar to a checkout simplification before?,8401,3.0,5.0,2.0,5.0,2.0,6925,3.0,5.0,2.0,4.0,2.0,0.0,0.0,0.0,-1.0,0.0,-1476
+Q-002,What previous experiments should we review before testing sticky ATB?,16354,4.0,5.0,2.0,5.0,5.0,6733,4.0,5.0,2.0,4.0,4.0,0.0,0.0,0.0,-1.0,-1.0,-9621
+Q-003,Has any brand tested Gen AI review summaries on PDP?,10969,5.0,5.0,2.0,5.0,3.0,5060,5.0,5.0,2.0,5.0,5.0,0.0,0.0,0.0,0.0,2.0,-5909
+Q-004,Have we run any Fit Tool experiments — TrueFit or Drapr?,11562,4.0,5.0,2.0,5.0,3.0,5903,3.0,5.0,2.0,5.0,3.0,-1.0,0.0,0.0,0.0,0.0,-5659
+Q-005,What Quick Add tests exist across brands — PLP and PDP?,11025,5.0,5.0,2.0,5.0,5.0,4889,4.0,5.0,3.0,5.0,4.0,-1.0,0.0,1.0,0.0,-1.0,-6136
+Q-006,"Which recommendation engine tests have been run — Certona, Constructor, Internal?",8068,5.0,5.0,3.0,5.0,5.0,5646,5.0,5.0,3.0,5.0,5.0,0.0,0.0,0.0,0.0,0.0,-2422
+Q-007,Has anyone tested PLP grid layout changes — 3-grid vs 4-grid?,11588,5.0,5.0,3.0,5.0,5.0,5835,4.0,5.0,3.0,5.0,4.0,-1.0,0.0,0.0,0.0,-1.0,-5753
+Q-008,"What show/hide promo experiments exist — Sale Accordion, Ticker, ISM banners?",12262,5.0,4.0,1.0,4.0,2.0,6711,3.0,3.0,1.0,3.0,3.0,-2.0,-1.0,0.0,-1.0,1.0,-5551
+Q-009,Which brands tested FindMine outfit recommendations on PDP?,4831,5.0,5.0,3.0,5.0,5.0,2849,5.0,5.0,3.0,5.0,5.0,0.0,0.0,0.0,0.0,0.0,-1982
+Q-010,Has BR Factory tested any MegaNav changes?,7961,4.0,5.0,1.0,5.0,1.0,3074,5.0,5.0,2.0,5.0,3.0,1.0,0.0,1.0,0.0,2.0,-4887
+Q-011,Did the Sticky ATB test for BR Mobile Challenger A reach significance? What was the +$800K estimate based on?,3957,3.0,4.0,2.0,4.0,2.0,2770,5.0,5.0,5.0,5.0,5.0,2.0,1.0,3.0,1.0,3.0,-1187
+Q-012,Was the Gen AI reviews 15 basis point return rate improvement statistically significant?,3184,5.0,5.0,2.0,5.0,5.0,2893,4.0,5.0,2.0,5.0,4.0,-1.0,0.0,0.0,0.0,-1.0,-291
+Q-013,Which brand-challenger combinations reached significance in the Fit Tool test?,9249,4.0,5.0,2.0,2.0,3.0,3986,5.0,5.0,2.0,2.0,3.0,1.0,0.0,0.0,0.0,0.0,-5263
+Q-014,Was the ON CTA Color test's 20-day run sufficient to reach significance?,4558,3.0,5.0,1.0,5.0,1.0,3329,4.0,5.0,2.0,5.0,1.0,1.0,0.0,1.0,0.0,0.0,-1229
+Q-015,Did all four brands reach adequate sample sizes in the Certona vs Constructor test?,4948,3.0,3.0,2.0,2.0,3.0,3451,2.0,5.0,2.0,3.0,2.0,-1.0,2.0,0.0,1.0,-1.0,-1497

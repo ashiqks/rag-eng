@@ -1,0 +1,30 @@
+{
+  "gcp_project_id": "prj-0n-dta-pt-ai-sandbox",
+  "gcp_region": "us-central1",
+  "search_project_id": "prj-0n-dta-pt-ai-sandbox",
+  "search_location": "global",
+  "search_collection": "default_collection",
+  "search_engine_id": "gap-erd-discovery_1779708094567",
+  "search_serving_config": "default_search",
+  "judge_model": "gemini-3.1-pro-preview",
+  "concurrency": 8,
+  "questions_csv": "C:\\Users\\vn5a4j1\\Downloads\\gap\\tests\\eval\\eval_questions_user_set.csv",
+  "runs_dir": "C:\\Users\\vn5a4j1\\Downloads\\gap\\tests\\eval\\runs",
+  "proxy": "http://proxy.wal-mart.com:8080",
+  "config": "preview+prompt",
+  "dry_run": false,
+  "config_name": "preview+prompt",
+  "config_description": "Strict preamble + the server-rolled `preview` answer generator (latest model Discovery Engine has enabled for :answer). Best instruction-following available; default retrieval.",
+  "config_model_label": "preview",
+  "request_overlay": {
+    "answerGenerationSpec": {
+      "modelSpec": {
+        "modelVersion": "preview"
+      },
+      "ignoreLowRelevantContent": true,
+      "promptSpec": {
+        "preamble": "You are an analyst answering questions strictly from the provided documents. Hard rules:\n1. Never invent dates, numbers, percentages, test names, brand codes, or document titles. If a fact is not stated verbatim in the retrieved chunks, omit it.\n2. When referring to a test, use the exact name as it appears in the chunk. If no name appears, refer to it descriptively (e.g., 'a 2025 Old Navy PDP test') without inventing a title.\n3. When the chunk filename encodes the year (e.g., '2018_...'), you MAY cite that year, but only if the chunk's textual content also discusses dates consistent with it.\n4. Quantitative claims (RPV, OPV, return-rate %, engagement %) must be quoted from the chunk verbatim or omitted.\n5. If the retrieved chunks do not answer the question, say so explicitly rather than guessing."
+      }
+    }
+  }
+}
