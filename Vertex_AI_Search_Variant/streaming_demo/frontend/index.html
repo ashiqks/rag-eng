@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vertex AI Search · streaming demo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Vertex AI Search · streaming demo</h1>
+      <div class="meta">
+        <span id="health" class="pill">connecting…</span>
+        <span class="pill" id="session-pill">no session</span>
+        <button id="new-session" type="button">New chat</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="answer-pane">
+        <div id="references" class="references hidden">
+          <h2>Sources</h2>
+          <ol id="references-list"></ol>
+        </div>
+
+        <div class="answer">
+          <div id="answer-text" class="answer-text"></div>
+          <span id="cursor" class="cursor hidden">▍</span>
+        </div>
+
+        <div id="citations" class="citations hidden">
+          <h3>Citations</h3>
+          <ol id="citations-list"></ol>
+        </div>
+
+        <div id="error" class="error hidden"></div>
+      </section>
+
+      <section id="event-log-pane">
+        <h2>Event log</h2>
+        <pre id="event-log"></pre>
+      </section>
+    </main>
+
+    <form id="chat-form">
+      <textarea
+        id="input"
+        rows="2"
+        placeholder="Ask a question about Gap experiments…"
+      ></textarea>
+      <div class="row">
+        <button id="send" type="submit">Send</button>
+        <button id="stop" type="button" disabled>Stop</button>
+      </div>
+    </form>
+
+    <script src="app.js"></script>
+  </body>
+</html>

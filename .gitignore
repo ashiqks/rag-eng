@@ -123,3 +123,8 @@ tests/New folder (2)/
 # Drawio backups
 *.drawio.bkp
 *.bkp
+
+# --- Vite / TypeScript build caches ---
+.vite/
+*.tsbuildinfo
+

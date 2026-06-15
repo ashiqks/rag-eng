@@ -1,0 +1,129 @@
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: #0f1117;
+  color: #e6e8ee;
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+header {
+  padding: 12px 20px;
+  border-bottom: 1px solid #1f2330;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #131722;
+}
+header h1 { font-size: 16px; margin: 0; font-weight: 600; }
+.meta { display: flex; gap: 8px; align-items: center; }
+.pill {
+  font-size: 12px;
+  padding: 4px 8px;
+  background: #1f2330;
+  border-radius: 999px;
+  color: #9aa3b2;
+}
+button {
+  background: #2563eb;
+  color: white;
+  border: 0;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+button[disabled] { opacity: 0.5; cursor: not-allowed; }
+button#new-session, button#stop { background: #3b3f4d; }
+
+main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  overflow: hidden;
+}
+@media (max-width: 900px) {
+  main { grid-template-columns: 1fr; }
+}
+
+#answer-pane, #event-log-pane {
+  background: #131722;
+  border: 1px solid #1f2330;
+  border-radius: 8px;
+  padding: 16px;
+  overflow: auto;
+  min-height: 0;
+}
+#answer-pane h2, #event-log-pane h2 { margin: 0 0 8px; font-size: 14px; color: #9aa3b2; text-transform: uppercase; letter-spacing: 0.05em; }
+
+.references {
+  border: 1px solid #1f2330;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  background: #0f1320;
+}
+.references ol { margin: 0; padding-left: 18px; }
+.references li { font-size: 13px; padding: 2px 0; color: #c9d1d9; }
+.references a { color: #6aa6ff; text-decoration: none; }
+.references a:hover { text-decoration: underline; }
+
+.answer { line-height: 1.55; font-size: 15px; white-space: pre-wrap; word-wrap: break-word; }
+.answer-text { display: inline; }
+.cursor { animation: blink 1s steps(2) infinite; color: #6aa6ff; margin-left: 2px; }
+@keyframes blink { 50% { opacity: 0; } }
+
+.citations { margin-top: 16px; padding-top: 12px; border-top: 1px solid #1f2330; }
+.citations h3 { font-size: 13px; color: #9aa3b2; margin: 0 0 6px; }
+.citations ol { font-size: 12px; padding-left: 18px; color: #9aa3b2; }
+
+.error {
+  margin-top: 12px;
+  padding: 10px;
+  background: #3b1d1d;
+  border: 1px solid #b34141;
+  border-radius: 6px;
+  color: #ffb3b3;
+  font-size: 13px;
+}
+
+.hidden { display: none; }
+
+#event-log {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  margin: 0;
+  white-space: pre-wrap;
+  color: #9aa3b2;
+  height: 100%;
+  overflow: auto;
+}
+
+#chat-form {
+  padding: 12px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid #1f2330;
+  background: #131722;
+}
+#chat-form textarea {
+  width: 100%;
+  font: inherit;
+  font-size: 14px;
+  background: #0f1320;
+  color: #e6e8ee;
+  border: 1px solid #2a3142;
+  border-radius: 6px;
+  padding: 10px;
+  resize: vertical;
+  min-height: 50px;
+}
+#chat-form .row { display: flex; gap: 8px; justify-content: flex-end; }
