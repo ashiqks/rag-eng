@@ -221,6 +221,56 @@ Key observations:
 Full data: `runs/sweep_2026-06-11T11-02-36Z/comparison.md` and
 `comparison.csv`.
 
+### Follow-up: `gemini-3.1-pro-preview` sweep (2026-06-12)
+
+The Discovery Engine `:answer` API also accepts the explicit model
+version `gemini-3.1-pro-preview/answer_gen/v1` (in addition to the
+generic `preview` alias used by the winner above). To check whether
+naming a stronger model gives a measurable lift, four extra configs
+were added to [configs.py](configs.py):
+
+| Preset | Model | Preamble | maxResults | Rephrase | Grounding |
+|---|---|---|---|---|---|
+| `gemini-3.1-pro+prompt` | `gemini-3.1-pro-preview` | strict | default | 0 | default |
+| `gemini-3.1-pro+recall` | `gemini-3.1-pro-preview` | strict | 25 | 3 | default |
+| `gemini-3.1-pro+grounding` | `gemini-3.1-pro-preview` | strict | 25 | 3 | `HIGH` |
+| `gemini-3.1-pro+glossary` | `gemini-3.1-pro-preview` | strict + brand glossary | default | 0 | default |
+
+Results on the same 15-question user set, side-by-side with `baseline`
+and the previous winner `preview+prompt`:
+
+| Config | faith | rel | correct | prec | recall | Δ correct vs baseline |
+|---|---|---|---|---|---|---|
+| `baseline` | 4.20 | 4.73 | 2.13 | 4.53 | 3.07 | — |
+| **`preview+prompt`** | **4.07** | **4.87** | **2.40** | **4.40** | **3.53** | **+0.27** |
+| `gemini-3.1-pro+prompt` | 4.13 | 5.00 | 2.13 | 4.60 | 2.67 | +0.00 |
+| `gemini-3.1-pro+recall` | 4.27 | 4.73 | 2.13 | 4.73 | 3.00 | +0.00 |
+| `gemini-3.1-pro+grounding` | 4.40 | 4.67 | 2.07 | 4.60 | 2.40 | -0.07 |
+| `gemini-3.1-pro+glossary` | 4.00 | 5.00 | 2.40 | 4.67 | 3.40 | +0.27 |
+
+**Winner is unchanged: `preview+prompt`.** Naming `gemini-3.1-pro-preview`
+explicitly does *not* beat the generic `preview` alias on this question
+set. `gemini-3.1-pro+glossary` ties on correctness (2.40) and is close
+on recall (3.40 vs 3.53), so it's a viable alternative if the brand
+glossary is wanted in the preamble.
+
+Caveats:
+
+- Re-running `baseline` produced 2.13 correctness vs 1.93 in the
+  earlier sweep — the autorater has non-trivial run-to-run variance, so
+  Δ correctness ≤ ±0.13 should be treated as noise. The `preview+prompt`
+  edge of +0.27 over baseline is at the edge of meaningful.
+- `gemini-3.1-pro+prompt` is *worse* than baseline on `context_recall`
+  (-0.40): the pro model is more selective and rejects context the
+  cheaper default would have used. This is masked when a glossary
+  preamble is added (`gemini-3.1-pro+glossary` recall +0.33).
+- `gemini-3.1-pro+grounding` has the highest faithfulness (4.40) but
+  the lowest correctness — it abstains too aggressively when grounding
+  is forced HIGH on top of an already strict prompt.
+
+Full data: `runs/sweep_pro31_2026-06-12T05-33-07Z/comparison.md` and
+`comparison.csv`.
+
 ### What `:answer`-config tuning **cannot** fix
 
 Some failure modes (date hallucination from chunk-metadata gaps,
